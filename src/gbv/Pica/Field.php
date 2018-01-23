@@ -48,19 +48,18 @@ class Field {
 		$this->checkPath();
 	}
 
-	protected function checkPath() {
-		if (preg_match(self::PICA_PLUS, $this->path, $matches)) {
+	protected function checkPath(bool $pica3 = false) {
+		$regEx = ($pica3) ? self::PICA_PLUS : self::PICA3;
+
+		if (preg_match($regEx, $this->path, $matches)) {
 			if (isset($matches['field'][0])) $this->name = $matches['field'][0];
 			if (isset($matches['sub'][0])) $this->subFieldName = $matches['field'][0];
-
-			return;
+			$this->pica3 = $pica3;
+		}
+		else if ($this->pica3 !== true) {
+			$this->checkPath(true);
 		}
 
-		if (preg_match(self::PICA3, $this->path, $matches)) {
-			if (isset($matches['field'][0])) $this->name = $matches['field'][0];
-			if (isset($matches['sub'][0])) $this->subFieldName = $matches['field'][0];
-			$this->pica3 = true;
-		}
 	}
 
 	protected function loadData() {
