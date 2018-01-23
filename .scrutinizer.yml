@@ -1,5 +1,6 @@
 filter:
-  paths: [src/gbv/*]
+  paths: [src/*]
+  dependency_paths: [src/re]
 checks:
   php:
     code_rating: true
