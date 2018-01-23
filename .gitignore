@@ -6,4 +6,5 @@
 
 # WebPublisher
 composer.phar
+composer.lock
 src/vendor/*
