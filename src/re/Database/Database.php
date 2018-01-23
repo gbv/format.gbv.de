@@ -6,7 +6,6 @@ use Re\Database\Driver\DatabaseDriverInterface;
 use Re\Database\Driver\MySQLiDriver;
 use Re\Database\Driver\PDOMySQLDriver;
 use Re\Database\Driver\StatementDriverInterface;
-use Re\Database\Table\Table;
 use Re\Debug\Debug;
 
 /**
@@ -101,7 +100,7 @@ class Database {
 	 * Sends a query.
 	 * 
 	 * @param	string	$sql
-	 * @return	\Re\Database\Driver\StatementDriverInterface|bool
+	 * @return	PreparedStatement
 	 */
 	public function query(string $sql) {
 		$query = $this->driver->query($sql);
@@ -187,16 +186,6 @@ class Database {
 	 */
 	public function getType() {
 		return $this->driver->getType();
-	}
-
-	/**
-	 * Returns table editor for creating a table.
-	 *
-	 * @param	$tableName
-	 * @return	\Re\Database\Table\Table
-	 */
-	public function createTable(string $tableName) {
-		return Table::create($tableName, $this);
 	}
 
 	/**

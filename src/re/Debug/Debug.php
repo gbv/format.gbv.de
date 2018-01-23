@@ -51,9 +51,8 @@ class Debug {
 	
 	/**
 	 * Catch error and exception handlers.
-	 * 
-	 * @param	boolean	$logErrors
-	 * @param	boolean	$showFull
+	 *
+	 * @param	bool	$showFull
 	 * @param	string	$languageCode
 	 */
 	public static function catchTrapHandlers(bool $showFull = true, string $languageCode = 'en') {
@@ -150,7 +149,7 @@ class Debug {
 	/**
 	 * Return the dir for the log.
 	 * 
-	 * @return	string
+	 * @return	\Psr\Log\LoggerInterface
 	 */
 	public static function getLogger() {
 		return static::$logger;
