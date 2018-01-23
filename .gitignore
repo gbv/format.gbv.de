@@ -1,0 +1,9 @@
+# IDEs
+.buildpath
+.idea
+.project
+.settings
+
+# WebPublisher
+composer.phar
+src/vendor/*

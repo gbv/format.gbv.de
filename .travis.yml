@@ -1,0 +1,14 @@
+language: php
+sudo: false
+php:
+  - 7.1
+  - 7.2
+before_install:
+  - export PATH="$PATH:$(composer global config bin-dir --absolute)"
+  - composer global require "squizlabs/php_codesniffer=3.*"
+  - phpenv rehash
+before_script:
+  - git clone --branch=master --depth=1 --quiet git://github.com/Teralios/WebPublisher.git WP
+script:
+  - find src -type f -name '*.php' |xargs -I file php -l file
+  - phpcs -p --extensions=php --standard="`pwd`/WP/CodeSniff/Tera" files
