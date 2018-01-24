@@ -31,7 +31,7 @@ try {
 	}
 }
 catch (\Exception $e) {
-	/*$code = $e->getCode();
+	$code = $e->getCode();
 	if (isset(JsonResponse::$statusTexts[$code])) {
 		$message = JsonResponse::$statusTexts[$code];
 	}
@@ -41,9 +41,7 @@ catch (\Exception $e) {
 	}
 
 	$response->setStatusCode($code);
-	$response->setData(['code' => $code, 'message' => $message]);*/
-
-	throw $e;
+	$response->setData(['error' => ['code' => $code, 'message' => $message]]);
 }
 
 // send response

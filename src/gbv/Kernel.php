@@ -5,10 +5,29 @@ namespace GBV;
 use Re\Database\Database;
 use Re\Debug\Debug;
 
+/**
+ * Kernel
+ * @package        PicaHelpRest
+ * @author         Karsten (Teralios) Achterrath
+ * @copyright      ©2017 - 2018 Teralios.de
+ * @license        GPLv3
+ */
 class Kernel {
+	/**
+	 * @var	string
+	 */
 	protected $baseDir = '';
+
+	/**
+	 * @var	\Re\Database\Database
+	 */
 	protected $db = null;
 
+	/**
+	 * Kernel constructor.
+	 *
+	 * @param	string	$baseDir
+	 */
 	public function __construct($baseDir = '') {
 		if (empty($baseDir)) {
 			$this->baseDir = dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR;
@@ -21,6 +40,9 @@ class Kernel {
 		$this->initDatabase();
 	}
 
+	/**
+	 * Initialize Database.
+	 */
 	protected function initDatabase() {
 		$configFile = $this->baseDir . 'config/database.json';
 
@@ -40,6 +62,11 @@ class Kernel {
 		$this->db = new Database($database, $host, $user, $password, $port);
 	}
 
+	/**
+	 * Returns database class.
+	 *
+	 * @return \Re\Database\Database
+	 */
 	public function getDB() {
 		return $this->db;
 	}
