@@ -192,8 +192,8 @@ class Field {
 			throw new HttpException(404);
 		}
 
-		$this->data['pica+'] = $field['pica_p'];
-		$this->data['pica3'] = $field['pica_3'];
+		$this->data['pica_p'] = $field['pica_p'];
+		$this->data['pica_3'] = $field['pica_3'];
 		$this->data['content'] = $field['titel'];
 		$this->data['repeatable'] = ($field['wiederholbar'] == 'Ja') ? true : false;
 		$this->data['modified'] = $field['stand'];
