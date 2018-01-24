@@ -11,7 +11,7 @@ use Re\Util\StringUtil;
  *
  * @package        PicaHelpRest
  * @author         Karsten (Teralios) Achterrath
- * @copyright      ©2017 - 2018 Teralios.de
+ * @copyright      ©2018 GBV VZG
  * @license        GPLv3
  */
 class Field {
