@@ -25,18 +25,6 @@ final class StringUtil {
 	}
 
 	/**
-	 * Trim whitespace signs.
-	 * 
-	 * @param	string	$string
-	 * @return	string
-	 */
-	public static function trim(string $string) {
-		$string = preg_replace('%^[\p{Zs}\s]+%u', '', $string);
-		$string = preg_replace('%[\p{Zs}\s]+$%u', '', $string);
-		return $string;
-	}
-	
-	/**
 	 * Encodes html.
 	 * 
 	 * @param	string	$string
