@@ -29,7 +29,9 @@ Wenn eine Liste aller Felder geladen werden soll, reicht es, wenn die API ohne P
 		"pica_3" : "000A",
 		"content" : "Title owner"
 	},
-	{ ... }
+	{ 
+		//... 
+	}
 ]
 ```
 ## Abruf eines bestimmten PICA+ Feldes
@@ -57,7 +59,9 @@ Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Feldes *0
 			"repeatable" : false,
 			"modified" : "2017-08-09 07:20:11"
 		},
-		{ ... }
+		{ 
+			//... 
+		}
 	]
 }
 ```
