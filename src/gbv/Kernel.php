@@ -55,14 +55,7 @@ class Kernel {
 		$port = (isset($config['port'])) ? $config['port'] : 3306;
 		$dns = 'mysql:host=' . $host . ';port=' . $port . ';dbname=' . $database;
 
-		// mysql driver option
-		$driverOptions = [
-			\PDO::MYSQL_ATTR_INIT_COMMAND	=> "SET NAMES 'utf8mb4', SESSION sql_mode = 'ANSI,ONLY_FULL_GROUP_BY,STRICT_ALL_TABLES'",
-			\PDO::ATTR_EMULATE_PREPARES		=> false,
-			\PDO::ATTR_ERRMODE				=> \PDO::ERRMODE_EXCEPTION
-		];
-
-		$this->db = new \PDO($dns, $user, $password, $driverOptions);
+		$this->db = new \PDO($dns, $user, $password, $this->getDriverOptions());
 	}
 
 	/**
@@ -72,5 +65,16 @@ class Kernel {
 	 */
 	public function getDB() {
 		return $this->db;
+	}
+
+	/**
+	 * @return array
+	 */
+	protected function getDriverOptions() {
+		return [
+			\PDO::MYSQL_ATTR_INIT_COMMAND	=> "SET NAMES 'utf8mb4', SESSION sql_mode = 'ANSI,ONLY_FULL_GROUP_BY,STRICT_ALL_TABLES'",
+			\PDO::ATTR_EMULATE_PREPARES		=> false,
+			\PDO::ATTR_ERRMODE				=> \PDO::ERRMODE_EXCEPTION
+		];
 	}
 }

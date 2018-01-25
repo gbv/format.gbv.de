@@ -141,6 +141,9 @@ class Field {
 			$this->loadList();
 			return;
 		}
+		else if ($this->isPica3()) {
+			$this->loadPica3Field();
+		}
 		else if (!empty($this->subFieldName)) {
 			$this->loadSubField();
 			return;
@@ -174,11 +177,6 @@ class Field {
 	 * @throws \GBV\Exception\HttpException
 	 */
 	protected function loadField() {
-		if ($this->isPica3()) {
-			$this->loadPica3Field();
-			return;
-		}
-
 		// sql
 		$sql = 'SELECT * FROM hauptfeld WHERE pica_p = ?';
 		$statement = $this->db->prepare($sql);
