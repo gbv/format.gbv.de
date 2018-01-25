@@ -4,7 +4,6 @@ namespace GBV\Pica;
 // imports
 use GBV\Exception\HttpException;
 use Re\Database\Database;
-use Re\Util\StringUtil;
 
 /**
  * Prepare pica+ field information for rest api.
@@ -68,7 +67,7 @@ class Field {
 	 * @throws \GBV\Exception\HttpException
 	 */
 	public function __construct(string $path, Database $db) {
-		$this->path = strtoupper(StringUtil::trim($path));
+		$this->path = $path;
 		$this->db = $db;
 
 		$this->checkPath();
