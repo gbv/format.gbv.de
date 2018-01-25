@@ -1,10 +1,6 @@
 <?php
 namespace GBV;
 
-// imports
-use Re\Database\Database;
-use Re\Debug\Debug;
-
 /**
  * Kernel
  *
@@ -20,7 +16,7 @@ class Kernel {
 	protected $baseDir = '';
 
 	/**
-	 * @var	\Re\Database\Database
+	 * @var	\PDO
 	 */
 	protected $db = null;
 
@@ -33,9 +29,6 @@ class Kernel {
 		if (empty($baseDir)) {
 			$this->baseDir = dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR;
 		}
-
-		// catch error and exception handler.
-		Debug::catchTrapHandlers();
 
 		// initialize database.
 		$this->initDatabase();
@@ -54,19 +47,28 @@ class Kernel {
 		$file = file_get_contents($configFile);
 		$config = json_decode($file, true);
 
+		// database information
 		$database = (isset($config['database'])) ? $config['database'] : 'pica';
 		$host = (isset($config['host'])) ? $config['host'] : 'localhost';
 		$user = (isset($config['user'])) ? $config['user'] : 'root';
 		$password = (isset($config['password'])) ? $config['password'] : '';
 		$port = (isset($config['port'])) ? $config['port'] : 3306;
+		$dns = 'mysql:host=' . $host . ';port=' . $port . ';dbname=' . $database;
 
-		$this->db = new Database($database, $host, $user, $password, $port);
+		// mysql driver option
+		$driverOptions = [
+			\PDO::MYSQL_ATTR_INIT_COMMAND	=> "SET NAMES 'utf8mb4', SESSION sql_mode = 'ANSI,ONLY_FULL_GROUP_BY,STRICT_ALL_TABLES'",
+			\PDO::ATTR_EMULATE_PREPARES		=> false,
+			\PDO::ATTR_ERRMODE				=> \PDO::ERRMODE_EXCEPTION
+		];
+
+		$this->db = new \PDO($dns, $user, $password, $driverOptions);
 	}
 
 	/**
 	 * Returns database class.
 	 *
-	 * @return \Re\Database\Database
+	 * @return \PDO
 	 */
 	public function getDB() {
 		return $this->db;
