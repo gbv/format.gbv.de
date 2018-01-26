@@ -3,7 +3,6 @@ namespace GBV\Pica;
 
 // imports
 use GBV\Exception\HttpException;
-use Re\Database\Database;
 
 /**
  * Prepare pica+ field information for rest api.
@@ -17,7 +16,7 @@ class Field {
 	/**
 	 * Pica+ field reg ex.
 	 */
-	const PICA_P = '#^(?P<field>[0-9]{3}[A-Z\@]{1})(?P<sub>\${1}[0-9A-Z]{1})*$#';
+	const PICA_P = '#^(?P<field>[0-9]{3}[a-zA-Z\@]{1})(?P<sub>\${1}[a-zA-Z0-9]{1})*$#';
 
 	/**
 	 * Pica3 field reg ex.
@@ -25,7 +24,7 @@ class Field {
 	const PICA_3 = '#^(?P<field>[0-9]{4})#';
 
 	/**
-	 * @var \Re\Database\Database
+	 * @var \PDO
 	 */
 	protected $db = null;
 
@@ -62,11 +61,11 @@ class Field {
 	/**
 	 * Field constructor.
 	 *
-	 * @param	string					$path
-	 * @param	\Re\Database\Database	$db
+	 * @param	string	$path
+	 * @param	\PDO	$db
 	 * @throws \GBV\Exception\HttpException
 	 */
-	public function __construct(string $path, Database $db) {
+	public function __construct(string $path, \PDO $db) {
 		$this->path = $path;
 		$this->db = $db;
 
@@ -124,7 +123,7 @@ class Field {
 		$regEx = ($pica3) ? self::PICA_3 : self::PICA_P;
 		if (preg_match($regEx, $this->path, $matches)) {
 			if (isset($matches['field'])) $this->name = $matches['field'];
-			if (isset($matches['sub'])) $this->subFieldName = strtolower($matches['sub']);
+			if (isset($matches['sub'])) $this->subFieldName = $matches['sub'];
 			$this->pica3 = $pica3;
 		}
 		else if ($this->pica3 !== true && $pica3 !== true) {
@@ -142,6 +141,9 @@ class Field {
 			$this->loadList();
 			return;
 		}
+		else if ($this->isPica3()) {
+			$this->loadPica3Field();
+		}
 		else if (!empty($this->subFieldName)) {
 			$this->loadSubField();
 			return;
@@ -156,7 +158,7 @@ class Field {
 	protected function loadList() {
 		$sql = 'SELECT pica_p, pica_3, titel FROM hauptfeld';
 		$statement = $this->db->query($sql);
-		$fields = $statement->fetchAll();
+		$fields = $statement->fetchAll(\PDO::FETCH_ASSOC);
 
 		foreach ($fields as $field) {
 			if (empty($field['titel'])) continue;
@@ -175,16 +177,11 @@ class Field {
 	 * @throws \GBV\Exception\HttpException
 	 */
 	protected function loadField() {
-		if ($this->isPica3()) {
-			$this->loadPica3Field();
-			return;
-		}
-
 		// sql
 		$sql = 'SELECT * FROM hauptfeld WHERE pica_p = ?';
 		$statement = $this->db->prepare($sql);
 		$statement->execute([$this->name]);
-		$field = $statement->fetch();
+		$field = $statement->fetch(\PDO::FETCH_ASSOC);
 
 		// no field found.
 		if (empty($field['titel'])) {
@@ -208,7 +205,7 @@ class Field {
 		$sql = 'SELECT pica_p FROM hauptfeld WHERE pica_3 = ?';
 		$statement = $this->db->prepare($sql);
 		$statement->execute([$this->name]);
-		$field = $statement->fetch();
+		$field = $statement->fetch(\PDO::FETCH_ASSOC);
 
 		if (!isset($field['pica_p'])) {
 			throw new HttpException(404);
@@ -224,8 +221,10 @@ class Field {
 		$sql = 'SELECT * FROM unterfeld WHERE pica_p = ?';
 		$statement = $this->db->prepare($sql);
 		$statement->execute([$this->name]);
-		$subFields = $statement->fetchAll();
+		$subFields = $statement->fetchAll(\PDO::FETCH_ASSOC);
 		foreach ($subFields as $subField) {
+			if ($subField['titel'] == 'In RDA-Sätzen nicht zugelassen') continue; // simple but it works. ;)
+
 			$data = [];
 			$data['code_p'] = $subField['pica_p_uf'];
 			$data['code_3'] = ($subField['pica_3_uf'] == 'Ohne') ? null : $subField['pica_3_uf'];
@@ -246,14 +245,14 @@ class Field {
 		$sql = 'SELECT * FROM unterfeld WHERE pica_p = ? AND pica_p_uf = ?';
 		$statement = $this->db->prepare($sql);
 		$statement->execute([$this->name, $this->subFieldName]);
-		$subField = $statement->fetch();
+		$subField = $statement->fetch(\PDO::FETCH_ASSOC);
 
-		if (!isset($subField['pica_p_uf'])) {
+		if (!isset($subField['pica_p_uf']) || $subField['titel'] == 'In RDA-Sätzen nicht zugelassen') {
 			throw new HttpException(404);
 		}
 
-		$this->data['pica_p'] = $subField['pica_3'];
-		$this->data['pica_3'] = $subField['pica_p'];
+		$this->data['pica_p'] = $subField['pica_p'];
+		$this->data['pica_3'] = $subField['pica_3'];
 		$this->data['code_p'] = $subField['pica_p_uf'];
 		$this->data['code_3'] = ($subField['pica_3_uf'] == 'Ohne') ? null : $subField['pica_3_uf'];
 		$this->data['content'] = $subField['titel'];

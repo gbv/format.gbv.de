@@ -21,8 +21,7 @@
 
 	"autoload" : {
 		"psr-4" : {
-			"GBV\\" : "src/gbv",
-			"Re\\" : "src/re"
+			"GBV\\" : "src/gbv"
 		}
 	},
 	"config" : {
