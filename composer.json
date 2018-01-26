@@ -1,7 +1,6 @@
 {
-	"name": "teralios/picahelprest",
+	"name": "gbv/picahelprest",
 	"type": "project",
-	"keywords": ["Blog", "CMS"],
 	"homepage": "http://www.gbv.de",
 	"license" : "GPL-3.0",
 	"version" : "1.0.0-dev",
