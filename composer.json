@@ -26,5 +26,12 @@
 	},
 	"config" : {
 		"vendor-dir" : "src/vendor"
+	},
+
+  "scripts" : {
+    "style" : "./src/vendor/bin/phpcbf"
+  },
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.2"
 	}
 }
