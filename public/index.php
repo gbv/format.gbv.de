@@ -9,39 +9,36 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 try {
-	// global
-	$kernel = new Kernel();
-	$request = Request::createFromGlobals();
-	$response = new JsonResponse();
+    // global
+    $kernel = new Kernel();
+    $request = Request::createFromGlobals();
+    $response = new JsonResponse();
 
-	// Check http method.
-	$method = $request->getMethod();
-	if ($method != 'GET') {
-		throw new \Exception('', 405);
-	}
+    // Check http method.
+    $method = $request->getMethod();
+    if ($method != 'GET') {
+        throw new \Exception('', 405);
+    }
 
-	// Check path info if empty load full list, else small block
-	$field = new Field($request->getPathInfo(), $kernel->getDB());
-	if ($field->isPica3()) {
-		$url = rtrim($request->getBaseUrl(),'/').'/' . $field->getName();
-		$response = new RedirectResponse($url);
-	}
-	else {
-		$response->setData($field->getData());
-	}
-}
-catch (\Exception $e) {
-	$code = $e->getCode();
-	if (isset(JsonResponse::$statusTexts[$code])) {
-		$message = JsonResponse::$statusTexts[$code];
-	}
-	else {
-		$code = 503;
-		$message = JsonResponse::$statusTexts[$code];
-	}
+    // Check path info if empty load full list, else small block
+    $field = new Field($request->getPathInfo(), $kernel->getDB());
+    if ($field->isPica3()) {
+        $url = rtrim($request->getBaseUrl(), '/').'/' . $field->getName();
+        $response = new RedirectResponse($url);
+    } else {
+        $response->setData($field->getData());
+    }
+} catch (\Exception $e) {
+    $code = $e->getCode();
+    if (isset(JsonResponse::$statusTexts[$code])) {
+        $message = JsonResponse::$statusTexts[$code];
+    } else {
+        $code = 503;
+        $message = JsonResponse::$statusTexts[$code];
+    }
 
-	$response->setStatusCode($code);
-	$response->setData(['error' => ['code' => $code, 'message' => $message]]);
+    $response->setStatusCode($code);
+    $response->setData(['error' => ['code' => $code, 'message' => $message]]);
 }
 
 // send response
