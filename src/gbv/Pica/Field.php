@@ -233,7 +233,7 @@ class Field
      */
     protected function loadSubFields()
     {
-        $sql = 'SELECT * FROM unterfeld WHERE pica_p = ?';
+        $sql = 'SELECT * FROM unterfeld WHERE pica_p = ? ORDER BY nr ASC';
         $statement = $this->db->prepare($sql);
         $statement->execute([$this->name]);
         $subFields = $statement->fetchAll(\PDO::FETCH_ASSOC);
@@ -272,6 +272,7 @@ class Field
         $this->data['pica_3'] = $subField['pica_3'];
         $this->data['code_p'] = $subField['pica_p_uf'];
         $this->data['code_3'] = ($subField['pica_3_uf'] == 'Ohne') ? null : $subField['pica_3_uf'];
+        $this->data['no'] = $subField['nr'];
         $this->data['content'] = $subField['titel'];
         $this->data['repeatable'] = ($subField['wiederholbar'] == 'Ja') ? true : false;
         $this->data['modified'] = $subField['stand'];
