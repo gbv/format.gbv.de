@@ -1,7 +1,7 @@
 # REST-API für Pica+ Felder des GBV und SWB (K10Plus)
-[![GitHub release](https://img.shields.io/github/release/Teralios/PicaRestHelp.svg?style=flat-square)](https://github.com/Teralios/PicaHelpRest/releases)
-[![Build Status](https://img.shields.io/travis/Teralios/PicaHelpRest.svg?style=flat-square)](https://travis-ci.org/Teralios/PicaHelpRest)
-[![Quality Score](https://img.shields.io/scrutinizer/g/Teralios/PicaHelpRest.svg?style=flat-square)](https://scrutinizer-ci.com/g/Teralios/PicaHelpRest)
+[![GitHub release](https://img.shields.io/github/release/gbv/PicaRestHelp.svg?style=flat-square)](https://github.com/gbv/PicaHelpRest/releases)
+[![Build Status](https://img.shields.io/travis/gbv/PicaHelpRest.svg?style=flat-square)](https://travis-ci.org/gbv/PicaHelpRest)
+[![Quality Score](https://img.shields.io/scrutinizer/g/gbv/PicaHelpRest.svg?style=flat-square)](https://scrutinizer-ci.com/g/gbv/PicaHelpRest)
 
 Stellt ein REST-API zur Verfügung um auf die Definition der Pica+ Felder nach RDA des gemeinsamen Kataloges des GBV und SWB zuzugreifen.
 
