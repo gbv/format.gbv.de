@@ -41,7 +41,7 @@ Wenn die Definition zu einem bestimmten Feld abgerufen werden soll, so muss die 
 **Feld** : *021A* - Haupttitel, Titelzusatz, Verantwortlichkeitsangabe.
 **URL**: [`http://format.gbv.de/pica/rda/021A`](http://format.gbv.de/pica/rda/021A)
 
-Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Feldes *021A* sowie eine Liste der Unterfelder, geordnet nach ihrer Reihenfolge.
+Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Feldes *021A*, sowie eine Liste der Unterfelder, geordnet nach ihrer Reihenfolge.
 
 ### Ausgabe
 ```json
