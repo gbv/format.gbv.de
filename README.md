@@ -1,22 +1,26 @@
-# REST-API für Pica+ Felder des GBV und SWB (K10Plus)
-[![GitHub release](https://img.shields.io/github/release/gbv/PicaRestHelp.svg?style=flat-square)](https://github.com/gbv/PicaHelpRest/releases)
+# REST-API für PICA+ Felder des GBV und SWB (K10Plus)
+
 [![Build Status](https://img.shields.io/travis/gbv/PicaHelpRest.svg?style=flat-square)](https://travis-ci.org/gbv/PicaHelpRest)
 [![Quality Score](https://img.shields.io/scrutinizer/g/gbv/PicaHelpRest.svg?style=flat-square)](https://scrutinizer-ci.com/g/gbv/PicaHelpRest)
 
-Stellt ein REST-API zur Verfügung um auf die Definition der Pica+ Felder nach RDA des gemeinsamen Kataloges des GBV und SWB zuzugreifen.
+Stellt ein JSON-API zur Verfügung um auf die Definition der PICA+ Felder nach RDA des gemeinsamen Kataloges des GBV und SWB zuzugreifen.
 
 # API Aufbau
+
 Der Aufruf erfolgt über die URL: [`http://format.gbv.de/pica/rda/`](http://format.gbv.de/pica/rda/).
 
-Aktuelle erfolgt die Rückgabe nur im JSON-Format. Der MIME-Typ ist `appilcation/json`.
+Aktuelle erfolgt die Rückgabe nur im JSON-Format. Der MIME-Typ ist `application/json`.
 
 ## Abruf aller definierten PICA+ Felder
+
 Wenn eine Liste aller Felder geladen werden soll, reicht es, wenn die API ohne Pfad-Angabe aufgerufen wird.
 
 ### Beispiel
+
 **URL**: [`http://format.gbv.de/pica/rda/`](http://format.gbv.de/pica/rda/)
 
 ### Ausgabe
+
 ```json
 [
 	{
@@ -34,16 +38,20 @@ Wenn eine Liste aller Felder geladen werden soll, reicht es, wenn die API ohne P
 	}
 ]
 ```
+
 ## Abruf eines bestimmten PICA+ Feldes
+
 Wenn die Definition zu einem bestimmten Feld abgerufen werden soll, so muss die URL um das gewünschte Feld als Pfadangabe erweitert werden: `http://format.gbv.de/pica/rda/{FELD}`
 
 ### Beispiel
+
 **Feld** : *021A* - Haupttitel, Titelzusatz, Verantwortlichkeitsangabe.
 **URL**: [`http://format.gbv.de/pica/rda/021A`](http://format.gbv.de/pica/rda/021A)
 
 Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Feldes *021A*, sowie eine Liste der Unterfelder, geordnet nach ihrer Reihenfolge.
 
 ### Ausgabe
+
 ```json
 {
 	"pica_p" : "021A",
@@ -67,16 +75,19 @@ Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Feldes *0
 ```
 
 ## Abruf eines bestimmten Unterfeldes
-Wenn die Definition eines bestimmten Unterfeldes zu einem Pica+ Feld geladen werden soll, so wird das Unterfeld durch ein `*$*` getrennt an das Feld angehangen: `http://format.gbv.de/pica/rda/{feld}${unterfeld}`
+
+Wenn die Definition eines bestimmten Unterfeldes zu einem PICA+ Feld geladen werden soll, so wird das Unterfeld durch ein `*$*` getrennt an das Feld angehangen: `http://format.gbv.de/pica/rda/{feld}${unterfeld}`
 
 ### Beispiel
-**Feld** : *021A* - Haupttitel, Titelzusatz, Verantwortlichkeitsangabe
-**Unterfeld** : *a* - Haupttitel
-**URL**: [`http://format.gbv.de/pica/rda/021A$a`](http://format.gbv.de/pica/rda/021A$a)
+
+* **Feld** : *021A* - Haupttitel, Titelzusatz, Verantwortlichkeitsangabe
+* **Unterfeld** : *a* - Haupttitel
+* **URL**: [`http://format.gbv.de/pica/rda/021A$a`](http://format.gbv.de/pica/rda/021A$a)
 
 Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Unterfeldes *a* des Feldes *021A*.
 
 ### Ausgabe
+
 ```json
 {
 	"pica_p" : "021A",
@@ -91,7 +102,9 @@ Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Unterfeld
 ```
 
 ## Fehlerrückmeldungen
+
 Sollte eine Anfrage zu keinem Ergebnis führen oder kann nicht bearbeitet werden, wird eine entsprechende Fehlermeldung erzeugt. Es werden Fehlercodes nach [HTTP-Standard]( https://de.wikipedia.org/wiki/HTTP-Statuscode) verwendet.
+
 ```json
 {
 	"error" : {
@@ -101,11 +114,15 @@ Sollte eine Anfrage zu keinem Ergebnis führen oder kann nicht bearbeitet werden
 }
 ```
 
+Sollte ein Feld oder Unterfeld nicht in RDA nicht zugelassen sein, dann erfolgt eine Fehlerausgabe so, als wäre das Feld nicht gefunden worden.
+
 ### Fehlercodes
+
 - 404 – Not Found : Das gesuchte Feld oder Unterfeld wurde nicht gefunden.*
 - 405 – Method Not Allowed : Die Anfrage erfolgte nicht per **GET-Method**
 - 503 - Service Unavailable : Es liegt eine technische Störung vor.
 
-## Besonderheit
-Sollte ein Feld oder Unterfeld nicht in RDA nicht zugelassen sein, dann erfolgt eine Fehlerausgabe so, als wäre das Feld nicht gefunden worden.
+## Installation
+
+Erfordert mindestens PHP 7 und die MySQL-PDO extension.
 
