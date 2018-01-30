@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-require_once('../src/vendor/autoload.php');
+require_once('../../src/vendor/autoload.php');
 
 use GBV\PicaHelp\Database;
 use GBV\PicaHelp\Field;
@@ -15,7 +15,7 @@ $request = Request::createFromGlobals();
 
 try {
     // load configuration
-    $configFile = __DIR__ . '/../config/picahelp.json';
+    $configFile = __DIR__ . '/../../config/picahelp.json';
     if (!file_exists($configFile)) {
         throw new \RuntimeException("config file not found: $configFile");
     }
