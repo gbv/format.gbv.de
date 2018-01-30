@@ -19,7 +19,7 @@ class Field
     /**
      * Pica+ field reg ex.
      */
-    const PICA_P = '#^(?P<field>[0-9]{3}[a-zA-Z\@]{1})(?P<sub>\${1}[a-zA-Z0-9]{1})*$#';
+    const PICA_P = '#^(?P<field>[0-9]{3}[a-zA-Z\@]{1}(\/[0-9]{2})*)(?P<sub>\${1}[a-zA-Z0-9]{1})*$#';
 
     /**
      * Pica3 field reg ex.
@@ -123,7 +123,7 @@ class Field
     /**
      * Prepare path information.
      *
-     * @param   bool    $pica3
+     * @param   bool   $pica3
      */
     protected function preparePath(bool $pica3 = false)
     {
@@ -144,7 +144,7 @@ class Field
     /**
      * Load data.
      *
-     * @throws  NotFoundException
+     * @throws NotFoundException
      */
     protected function loadData()
     {
@@ -199,11 +199,11 @@ class Field
             throw new NotFoundException();
         }
 
-        $this->data['tag'] = $field['pica_p'];
-        $this->data['pica3'] = $field['pica_3'];
-        $this->data['label'] = $field['titel'];
+        $this->data['tag']        = $field['pica_p'];
+        $this->data['pica3']      = $field['pica_3'];
+        $this->data['label']      = $field['titel'];
         $this->data['repeatable'] = ($field['wiederholbar'] == 'Ja') ? true : false;
-        $this->data['modified'] = $field['stand'];
+        $this->data['modified']   = $field['stand'];
         $this->loadSubfields();
     }
 
@@ -247,14 +247,14 @@ class Field
     protected function subfieldInfo($subfield)
     {
         return [
-            'code'      => $subfield['pica_p_uf'][1],
-            'pica3'     => (
+            'code'       => $subfield['pica_p_uf'][1],
+            'pica3'      => (
                 preg_match('/^ohne$/i', $subfield['pica_3_uf'])
                 ? null : $subfield['pica_3_uf']),
-            'label'     => $subfield['titel'],
+            'label'      => $subfield['titel'],
             'repeatable' => ($subfield['wiederholbar'] == 'Ja') ? true : false,
-            'modified'  => $subfield['stand'],
-            'position'  => $subfield['nr'],
+            'modified'   => $subfield['stand'],
+            'position'   => $subfield['nr'],
         ];
     }
 
