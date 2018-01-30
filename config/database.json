@@ -1,7 +1,0 @@
-{
-  "host": "localhost",
-  "database": "pica",
-  "user": "root",
-  "password": "",
-  "port": 3306
-}

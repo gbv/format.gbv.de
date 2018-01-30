@@ -1,7 +1,7 @@
 {
   "name": "gbv/picahelprest",
   "type": "project",
-  "homepage": "http://www.gbv.de",
+  "homepage": "http://format.gbv.de/pica/",
   "license": "GPL-3.0",
   "version": "1.0.0-dev",
   "authors": [
@@ -11,13 +11,13 @@
     }
   ],
   "require": {
-    "php": "^7.1.0",
-    "psr/log": "~1.0",
-    "symfony/http-foundation": "~4.0"
+    "php": "^7.0",
+    "psr/log": "^1.0",
+    "symfony/http-foundation": "~3.4"
   },
   "autoload": {
     "psr-4": {
-      "GBV\\": "src/gbv"
+      "GBV\\": "src/GBV"
     }
   },
   "config": {

@@ -1,16 +1,18 @@
-<?php
-namespace GBV\Pica;
+<?php declare(strict_types=1);
 
-// imports
-use GBV\Exception\HttpException;
+namespace GBV\PicaHelp;
+
+use GBV\PicaHelp\NotFoundException;
+use GBV\PicaHelp\Database;
+use PDO;
 
 /**
- * Prepare pica+ field information for rest api.
+ * Prepare PICA+ field and subfield information.
  *
- * @package         PicaHelpRest
+ * @package     PicaHelp
  * @author      Karsten Achterrath <karsten.achterrath@gbv.de>
- * @copyright   ©$2018 GBV VZG <https://www.gbv.de>
- * @license         GPLv3 <https://www.gnu.org/licenses/gpl-3.0.txt>
+ * @copyright   GBV VZG <https://www.gbv.de>
+ * @license     GPLv3 <https://www.gnu.org/licenses/gpl-3.0.txt>
  */
 class Field
 {
@@ -25,7 +27,7 @@ class Field
     const PICA_3 = '#^(?P<field>[0-9]{4})#';
 
     /**
-     * @var \PDO
+     * @var \GBV\PicaHelp\Database
      */
     protected $db = null;
 
@@ -64,9 +66,9 @@ class Field
      *
      * @param   string  $path
      * @param   \PDO    $db
-     * @throws \GBV\Exception\HttpException
+     * @throws NotFoundException
      */
-    public function __construct(string $path, \PDO $db)
+    public function __construct(string $path, Database $db)
     {
         $this->path = $path;
         $this->db = $db;
@@ -78,7 +80,7 @@ class Field
     /**
      * Given path is a pica3 field.
      *
-     * @return  bool
+     * @return boolean
      */
     public function isPica3()
     {
@@ -86,19 +88,17 @@ class Field
     }
 
     /**
-     * Returns pica+
-     *
-     * @return  string
+     * Return PICA+
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
     /**
-     * Returns data.
+     * Return data.
      *
-     * @return  string[]
+     * @return string[]
      */
     public function getData()
     {
@@ -108,7 +108,7 @@ class Field
     /**
      * Check path.
      *
-     * @throws \GBV\Exception\HttpException
+     * @throws NotFoundException
      */
     protected function checkPath()
     {
@@ -116,7 +116,7 @@ class Field
         $this->preparePath();
 
         if (empty($this->name) && strlen($this->path) > 0) {
-            throw new HttpException(404);
+            throw new NotFoundException();
         }
     }
 
@@ -144,7 +144,7 @@ class Field
     /**
      * Load data.
      *
-     * @throws  \GBV\Exception\HttpException
+     * @throws  NotFoundException
      */
     protected function loadData()
     {
@@ -167,10 +167,9 @@ class Field
     protected function loadList()
     {
         $sql = 'SELECT pica_p, pica_3, titel FROM hauptfeld';
-        $statement = $this->db->query($sql);
-        $fields = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        $fields = $this->db->query($sql);
 
-        foreach ($fields as $field) {
+        foreach ($fields->fetchAll(PDO::FETCH_ASSOC) as $field) {
             if (empty($field['titel'])) {
                 continue;
             }
@@ -186,19 +185,17 @@ class Field
     /**
      * Load data from pica+ field.
      *
-     * @throws \GBV\Exception\HttpException
+     * @throws NotFoundException
      */
     protected function loadField()
     {
         // sql
         $sql = 'SELECT * FROM hauptfeld WHERE pica_p = ?';
-        $statement = $this->db->prepare($sql);
-        $statement->execute([$this->name]);
-        $field = $statement->fetch(\PDO::FETCH_ASSOC);
+        $field = $this->db->query($sql, [$this->name])->fetch(PDO::FETCH_ASSOC);
 
         // no field found.
         if (empty($field['titel'])) {
-            throw new HttpException(404);
+            throw new NotFoundException();
         }
 
         $this->data['pica_p'] = $field['pica_p'];
@@ -212,32 +209,29 @@ class Field
     /**
      * Load pica_p field for pica3 field.
      *
-     * @throws \GBV\Exception\HttpException
+     * @throws NotFoundException
      */
     protected function loadPica3Field()
     {
         $sql = 'SELECT pica_p FROM hauptfeld WHERE pica_3 = ?';
-        $statement = $this->db->prepare($sql);
-        $statement->execute([$this->name]);
-        $field = $statement->fetch(\PDO::FETCH_ASSOC);
+        $field = $this->db->query($sql, [$this->name])->fetch(PDO::FETCH_ASSOC);
 
         if (!isset($field['pica_p'])) {
-            throw new HttpException(404);
+            throw new NotFoundException();
         }
 
         $this->name = $field['pica_p'];
     }
 
     /**
-     * Load sub field list.
+     * Load subfield list.
      */
     protected function loadSubFields()
     {
         $sql = 'SELECT * FROM unterfeld WHERE pica_p = ? ORDER BY nr ASC';
-        $statement = $this->db->prepare($sql);
-        $statement->execute([$this->name]);
-        $subFields = $statement->fetchAll(\PDO::FETCH_ASSOC);
-        foreach ($subFields as $subField) {
+        $subfields = $this->db->query($sql, [$this->name]);
+
+        foreach ($subfields->fetchAll(PDO::FETCH_ASSOC) as $subField) {
             if ($subField['titel'] == 'In RDA-Sätzen nicht zugelassen') {
                 continue; // simple but it works. ;)
             }
@@ -253,28 +247,26 @@ class Field
     }
 
     /**
-     * Load a sub field.
+     * Load a subfield.
      *
-     * @throws \GBV\Exception\HttpException
+     * @throws NotFoundException
      */
     protected function loadSubField()
     {
         $sql = 'SELECT * FROM unterfeld WHERE pica_p = ? AND pica_p_uf = ?';
-        $statement = $this->db->prepare($sql);
-        $statement->execute([$this->name, $this->subFieldName]);
-        $subField = $statement->fetch(\PDO::FETCH_ASSOC);
+        $subfield = $this->db->query($sql, [$this->name, $this->subFieldName])->fetch(PDO::FETCH_ASSOC);
 
-        if (!isset($subField['pica_p_uf']) || $subField['titel'] == 'In RDA-Sätzen nicht zugelassen') {
-            throw new HttpException(404);
+        if (!isset($subfield['pica_p_uf']) || $subfield['titel'] == 'In RDA-Sätzen nicht zugelassen') {
+            throw new NotFoundException();
         }
 
-        $this->data['pica_p'] = $subField['pica_p'];
-        $this->data['pica_3'] = $subField['pica_3'];
-        $this->data['code_p'] = $subField['pica_p_uf'];
-        $this->data['code_3'] = ($subField['pica_3_uf'] == 'Ohne') ? null : $subField['pica_3_uf'];
-        $this->data['no'] = $subField['nr'];
-        $this->data['content'] = $subField['titel'];
-        $this->data['repeatable'] = ($subField['wiederholbar'] == 'Ja') ? true : false;
-        $this->data['modified'] = $subField['stand'];
+        $this->data['pica_p'] = $subfield['pica_p'];
+        $this->data['pica_3'] = $subfield['pica_3'];
+        $this->data['code_p'] = $subfield['pica_p_uf'];
+        $this->data['code_3'] = ($subfield['pica_3_uf'] == 'Ohne') ? null : $subfield['pica_3_uf'];
+        $this->data['no'] = $subfield['nr'];
+        $this->data['content'] = $subfield['titel'];
+        $this->data['repeatable'] = ($subfield['wiederholbar'] == 'Ja') ? true : false;
+        $this->data['modified'] = $subfield['stand'];
     }
 }
