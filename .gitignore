@@ -4,6 +4,9 @@
 .project
 .settings
 
+# local config file
+config/picahelp.json
+
 # WebPublisher
 composer.phar
 composer.lock

@@ -130,3 +130,5 @@ Sollte ein Feld oder Unterfeld nicht in RDA nicht zugelassen sein, dann erfolgt 
 
 Erfordert mindestens PHP 7 und die MySQL-PDO extension.
 
+Die Konfigurationsdatei (siehe Beispiel `config/picahelp.example.json`) muss nach `config/picahelp.json` kopiert und angepasst werden.
+
