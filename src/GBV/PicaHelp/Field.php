@@ -225,7 +225,7 @@ class Field
     }
 
     /**
-     * Load sub field list.
+     * Load subfield list.
      */
     protected function loadSubfields()
     {
@@ -242,7 +242,7 @@ class Field
     }
 
     /**
-     * Map sub field information from database format.
+     * Map subfield information from database format.
      */
     protected function subfieldInfo($subfield)
     {
@@ -259,7 +259,7 @@ class Field
     }
 
     /**
-     * Load a sub field.
+     * Load a subfield.
      *
      * @throws NotFoundException
      */

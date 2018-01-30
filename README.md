@@ -17,7 +17,7 @@ Wenn eine Liste aller Felder geladen werden soll, reicht es, wenn die API ohne P
 
 ### Beispiel
 
-**URL**: [`http://format.gbv.de/pica/rda/`](http://format.gbv.de/pica/rda/)
+* **URL**: [`http://format.gbv.de/pica/rda/`](http://format.gbv.de/pica/rda/)
 
 ### Ausgabe
 
@@ -34,7 +34,7 @@ Wenn eine Liste aller Felder geladen werden soll, reicht es, wenn die API ohne P
         "label": "Title owner"
     }
     ...
-]
+}
 ```
 
 ## Abruf eines bestimmten PICA+ Feldes
@@ -43,8 +43,8 @@ Wenn die Definition zu einem bestimmten Feld abgerufen werden soll, so muss die 
 
 ### Beispiel
 
-**Feld** : *021A* - Haupttitel, Titelzusatz, Verantwortlichkeitsangabe.
-**URL**: [`http://format.gbv.de/pica/rda/021A`](http://format.gbv.de/pica/rda/021A)
+* **Feld** : *021A* - Haupttitel, Titelzusatz, Verantwortlichkeitsangabe.
+* **URL**: [`http://format.gbv.de/pica/rda/021A`](http://format.gbv.de/pica/rda/021A)
 
 Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Feldes *021A* und seiner Unterfelder.
 
