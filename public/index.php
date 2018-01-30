@@ -10,12 +10,10 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-
 $response = new JsonResponse();
 $request = Request::createFromGlobals();
 
 try {
-
     // load configuration
     $configFile = __DIR__ . '/../config/picahelp.json';
     if (!file_exists($configFile)) {
@@ -41,7 +39,6 @@ try {
     } else {
         $response->setData($field->getData());
     }
-
 } catch (\Exception $e) {
     error_log("$e");
 
@@ -56,7 +53,12 @@ try {
 }
 
 // send response
-$response->setEncodingOptions( $response->getEncodingOptions() | JSON_PRETTY_PRINT );
+if ($response instanceof JsonResponse) {
+    // JSON_FORCE_OBJECT is required to encode subfield code "0" as object key!
+    $options = $response->getEncodingOptions() | JSON_PRETTY_PRINT | JSON_FORCE_OBJECT;
+    $response->setEncodingOptions($options);
+}
+
 $response->headers->set('Access-Control-Allow-Origin', '*');
 $response->prepare($request);
 $response->send();

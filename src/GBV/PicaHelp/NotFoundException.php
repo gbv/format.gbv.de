@@ -12,7 +12,8 @@ namespace GBV\PicaHelp;
  */
 class NotFoundException extends \Exception
 {
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct('Not Found', 404);
     }
 }

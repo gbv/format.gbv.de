@@ -54,7 +54,7 @@ class Field
     /**
      * @var string
      */
-    protected $subFieldName = '';
+    protected $subName = '';
 
     /**
      * @var string[]
@@ -133,7 +133,7 @@ class Field
                 $this->name = $matches['field'];
             }
             if (isset($matches['sub'])) {
-                $this->subFieldName = $matches['sub'];
+                $this->subName = $matches['sub'];
             }
             $this->pica3 = $pica3;
         } elseif ($this->pica3 !== true && $pica3 !== true) {
@@ -153,8 +153,8 @@ class Field
             return;
         } elseif ($this->isPica3()) {
             $this->loadPica3Field();
-        } elseif (!empty($this->subFieldName)) {
-            $this->loadSubField();
+        } elseif (!empty($this->subName)) {
+            $this->loadSubfield();
             return;
         }
 
@@ -174,10 +174,10 @@ class Field
                 continue;
             }
 
-            $this->data[] = [
-                'pica_p' => $field['pica_p'],
-                'pica_3' => $field['pica_3'],
-                'content' => $field['titel']
+            $this->data[$field['pica_p']] = [
+                'tag'   => $field['pica_p'],
+                'pica3' => $field['pica_3'],
+                'label' => $field['titel']
             ];
         }
     }
@@ -198,12 +198,12 @@ class Field
             throw new NotFoundException();
         }
 
-        $this->data['pica_p'] = $field['pica_p'];
-        $this->data['pica_3'] = $field['pica_3'];
-        $this->data['content'] = $field['titel'];
+        $this->data['tag'] = $field['pica_p'];
+        $this->data['pica3'] = $field['pica_3'];
+        $this->data['label'] = $field['titel'];
         $this->data['repeatable'] = ($field['wiederholbar'] == 'Ja') ? true : false;
         $this->data['modified'] = $field['stand'];
-        $this->loadSubFields();
+        $this->loadSubfields();
     }
 
     /**
@@ -226,24 +226,35 @@ class Field
     /**
      * Load subfield list.
      */
-    protected function loadSubFields()
+    protected function loadSubfields()
     {
         $sql = 'SELECT * FROM unterfeld WHERE pica_p = ? ORDER BY nr ASC';
         $subfields = $this->db->query($sql, [$this->name]);
 
-        foreach ($subfields->fetchAll(PDO::FETCH_ASSOC) as $subField) {
-            if ($subField['titel'] == 'In RDA-Sätzen nicht zugelassen') {
+        foreach ($subfields->fetchAll(PDO::FETCH_ASSOC) as $subfield) {
+            if ($subfield['titel'] == 'In RDA-Sätzen nicht zugelassen') {
                 continue; // simple but it works. ;)
             }
-            $data = [];
-            $data['code_p'] = $subField['pica_p_uf'];
-            $data['code_3'] = ($subField['pica_3_uf'] == 'Ohne') ? null : $subField['pica_3_uf'];
-            $data['content'] = $subField['titel'];
-            $data['repeatable'] = ($subField['wiederholbar'] == 'Ja') ? true : false;
-            $data['modified'] = $subField['stand'];
-
-            $this->data['subfields'][] = $data;
+            $data = $this->subfieldInfo($subfield);
+            $this->data['subfields'][$data['code']] = $data;
         }
+    }
+
+    /**
+     * Map subfield information from database format.
+     */
+    protected function subfieldInfo($subfield)
+    {
+        return [
+            'code'      => $subfield['pica_p_uf'][1],
+            'pica3'     => (
+                preg_match('/^ohne$/i', $subfield['pica_3_uf'])
+                ? null : $subfield['pica_3_uf']),
+            'label'     => $subfield['titel'],
+            'repeatable' => ($subfield['wiederholbar'] == 'Ja') ? true : false,
+            'modified'  => $subfield['stand'],
+            'position'  => $subfield['nr'],
+        ];
     }
 
     /**
@@ -251,22 +262,15 @@ class Field
      *
      * @throws NotFoundException
      */
-    protected function loadSubField()
+    protected function loadSubfield()
     {
         $sql = 'SELECT * FROM unterfeld WHERE pica_p = ? AND pica_p_uf = ?';
-        $subfield = $this->db->query($sql, [$this->name, $this->subFieldName])->fetch(PDO::FETCH_ASSOC);
+        $subfield = $this->db->query($sql, [$this->name, $this->subName])->fetch(PDO::FETCH_ASSOC);
 
         if (!isset($subfield['pica_p_uf']) || $subfield['titel'] == 'In RDA-Sätzen nicht zugelassen') {
             throw new NotFoundException();
         }
 
-        $this->data['pica_p'] = $subfield['pica_p'];
-        $this->data['pica_3'] = $subfield['pica_3'];
-        $this->data['code_p'] = $subfield['pica_p_uf'];
-        $this->data['code_3'] = ($subfield['pica_3_uf'] == 'Ohne') ? null : $subfield['pica_3_uf'];
-        $this->data['no'] = $subfield['nr'];
-        $this->data['content'] = $subfield['titel'];
-        $this->data['repeatable'] = ($subfield['wiederholbar'] == 'Ja') ? true : false;
-        $this->data['modified'] = $subfield['stand'];
+        $this->data = array_merge(['tag' => $this->name], $this->subfieldInfo($subfield));
     }
 }

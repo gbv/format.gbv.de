@@ -22,20 +22,18 @@ Wenn eine Liste aller Felder geladen werden soll, reicht es, wenn die API ohne P
 ### Ausgabe
 
 ```json
-[
-	{
-		"pica_p" : "001@",
-		"pica_3" : "0000",
-		"content" : "ILNs der Bibliotheken mit Exemplarsatz"
-	},
-	{
-		"pica_p" : "001X",
-		"pica_3" : "000A",
-		"content" : "Title owner"
-	},
-	{ 
-		//... 
-	}
+{
+    "001@": {
+        "tag": "001@",
+        "pica3": "0000",
+        "label": "ILNs der Bibliotheken mit Exemplarsatz"
+    },
+    "001X": {
+        "tag": "001X",
+        "pica3": "000A",
+        "label": "Title owner"
+    }
+    ...
 ]
 ```
 
@@ -48,29 +46,36 @@ Wenn die Definition zu einem bestimmten Feld abgerufen werden soll, so muss die 
 **Feld** : *021A* - Haupttitel, Titelzusatz, Verantwortlichkeitsangabe.
 **URL**: [`http://format.gbv.de/pica/rda/021A`](http://format.gbv.de/pica/rda/021A)
 
-Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Feldes *021A*, sowie eine Liste der Unterfelder, geordnet nach ihrer Reihenfolge.
+Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Feldes *021A* und seiner Unterfelder.
 
 ### Ausgabe
 
 ```json
 {
-	"pica_p" : "021A",
-	"pica_3" : "4000",
-	"content" : "Haupttitel, Titelzusatz, Verantwortlichkeitsangabe",
-	"repeatable" : false,
-	"modified" : "2017-12-18 10:41:47",
-	"subfields" : [
-		{
-			"code_p" : "$T",
-			"code_3" : "$T",
-			"content" : "Feldzuordnung",
-			"repeatable" : false,
-			"modified" : "2017-08-09 07:20:11"
-		},
-		{ 
-			//... 
-		}
-	]
+    "tag": "021A",
+    "pica3": "4000",
+    "label": "Haupttitel, Titelzusatz, Verantwortlichkeitsangabe",
+    "repeatable": false,
+    "modified": "2017-12-18 10:41:47",
+    "subfields": {
+        "T": {
+            "code": "T",
+            "pica3": "$T",
+            "label": "Feldzuordnung",
+            "repeatable": false,
+            "modified": "2017-08-09 07:20:11",
+            "position": 1
+        },
+        "U": {
+            "code": "U",
+            "pica3": "$U...%%",
+            "label": "Schriftcode",
+            "repeatable": false,
+            "modified": "2017-09-14 13:08:59",
+            "position": 2
+        }
+        ...
+    }
 }
 ```
 
@@ -90,14 +95,13 @@ Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Unterfeld
 
 ```json
 {
-	"pica_p" : "021A",
-	"pica_3" : "4000",
-	"code_p" : "$a",
-	"code_3" : "ohne",
-	"no" : 3,
-	"content" : "Haupttitel",
-	"repeatable":false,
-	"modified":"2017-12-08 12:48:59"
+    "tag": "021A",
+    "code": "a",
+    "pica3": null,
+    "label": "Haupttitel",
+    "repeatable": false,
+    "modified": "2017-12-08 12:48:59",
+    "position": 3
 }
 ```
 
