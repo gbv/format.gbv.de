@@ -2,7 +2,7 @@
 RewriteEngine on
 
 #current work mode
-RewriteBase /gbv/
+RewriteBase /gbv/rda/
 
 # public
 RewriteCond %{SCRIPT_FILENAME} !-d

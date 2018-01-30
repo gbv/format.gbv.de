@@ -4,8 +4,6 @@ require_once('../../src/vendor/autoload.php');
 
 use GBV\PicaHelp\Database;
 use GBV\PicaHelp\Field;
-use GBV\PicaHelp\NotFoundException;
-
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -17,7 +15,7 @@ try {
     // load configuration
     $configFile = __DIR__ . '/../../config/picahelp.json';
     if (!file_exists($configFile)) {
-        throw new \RuntimeException("config file not found: $configFile");
+        throw new \RuntimeException('config file not found:' . $configFile);
     }
 
     $file = file_get_contents($configFile);

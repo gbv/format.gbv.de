@@ -153,6 +153,7 @@ class Field
             return;
         } elseif ($this->isPica3()) {
             $this->loadPica3Field();
+            return;
         } elseif (!empty($this->subName)) {
             $this->loadSubfield();
             return;
@@ -166,7 +167,7 @@ class Field
      */
     protected function loadList()
     {
-        $sql = 'SELECT pica_p, pica_3, titel FROM hauptfeld';
+        $sql = 'SELECT pica_p, pica_3, titel FROM hauptfeld ORDER BY pica_p ASC';
         $fields = $this->db->query($sql);
 
         foreach ($fields->fetchAll(PDO::FETCH_ASSOC) as $field) {
@@ -224,7 +225,7 @@ class Field
     }
 
     /**
-     * Load subfield list.
+     * Load sub field list.
      */
     protected function loadSubfields()
     {
@@ -241,7 +242,7 @@ class Field
     }
 
     /**
-     * Map subfield information from database format.
+     * Map sub field information from database format.
      */
     protected function subfieldInfo($subfield)
     {
@@ -258,7 +259,7 @@ class Field
     }
 
     /**
-     * Load a subfield.
+     * Load a sub field.
      *
      * @throws NotFoundException
      */
