@@ -66,6 +66,9 @@ class Field
      */
     protected $data = [];
 
+    /**
+     * @var string
+     */
     protected $type = 'T';
 
     /**
@@ -84,9 +87,6 @@ class Field
         $this->loadData();
     }
 
-    public function isArray() {
-        return $this->isArray;
-    }
     /**
      * Given path is a pica3 field.
      *
@@ -130,7 +130,8 @@ class Field
         }
     }
 
-    public function setType() {
+    public function setType()
+    {
         $this->type = 'T';
         if (preg_match('#^authority/?#', $this->path)) {
             $this->type = 'N';
@@ -331,7 +332,13 @@ class Field
         return $data;
     }
 
-    protected function splitPicaPField(string $field) {
+    /**
+     * Split field on occurence
+     * @param   string  $field
+     * @return  array
+     */
+    protected function splitPicaPField(string $field): array
+    {
         $occurrence = -1;
         $picap = $field;
         if (strpos($field, '/') !== false) {
