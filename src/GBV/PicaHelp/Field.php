@@ -19,12 +19,12 @@ class Field
     /**
      * Pica+ field reg ex.
      */
-    const PICA_P = '#^(?P<field>[0-9]{3}[a-zA-Z\@]{1}(\/[0-9]{2})*)(?P<sub>\${1}[a-zA-Z0-9]{1})*$#';
+    const PICA_P = '#^(?P<field>[0-9]{3}[a-zA-Z\@]{1})(/(?P<occurrence>[0-9]{2}))?(?P<sub>\${1}[a-zA-Z0-9]{1})?$#';
 
     /**
      * Pica3 field reg ex.
      */
-    const PICA_3 = '#^(?P<field>[0-9]{4})#';
+    const PICA_3 = '#^(?P<field>[0-9]{3,4})#';
 
     /**
      * Url to online help
@@ -49,22 +49,24 @@ class Field
     /**
      * @var string
      */
-    protected $name = '';
+    protected $field = '';
 
     /**
      * @var string
      */
-    protected $pica3name = '';
+    protected $pica3field = '';
 
     /**
      * @var string
      */
-    protected $subName = '';
+    protected $subfield = '';
 
     /**
      * @var string[]
      */
     protected $data = [];
+
+    protected $type = 'T';
 
     /**
      * Field constructor.
@@ -82,6 +84,9 @@ class Field
         $this->loadData();
     }
 
+    public function isArray() {
+        return $this->isArray;
+    }
     /**
      * Given path is a pica3 field.
      *
@@ -95,9 +100,9 @@ class Field
     /**
      * Return PICA+
      */
-    public function getName(): string
+    public function getField(): string
     {
-        return $this->name;
+        return $this->field;
     }
 
     /**
@@ -118,10 +123,18 @@ class Field
     protected function checkPath()
     {
         $this->path = trim($this->path, '/');
+        $this->setType();
         $this->preparePath();
-
-        if (empty($this->name) && strlen($this->path) > 0) {
+        if (empty($this->field) && strlen($this->path) > 0) {
             throw new NotFoundException();
+        }
+    }
+
+    public function setType() {
+        $this->type = 'T';
+        if (preg_match('#^authority/?#', $this->path)) {
+            $this->type = 'N';
+            $this->path = preg_replace('#^authority/?#', '', $this->path);
         }
     }
 
@@ -134,12 +147,12 @@ class Field
     {
         $regEx = ($pica3) ? self::PICA_3 : self::PICA_P;
         if (preg_match($regEx, $this->path, $matches)) {
-            if (isset($matches['field'])) {
-                $this->name = $matches['field'];
-            }
-            if (isset($matches['sub'])) {
-                $this->subName = $matches['sub'];
-            }
+            $field = $matches['field'] ?? '';
+            $sub = $matches['sub'] ?? '';
+            $occurrence = $matches['occurrence'] ?? '';
+            $authority = $matches['authority'] ?? '';
+            $this->field = $field . ((empty($occurrence)) ? '%' : '/' . $occurrence);
+            $this->subfield = $sub;
             $this->pica3 = $pica3;
         } elseif ($this->pica3 !== true && $pica3 !== true) {
             $this->preparePath(true);
@@ -153,13 +166,13 @@ class Field
      */
     protected function loadData()
     {
-        if (empty($this->name)) {
+        if (empty($this->field)) {
             $this->loadList();
             return;
         } elseif ($this->isPica3()) {
             $this->loadPica3Field();
             return;
-        } elseif (!empty($this->subName)) {
+        } elseif (!empty($this->subfield)) {
             $this->loadSubfield();
             return;
         }
@@ -172,15 +185,15 @@ class Field
      */
     protected function loadList()
     {
-        $sql = 'SELECT pica_p, pica_3, titel FROM hauptfeld ORDER BY pica_p ASC';
-        $fields = $this->db->query($sql);
+        $sql = 'SELECT pica_p, pica_3, titel FROM hauptfeld WHERE datentyp = ? ORDER BY pica_p ASC';
+        $fields = $this->db->query($sql, [$this->type]);
 
         foreach ($fields->fetchAll(PDO::FETCH_ASSOC) as $field) {
             if (empty($field['titel'])) {
                 continue;
             }
-
-            $this->data[$field['pica_p']][] = $this->fieldInfo($field);
+            $data = $this->fieldInfo($field);
+            $this->data[$data['tag']] = $this->fieldInfo($field);
         }
     }
 
@@ -192,8 +205,8 @@ class Field
     protected function loadField()
     {
         // sql
-        $sql = 'SELECT * FROM hauptfeld WHERE pica_p = ?';
-        $fields = $this->db->query($sql, [$this->name])->fetchAll(PDO::FETCH_ASSOC);
+        $sql = 'SELECT * FROM hauptfeld WHERE pica_p LIKE ? AND datentyp = ?';
+        $fields = $this->db->query($sql, [$this->field, $this->type])->fetchAll(PDO::FETCH_ASSOC);
 
         // no field found.
         foreach ($fields as $field) {
@@ -202,8 +215,11 @@ class Field
             }
 
             $data = $this->fieldInfo($field, true);
-            $data['subfields'] = $this->loadSubfields($field['pica_3']);
-            $this->data[$field['pica_p']][] = $data;
+            $subfields = $this->loadSubfields($data['tag']);
+            if (!empty($subfields)) {
+                $data['subfields'] = $subfields;
+            }
+            $this->data[] = $data;
         }
         if (count($this->data) == 0) {
             throw new NotFoundException();
@@ -217,14 +233,14 @@ class Field
      */
     protected function loadPica3Field()
     {
-        $sql = 'SELECT pica_p FROM hauptfeld WHERE pica_3 = ?';
-        $field = $this->db->query($sql, [$this->name])->fetch(PDO::FETCH_ASSOC);
+        $sql = 'SELECT pica_p FROM hauptfeld WHERE pica_3 = ? AND datentyp = ?';
+        $field = $this->db->query($sql, [$this->field, $this->type])->fetch(PDO::FETCH_ASSOC);
 
         if (!isset($field['pica_p'])) {
             throw new NotFoundException();
         }
 
-        $this->name = $field['pica_p'];
+        $this->field = $field['pica_p'];
     }
 
     /**
@@ -232,8 +248,8 @@ class Field
      */
     protected function loadSubfields(string $pica3)
     {
-        $sql = 'SELECT * FROM unterfeld WHERE pica_p = ? AND pica_3 = ? ORDER BY nr ASC';
-        $subfields = $this->db->query($sql, [$this->name, $pica3]);
+        $sql = 'SELECT * FROM unterfeld WHERE pica_p LIKE ? AND pica_3 = ? AND datentyp = ? ORDER BY nr ASC';
+        $subfields = $this->db->query($sql, [$this->field, $pica3, $this->type]);
 
         $subfieldData = [];
         foreach ($subfields->fetchAll(PDO::FETCH_ASSOC) as $subfield) {
@@ -256,7 +272,7 @@ class Field
     protected function subfieldInfo(array $subfield): array
     {
         return [
-            'code'       => $subfield['pica_p_uf'][1],
+            'code'       => $subfield['pica_p_uf'],
             'pica3'      => (
                 preg_match('/^ohne$/i', $subfield['pica_3_uf'])
                 ? null : $subfield['pica_3_uf']),
@@ -274,14 +290,14 @@ class Field
      */
     protected function loadSubfield()
     {
-        $sql = 'SELECT * FROM unterfeld WHERE pica_p = ? AND pica_p_uf = ?';
-        $subfield = $this->db->query($sql, [$this->name, $this->subName])->fetch(PDO::FETCH_ASSOC);
+        $sql = 'SELECT * FROM unterfeld WHERE pica_p = ? AND pica_p_uf = ? AND datentyp = ?';
+        $subfield = $this->db->query($sql, [$this->field, $this->subfield, $this->type])->fetch(PDO::FETCH_ASSOC);
 
         if (!isset($subfield['pica_p_uf']) || $subfield['titel'] == 'In RDA-Sätzen nicht zugelassen') {
             throw new NotFoundException();
         }
 
-        $this->data = array_merge(['tag' => $this->name], $this->subfieldInfo($subfield));
+        $this->data = array_merge(['tag' => $this->field], $this->subfieldInfo($subfield));
     }
 
     /**
@@ -293,11 +309,17 @@ class Field
      */
     protected function fieldInfo(array $field, bool $complex = false): array
     {
+        list($picap, $occurrence) = $this->splitPicaPField($field['pica_p']);
+
         $data = [
-            'tag'   => $field['pica_p'],
+            'tag'   => $picap,
             'pica3' => $field['pica_3'],
             'label' => $field['titel']
         ];
+
+        if ($occurrence != -1) {
+            $data['occurrence'] = $occurrence;
+        }
 
         if ($complex === true) {
             // url
@@ -312,5 +334,15 @@ class Field
         }
 
         return $data;
+    }
+
+    protected function splitPicaPField(string $field) {
+        $occurrence = -1;
+        $picap = $field;
+        if (strpos($field, '/') !== false) {
+            list($picap, $occurrence) = explode('/', $field);
+        }
+
+        return [$picap, $occurrence];
     }
 }

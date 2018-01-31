@@ -24,25 +24,20 @@ Wenn eine Liste aller Felder geladen werden soll, reicht es, wenn die API ohne P
 ```json
 {
     "001@": {
-        "0": {
-            "tag": "001@",
-            "pica3": "0000",
-            "label": "ILNs der Bibliotheken mit Exemplarsatz"
-        }
+        "tag": "001@",
+        "pica3": "0000",
+        "label": "ILNs der Bibliotheken mit Exemplarsatz"
     },
     "001A": {
-        "0": {
-            "tag": "001A",
-            "pica3": "0200",
-            "label": "Kennung und Datum der Ersterfassung"
-        },
-        "1": {
-            "tag": "001A",
-            "pica3": "001",
-            "label": "Quelle und Datum der Ersterfassung"
-        }
+        "tag": "001A",
+        "pica3": "0200",
+        "label": "Kennung und Datum der Ersterfassung"
     },
-    ...
+    "001B": {
+        "tag": "001B",
+        "pica3": "0210",
+        "label": "Kennung und Datum der letzten \u00c4nderung"
+    }
 }
 ```
 
@@ -60,37 +55,16 @@ Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Feldes *0
 ### Ausgabe
 
 ```json
-{
-    "021A": {
-        "0": {
-            "tag": "021A",
-            "pica3": "4000",
-            "label": "Haupttitel, Titelzusatz, Verantwortlichkeitsangabe",
-            "url": "http:\/\/swbtools.bsz-bw.de\/cgi-bin\/help.pl?cmd=kat\u0026val=4000\u0026regelwerk=RDA\u0026verbund=GBV",
-            "repeatable": false,
-            "modified": "2017-12-18 10:41:47",
-            "subfields": {
-                "T": {
-                    "code": "T",
-                    "pica3": "$T",
-                    "label": "Feldzuordnung",
-                    "repeatable": false,
-                    "modified": "2017-08-09 07:20:11",
-                    "position": 1
-                },
-                "U": {
-                    "code": "U",
-                    "pica3": "$U...%%",
-                    "label": "Schriftcode",
-                    "repeatable": false,
-                    "modified": "2017-09-14 13:08:59",
-                    "position": 2
-                },
-                ...
-            }
-        }
+[
+    {
+        "tag": "021A",
+        "pica3": "4000",
+        "label": "Haupttitel, Titelzusatz, Verantwortlichkeitsangabe",
+        "url": "http:\/\/swbtools.bsz-bw.de\/cgi-bin\/help.pl?cmd=kat\u0026val=4000\u0026regelwerk=RDA\u0026verbund=GBV",
+        "repeatable": false,
+        "modified": "2017-12-18 10:41:47"
     }
-}
+]
 ```
 
 ## Abruf eines bestimmten Unterfeldes
@@ -110,7 +84,7 @@ Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Unterfeld
 ```json
 {
     "tag": "021A",
-    "code": "a",
+    "code": "$a",
     "pica3": null,
     "label": "Haupttitel",
     "repeatable": false,

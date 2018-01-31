@@ -32,13 +32,15 @@ try {
     // Check path info if empty load full list, else small block
     $field = new Field($request->getPathInfo(), $db);
     if ($field->isPica3()) {
-        $url = rtrim($request->getBaseUrl(), '/').'/' . $field->getName();
+        $url = rtrim($request->getBaseUrl(), '/').'/' . $field->getField();
         $response = new RedirectResponse($url);
     } else {
         $response->setData($field->getData());
     }
 } catch (\Exception $e) {
     error_log("$e");
+    echo $e;
+    exit;
 
     $code = $e->getCode();
     if (!isset(JsonResponse::$statusTexts[$code])) {
@@ -53,7 +55,7 @@ try {
 // send response
 if ($response instanceof JsonResponse) {
     // JSON_FORCE_OBJECT is required to encode subfield code "0" as object key!
-    $options = $response->getEncodingOptions() | JSON_PRETTY_PRINT | JSON_FORCE_OBJECT;
+    $options = $response->getEncodingOptions() | JSON_PRETTY_PRINT;
     $response->setEncodingOptions($options);
 }
 
