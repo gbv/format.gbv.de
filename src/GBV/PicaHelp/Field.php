@@ -323,12 +323,7 @@ class Field
 
         if ($complex === true) {
             // url
-            $pica3 = preg_replace('#[a-zA-Z]#', '', $field['pica_3']);
-            if ((int) $pica3 > 100) {
-                //  && $field['beschreibung'] != 'Noch kein Text.'
-                $data['url'] = str_replace('{pica3}', $field['pica_3'], static::HELP_URL);
-            }
-
+            $data['url'] = str_replace('{pica3}', $field['pica_3'], static::HELP_URL);
             $data['repeatable'] = ($field['wiederholbar'] == 'Ja') ? true : false;
             $data['modified']   = $field['stand'];
         }
