@@ -24,15 +24,24 @@ Wenn eine Liste aller Felder geladen werden soll, reicht es, wenn die API ohne P
 ```json
 {
     "001@": {
-        "tag": "001@",
-        "pica3": "0000",
-        "label": "ILNs der Bibliotheken mit Exemplarsatz"
+        "0": {
+            "tag": "001@",
+            "pica3": "0000",
+            "label": "ILNs der Bibliotheken mit Exemplarsatz"
+        }
     },
-    "001X": {
-        "tag": "001X",
-        "pica3": "000A",
-        "label": "Title owner"
-    }
+    "001A": {
+        "0": {
+            "tag": "001A",
+            "pica3": "0200",
+            "label": "Kennung und Datum der Ersterfassung"
+        },
+        "1": {
+            "tag": "001A",
+            "pica3": "001",
+            "label": "Quelle und Datum der Ersterfassung"
+        }
+    },
     ...
 }
 ```
@@ -52,29 +61,34 @@ Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Feldes *0
 
 ```json
 {
-    "tag": "021A",
-    "pica3": "4000",
-    "label": "Haupttitel, Titelzusatz, Verantwortlichkeitsangabe",
-    "repeatable": false,
-    "modified": "2017-12-18 10:41:47",
-    "subfields": {
-        "T": {
-            "code": "T",
-            "pica3": "$T",
-            "label": "Feldzuordnung",
+    "021A": {
+        "0": {
+            "tag": "021A",
+            "pica3": "4000",
+            "label": "Haupttitel, Titelzusatz, Verantwortlichkeitsangabe",
+            "url": "http:\/\/swbtools.bsz-bw.de\/cgi-bin\/help.pl?cmd=kat\u0026val=4000\u0026regelwerk=RDA\u0026verbund=GBV",
             "repeatable": false,
-            "modified": "2017-08-09 07:20:11",
-            "position": 1
-        },
-        "U": {
-            "code": "U",
-            "pica3": "$U...%%",
-            "label": "Schriftcode",
-            "repeatable": false,
-            "modified": "2017-09-14 13:08:59",
-            "position": 2
+            "modified": "2017-12-18 10:41:47",
+            "subfields": {
+                "T": {
+                    "code": "T",
+                    "pica3": "$T",
+                    "label": "Feldzuordnung",
+                    "repeatable": false,
+                    "modified": "2017-08-09 07:20:11",
+                    "position": 1
+                },
+                "U": {
+                    "code": "U",
+                    "pica3": "$U...%%",
+                    "label": "Schriftcode",
+                    "repeatable": false,
+                    "modified": "2017-09-14 13:08:59",
+                    "position": 2
+                },
+                ...
+            }
         }
-        ...
     }
 }
 ```

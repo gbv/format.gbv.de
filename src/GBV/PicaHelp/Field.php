@@ -27,6 +27,11 @@ class Field
     const PICA_3 = '#^(?P<field>[0-9]{4})#';
 
     /**
+     * Url to online help
+     */
+    const HELP_URL = 'http://swbtools.bsz-bw.de/cgi-bin/help.pl?cmd=kat&val={pica3}&regelwerk=RDA&verbund=GBV';
+
+    /**
      * @var \GBV\PicaHelp\Database
      */
     protected $db = null;
@@ -175,11 +180,7 @@ class Field
                 continue;
             }
 
-            $this->data[$field['pica_p']] = [
-                'tag'   => $field['pica_p'],
-                'pica3' => $field['pica_3'],
-                'label' => $field['titel']
-            ];
+            $this->data[$field['pica_p']][] = $this->fieldInfo($field);
         }
     }
 
@@ -192,19 +193,21 @@ class Field
     {
         // sql
         $sql = 'SELECT * FROM hauptfeld WHERE pica_p = ?';
-        $field = $this->db->query($sql, [$this->name])->fetch(PDO::FETCH_ASSOC);
+        $fields = $this->db->query($sql, [$this->name])->fetchAll(PDO::FETCH_ASSOC);
 
         // no field found.
-        if (empty($field['titel'])) {
+        foreach ($fields as $field) {
+            if (empty($field['titel'])) {
+                continue;
+            }
+
+            $data = $this->fieldInfo($field, true);
+            $data['subfields'] = $this->loadSubfields($field['pica_3']);
+            $this->data[$field['pica_p']][] = $data;
+        }
+        if (count($this->data) == 0) {
             throw new NotFoundException();
         }
-
-        $this->data['tag']        = $field['pica_p'];
-        $this->data['pica3']      = $field['pica_3'];
-        $this->data['label']      = $field['titel'];
-        $this->data['repeatable'] = ($field['wiederholbar'] == 'Ja') ? true : false;
-        $this->data['modified']   = $field['stand'];
-        $this->loadSubfields();
     }
 
     /**
@@ -227,24 +230,30 @@ class Field
     /**
      * Load subfield list.
      */
-    protected function loadSubfields()
+    protected function loadSubfields(string $pica3)
     {
-        $sql = 'SELECT * FROM unterfeld WHERE pica_p = ? ORDER BY nr ASC';
-        $subfields = $this->db->query($sql, [$this->name]);
+        $sql = 'SELECT * FROM unterfeld WHERE pica_p = ? AND pica_3 = ? ORDER BY nr ASC';
+        $subfields = $this->db->query($sql, [$this->name, $pica3]);
 
+        $subfieldData = [];
         foreach ($subfields->fetchAll(PDO::FETCH_ASSOC) as $subfield) {
             if ($subfield['titel'] == 'In RDA-Sätzen nicht zugelassen') {
                 continue; // simple but it works. ;)
             }
             $data = $this->subfieldInfo($subfield);
-            $this->data['subfields'][$data['code']] = $data;
+            $subfieldData[$data['code']] = $data;
         }
+
+        return $subfieldData;
     }
 
     /**
      * Map subfield information from database format.
+     *
+     * @param   array $subfield
+     * @return  array
      */
-    protected function subfieldInfo($subfield)
+    protected function subfieldInfo(array $subfield): array
     {
         return [
             'code'       => $subfield['pica_p_uf'][1],
@@ -273,5 +282,35 @@ class Field
         }
 
         $this->data = array_merge(['tag' => $this->name], $this->subfieldInfo($subfield));
+    }
+
+    /**
+     * Map field information from database format.
+     *
+     * @param   array   $field
+     * @param   bool    $complex
+     * @return  array
+     */
+    protected function fieldInfo(array $field, bool $complex = false): array
+    {
+        $data = [
+            'tag'   => $field['pica_p'],
+            'pica3' => $field['pica_3'],
+            'label' => $field['titel']
+        ];
+
+        if ($complex === true) {
+            // url
+            $pica3 = preg_replace('#[a-zA-Z]#', '', $field['pica_3']);
+            if ((int) $pica3 > 100) {
+                //  && $field['beschreibung'] != 'Noch kein Text.'
+                $data['url'] = str_replace('{pica3}', $field['pica_3'], static::HELP_URL);
+            }
+
+            $data['repeatable'] = ($field['wiederholbar'] == 'Ja') ? true : false;
+            $data['modified']   = $field['stand'];
+        }
+
+        return $data;
     }
 }
