@@ -20,7 +20,7 @@ $db = new DB($configFile);
 $rda = function ($f3) {
     $path = (string) $f3->get('PARAMS.*');
     $field = new Field($path, \Registry::get('DB'));
-    $response = new Response($field->getData());
+    $response = new Response($field);
     $response->send();
 
 };

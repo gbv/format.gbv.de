@@ -4,7 +4,6 @@ namespace GBV\RDA;
 
 use GBV\NotFoundException;
 use GBV\DB;
-use PDO;
 
 /**
  * Prepare PICA+ field and subfield information.
@@ -261,12 +260,18 @@ class Field
     protected function loadPica3Field()
     {
         $sql = 'SELECT pica_p FROM hauptfeld WHERE pica_3 = ?';
-        $field = $this->db->exec($sql, [$this->field]);
-        if (!isset($field['pica_p'])) {
+        $fields = $this->db->exec($sql, [$this->field]);
+
+        $field = '';
+        foreach ($fields as $field) {
+            $field = $field['pica_p'] ?? '';
+        }
+
+        if (empty($field)) {
             throw new NotFoundException();
         }
 
-        $this->field = $field['pica_p'];
+        $this->field = $field;
     }
 
     /**

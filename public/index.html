@@ -1,56 +1,108 @@
 <!doctype html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="boostrap4-vzg.css">
-    <title>PICA-Format Hilfe</title>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-dark navbar-expand">
-        <div class="container">
-          <a href="//www.gbv.de/" alt="VZG" class="navbar-brand expand-lg d-none d-lg-block">
-            <img src="vzg-logo.jpg"/>
-          </a>
-          <div class="navbar-text">
-            <span style="color: #fff">Verbundzentrale des GBV (VZG)</span>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main role="main" class="container">
-      <h1>PICA-Format Hilfe</h1>
-      <p>Allgemeine Informationen zum PICA-Format siehe im Verbundwiki:</p>
-      <ul>
-        <li><a href="https://verbundwiki.gbv.de/display/VZG/PICA-Format">PICA-Format</a></li>
-        <li><a href="https://verbundwiki.gbv.de/pages/viewpage.action?pageId=40009828">PICA+</a></li>
-        <li><a href="https://verbundwiki.gbv.de/display/VZG/PICA+XML+Version+1.0">PICA-XML</a></li>
-        <li><a href="">PICA-JSON</a> (noch nicht dokumentiert)</li>
-      </ul>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="boostrap4-vzg.css">
+  <title>PICA-Format</title>
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-dark navbar-expand">
+    <a href="//www.gbv.de/" alt="VZG" class="navbar-brand expand-lg d-none d-lg-block">
+      <img src="vzg-logo.jpg"/>
+    </a>
+    <a href="." class="navbar-brand">Informationen zum PICA-Format</a>
+  </nav>
+</header>
+<main role="main" class="container">
+  <p>
+    Das PICA-Format ist das Datenbankformat der Katalogsysteme CBS und LBS. Die interne Form
+    <b>PICA+</b> hat dabei eindeutige Entsprechungen im Katalogisierungsformat <b>Pica3</b>.
+    Weitere Informationen stehem um Verbundwiki unter
+    <a href="https://verbundwiki.gbv.de/display/VZG/PICA-Format">PICA-Format</a>,
+    <a href="https://verbundwiki.gbv.de/pages/viewpage.action?pageId=40009828">PICA+</a>
+    und
+    <a href="https://verbundwiki.gbv.de/display/VZG/PICA+XML+Version+1.0">PICA-XML</a>.
+  </p>
+  <p>
+    Die Bedeutung einzelner Felder und Unterfelder im PICA-Format hängt von konkreten
+    Katalogisierungsrichtlinien ab.
+  </p>
 
-      <h2>Format-API</h2>
-      <p>Unter <a href="api/">rda/</a> kann die gemeinsame PICA-Formatspezifikation von GBV und SWB auf
-        Basis des RDA-Regelwerks abgefragt werden. Die Felddefinitionen entsprichen der
-        <a href="http://swbtools.bsz-bw.de/cgi-bin/help.pl?cmd=help&amp;verbund=GBV&amp;regelwerk=RDA">K10plus Online-Hilfe</a>.
-      </p>
-      <div class="alert alert-warning" role="alert">
-        Die entgültige Spezifikation befindet sich noch im Aufbau, Änderungen vorbehalten!
-      </div>
+  <h2>Schema-API</h2>
 
-      <h3>Beispiel-Abfragen</h3>
-      <ul>
-        <li><a href="api/021A" class="demo">021A</a> (PICA+ Feld)</li>
-        <li><a href="api/021A$a" class="demo">021A$a</a> (PICA+ Unterfeld)</li>
-        <li><a href="api/4000" class="demo">4000</a> (Pica3)</li>
-      </ul>
-      <div id="demo" style="display: none;">
-        <h4>Antwort</h4>
-        <pre class="" id="demo-output"><code></code></pre>
-      </div>
-    </main>
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="js/demo.js"></script>
-  </body>
+  <div class="alert alert-warning" role="alert">
+    Die entgültige Spezifikation befindet sich noch im Aufbau, Änderungen vorbehalten!
+  </div>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Schema</th>
+      <th>Basis-URL</th>
+      <th>Hintergrund</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>RDA Bibliografische Daten</td>
+      <td><a href="rda/">rda/</a></td>
+      <td>RDA-Umsetzung von GBV und SWB für bibliografische Daten
+        (siehe K10plus
+        <a href="http://swbtools.bsz-bw.de/cgi-bin/help.pl?cmd=help&amp;verbund=GBV&amp;regelwerk=RDA">Online-Hilfe</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>RDA Normdaten</td>
+      <td><a href="rda/authority/">rda/authority/</a></td>
+      <td>RDA-Umsetzung von GBV und SWB für Normdaten
+        (siehe K10plus
+        <a href="http://swbtools.bsz-bw.de/cgi-bin/help.pl?cmd=help&amp;verbund=GBV&amp;regelwerk=RDA">Online-Hilfe</a>)
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h3>Beispiel-Abfragen</h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Schema</th>
+      <th>(Unter)feld</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>RDA Bibliografische Daten</td>
+      <td><a href="rda/021A" class="demo">021A</a> PICA+</td>
+    </tr><tr>
+      <td>RDA Bibliografische Daten</td>
+      <td><a href="rda/021A$a" class="demo">021A$a</a> PICA+ Unterfeld</td>
+    </tr><tr>
+      <td>RDA Bibliografische Daten</td>
+      <td><a href="rda/4000" class="demo">4000</a> Pica3</td>
+    </tr><tr>
+      <td>RDA Normdaten</td>
+      <td><a href="rda/authority/" class="demo">003U</a> PICA+</td>
+    </tr>
+    </tbody>
+  </table>
+  <div id="demo" style="display: none;">
+    <h4>Antwort</h4>
+    <pre class="" id="demo-output"><code></code></pre>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container-fluid text-secondary">
+    <div class="float-right">
+      <a href="https://github.com/gbv/PicaHelpRest">sources</a>
+    </div>
+    <p><a href="https://www.gbv.de/">Verbundzentrale des GBV (VZG)</a></p>
+  </div>
+</footer>
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="js/demo.js"></script>
+</body>
 </html>

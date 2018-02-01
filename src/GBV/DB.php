@@ -2,8 +2,21 @@
 
 namespace GBV;
 
+/**
+ * Database impementation.
+ *
+ * @package     PicaHelp
+ * @author      Karsten Achterrath <karsten.achterrath@gbv.de>
+ * @copyright   GBV VZG <https://www.gbv.de>
+ * @license     GPLv3 <https://www.gnu.org/licenses/gpl-3.0.txt>
+ */
 class DB extends \DB\SQL
 {
+    /**
+     * DB constructor.
+     *
+     * @param string $configFile
+     */
     public function __construct(string $configFile)
     {
         $config = $this->loadConfig($configFile);
@@ -23,7 +36,13 @@ class DB extends \DB\SQL
         ]);
     }
 
-    protected function loadConfig($configFile)
+    /**
+     * Load config file.
+     *
+     * @param $configFile
+     * @return array
+     */
+    protected function loadConfig($configFile): array
     {
         $config = [];
         if (file_exists($configFile)) {
