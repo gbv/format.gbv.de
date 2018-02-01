@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace GBV\PicaHelp;
+namespace GBV\RDA;
 
-use GBV\PicaHelp\NotFoundException;
-use GBV\PicaHelp\Database;
+use GBV\NotFoundException;
+use GBV\DB;
 use PDO;
 
 /**
@@ -32,7 +32,7 @@ class Field
     const HELP_URL = 'http://swbtools.bsz-bw.de/cgi-bin/help.pl?cmd=kat&val={pica3}&regelwerk=RDA&verbund=GBV';
 
     /**
-     * @var \GBV\PicaHelp\Database
+     * @var \GBV\DB
      */
     protected $db = null;
 
@@ -78,7 +78,7 @@ class Field
      * @param   \PDO    $db
      * @throws NotFoundException
      */
-    public function __construct(string $path, Database $db)
+    public function __construct(string $path, DB $db)
     {
         $this->path = $path;
         $this->db = $db;
@@ -156,8 +156,7 @@ class Field
             $field = $matches['field'] ?? '';
             $sub = $matches['sub'] ?? '';
             $occurrence = $matches['occurrence'] ?? '';
-            $authority = $matches['authority'] ?? '';
-            $this->setParameters($field, $sub, $occurrence, $authority, $pica3);
+            $this->setParameters($field, $sub, $occurrence, $pica3);
         } elseif ($this->pica3 !== true && $pica3 !== true) {
             $this->preparePath(true);
         }
@@ -172,7 +171,7 @@ class Field
      * @param string $authority
      * @param bool   $pica3
      */
-    protected function setParameters(string $field, string $sub, string $occurrence, string $authority, bool $pica3)
+    protected function setParameters(string $field, string $sub, string $occurrence, bool $pica3)
     {
         if ($pica3 === true) {
             $this->field = $field;
@@ -182,7 +181,6 @@ class Field
 
         $this->field = $field;
         $this->subfield = $sub;
-        $this->type = (empty($authority)) ? 'T' : 'N';
 
         if (!empty($occurrence)) {
             $this->field .= '/' . $occurrence;
@@ -218,9 +216,9 @@ class Field
     protected function loadList()
     {
         $sql = 'SELECT pica_p, pica_3, titel FROM hauptfeld WHERE datentyp = ? ORDER BY pica_p ASC';
-        $fields = $this->db->query($sql, [$this->type]);
+        $fields = $this->db->exec($sql, [$this->type]);
 
-        foreach ($fields->fetchAll(PDO::FETCH_ASSOC) as $field) {
+        foreach ($fields as $field) {
             if (empty($field['titel'])) {
                 continue;
             }
@@ -238,7 +236,7 @@ class Field
     {
         // sql
         $sql = 'SELECT * FROM hauptfeld WHERE pica_p LIKE ? AND datentyp = ?';
-        $fields = $this->db->query($sql, [$this->field, $this->type])->fetchAll(PDO::FETCH_ASSOC);
+        $fields = $this->db->exec($sql, [$this->field, $this->type]);
 
         // no field found.
         foreach ($fields as $field) {
@@ -263,7 +261,7 @@ class Field
     protected function loadPica3Field()
     {
         $sql = 'SELECT pica_p FROM hauptfeld WHERE pica_3 = ?';
-        $field = $this->db->query($sql, [$this->field])->fetch(PDO::FETCH_ASSOC);
+        $field = $this->db->exec($sql, [$this->field]);
         if (!isset($field['pica_p'])) {
             throw new NotFoundException();
         }
@@ -277,10 +275,10 @@ class Field
     protected function loadSubfields(string $pica3)
     {
         $sql = 'SELECT * FROM unterfeld WHERE pica_p LIKE ? AND pica_3 = ? AND datentyp = ? ORDER BY nr ASC';
-        $subfields = $this->db->query($sql, [$this->field, $pica3, $this->type]);
+        $subfields = $this->db->exec($sql, [$this->field, $pica3, $this->type]);
 
         $subfieldData = [];
-        foreach ($subfields->fetchAll(PDO::FETCH_ASSOC) as $subfield) {
+        foreach ($subfields as $subfield) {
             if ($subfield['titel'] == 'In RDA-Sätzen nicht zugelassen') {
                 continue; // simple but it works. ;)
             }
@@ -319,7 +317,7 @@ class Field
     protected function loadSubfield()
     {
         $sql = 'SELECT * FROM unterfeld WHERE pica_p = ? AND pica_p_uf = ? AND datentyp = ?';
-        $subfield = $this->db->query($sql, [$this->field, $this->subfield, $this->type])->fetch(PDO::FETCH_ASSOC);
+        $subfield = $this->db->exec($sql, [$this->field, $this->subfield, $this->type]);
 
         if (!isset($subfield['pica_p_uf']) || $subfield['titel'] == 'In RDA-Sätzen nicht zugelassen') {
             throw new NotFoundException();

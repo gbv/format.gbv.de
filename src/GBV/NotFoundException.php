@@ -1,6 +1,6 @@
 <?php
 
-namespace GBV\PicaHelp;
+namespace GBV;
 
 /**
  * Exception to be thrown if help could not be found.
