@@ -283,8 +283,8 @@ class Field
      */
     protected function loadSubfields(string $pica3)
     {
-        $sql = 'SELECT * FROM unterfeld WHERE pica_p LIKE ? AND pica_3 = ? AND datentyp = ? ORDER BY nr ASC';
-        $subfields = $this->db->exec($sql, [$this->field, $pica3, $this->type]);
+        $sql = 'SELECT * FROM unterfeld WHERE pica_p LIKE ? AND datentyp = ? ORDER BY nr ASC';
+        $subfields = $this->db->exec($sql, [$this->field, $this->type]);
 
         $subfieldData = [];
         if (is_array($subfields)) {
@@ -329,6 +329,10 @@ class Field
     {
         $sql = 'SELECT * FROM unterfeld WHERE pica_p = ? AND pica_p_uf = ? AND datentyp = ?';
         $subfield = $this->db->exec($sql, [$this->field, $this->subfield, $this->type]);
+
+        if (is_array($subfield)) {
+            $subfield = $subfield[0];
+        }
 
         if (!isset($subfield['pica_p_uf']) || $subfield['titel'] == 'In RDA-Sätzen nicht zugelassen') {
             throw new NotFoundException();

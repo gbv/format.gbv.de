@@ -66,7 +66,7 @@ class JsonResponse
         if ($this->code != 200) {
             $this->data = [
                 'code' => $this->code,
-                'message' => static::$messages[$code]
+                'message' => static::$messages[$this->code]
             ];
         }
     }
