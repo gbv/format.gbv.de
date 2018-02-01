@@ -2,9 +2,9 @@
 require_once('../vendor/autoload.php');
 $configFile = '../config/picahelp.json';
 
+use GBV\ControllerInterface;
 use GBV\Db;
-use GBV\RDA\Field;
-use GBV\Response;
+use GBV\JsonResponse;
 
 // F3 and database
 $f3 = Base::instance();
@@ -14,23 +14,29 @@ $db = new DB($configFile);
 // replace error handler
 $f3->set('ONERROR', function($f3) {
     $code = $f3->get('ERROR.code');
-    throw new \Exception('', $code);
+    throw new \Exception($f3->get('ERROR.message'), $code);
 });
 
-// default controller
-$rda = function ($f3) {
+// base controller
+$baseController = function ($f3) {
+    $type = (string) $f3->get('PARAMS.text');
     $path = (string) $f3->get('PARAMS.*');
-    $field = new Field($path, \Registry::get('DB'));
-    $response = new Response($field);
-    $response->send();
+
+    $controllerName = '\\GBV\\' . strtoupper($type) . '\\Controller';
+    if (!class_exists($controllerName) || !is_subclass_of($controllerName, ControllerInterface::class)) {
+        throw new RuntimeException('Can not find controller for ' . $type);
+    }
+
+    $controller = new $controllerName;
+    $controller->handle($path, \Registry::get('DB'));
 };
 
 try {
-    $f3->route('GET /rda/*', $rda);
-    $f3->route('GET /rda', $rda);
+    $f3->route('GET /@text', $baseController);
+    $f3->route('GET /@text/*', $baseController);
     $f3->run();
 } catch (\Exception $e) {
     error_log("$e");
-    $response = new Response([], $e->getCode());
+    $response = new JsonResponse([], $e->getCode());
     $response->send();
 }

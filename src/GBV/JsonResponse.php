@@ -2,8 +2,6 @@
 
 namespace GBV;
 
-use GBV\RDA\Field;
-
 /**
  * Response class.
  *
@@ -12,7 +10,7 @@ use GBV\RDA\Field;
  * @copyright   GBV VZG <https://www.gbv.de>
  * @license     GPLv3 <https://www.gnu.org/licenses/gpl-3.0.txt>
  */
-class Response
+class JsonResponse
 {
     /**
      * @var string[]
@@ -114,18 +112,7 @@ class Response
      */
     protected function handleData($data)
     {
-        if (is_array($data)) {
-            return $data;
-        } elseif ($data instanceof Field) {
-            if ($data->isPica3()) {
-                $this->code = 302;
-                $this->redirect = 'Location: ./' . $data->getField() . '/';
-            } else {
-                return $data->getData();
-            }
-        } else {
-            return [$data];
-        }
+        return $data;
     }
 
     /**
