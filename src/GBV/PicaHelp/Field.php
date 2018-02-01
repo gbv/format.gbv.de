@@ -213,7 +213,7 @@ class Field
     }
 
     /**
-     * Load full pica+ list (only rda fields.)
+     * Load full pica+ list (only api fields.)
      */
     protected function loadList()
     {
