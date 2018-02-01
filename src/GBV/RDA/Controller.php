@@ -46,6 +46,6 @@ class Controller implements ControllerInterface
      */
     protected function handleIndex(): void
     {
-
+        // ... put index view here!
     }
 }

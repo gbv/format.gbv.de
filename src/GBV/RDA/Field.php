@@ -167,7 +167,6 @@ class Field
      * @param string $field
      * @param string $sub
      * @param string $occurrence
-     * @param string $authority
      * @param bool   $pica3
      */
     protected function setParameters(string $field, string $sub, string $occurrence, bool $pica3)
@@ -217,12 +216,14 @@ class Field
         $sql = 'SELECT pica_p, pica_3, titel FROM hauptfeld WHERE datentyp = ? ORDER BY pica_p ASC';
         $fields = $this->db->exec($sql, [$this->type]);
 
-        foreach ($fields as $field) {
-            if (empty($field['titel'])) {
-                continue;
+        if (is_array($fields)) {
+            foreach ($fields as $field) {
+                if (empty($field['titel'])) {
+                    continue;
+                }
+                $data = $this->fieldInfo($field);
+                $this->data[$data['tag']] = $this->fieldInfo($field);
             }
-            $data = $this->fieldInfo($field);
-            $this->data[$data['tag']] = $this->fieldInfo($field);
         }
     }
 
@@ -237,18 +238,19 @@ class Field
         $sql = 'SELECT * FROM hauptfeld WHERE pica_p LIKE ? AND datentyp = ?';
         $fields = $this->db->exec($sql, [$this->field, $this->type]);
 
-        // no field found.
-        foreach ($fields as $field) {
-            if (empty($field['titel'])) {
-                continue;
-            }
+        if (is_array($fields)) {
+            foreach ($fields as $field) {
+                if (empty($field['titel'])) {
+                    continue;
+                }
 
-            $data = $this->fieldInfo($field, true);
-            $subfields = $this->loadSubfields($data['tag']);
-            if (!empty($subfields)) {
-                $data['subfields'] = $subfields;
+                $data = $this->fieldInfo($field, true);
+                $subfields = $this->loadSubfields($data['tag']);
+                if (!empty($subfields)) {
+                    $data['subfields'] = $subfields;
+                }
+                $this->data[] = $data;
             }
-            $this->data[] = $data;
         }
     }
 
@@ -263,8 +265,10 @@ class Field
         $fields = $this->db->exec($sql, [$this->field]);
 
         $field = '';
-        foreach ($fields as $field) {
-            $field = $field['pica_p'] ?? '';
+        if (is_array($fields)) {
+            foreach ($fields as $field) {
+                $field = $field['pica_p'] ?? '';
+            }
         }
 
         if (empty($field)) {
@@ -283,12 +287,14 @@ class Field
         $subfields = $this->db->exec($sql, [$this->field, $pica3, $this->type]);
 
         $subfieldData = [];
-        foreach ($subfields as $subfield) {
-            if ($subfield['titel'] == 'In RDA-Sätzen nicht zugelassen') {
-                continue; // simple but it works. ;)
+        if (is_array($subfields)) {
+            foreach ($subfields as $subfield) {
+                if ($subfield['titel'] == 'In RDA-Sätzen nicht zugelassen') {
+                    continue; // simple but it works. ;)
+                }
+                $data = $this->subfieldInfo($subfield);
+                $subfieldData[$data['code']] = $data;
             }
-            $data = $this->subfieldInfo($subfield);
-            $subfieldData[$data['code']] = $data;
         }
 
         return $subfieldData;
