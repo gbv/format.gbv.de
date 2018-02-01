@@ -182,7 +182,7 @@ class Field
 
         $this->field = $field;
         $this->subfield = $sub;
-        $this->authority = (empty($authority)) ? 'T' : 'N';
+        $this->type = (empty($authority)) ? 'T' : 'N';
 
         if (!empty($occurrence)) {
             $this->field .= '/' . $occurrence;
