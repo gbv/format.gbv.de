@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
-require_once('../../vendor/autoload.php');
-$configFile = '../../config/picahelp.json';
+require_once('../vendor/autoload.php');
+$configFile = '../config/picahelp.json';
 
 use GBV\Db;
 use GBV\RDA\Field;

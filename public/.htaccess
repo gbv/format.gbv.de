@@ -2,10 +2,10 @@
 RewriteEngine on
 
 #current work mode
-RewriteBase /gbv/api/
+RewriteBase /gbv/
 
 # public
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
-RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+RewriteRule ^(.*)$ api.php/$1 [L,QSA]
 </IfModule>
