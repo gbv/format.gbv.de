@@ -23,7 +23,8 @@ class DB extends \DB\SQL
         ]);
     }
 
-    protected function loadConfig($configFile) {
+    protected function loadConfig($configFile)
+    {
         $config = [];
         if (file_exists($configFile)) {
             $fileContent = file_get_contents($configFile);

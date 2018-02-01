@@ -2,7 +2,8 @@
 
 namespace GBV;
 
-class Response {
+class Response
+{
     public static $messages = [
         200 => 'Ok',
         404 => 'Not Found',
@@ -13,7 +14,8 @@ class Response {
     protected $data = [];
     protected $jsonOptions = JSON_PRETTY_PRINT;
 
-    public function __construct(array $data = [], int $code = 200) {
+    public function __construct(array $data = [], int $code = 200)
+    {
         $this->code = $code;
         $this->data = $data;
 
