@@ -8,13 +8,14 @@ use GBV\Response;
 
 // F3 and database
 $f3 = Base::instance();
+$db = new DB($configFile);
+\Registry::set('DB', $db);
+
+// replace error handler
 $f3->set('ONERROR', function($f3) {
     $code = $f3->get('ERROR.code');
     throw new \Exception('', $code);
 });
-
-$db = new DB($configFile);
-\Registry::set('DB', $db);
 
 // default controller
 $rda = function ($f3) {
@@ -30,6 +31,7 @@ try {
     $f3->route('GET /rda', $rda);
     $f3->run();
 } catch (\Exception $e) {
+    error_log("$e");
     $response = new Response([], $e->getCode());
     $response->send();
 }
