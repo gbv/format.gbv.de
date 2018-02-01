@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-require_once('../../src/vendor/autoload.php');
+require_once('../../vendor/autoload.php');
 
 use GBV\PicaHelp\Database;
 use GBV\PicaHelp\Field;
