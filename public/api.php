@@ -23,7 +23,6 @@ $rda = function ($f3) {
     $field = new Field($path, \Registry::get('DB'));
     $response = new Response($field);
     $response->send();
-
 };
 
 try {

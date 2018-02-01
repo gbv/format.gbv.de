@@ -116,18 +116,14 @@ class Response
     {
         if (is_array($data)) {
             return $data;
-        }
-        elseif ($data instanceof Field) {
+        } elseif ($data instanceof Field) {
             if ($data->isPica3()) {
                 $this->code = 302;
                 $this->redirect = 'Location: ./' . $data->getField() . '/';
-            }
-            else {
+            } else {
                 return $data->getData();
             }
-        }
-        else
-        {
+        } else {
             return [$data];
         }
     }
