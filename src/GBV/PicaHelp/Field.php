@@ -186,7 +186,7 @@ class Field
 
         if (!empty($occurrence)) {
             $this->field .= '/' . $occurrence;
-        } elseif (empty($occurrence) && empty($sub)) {
+        } elseif (empty($sub)) {
             $this->field .= '%';
         }
     }
