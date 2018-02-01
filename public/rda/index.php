@@ -39,6 +39,7 @@ try {
     }
 } catch (\Exception $e) {
     error_log("$e");
+    echo "<pre>";
     echo $e;
     exit;
 

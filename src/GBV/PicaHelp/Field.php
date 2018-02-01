@@ -109,9 +109,14 @@ class Field
      * Return data.
      *
      * @return string[]
+     * @throws NotFoundException
      */
     public function getData()
     {
+        if (count($this->data) == 0) {
+            throw new NotFoundException();
+        }
+
         return $this->data;
     }
 
@@ -152,11 +157,37 @@ class Field
             $sub = $matches['sub'] ?? '';
             $occurrence = $matches['occurrence'] ?? '';
             $authority = $matches['authority'] ?? '';
-            $this->field = $field . ((empty($occurrence)) ? '%' : '/' . $occurrence);
-            $this->subfield = $sub;
-            $this->pica3 = $pica3;
+            $this->setParameters($field, $sub, $occurrence, $authority, $pica3);
         } elseif ($this->pica3 !== true && $pica3 !== true) {
             $this->preparePath(true);
+        }
+    }
+
+    /**
+     * Set parameters.
+     *
+     * @param string $field
+     * @param string $sub
+     * @param string $occurrence
+     * @param string $authority
+     * @param bool   $pica3
+     */
+    protected function setParameters(string $field, string $sub, string $occurrence, string $authority, bool $pica3)
+    {
+        if ($pica3 === true) {
+            $this->field = $field;
+            $this->pica3 = true;
+            return;
+        }
+
+        $this->field = $field;
+        $this->subfield = $sub;
+        $this->authority = (empty($authority)) ? 'T' : 'N';
+
+        if (!empty($occurrence)) {
+            $this->field .= '/' . $occurrence;
+        } else if (empty($occurrence) && empty($sub)) {
+            $this->field .= '%';
         }
     }
 
@@ -222,9 +253,6 @@ class Field
             }
             $this->data[] = $data;
         }
-        if (count($this->data) == 0) {
-            throw new NotFoundException();
-        }
     }
 
     /**
@@ -234,9 +262,8 @@ class Field
      */
     protected function loadPica3Field()
     {
-        $sql = 'SELECT pica_p FROM hauptfeld WHERE pica_3 = ? AND datentyp = ?';
-        $field = $this->db->query($sql, [$this->field, $this->type])->fetch(PDO::FETCH_ASSOC);
-
+        $sql = 'SELECT pica_p FROM hauptfeld WHERE pica_3 = ?';
+        $field = $this->db->query($sql, [$this->field])->fetch(PDO::FETCH_ASSOC);
         if (!isset($field['pica_p'])) {
             throw new NotFoundException();
         }
