@@ -17,16 +17,17 @@ class FieldResponse extends JsonResponse
      * {@inheritDoc}
      * @throws \GBV\NotFoundException
      */
-    public function handleData($data) {
+    public function handleData($data)
+    {
         if (is_array($data)) {
             return $data;
         } elseif ($data instanceof Field) {
-                if ($data->isPica3()) {
-                    $this->code = 302;
-                    $this->redirect = 'Location: ./' . $data->getField() . '/';
-                } else {
-                    return $data->getData();
-                }
+            if ($data->isPica3()) {
+                $this->code = 302;
+                $this->redirect = 'Location: ./' . $data->getField() . '/';
+            } else {
+                return $data->getData();
+            }
         } else {
             return [$data];
         }

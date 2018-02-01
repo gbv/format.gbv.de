@@ -34,7 +34,7 @@ class Controller implements ControllerInterface
      * @param DB        $db
      * @throws \GBV\NotFoundException
      */
-   protected function handleApi(string $path, DB $db): void
+    protected function handleApi(string $path, DB $db): void
     {
         $field = new Field($path, $db);
         $response = new FieldResponse($field);
