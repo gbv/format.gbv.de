@@ -7,5 +7,5 @@ RewriteBase /gbv/
 # public
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
-RewriteRule ^(.*)$ api.php/$1 [L,QSA]
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
 </IfModule>

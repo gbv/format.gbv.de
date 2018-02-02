@@ -17,7 +17,7 @@ class Controller implements ControllerInterface
     /**
      * {@inheritDoc}
      */
-    public function handle(string $path, DB $db): void
+    public function handle(string $path, DB $db)
     {
         if (strtolower($path) == 'index.html') {
             $this->handleIndex();
@@ -34,7 +34,7 @@ class Controller implements ControllerInterface
      * @param DB        $db
      * @throws \GBV\NotFoundException
      */
-    protected function handleApi(string $path, DB $db): void
+    protected function handleApi(string $path, DB $db)
     {
         $field = new Field($path, $db);
         $response = new FieldResponse($field);
@@ -44,7 +44,7 @@ class Controller implements ControllerInterface
     /**
      * Handle index for api.
      */
-    protected function handleIndex(): void
+    protected function handleIndex()
     {
         // ... put index view here!
     }

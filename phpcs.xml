@@ -7,6 +7,5 @@
   <rule ref="PSR2"/>
 
   <file>src</file>
-  <exclude-pattern>src/vendor</exclude-pattern>
   <file>public</file>
 </ruleset>

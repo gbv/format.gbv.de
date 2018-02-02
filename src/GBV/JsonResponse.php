@@ -86,7 +86,7 @@ class JsonResponse
      *
      * @param int $options
      */
-    public function setOption(int $options): void
+    public function setOption(int $options)
     {
         $this->jsonOptions = $options;
     }
@@ -94,7 +94,7 @@ class JsonResponse
     /**
      * Send response.
      */
-    public function send(): void
+    public function send()
     {
         $this->sendHeader();
 
@@ -118,7 +118,7 @@ class JsonResponse
     /**
      * Send headers
      */
-    protected function sendHeader(): void
+    protected function sendHeader()
     {
         if (!headers_sent()) {
             header('HTTP/1.1 ' . $this->code . ' ' . static::$messages[$this->code]);
@@ -133,7 +133,7 @@ class JsonResponse
     /**
      * Send content.
      */
-    protected function sendContent(): void
+    protected function sendContent()
     {
         echo json_encode($this->data, $this->jsonOptions);
     }
