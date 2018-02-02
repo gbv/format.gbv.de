@@ -70,6 +70,8 @@ class Field
      */
     protected $type = 'T';
 
+    protected $isSchema = false;
+
     /**
      * Field constructor.
      *
@@ -129,12 +131,12 @@ class Field
         $this->path = trim($this->path, '/');
         $this->setType();
         $this->preparePath();
-        if (empty($this->field) && strlen($this->path) > 0) {
+        if (empty($this->field) && strlen($this->path) > 0 && $this->isSchema == false) {
             throw new NotFoundException();
         }
     }
 
-    public function setType()
+    protected function setType()
     {
         $this->type = 'T';
         if (preg_match('#^authority/?#', $this->path)) {
@@ -150,6 +152,11 @@ class Field
      */
     protected function preparePath(bool $pica3 = false)
     {
+        if (preg_match('#schema#', $this->path)) {
+            $this->isSchema = true;
+            return;
+        }
+
         $regEx = ($pica3) ? self::PICA_3 : self::PICA_P;
         if (preg_match($regEx, $this->path, $matches)) {
             $field = $matches['field'] ?? '';
@@ -194,7 +201,10 @@ class Field
      */
     protected function loadData()
     {
-        if (empty($this->field)) {
+        if ($this->isSchema) {
+            $this->loadSchema();
+            return;
+        } elseif (empty($this->field)) {
             $this->loadList();
             return;
         } elseif ($this->isPica3()) {
@@ -208,12 +218,35 @@ class Field
         $this->loadField();
     }
 
+    protected function loadSchema()
+    {
+        $this->loadList(true);
+
+        // load subfields
+        $sql = 'SELECT * FROM unterfeld WHERE datentyp = ? ORDER BY nr ASC';
+        $fields = $this->db->exec($sql, [$this->type]);
+        if (is_array($fields)) {
+            foreach ($fields as $field) {
+                $subfield = $this->subfieldInfo($field);
+                $tag = $field['pica_p'];
+
+                if (isset($this->data[$tag])) {
+                    if (isset($this->data[$tag]['subfields'])) {
+                        $this->data[$tag]['subfields'][] = $subfield;
+                    } else {
+                        $this->data[$tag]['subfields'] = [$subfield];
+                    }
+                }
+            }
+        }
+    }
+
     /**
      * Load full pica+ list (only api fields.)
      */
-    protected function loadList()
+    protected function loadList($full = false)
     {
-        $sql = 'SELECT pica_p, pica_3, titel FROM hauptfeld WHERE datentyp = ? ORDER BY pica_p ASC';
+        $sql = 'SELECT * FROM hauptfeld WHERE datentyp = ? ORDER BY pica_p ASC';
         $fields = $this->db->exec($sql, [$this->type]);
 
         if (is_array($fields)) {
@@ -221,8 +254,8 @@ class Field
                 if (empty($field['titel'])) {
                     continue;
                 }
-                $data = $this->fieldInfo($field);
-                $this->data[$data['tag']] = $this->fieldInfo($field);
+                $data = $this->fieldInfo($field, $full);
+                $this->data[$data['tag']] = $data;
             }
         }
     }
@@ -243,11 +276,11 @@ class Field
                 if (empty($field['titel'])) {
                     continue;
                 }
-
                 $data = $this->fieldInfo($field, true);
-                $subfields = $this->loadSubfields($data['tag']);
+
+                $subfield = $this->loadSubfields($data['tag']);
                 if (!empty($subfields)) {
-                    $data['subfields'] = $subfields;
+                    $data['subfields'] = $subfield;
                 }
                 $this->data[] = $data;
             }
@@ -281,7 +314,7 @@ class Field
     /**
      * Load subfield list.
      */
-    protected function loadSubfields(string $pica3)
+    protected function loadSubfields()
     {
         $sql = 'SELECT * FROM unterfeld WHERE pica_p LIKE ? AND datentyp = ? ORDER BY nr ASC';
         $subfields = $this->db->exec($sql, [$this->field, $this->type]);

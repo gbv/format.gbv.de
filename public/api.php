@@ -5,6 +5,7 @@ $configFile = '../config/picahelp.json';
 use GBV\ControllerInterface;
 use GBV\Db;
 use GBV\JsonResponse;
+use GBV\NotFoundException;
 
 // F3 and database
 $f3 = Base::instance();
@@ -22,6 +23,10 @@ $baseController = function ($f3) {
     $type = (string) $f3->get('PARAMS.text');
     $path = (string) $f3->get('PARAMS.*');
 
+    if (!preg_match('%^[a-z]+$%', $type)) {
+        throw new NotFoundException();
+    }
+
     $controllerName = '\\GBV\\' . strtoupper($type) . '\\Controller';
     if (!class_exists($controllerName) || !is_subclass_of($controllerName, ControllerInterface::class)) {
         throw new RuntimeException('Can not find controller for ' . $type);
@@ -37,6 +42,8 @@ try {
     $f3->run();
 } catch (\Exception $e) {
     error_log("$e");
+    echo '<pre>' . $e;
+    exit;
     $response = new JsonResponse([], $e->getCode());
     $response->send();
 }
