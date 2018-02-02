@@ -3,5 +3,5 @@ namespace GBV;
 
 interface ControllerInterface
 {
-    public function handle(string $path, DB $db): void;
+    public function handle(string $path, DB $db);
 }
