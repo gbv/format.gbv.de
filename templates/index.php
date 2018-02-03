@@ -42,7 +42,7 @@
 <footer class="footer">
   <div class="container-fluid text-secondary">
     <div class="float-right">
-      <a href="https://github.com/gbv/PicaHelpRest">sources</a>
+      <a href="<?=$BASE?>about">about</a>
     </div>
     <p><a href="https://www.gbv.de/">Verbundzentrale des GBV (VZG)</a></p>
   </div>

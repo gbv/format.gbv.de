@@ -88,7 +88,7 @@ $lovController = function ($f3, $params) {
     // TODO: add incoming and outgoing links
     // TODO: add equivalence to Wikidata and BARTOC
 
-    echo \View::instance()->render('page.php');
+    echo \View::instance()->render('index.php');
 };
 
 $htmlController = function ($f3, $params) {
