@@ -12,8 +12,6 @@ use GBV\NotFoundException;
 // F3 and database
 $f3 = Base::instance();
 $f3->set('UI', '../templates/');
-$db = new DB($configFile);
-\Registry::set('DB', $db);
 
 // replace error handler
 $f3->set('ONERROR', function ($f3) {
@@ -27,6 +25,12 @@ $f3->set('ONERROR', function ($f3) {
 
 // base controller
 $picaController = function ($f3, $params) {
+    global $db, $configFile;
+
+    if (!$db) {
+        \Registry::set('DB', new DB($configFile));
+    }
+
     $type = (string) $params['type'];
     $path = (string) $params['*'];
 
@@ -41,7 +45,50 @@ $picaController = function ($f3, $params) {
     }
 
     $controller = new $controllerName;
+
+    // TODO: not all controllers require the database
     $controller->handle($path, \Registry::get('DB'));
+};
+
+// TODO: move to controller class
+$lovController = function ($f3, $params) {
+    $path = $params['*'];
+
+    if (!preg_match('/^[a-z]+$/', $path)) {
+        $f3->error(404);
+    } 
+
+    $url = 'http://lov.okfn.org/dataset/lov/api/v2/vocabulary/info?vocab='.$path;
+    $data = @file_get_contents($url);
+    $data = json_decode($data, TRUE);
+
+    if (!$data || !isset($data['prefix'])) {
+        $f3->error(404);
+    }
+
+    $f3->set('breadcrumb', [ 
+        '../../' => 'Formate',
+        '../../rdf' => 'RDF',
+        '../lov' => 'LOV',
+    ]);
+    $f3->set('VIEW', 'lov.php');
+
+    $title = $data['titles'][0]['value'] ?? $data['prefix'];
+    $prefix = $data['prefix'];
+
+    $f3->mset([
+        'prefix'    => $prefix,
+        'title'     => $prefix,
+        'fulltitle' => $title == $prefix ? $title : "$title ($prefix)",
+        'homepage'  => $data['homepage'] ?? null,
+        'uri'       => $data['uri'] ?? null,
+        'description' => $data['descriptions'][0]['value'] ?? null,
+    ]);
+
+    // TODO: add incoming and outgoing links
+    // TODO: add equivalence to Wikidata and BARTOC
+
+    echo \View::instance()->render('page.php');
 };
 
 $htmlController = function ($f3, $params) {
@@ -51,16 +98,22 @@ $htmlController = function ($f3, $params) {
         $path = 'index';
     }
 
-    if (preg_match('!([a-z0-9/]+)!', $path)) {
+    $path = str_replace('/', '-', $path);
+    if (preg_match('!([a-z0-9]+)!', $path)) {
+        error_log($path);
         if (file_exists("../templates/$path.md")) {
             $document = YamlHeader::parseFile("../templates/$path.md");
             $f3->mset($document[0]);
             $f3->set('MARKDOWN', $document[1]);
 
             if ($path != 'index') {
-                $f3->set('navigation', [
-                    '' => 'Formate'
-                ]);
+                $breadcrumb = [ '/' => 'Formate'];
+                $parts = explode('-', $path);
+                $depth = count($parts);
+                for ($i=0; $i<$depth-1; $i++) {
+                    $breadcrumb[ str_repeat('../', $depth-$i).$parts[$i] ] = strtoupper($parts[$i]);
+                }
+                $f3->set('breadcrumb', $breadcrumb);
             }
         }
     }
@@ -75,6 +128,7 @@ $htmlController = function ($f3, $params) {
 try {
     $f3->route('GET /pica/@type', $picaController);
     $f3->route('GET /pica/@type/*', $picaController);
+    $f3->route('GET /rdf/lov/*', $lovController);
     $f3->route('GET /*', $htmlController);
     $f3->run();
 } catch (\Exception $e) {
