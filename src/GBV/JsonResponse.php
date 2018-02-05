@@ -48,7 +48,6 @@ class JsonResponse
      *
      * @param mixed $data
      * @param int   $code
-     * @throws NotFoundException
      */
     public function __construct($data, int $code = 200)
     {
@@ -74,7 +73,7 @@ class JsonResponse
      *
      * @return int
      */
-    public function setOptions(): int
+    public function getOptions(): int
     {
         return $this->jsonOptions;
     }

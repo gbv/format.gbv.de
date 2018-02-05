@@ -12,7 +12,6 @@ class PICA
 
     public function error($f3)
     {
-        $code = $f3->get('ERROR.code');
         error_log(print_r($f3['ERROR'], true));
         $response = new JsonResponse([], $f3['ERROR.code']);
         $response->send();

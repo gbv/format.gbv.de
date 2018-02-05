@@ -11,6 +11,7 @@ $f3['configFile'] = '../config/picahelp.json';
 $f3->route('GET /pica/@type', 'Controller\PICA->render');
 $f3->route('GET /pica/@type/*', 'Controller\PICA->render');
 $f3->route('GET /rdf/lov/*', 'Controller\LOV->render');
+$f3->route('GET /marc/*', 'Controller\MARC->render');
 $f3->route('GET /*', 'Controller\HTML->render');
 
 $f3->run();
