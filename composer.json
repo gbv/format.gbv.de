@@ -24,8 +24,7 @@
   },
 
   "scripts": {
-    "style": "./vendor/bin/phpcbf src public",
-    "web": "php -S localhost:8020 -t public"
+    "style": "./vendor/bin/phpcbf src public"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.2"

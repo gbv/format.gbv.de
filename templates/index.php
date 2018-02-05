@@ -35,7 +35,7 @@
 <?php if ($wikidata) { ?>
     <div class="alert alert-info" role="alert">
     ➜ Weitere Informationen zu <?=$title?>
-    <a href="https://tools.wmflabs.org/hub/<?=$wikidata?>">in Wikipedia oder Wikidata</a>
+    <a href="https://tools.wmflabs.org/hub/<?=$wikidata?>">in Wikipedia/Wikidata</a>
     </div>
 <?php } ?>
 </main>

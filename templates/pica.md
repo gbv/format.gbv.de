@@ -5,21 +5,17 @@ javascript:
   - //code.jquery.com/jquery-3.2.1.min.js
   - js/demo.js
 ---
-<p>
-  Das PICA-Format ist das Datenbankformat der Katalogsysteme CBS und LBS. Die interne Form
-  <b>PICA+</b> hat dabei eindeutige Entsprechungen im Katalogisierungsformat <b>Pica3</b>.
-  Weitere Informationen stehem um Verbundwiki unter
-  <a href="https://verbundwiki.gbv.de/display/VZG/PICA-Format">PICA-Format</a>,
-  <a href="https://verbundwiki.gbv.de/pages/viewpage.action?pageId=40009828">PICA+</a>
-  und
-  <a href="https://verbundwiki.gbv.de/display/VZG/PICA+XML+Version+1.0">PICA-XML</a>.
-</p>
-<p>
-  Die Bedeutung einzelner Felder und Unterfelder im PICA-Format hängt von konkreten
-  Katalogisierungsrichtlinien ab.
-</p>
 
-<h2>Schema-API</h2>
+Das PICA-Format ist das Datenbankformat der Katalogsysteme CBS und LBS.  Die
+interne Form **PICA+** hat dabei eindeutige Entsprechungen im
+Katalogisierungsformat **Pica3**. Weitere Informationen stehem um Verbundwiki
+unter [PICA-Format](https://verbundwiki.gbv.de/display/VZG/PICA-Format),
+[PICA+](https://verbundwiki.gbv.de/pages/viewpage.action?pageId=40009828) und
+[PICA-XML](https://verbundwiki.gbv.de/display/VZG/PICA+XML+Version+1.0).  Die
+Bedeutung einzelner Felder und Unterfelder im PICA-Format hängt von konkreten
+Katalogisierungsrichtlinien ab.
+
+## Schema-API
 
 <div class="alert alert-warning" role="alert">
   Die entgültige Spezifikation befindet sich noch im Aufbau, Änderungen vorbehalten!
@@ -31,6 +27,7 @@ javascript:
     <th>Schema</th>
     <th>Basis-URL</th>
     <th>Hintergrund</th>
+    <th>Download</th>
   </tr>
   </thead>
   <tbody>
@@ -41,6 +38,7 @@ javascript:
       (siehe K10plus
       <a href="http://swbtools.bsz-bw.de/cgi-bin/help.pl?cmd=help&amp;verbund=GBV&amp;regelwerk=RDA">Online-Hilfe</a>)
     </td>
+    <td><a href="pica/rda/schema">rda/schema</a></td>
   </tr>
   <tr>
     <td>RDA Normdaten</td>
@@ -49,6 +47,7 @@ javascript:
       (siehe K10plus
       <a href="http://swbtools.bsz-bw.de/cgi-bin/help.pl?cmd=help&amp;verbund=GBV&amp;regelwerk=RDA">Online-Hilfe</a>)
     </td>
+    <td><a href="pica/rda/authority/schema">rda/authority/schema</a></td>
   </tr>
   </tbody>
 </table>
