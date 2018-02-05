@@ -52,8 +52,6 @@ class JsonResponse
      */
     public function __construct($data, int $code = 200)
     {
-        $data = $this->handleData($data);
-
         $this->code = $code;
         $this->data = $data;
 
@@ -101,18 +99,6 @@ class JsonResponse
         if ($this->redirect == '') {
             $this->sendContent();
         }
-    }
-
-    /**
-     * Handle data.
-     *
-     * @param   $data
-     * @return  array|string[]
-     * @throws  NotFoundException
-     */
-    protected function handleData($data)
-    {
-        return $data;
     }
 
     /**

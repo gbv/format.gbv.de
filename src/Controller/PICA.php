@@ -6,7 +6,6 @@ use GBV\JsonResponse;
 use GBV\DB;
 use GBV\NotFoundException;
 use GBV\RDA\Field;
-use GBV\RDA\FieldResponse;
 
 class PICA
 {
@@ -33,7 +32,15 @@ class PICA
         if ($type == 'rda') {
             try {
                 $field = new Field($path, $db);
-                $response = new FieldResponse($field);
+
+                if ($field->isPica3()) {
+                    $f3->reroute('/pica/rda/' . $field->getField());
+                }
+
+                $data = $field->getData();
+
+                $response = new JSONResponse($data, 200);
+
                 $response->send();
             } catch (NotFoundException $e) {
                 $f3->error(404);

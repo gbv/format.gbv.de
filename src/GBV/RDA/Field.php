@@ -228,17 +228,36 @@ class Field
         if (is_array($fields)) {
             foreach ($fields as $field) {
                 $subfield = $this->subfieldInfo($field);
-                $tag = $field['pica_p'];
 
-                if (isset($this->data[$tag])) {
-                    if (isset($this->data[$tag]['subfields'])) {
-                        $this->data[$tag]['subfields'][] = $subfield;
+                $key = static::fieldKey($field);
+
+                if (isset($this->data[$key])) {
+                    if (isset($this->data[$key]['subfields'])) {
+                        $this->data[$key]['subfields'][] = $subfield;
                     } else {
-                        $this->data[$tag]['subfields'] = [$subfield];
+                        $this->data[$key]['subfields'] = [$subfield];
                     }
                 }
             }
+
+            $title = $this->type == 'T'
+                ? 'GBV/SWB RDA PICA für bibliographische Daten'
+                : 'GBV/SWB RDA PICA für Normdaten';
+
+            $this->data = [
+                'title' => $title,
+                'fields' => $this->data,
+            ];
         }
+    }
+
+    public static function fieldKey($field)
+    {
+        $key = $field['pica_p'];
+        if (isset($field['occurrence'])) {
+            $key .= '/' . $field['occurrence'];
+        }
+        return $key;
     }
 
     /**
@@ -254,8 +273,9 @@ class Field
                 if (empty($field['titel'])) {
                     continue;
                 }
+                $key = static::fieldKey($field);
                 $data = $this->fieldInfo($field, $full);
-                $this->data[$data['tag']] = $data;
+                $this->data[$key] = $data;
             }
         }
     }

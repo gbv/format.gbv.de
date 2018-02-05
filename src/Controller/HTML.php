@@ -37,7 +37,7 @@ class HTML
             'VIEW'       => 'error.php'
         ]);
 
-        echo View::instance()->render('index.php');
+        echo \View::instance()->render('index.php');
     }
 
     public function page($f3, $params)
