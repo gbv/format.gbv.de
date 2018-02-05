@@ -22,11 +22,15 @@
       "GBV\\": "src/GBV"
     }
   },
-
   "scripts": {
-    "style": "./vendor/bin/phpcbf src public"
+    "style": "./vendor/bin/phpcbf src public tests",
+    "test": [
+      "vendor/bin/phpunit tests --coverage-clover build/logs/clover.xml",
+      "vendor/bin/phpcs src public tests"
+    ]
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.2"
+    "squizlabs/php_codesniffer": "^3.2",
+    "phpunit/phpunit": "^6.5"
   }
 }

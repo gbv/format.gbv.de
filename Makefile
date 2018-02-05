@@ -1,3 +1,6 @@
+test:
+	composer test
+
 style:
 	composer style
 

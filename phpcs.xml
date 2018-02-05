@@ -8,4 +8,5 @@
 
   <file>src</file>
   <file>public</file>
+  <file>tests</file>
 </ruleset>
