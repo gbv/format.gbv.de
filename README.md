@@ -1,7 +1,7 @@
 # REST-API für PICA+ Felder des GBV und SWB (K10Plus)
 
-[![Build Status](https://img.shields.io/travis/gbv/PicaHelpRest.svg?style=flat-square)](https://travis-ci.org/gbv/PicaHelpRest)
-[![Quality Score](https://img.shields.io/scrutinizer/g/gbv/PicaHelpRest.svg?style=flat-square)](https://scrutinizer-ci.com/g/gbv/PicaHelpRest)
+[![Build Status](https://img.shields.io/travis/gbv/format.gbv.de.svg?style=flat-square)](https://travis-ci.org/gbv/format.gbv.de)
+[![Quality Score](https://img.shields.io/scrutinizer/g/gbv/format.gbv.de.svg?style=flat-square)](https://scrutinizer-ci.com/g/gbv/format.gbv.de)
 
 Stellt ein JSON-API zur Verfügung um auf die Definition der PICA+ Felder nach RDA des gemeinsamen Kataloges des GBV und SWB zuzugreifen.
 

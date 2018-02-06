@@ -19,8 +19,8 @@ der Dissertation [Describing Data Patterns](http://aboutdata.org/).
 
 ## Inhalt und Beteiligte
 
-Der Quellcode dieser Seite steht [auf GitHub](https://github.com/gbv/PicaHelpRest). 
-Anregungen, Korrekturen und Verbesserungsvorschläge [sind dort herzlich willkommen](https://github.com/gbv/PicaHelpRest/issues)!
+Der Quellcode dieser Seite steht [auf GitHub](https://github.com/gbv/format.gbv.de). 
+Anregungen, Korrekturen und Verbesserungsvorschläge [sind dort herzlich willkommen](https://github.com/gbv/format.gbv.de/issues)!
 
 Beteiligt an den Inhalten dieser Seite sind oder waren unter Anderem:
 
