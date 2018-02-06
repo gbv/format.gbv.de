@@ -16,7 +16,7 @@ class Field
     /**
      * @var string
      */
-    protected $jsonUrl = 'https://raw.githubusercontent.com/pkiraly/metadata-qa-marc/master/src/main/resources/marc-schema.json';
+    protected $jsonUrl = 'https://raw.githubusercontent.com/pkiraly/metadata-qa-marc/master/src/main/resources/marc-schema.json'; // @codingStandardsIgnoreLine
 
     /**
      * @var string
