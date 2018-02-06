@@ -77,7 +77,7 @@ class LOV extends HTML
             $f3->get('BASE') => 'Formate',
             '../../rdf' => 'RDF'
         ];
-        $f3['VIEW'] = 'rdf-lov.php';
+        $f3['VIEW'] = 'rdf/lov.php';
 
         $f3->mset([
             'title' => 'Linked Open Vocabularies',

@@ -49,8 +49,7 @@ class HTML
         }
 
         $templates = $f3->get('UI');
-        $path = str_replace('/', '-', $path);
-        if (preg_match('!([a-z0-9]+)!', $path)) {
+        if (preg_match('!(([a-z0-9]+)/?)+!', $path)) {
             if (file_exists("$templates$path.md")) {
                 $document = YamlHeader::parseFile("$templates$path.md");
                 $f3->mset($document[0]);
@@ -58,7 +57,7 @@ class HTML
 
                 if ($path != 'index') {
                     $breadcrumb = [ '/' => 'Formate'];
-                    $parts = explode('-', $path);
+                    $parts = explode('/', $path);
                     $depth = count($parts);
                     for ($i=0; $i<$depth-1; $i++) {
                         $breadcrumb[ str_repeat('../', $depth-$i).$parts[$i] ] = strtoupper($parts[$i]);
