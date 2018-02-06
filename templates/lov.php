@@ -8,7 +8,7 @@
 <?php if ($uri) { ?>
 <p><a href="<?=$uri?>"><?=$uri?></a></p>
 <?php } ?>
-<?php if ($uri) { ?>
+<?php if ($url) { ?>
 <p>URL: <a href="<?=$url?>"><?=$url?></a></p>
 <?php } ?>
 

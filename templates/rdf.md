@@ -15,9 +15,8 @@ RDF-Formate basieren auf RDF-Ontologien oder werden mit Ontologien
 gleichgesetzt. Eine Besonderheit von RDF ist dass sich Daten verschiedener
 Ontologien kombinieren lassen.
 
-Die meisten relevanten Ontologien sind bei [Linked Open Vocabularies (LOV)]
-verzeichnet. Unter [`/rdf/lov/{prefix}`](rdf/lov/) können diese Ontologien mit
-ihrem jeweiligen Prefix abgerufen werden.
+Die meisten relevanten Ontologien sind bei [Linked Open Vocabularies (LOV)](rdf/lov)
+verzeichnet und können unter `/rdf/lov/{prefix}` mit ihrem jeweiligen Prefix abgerufen werden.
 
 <!-- 
 - Ontologien bauen aufeinander auf

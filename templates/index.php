@@ -48,7 +48,7 @@
 <footer class="footer">
   <div class="container-fluid text-secondary">
     <div class="float-right">
-      <a href="<?=$BASE?>about">about</a>
+      <a href="<?=$BASE?>/about">about</a>
     </div>
     <p><a href="https://www.gbv.de/">Verbundzentrale des GBV (VZG)</a></p>
   </div>
@@ -57,7 +57,7 @@
 <?php
 foreach (($javascript ?? []) as $src) {
     if (!preg_match('!^(https:)?//!', $src)) {
-        $src = $BASE . $src;
+        $src = "$BASE/$src";
     }
     echo "<script src=\"$src\"></script>";
 }
