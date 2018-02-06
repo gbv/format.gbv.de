@@ -22,6 +22,7 @@ Formate, beispielsweise MARC für bibliographische Daten und MARC für Normdaten
 Die Spezifikation eines von Péter Király zusammengetragenen MARC-Formats kann
 hier abgerufen werden. Beispiele:
 
+* [schema](marc/schema)
 * [110](marc/110)
 * [130](marc/130)
 * ...

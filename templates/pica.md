@@ -3,7 +3,7 @@ title: PICA-Format
 shorttitle: PICA
 javascript:
   - //code.jquery.com/jquery-3.2.1.min.js
-  - js/demo.js
+  - /js/demo.js
 ---
 
 Das PICA-Format ist das Datenbankformat der Katalogsysteme CBS und LBS.  Die
@@ -78,6 +78,7 @@ Katalogisierungsrichtlinien ab.
 </table>
 <div id="demo" style="display: none;">
   <h4>Antwort</h4>
-  <pre class="" id="demo-output"><code></code></pre>
+  <p id="demo-url"><b>Url</b> <a></a></p>
+  <pre id="demo-output"><code></code></pre>
 </div>
 

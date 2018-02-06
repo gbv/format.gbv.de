@@ -2,6 +2,7 @@
 namespace GBV\MARC;
 
 use GBV\NotFoundException;
+use Cache;
 
 /**
  * Handle marc information.
@@ -109,9 +110,8 @@ class Field
      */
     protected function loadFile()
     {
-        if (file_exists($this->cacheFile) && (filemtime($this->cacheFile) + $this->lifetime) > time()) {
-            $content = file_get_contents($this->cacheFile);
-            $this->fields = json_decode($content, true, 1024, JSON_FORCE_OBJECT);
+        if (Cache::instance()->exists('marc.bib')) {
+            $this->fields = Cache::instance()->get('marc.bib');
             return;
         }
 
@@ -140,7 +140,7 @@ class Field
         $fields = json_decode($content, true, 1024, JSON_FORCE_OBJECT);
         $this->cleanData($fields);
 
-        file_put_contents($this->cacheFile, json_encode($this->fields, JSON_FORCE_OBJECT, 1024));
+        Cache::instance()->set('marc.bib', $this->fields, $this->lifetime);
     }
 
     /**
@@ -159,7 +159,9 @@ class Field
             $this->fields[$key] = [
                 'tag' => $key,
                 'label' => $field['label'],
-                'repeatable' => $field['repeatable']
+                'repeatable' => $field['repeatable'],
+                'indicator1' => $field['indicator1'],
+                'indicator2' => $field['indicator2']
             ];
         }
     }

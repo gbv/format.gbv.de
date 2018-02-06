@@ -50,7 +50,7 @@
 </body>
 <?php
 foreach (($javascript ?? []) as $src) {
-    if (!preg_match('!^(https:?)//!', $src)) {
+    if (!preg_match('!^(https:)?//!', $src)) {
         $src = $BASE . $src;
     }
     echo "<script src=\"$src\"></script>";

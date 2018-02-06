@@ -5,6 +5,7 @@ require_once('../vendor/autoload.php');
 $f3 = Base::instance();
 $f3['UI'] = '../templates/';
 $f3['AUTOLOAD'] = '../src/';
+$f3['CACHE'] = 'folder=../cache/';
 
 $f3['configFile'] = '../config/picahelp.json';
 
