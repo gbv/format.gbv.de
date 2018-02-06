@@ -1,6 +1,7 @@
 ---
 title: Linked Open Vocabularies
 wikidata: Q39392701
+homepage: http://lov.okfn.org/
 ---
 
 Alle in [Linked Open Vocabularies](http://lov.okfn.org/) eingetragene

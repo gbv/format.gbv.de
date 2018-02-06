@@ -1,6 +1,7 @@
 ---
 title: MARC
 wikidata: Q722609
+homepage: https://www.loc.gov/marc/
 ---
 
 <div class="alert alert-warning" role="alert">

@@ -15,3 +15,7 @@ Auf dieser Seiten sollen verschiedene Datenformate dokumentiert werden.
 * [MARC](marc)
 * [RDF](rdf)
 * ...
+
+### Schemas
+
+Siehe Unterseite zu [Schemas](schema) und Schema-Sprachen.
