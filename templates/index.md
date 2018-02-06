@@ -9,13 +9,31 @@ Auf dieser Seiten sollen verschiedene Datenformate dokumentiert werden.
 </div>
 
 
-### Formate
+## Formate
+
+### Feldbasierte Formate
 
 * [PICA](pica)
 * [MARC](marc)
-* [RDF](rdf)
-* ...
+* [MAB](mab)
+* [allegro](allegro)
 
-### Schemas
+### Graph-basierte Formate
+
+* [RDF](rdf)
+
+### Hierarchische Formate
+
+* JSON
+* XML
+
+### Tabellenbasierte Formate
+
+* CSV
+* TSV
+* SQL
+
+
+## Schemas
 
 Siehe Unterseite zu [Schemas](schema) und Schema-Sprachen.
