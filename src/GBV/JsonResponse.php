@@ -46,10 +46,10 @@ class JsonResponse
     /**
      * Response constructor.
      *
-     * @param mixed $data
+     * @param array $data
      * @param int   $code
      */
-    public function __construct($data, int $code = 200)
+    public function __construct(array $data, int $code = 200)
     {
         $this->code = $code;
         $this->data = $data;

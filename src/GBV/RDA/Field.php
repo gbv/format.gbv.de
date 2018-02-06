@@ -61,7 +61,7 @@ class Field
     protected $subfield = '';
 
     /**
-     * @var string[]
+     * @var array
      */
     protected $data = [];
 
@@ -131,7 +131,7 @@ class Field
         $this->path = trim($this->path, '/');
         $this->setType();
         $this->preparePath();
-        if (empty($this->field) && strlen($this->path) > 0 && $this->isSchema == false) {
+        if (empty($this->field) && strlen($this->path) > 0 && $this->isSchema === false) {
             throw new NotFoundException();
         }
     }
@@ -298,7 +298,7 @@ class Field
                 }
                 $data = $this->fieldInfo($field, true);
 
-                $subfield = $this->loadSubfields($data['tag']);
+                $subfield = $this->loadSubfields();
                 if (!empty($subfields)) {
                     $data['subfields'] = $subfield;
                 }
