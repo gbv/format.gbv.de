@@ -12,5 +12,6 @@ Auf dieser Seiten sollen verschiedene Datenformate dokumentiert werden.
 ### Formate
 
 * [PICA](pica)
+* [MARC](marc)
 * [RDF](rdf)
 * ...
