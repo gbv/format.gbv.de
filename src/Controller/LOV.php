@@ -7,10 +7,11 @@ class LOV extends HTML
 
     public function page($f3, $params)
     {
-        $path = $params['*'];
+        $path = $params['*'] ?? '';
 
-        if (!preg_match('/^[a-z]+$/', $path)) {
-            $f3->error(404);
+        if (!preg_match('/^[a-zA-Z]+$/', $path)) {
+            $this->indexPage($f3);
+            return;
         }
 
         $url = 'http://lov.okfn.org/dataset/lov/api/v2/vocabulary/info?vocab='.$path;
@@ -50,5 +51,28 @@ class LOV extends HTML
 
         // TODO: add incoming and outgoing links
         // TODO: add equivalence to Wikidata and BARTOC
+    }
+
+    public function indexPage($f3)
+    {
+        $url = 'http://lov.okfn.org/dataset/lov/api/v2/vocabulary/list';
+        $data = @file_get_contents($url);
+        $data = json_decode($data, true);
+        $vocables = [];
+        foreach ($data as $entry) {
+            $vocables[] = ['prefix' => $entry['prefix'], 'title' => $entry['titles'][0]['value']];
+        }
+
+        $f3->set('breadcrumb', [
+            $f3->get('BASE') => 'Formate',
+            '../../rdf' => 'RDF'
+        ]);
+        $f3->set('VIEW', 'rdf-lov.php');
+        $f3->mset([
+            'title' => 'Linked Open Vocabularies',
+            'wikidata' => 'Q39392701',
+            'homepage' => 'http://lov.okfn.org/',
+            'vocables' => $vocables
+        ]);
     }
 }
