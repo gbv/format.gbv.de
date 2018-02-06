@@ -22,7 +22,7 @@
         <li class="navbar-item active">
           <a href="<?=$URI?>" class="nav-link"><b><?=$title?></b></a>
         </li>
-      </ol>
+      </ul>
     </nav>
   </nav>
 </header>

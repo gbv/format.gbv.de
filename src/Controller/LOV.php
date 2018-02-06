@@ -31,6 +31,13 @@ class LOV extends HTML
         $title = $data['titles'][0]['value'] ?? $data['prefix'];
         $prefix = $data['prefix'];
 
+        // publisher
+        if (isset($data['publisherIds'])) {
+            foreach ($data['publisherIds'] as $publisher) {
+                $publishers[] = $publisher['name'];
+            }
+        }
+
         $f3->mset([
             'prefix'    => $prefix,
             'title'     => $prefix,
@@ -38,6 +45,7 @@ class LOV extends HTML
             'url'       => $data['homepage'] ?? null,
             'uri'       => $data['uri'] ?? null,
             'description' => $data['descriptions'][0]['value'] ?? null,
+            'publishers' => $publishers ?? null
         ]);
 
         // TODO: add incoming and outgoing links
