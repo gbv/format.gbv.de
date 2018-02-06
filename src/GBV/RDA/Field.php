@@ -204,9 +204,6 @@ class Field
         if ($this->isSchema) {
             $this->loadSchema();
             return;
-        } elseif (empty($this->field)) {
-            $this->loadList();
-            return;
         } elseif ($this->isPica3()) {
             $this->loadPica3Field();
             return;
