@@ -11,7 +11,8 @@ use GBV\NotFoundException;
  * @copyright ©2017 - 2018 Teralios.de
  * @license   GPLv3 <https://github.com/Teralios/commentarius/blob/master/LICENSE>
  */
-class Field {
+class Field
+{
     /**
      * @var string
      */
