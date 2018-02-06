@@ -35,7 +35,7 @@ class LOV extends HTML
             'prefix'    => $prefix,
             'title'     => $prefix,
             'fulltitle' => $title == $prefix ? $title : "$title ($prefix)",
-            'homepage'  => $data['homepage'] ?? null,
+            'url'       => $data['homepage'] ?? null,
             'uri'       => $data['uri'] ?? null,
             'description' => $data['descriptions'][0]['value'] ?? null,
         ]);
