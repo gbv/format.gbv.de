@@ -1,0 +1,7 @@
+code, model, format
+pica/xml, pica, xml
+xml, xml, unicode
+pica/normalized, pica, bytes
+json, json, unicode
+rdf/json-ld, rdf, json
+rdf/turtle, rdf, unicode
