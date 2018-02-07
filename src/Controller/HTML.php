@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-use GBV\YamlHeader;
+use GBV\YamlHeaderDocument;
 
 /**
  * Show HTML based on Markdown files.
@@ -51,9 +51,9 @@ class HTML
         $templates = $f3->get('UI');
         if (preg_match('!(([a-z0-9]+)/?)+!', $path)) {
             if (file_exists("$templates$path.md")) {
-                $document = YamlHeader::parseFile("$templates$path.md");
-                $f3->mset($document[0]);
-                $f3->set('MARKDOWN', $document[1]);
+                $doc = YamlHeaderDocument::parseFile("$templates$path.md");
+                $f3->mset($doc->header());
+                $f3->set('MARKDOWN', $doc->body());
 
                 if ($path != 'index') {
                     $breadcrumb = [ '/' => 'Formate'];
