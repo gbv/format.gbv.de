@@ -9,15 +9,17 @@ Kodierungen deren Zielformat auf einer Reihenfolge basiert (beispielsweise eine 
 
 ## Beispiele
 
-Kodierung       | (Ausgangs-)Modell | (Ziel-)Format
-----------------|-------------------|---------------
-PICA XML        | PICA              | XML
-XML Syntax      | XML               | Unicode
-Normalized PICA | PICA              | Bytes
-JSON Syntax     | JSON              | Unicode
-JSON-LD         | RDF               | JSON
-Turtle          | RDF               | Unicode
-UTF-8           | Unicode           | Bytes
+Kodierung              | (Ausgangs-)Modell | (Ziel-)Format
+-----------------------|-------------------|---------------
+[PICA XML](pica/xml)   | [PICA](pica)      | [XML](xml)
+XML Syntax             | [XML](xml)        | Unicode
+Normalized PICA        | [PICA](pica)      | Bytes
+JSON Syntax            | [JSON](json)      | Unicode
+[JSON-LD](rdf/json-ld) | [RDF](rdf)        | [JSON](json)
+[Turtle](rdf/turtle)   | [RDF](rdf)        | Unicode
+UTF-8                  | Unicode           | Bytes
+
+<!--
 
 ## Eigenschaften von Kodierungen
 
@@ -48,3 +50,5 @@ auch als *Normalisierung* bezeichnet. Eine Folge normalisierender Kodierungen
 bis zur Ebene von Bytes ist notwendig um bei Bedarf gleiche Dokumente anhand
 ihrer Prüfsummen identifizieren zu können. In der Praxis ist dies bislang
 jedoch nur für die wenigsten Formate möglich.
+
+-->

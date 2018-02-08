@@ -31,7 +31,8 @@ verzeichnet und können unter `/rdf/lov/{prefix}` mit ihrem jeweiligen Prefix ab
 
 Die wichtigsten RDF-Serialisierungen sind:
 
-* N-Triples
-* Turtle
-* JSON-LD
-* RDF/XML
+* [Turtle](rdf/turtle)
+* [JSON-LD](rdf/json-ld)
+* [RDF/XML](rdf/xml)
+* [N-Triples](rdf/ntriples)
+

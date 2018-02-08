@@ -9,8 +9,6 @@ Auf dieser Seiten sollen verschiedene Datenformate dokumentiert werden.
 </div>
 
 
-## Formate
-
 ### Feldbasierte Formate
 
 * [PICA](pica)
@@ -24,8 +22,8 @@ Auf dieser Seiten sollen verschiedene Datenformate dokumentiert werden.
 
 ### Hierarchische Formate
 
-* JSON
-* XML
+* [JSON](json)
+* [XML](xml)
 
 ### Tabellenbasierte Formate
 
@@ -33,7 +31,7 @@ Auf dieser Seiten sollen verschiedene Datenformate dokumentiert werden.
 * TSV
 * SQL
 
+## Schemas und Codes
 
-## Schemas
-
-Siehe Unterseite zu [Schemas](schema) und Schema-Sprachen.
+Siehe Unterseiten zu [Schemas und Schema-Sprachen](schema) und
+[Kodierungen](code).
