@@ -152,7 +152,7 @@ class Field
      */
     protected function preparePath(bool $pica3 = false)
     {
-        if (preg_match('#schema#', $this->path)) {
+        if ($this->path == '' || $this->path == 'authority') {
             $this->isSchema = true;
             return;
         }

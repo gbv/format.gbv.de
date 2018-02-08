@@ -9,11 +9,17 @@ $f3['CACHE'] = 'folder=../cache/';
 
 $f3['configFile'] = '../config/picahelp.json';
 
-$f3->route('GET /pica/@type', 'Controller\PICA->render');
-$f3->route('GET /pica/@type/*', 'Controller\PICA->render');
-$f3->route('GET /rdf/lov/*', 'Controller\LOV->render');
-$f3->route('GET /rdf/lov*', 'Controller\LOV->render');
-$f3->route('GET /marc/*', 'Controller\MARC->render');
+$routes = [
+    'pica/@type/schema' => 'PICA',
+    'marc/schema' => 'MARC',
+    'rdf/lov' => 'LOV',
+];
+
+foreach ($routes as $path => $controller) {
+    $f3->route("GET /$path", "Controller\\{$controller}->render");
+    $f3->route("GET /$path/*", "Controller\\{$controller}->render");
+}
+
 $f3->route('GET /*', 'Controller\HTML->render');
 
 $f3->run();

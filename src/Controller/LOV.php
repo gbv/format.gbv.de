@@ -19,7 +19,7 @@ class LOV extends HTML
         }
 
         $url = 'http://lov.okfn.org/dataset/lov/api/v2/vocabulary/info?vocab='.$path;
-        $data = @file_get_contents($url);
+        $data = file_get_contents($url);
         $data = json_decode($data, true);
 
         if (!$data || !isset($data['prefix'])) {
@@ -60,7 +60,7 @@ class LOV extends HTML
     public function index($f3)
     {
         $url = 'http://lov.okfn.org/dataset/lov/api/v2/vocabulary/list';
-        $data = @file_get_contents($url);
+        $data = file_get_contents($url);
         $data = json_decode($data, true);
 
         $vocabularies = [];

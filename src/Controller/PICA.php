@@ -2,50 +2,34 @@
 
 namespace Controller;
 
-use GBV\JsonResponse;
 use GBV\DB;
 use GBV\NotFoundException;
 use GBV\RDA\Field;
 
-class PICA
+/**
+ * Controller for PICA+ Schema API.
+ */
+class PICA extends JSON
 {
-
-    public function error($f3)
+    public function data($f3, $params)
     {
-        error_log(print_r($f3['ERROR'], true));
-        $response = new JsonResponse([], $f3['ERROR.code']);
-        $response->send();
-    }
-
-    public function render($f3, $params)
-    {
-        $f3->set('ONERROR', function ($f3) {
-            $this->error($f3);
-        });
-
         $db = new DB($f3['configFile']);
 
-        $type = (string) $params['type'];
-        $path = (string) $params['*'];
+        $type = $params['type'];
+        $path = $params['*'] ?? '';
 
         if ($type == 'rda') {
             try {
                 $field = new Field($path, $db);
 
                 if ($field->isPica3()) {
-                    $f3->reroute('/pica/rda/' . $field->getField());
+                    $f3->reroute("/pica/$type/schema/" . $field->getField());
                 }
 
-                $data = $field->getData();
-
-                $response = new JSONResponse($data, 200);
-
-                $response->send();
+                return $field->getData();
             } catch (NotFoundException $e) {
-                $f3->error(404);
+                return;
             }
-        } else {
-            $f3->error(404);
         }
     }
 }

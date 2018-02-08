@@ -65,6 +65,18 @@ class Field
     }
 
     /**
+     * Return the full schema.
+     */
+    public static function getSchema()
+    {
+        $field = new Field('001');
+        return [
+            'title' => 'MARC21 Schema for bibliographic Data',
+            'fields' => $field->fields,
+        ];
+    }
+
+    /**
      * Returns data
      *
      * @return array

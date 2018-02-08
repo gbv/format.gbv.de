@@ -7,10 +7,6 @@ javascript:
   - /js/demo.js
 ---
 
-<div class="alert alert-warning" role="alert">
-  Die Seite befindet sich noch im Aufbau!
-</div>
-
 **Machine-Readable Cataloging (MARC)** ist das wichtigste Format für den
 Austausch von Daten zwischen Bibliotheken. Die aktuell übliche Form ist MARC21.
 Für verschiedene Anwendungen gibt es unterschiedliche auf MARC basierende
@@ -23,12 +19,12 @@ Formate, beispielsweise MARC für bibliographische Daten und MARC für Normdaten
 
 ## MARC-Schema
 
-Die Spezifikation eines von Péter Király zusammengetragenen MARC-Formats kann
-hier abgerufen werden. Beispiele:
+Die Spezifikation eines von Péter Király zusammengetragenen MARC-Formats für
+bibliographische Daten kann hier abgerufen werden. Beispiele:
 
-* [schema](Schema)
-* <a href="marc/110" class="demo">110</a>
-* <a href="marc/130" class="demo">130</a>
+* [schema](marc/schema)
+* <a href="marc/schema/110" class="demo">110</a>
+* <a href="marc/schema/130" class="demo">130</a>
 * ...
 
 <div id="demo" style="display: none">
