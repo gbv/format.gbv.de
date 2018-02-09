@@ -1,23 +1,60 @@
 ---
 title: Kodierungen
 shorttitle: Codes
+javascript:
+    - //code.jquery.com/jquery-1.12.4.js
+    - //cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js
+    - //cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js
+    - |
+        $(document).ready(function() {
+            $('#codings').DataTable({ paging: false, search: false, info: false });
+        } );
+css: 
+    - //cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css
 ---
 
-**Kodierungen** sind Vorschriften zur Abbildung eines Datenformates oder -Modells in einem anderen Datenformat.
+**Kodierungen** sind Vorschriften zur Abbildung eines Datenformates oder
+-Modells in einem anderen Datenformat. Kodierungen deren Zielformat auf einer
+Zeichenkette oder anderen Art von Reihenfolge basiert werden auch
+**Serialisierung** genannt. 
 
-Kodierungen deren Zielformat auf einer Reihenfolge basiert (beispielsweise eine Folge von Zeichen) werden auch **Serialisierung** genannt. 
+## Liste von Kodierungen
 
-## Beispiele
+Die folgenden Kodierungen von Ausgangs-Modell zu Ziel-Format sind auf dieser Seite dokumentiert.
 
-Kodierung              | (Ausgangs-)Modell | (Ziel-)Format
------------------------|-------------------|---------------
-[PICA XML](pica/xml)   | [PICA](pica)      | [XML](xml)
-XML Syntax             | [XML](xml)        | Unicode
-Normalized PICA        | [PICA](pica)      | Bytes
-JSON Syntax            | [JSON](json)      | Unicode
-[JSON-LD](rdf/json-ld) | [RDF](rdf)        | [JSON](json)
-[Turtle](rdf/turtle)   | [RDF](rdf)        | Unicode
-UTF-8                  | Unicode           | Bytes
+<phtml>
+<table class="table table-bordered table-striped" id="codings">
+  <thead>
+    <tr>
+      <th>Kodierung</th>
+      <th>Modell</th>
+      <th>Format</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php 
+        $codes = \GBV\Codings::fromDir('../templates')->codings();
+        foreach ($codes as $codings) {
+            echo "<tr>";
+            foreach ($codings as $coding) {
+                echo "<td>";
+                if ($coding['local']) {
+                    echo '<a href="'
+                        .htmlspecialchars($coding['local'])
+                        .'">'
+                        .htmlspecialchars($coding['title'])
+                        .'</a>';
+                } else {
+                    echo htmlspecialchars($coding['title']);
+                }
+                echo "</td>";
+            }
+            echo "</tr>";
+        }
+    ?>
+  </tbody>
+</table>
+</phtml>
 
 <!--
 

@@ -1,7 +1,10 @@
 code, model, format
 pica/xml, pica, xml
 xml, xml, unicode
-pica/normalized, pica, bytes
+pica/json, pica, json
 json, json, unicode
 rdf/json-ld, rdf, json
 rdf/turtle, rdf, unicode
+rdf/ntriples, rdf, unicode
+rdf/xml, rdf, xml
+utf-8, unicode, bytes

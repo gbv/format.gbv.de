@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?=$BASE?>/css/boostrap4-vzg.css">
+  <?php foreach (($css ?? []) as $href) {
+    echo "  <link rel='stylesheet' href='$href'>\n";
+  } ?>
   <title><?=$shorttitle ?? $title?></title>
 </head>
 <header>
@@ -29,8 +32,8 @@
 <main role="main" class="container">
 <?php if ($VIEW) {
     echo \View::instance()->render($VIEW);
-} elseif ($MARKDOWN) {
-    echo Parsedown::instance()->text(View::instance()->raw($MARKDOWN));
+} elseif ($BODY) {
+    echo \View::instance()->raw($BODY);
 } ?>
 <?php if ($wikidata || $homepage) { ?>
     <div class="alert alert-info" role="alert">
@@ -55,11 +58,14 @@
 </footer>
 </body>
 <?php
-foreach (($javascript ?? []) as $src) {
-    if (!preg_match('!^(https:)?//!', $src)) {
-        $src = "$BASE/$src";
+foreach (($javascript ?? []) as $js) {
+    if (preg_match('/[\r\n]/', $js)) {
+        echo "<script>\n$js</script>\n";
+    } elseif (!preg_match('!^(https:)?//!', $js)) {
+        echo "<script src=\"$BASE/$js\"></script>\n";
+    } else {
+        echo "<script src=\"$js\"></script>\n";
     }
-    echo "<script src=\"$src\"></script>";
 }
 ?>
 </html>

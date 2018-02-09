@@ -24,6 +24,6 @@ Folgende PICA-Formate können anhand ihrer Katalogisierungsrichtlinien hier übe
 * Normalisiertes PICA+ (Datensätze mit Bytecode `0A`, Felder mit `1E` und Unterfelder mit `1F` getrennt)
 * Binäres PICA+ (Datensätze mit Bytecode `1D`, Felder mit `1E` und Unterfelder mit `1F` getrennt)
 * [PICA XML](pica/xml)
-* PICA/JSON ([siehe hier](https://github.com/gbv/PICA-Data#description))
+* [PICA JSON](pica/json)
 * PPXML (XML-Variante der Deutschen Nationalbibliothek)
 

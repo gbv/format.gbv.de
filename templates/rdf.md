@@ -31,8 +31,22 @@ verzeichnet und können unter `/rdf/lov/{prefix}` mit ihrem jeweiligen Prefix ab
 
 Die wichtigsten RDF-Serialisierungen sind:
 
-* [Turtle](rdf/turtle)
-* [JSON-LD](rdf/json-ld)
-* [RDF/XML](rdf/xml)
-* [N-Triples](rdf/ntriples)
+<phtml>
+<?php
 
+$codings = \GBV\Codings::fromDir('../templates')->codings([ 1 => 'rdf' ]);
+if (count($codings)) {
+    echo "<ul>";
+    foreach ($codings as $c) {
+        echo '<li>';
+        echo '<a href="'
+            .htmlspecialchars($c[0]['local'])
+            .'">'
+            .htmlspecialchars($c[0]['title'])
+            .'</a>';
+        echo '</li>';
+    }
+    echo "</ul>";
+} 
+?>
+</phtml>
