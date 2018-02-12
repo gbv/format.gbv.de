@@ -3,6 +3,7 @@
 namespace Controller;
 
 use GBV\YamlHeaderDocument;
+use Tags;
 
 /**
  * Show HTML based on Markdown files.
@@ -21,16 +22,28 @@ class HTML
         $this->page($f3, $params);
 
         if ($f3['MARKDOWN']) {
+            $html = \Parsedown::instance()->text($f3['MARKDOWN']);
+
+            // process custom tags
+            $tagnames = implode('|', Tags::NAMES);
             $f3['BODY'] = preg_replace_callback(
-                '!<phtml>(.*?)</phtml>!s',
+                "!<(?'tag'$tagnames)(?'attr'[^>]*?)(/>|>(?'content'.*?)</(?P=tag)>)!s",
                 function ($match) {
-                    $php = '?>' . $match[1] . '<?php ';
-                    ob_start();
-                    eval($php);    // EVIL EVAL!
-                    return ob_get_clean();
+                    $xml = '<' . $match['tag'] . $match['attr'] . '/>';
+                    $xml = new \SimpleXMLElement($xml);
+                    $elem = json_decode(json_encode($xml), true);
+                    return call_user_func(
+                        "Tags::".$match['tag'],
+                        [
+                            0 => $match['content'] ?? '',
+                            '@attrib' => $elem['@attributes']
+                        ]
+                    );
                 },
-                \Parsedown::instance()->text($f3['MARKDOWN'])
+                $html
             );
+
+            // clean up tables
             $f3['BODY'] = str_replace('<table>', '<table class="table">', $f3['BODY']);
             $f3['BODY'] = preg_replace(
                 '!<thead>\s*<tr>\s*(<th></th>\s*)*</tr>\s*</thead>!s',

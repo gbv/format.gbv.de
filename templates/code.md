@@ -56,6 +56,7 @@ Die folgenden Kodierungen von Ausgangs-Modell zu Ziel-Format sind auf dieser Sei
 </table>
 </phtml>
 
+
 <!--
 
 ## Eigenschaften von Kodierungen

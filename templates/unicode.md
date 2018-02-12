@@ -11,3 +11,7 @@ Unicode der Buchstabe `Ä` den Code `U+00C4` was der Zahl 196 entspricht.
 
 Die häufigste Kodierung von Unicode-Zeichenketten als Folge von [Bytes](bytes)
 ist [UTF-8](utf-8).
+
+Unicode bildet die Basis folgender Datenformate:
+
+<codelist format="unicode"/>

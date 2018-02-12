@@ -18,12 +18,9 @@ Folgende PICA-Formate können anhand ihrer Katalogisierungsrichtlinien hier übe
 
 * [RDA von GBV und SWB](pica/rda)
 
-## Serialisierungen
+## Kodierungen
 
-* "Plain" PICA+ (Datensätze und Felder mit Bytecode `0A` und Unterfelder mit `$` getrennt, `$` in Werten wird verdoppelt)
-* Normalisiertes PICA+ (Datensätze mit Bytecode `0A`, Felder mit `1E` und Unterfelder mit `1F` getrennt)
-* Binäres PICA+ (Datensätze mit Bytecode `1D`, Felder mit `1E` und Unterfelder mit `1F` getrennt)
-* [PICA XML](pica/xml)
-* [PICA JSON](pica/json)
-* PPXML (XML-Variante der Deutschen Nationalbibliothek)
+PICA+ wird in verschiedenen Serialisierungen verwendet, die sich alle
+verlustfrei ineinander umwandeln lassen.
 
+<codelist model="pica"/>
