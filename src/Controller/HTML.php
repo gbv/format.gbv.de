@@ -22,7 +22,7 @@ class HTML
 
         if ($f3['MARKDOWN']) {
             $f3['BODY'] = preg_replace_callback(
-                '!<phtml>(.*?)</phtml>!sm',
+                '!<phtml>(.*?)</phtml>!s',
                 function ($match) {
                     $php = '?>' . $match[1] . '<?php ';
                     ob_start();
@@ -30,6 +30,12 @@ class HTML
                     return ob_get_clean();
                 },
                 \Parsedown::instance()->text($f3['MARKDOWN'])
+            );
+            $f3['BODY'] = str_replace('<table>', '<table class="table">', $f3['BODY']);
+            $f3['BODY'] = preg_replace(
+                '!<thead>\s*<tr>\s*(<th></th>\s*)*</tr>\s*</thead>!s',
+                '',
+                $f3['BODY']
             );
         }
 

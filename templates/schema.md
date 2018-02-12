@@ -34,11 +34,11 @@ formuliert.
     </tr>
     <tr>
       <td>MARC</td>
-      <td><a href="schema/fsfs">FSFS</a></td>
+      <td><a href="schema/avram">Avram Schema Language</a></td>
     </tr>
     <tr>
       <td>PICA</td>
-      <td><a href="schema/fsfs">FSFS</a></td>
+      <td><a href="schema/avram">Avram Schema Language</a></td>
     </tr>
     <tr>
       <td>Character Strings</td>

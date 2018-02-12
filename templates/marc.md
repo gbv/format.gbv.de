@@ -19,6 +19,9 @@ Formate, beispielsweise MARC für bibliographische Daten und MARC für Normdaten
 
 ## MARC-Schema
 
+Die [Avram Schema Language](schema/avram) ist eine Sprache zur Beschreibung
+von MARC-basierten Formaten.
+
 Die Spezifikation eines von Péter Király zusammengetragenen MARC-Formats für
 bibliographische Daten kann hier abgerufen werden. Beispiele:
 

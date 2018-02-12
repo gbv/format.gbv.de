@@ -14,6 +14,8 @@ Die RDA-Umsetzung von GBV und SWB kann in Zukunft an dieser Stelle per Webservic
 
 ## Schema-API
 
+*Antwortformat wird noch an die [Avram Schema Language](../schema/avram) angepasst!*
+
 <table class="table">
   <thead>
   <tr>
