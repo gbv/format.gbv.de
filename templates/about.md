@@ -30,3 +30,11 @@ Beteiligt an den Inhalten dieser Seite sind oder waren unter Anderem:
 * Karsten Achterrath (Programmierung)
 * Péter Király (MARC-Schema)
 * VZG und BSZ (K10plus Online-Hilfe)
+* Linked Open Vocabularies (Daten)
+
+## Verwandte Projekte
+
+* [Wikidata](https://www.wikidata.org/)
+* [Just Solve the File Format Problem](http://fileformats.archiveteam.org)
+* [PRONOM file format registry](https://www.nationalarchives.gov.uk/PRONOM/)
+* [Basel Register of Thesauri, Ontologies & Classifications (BARTOC)](https://bartoc.org/)

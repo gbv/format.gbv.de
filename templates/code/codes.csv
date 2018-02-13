@@ -12,3 +12,6 @@ rdf/turtle, rdf, unicode
 rdf/ntriples, rdf, unicode
 rdf/xml, rdf, xml
 utf-8, unicode, bytes
+hjson, json, unicode
+yaml, json, yaml
+yaml, yaml, unicode

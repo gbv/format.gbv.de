@@ -1,5 +1,5 @@
 ---
-title: Formate
+title: Datenformate
 ---
 
 Alle **Datenformate** lassen sich grob in Strukturierungssprachen,
@@ -13,7 +13,7 @@ Tabelle, Graph, Folge, Hierarchie):
 | |
 |
 | [JSON](json), [XML](xml), [SGML](sgml)    | Hierarchisch oder Dokumentenorientiert |
-| [RDF](rdf)                                | Graph- oder Netzwerkbasiert |
+| [RDF](rdf), [YAML](yaml)                  | Graph- oder Netzwerkbasiert |
 | [CSV](csv), TSV, SQL                      | Tabellenbasiert |
 | [INI](ini) | Feldbasiert |
 | [Unicode](unicode), [Bytes](bytes)        | Zeichenkettenbasiert |
@@ -48,6 +48,6 @@ Daten* lassen sich beispielsweise folgende Ebenen unterscheiden:
 * Eine MARC-Kodierungen wie zum Beispiel MARC-XML
 
 <div class="alert alert-warning" role="alert">
-  Die Seite befindet sich noch im Aufbau!
+Die Seite befindet sich noch im Aufbau!
 </div>
 

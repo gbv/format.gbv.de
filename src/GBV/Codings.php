@@ -13,11 +13,6 @@ class Codings
 
     public static $files = []; // TODO: use Cache
 
-    public static $names = [
-        'model' => 1,
-        'format' => 2
-    ];
-
     private function __construct()
     {
     }
@@ -45,7 +40,16 @@ class Codings
             foreach ($this->codes as $coding) {
                 $keep = true;
                 foreach ($select as $name => $value) {
-                    $id = static::$names[$name] ?? '';
+                    if ($name === 'model') {
+                        $id = 1;
+                    } elseif ($name === 'format') {
+                        $id = 2;
+                    } else {
+                        if ($name == 'except' && $value == $coding[0]['local']) {
+                            $keep = false;
+                        }
+                        continue;
+                    }
                     if ($select[$name] !== $coding[$id]['local']) {
                         $keep = false;
                     }
@@ -103,7 +107,7 @@ class Codings
                 && $coding[0]['title'] == $coding[1]['title']) {
                 $coding[0]['title'] .= ' Syntax';
             }
-            $codings->codes[$line[0]] = $coding;
+            $codings->codes[] = $coding;
         }
 
         return $codings;

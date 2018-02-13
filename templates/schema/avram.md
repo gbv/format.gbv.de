@@ -83,8 +83,9 @@ given) or `tag` and `occurrence` connected by `/` (if both fields are given).
 Only one of `positions` (for fixed fields), `subfields` (for variable fields)
 or `types` (for alternatives) is allowed.
 
-The value of `types`, if given, MUST be a JSON array that maps type names to JSON objects
-either all having field `positions` or all having field `subfields`.
+The value of `types`, if given, MUST be a JSON object that maps type names to
+JSON objects either all having field `positions` or all having field
+`subfields`.
 
 In the following example MARC field `007` byte position `00` has the fixed
 value `c` for Electronic resources:
