@@ -8,7 +8,7 @@
   <?php foreach (($css ?? []) as $href) {
     echo "  <link rel='stylesheet' href='$href'>\n";
   } ?>
-  <title><?=$shorttitle ?? $title?></title>
+  <title><?=$short ?? $title?></title>
 </head>
 <header>
   <nav class="navbar navbar-dark navbar-expand">

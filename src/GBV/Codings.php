@@ -22,6 +22,20 @@ class Codings
     {
     }
 
+    public function schemas()
+    {
+        // TODO: read from cache
+        $schemas = [];
+        $files = preg_grep('/\.md$/', scandir('../templates/schema'));
+        foreach ($files as $file) {
+            $metadata = static::metadata(substr($file, 0, -3), '../templates/schema');
+            if ($metadata['for']) {
+                $schemas[$metadata['local']] = $metadata;
+            }
+        }
+        return $schemas;
+    }
+
     public function codings(array $select = [])
     {
         $codings = [];
@@ -44,7 +58,7 @@ class Codings
         return $codings;
     }
 
-    public static function metadata($localName, $base)
+    public static function metadata($localName, $base = '.')
     {
         if (!isset(static::$files[$localName])) {
             $file = "$base/$localName.md";
@@ -53,6 +67,8 @@ class Codings
                 $doc = YamlHeaderDocument::parseFile($file);
                 $meta = $doc->header();
                 $meta['local'] = $localName;
+            } else {
+                error_log("missing file $file");
             }
             static::$files[$localName] = $meta;
         }

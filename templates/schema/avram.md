@@ -1,7 +1,11 @@
 ---
 title: Avram Schema Language
-shorttitle: Avram
+short: Avram
 language: en
+for:
+  - marc
+  - mab
+  - pica 
 ---
 
 **Avram** is a [schema language](../schema) for [MARC](../marc) and related

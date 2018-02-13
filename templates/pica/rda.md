@@ -1,6 +1,6 @@
 ---
 title: RDA-Richtlinien
-shorttitle: RDA
+short: RDA
 javascript:
   - //code.jquery.com/jquery-3.2.1.min.js
   - /js/demo.js

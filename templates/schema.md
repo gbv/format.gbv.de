@@ -1,6 +1,6 @@
 ---
-title: Daten-Schemas und Schema-Sprachen
-shorttitle: Schemas
+title: Schemas und Schemasprachen
+short: Schemas
 ---
 
 Ein **Schema** ist eine formale Beschreibung der Struktur von Daten. Mit einem
@@ -9,45 +9,13 @@ der beschriebenen Struktur entspricht. Dieser Vorgang wird auch als
 *Validierung* bezeichnet.
 
 Die meisten Datenformate sind durch Schemas beschrieben oder lassen sich durch
-Schemas anpassen. Diese Schemas sind üblicherweise in einer Schema-Sprache
+Schemas anpassen. Diese Schemas sind üblicherweise in einer Schemasprache
 formuliert.
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Format</th>
-      <th>Schema-Sprachen</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>JSON</td>
-      <td>JSON Schema</td>
-    </tr>
-    <tr>
-      <td>XML</td>
-      <td>DTD, XML Schema</td>
-    </tr>
-    <tr>
-      <td>RDF</td>
-      <td>RDFS, OWL, SHACL, ShEx</td>
-    </tr>
-    <tr>
-      <td>MARC</td>
-      <td><a href="schema/avram">Avram Schema Language</a></td>
-    </tr>
-    <tr>
-      <td>PICA</td>
-      <td><a href="schema/avram">Avram Schema Language</a></td>
-    </tr>
-    <tr>
-      <td>Character Strings</td>
-      <td>Regular Expressions</td>
-    </tr>
-    <tr>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-  </tbody>
-</table>
+Im Unterschied zu Anwendungsregeln lassen sich mit Schemas nur strukturelle
+Eigenschaften von Daten festlegen.
+
+<php>
+echo \View::instance()->render('schematable.php');
+</php>
 
