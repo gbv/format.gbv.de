@@ -44,7 +44,7 @@ class HTML
             );
 
             // clean up tables
-            $f3['BODY'] = str_replace('<table>', '<table class="table">', $f3['BODY']);
+            $f3['BODY'] = str_replace('<table>', '<table class="table table-bordered">', $f3['BODY']);
             $f3['BODY'] = preg_replace(
                 '!<thead>\s*<tr>\s*(<th></th>\s*)*</tr>\s*</thead>!s',
                 '',

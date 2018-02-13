@@ -2,6 +2,8 @@
 title: Impressum
 ---
 
+Auf dieser Seiten sollen verschiedene Datenformate dokumentiert werden.
+
 Die Formatdatenbank ist ein Angebot der Stabstelle Forschung und Entwicklung
 der [Verbundzentrale des GBV](//www.gbv.de) unter Leitung von Jakob Voß.
 Weitere Angaben zur Anbieterkennzeichnung entnehmen sie bitte dem **[Impressum

@@ -11,7 +11,7 @@ $f3['configFile'] = '../config/picahelp.json';
 
 $routes = [
     'pica/@type/schema' => 'PICA',
-    'marc/schema' => 'MARC',
+    'marc/bibliographic/schema' => 'MARC',
     'rdf/lov' => 'LOV',
 ];
 

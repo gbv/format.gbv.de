@@ -17,17 +17,28 @@ Formate, beispielsweise MARC für bibliographische Daten und MARC für Normdaten
 * MARC21 (binäres Datenformat)
 * MARC21-XML
 
+## MARC-Formate
+
+* MARC 21 für bibliographische Daten
+* MARC 21 für Lokaldaten
+* MARC 21 für Normdaten
+* MARC 21 für Klassifikationen
+* MARC 21 für Community-Informationen
+
+Darüber hinaus gibt es viele weitere Erweiterungen und Abweichungen die erst noch erfasst werden müssen.
+
+
 ## MARC-Schema
 
 Die [Avram Schema Language](schema/avram) ist eine Sprache zur Beschreibung
 von MARC-basierten Formaten.
 
-Die Spezifikation eines von Péter Király zusammengetragenen MARC-Formats für
+Die von Péter Király zusammengetragenen Spezifikation MARC-Formats für
 bibliographische Daten kann hier abgerufen werden. Beispiele:
 
-* [schema](marc/schema)
-* <a href="marc/schema/110" class="demo">110</a>
-* <a href="marc/schema/130" class="demo">130</a>
+* [schema](marc/bibliographic/schema)
+* <a href="marc/bibliographic/schema/110" class="demo">110</a>
+* <a href="marc/bibliographic/schema/130" class="demo">130</a>
 * ...
 
 <div id="demo" style="display: none">
