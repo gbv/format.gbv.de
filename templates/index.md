@@ -10,6 +10,8 @@ Einheiten zu unterteilen und miteinander in Beziehung zu setzen. Jede
 Strukturierungssprache basiert auf einem allgemeinen Ordnungsprinzip (Felder,
 Tabelle, Graph, Folge, Hierarchie):
 
+<!-- see =Q24451526 -->
+
 | |
 |
 | [JSON](json), [XML](xml), [SGML](sgml)    | Hierarchisch oder Dokumentenorientiert |

@@ -1,7 +1,7 @@
 ---
 title: Shape Expressions
 short: ShEx
-url: https://www.w3.org/community/shex/
+homepage: https://www.w3.org/community/shex/
 wikidata: Q29377880 
 for: rdf
 ---

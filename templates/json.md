@@ -1,7 +1,7 @@
 ---
 title: JSON
 wikidata: Q2063
-url: https://json.org/
+homepage: https://json.org/
 ---
 
 **JavaScript Object Notation (JSON)** ist ein hierarchisches Datenformat, das

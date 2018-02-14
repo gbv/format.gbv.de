@@ -4,7 +4,7 @@ $codings = \GBV\Codings::fromDir('../templates');
 $schemas = $codings->schemas();
 
 ?>
-<table class="table">
+<table class="table table-bordered sortable">
   <thead>
     <tr>
       <th>Schemasprache</th>

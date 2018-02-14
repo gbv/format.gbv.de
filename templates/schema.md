@@ -1,6 +1,17 @@
 ---
 title: Schemas und Schemasprachen
 short: Schemas
+javascript:
+    - //code.jquery.com/jquery-1.12.4.js
+    - //cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js
+    - //cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js
+    - |
+        $(document).ready(function() {
+            $('.sortable').DataTable({ paging: false, search: false, info: false });
+        } );
+css: 
+    - //cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css
+
 ---
 
 Ein **Schema** ist eine formale Beschreibung der Struktur von Daten. Mit einem

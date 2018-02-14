@@ -7,7 +7,7 @@ javascript:
     - //cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js
     - |
         $(document).ready(function() {
-            $('#codings').DataTable({ paging: false, search: false, info: false });
+            $('.sortable').DataTable({ paging: false, search: false, info: false });
         } );
 css: 
     - //cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css
@@ -23,7 +23,7 @@ Zeichenkette oder anderen Art von Reihenfolge basiert werden auch
 Die folgenden Kodierungen von Ausgangs-Modell zu Ziel-Format sind auf dieser Seite dokumentiert.
 
 <phtml>
-<table class="table table-bordered table-striped" id="codings">
+<table class="table table-bordered table-striped sortable">
   <thead>
     <tr>
       <th>Kodierung</th>

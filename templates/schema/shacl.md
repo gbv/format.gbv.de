@@ -1,7 +1,7 @@
 ---
 title: Shapes Constraint Language 
 short: SHACL
-url: https://www.w3.org/TR/shacl/
+homepage: https://www.w3.org/TR/shacl/
 wikidata: Q29377821 
 for: rdf
 ---
