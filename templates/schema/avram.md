@@ -177,6 +177,8 @@ Example:
 
 ## See also
 
+* [Henriette D. Avram (1919-2006)](https://en.wikipedia.org/wiki/Henriette_Avram) devised the first automated cataloging system: Machine Readable Cataloging (MARC) in the 1960s.
+
 * <http://pkiraly.github.io/2018/01/28/marc21-in-json/>
 * <https://github.com/gbv/format.gbv.de/wiki/Schema>
 * [MARCspec - A common MARC record path language](http://marcspec.github.io/MARCspec/marc-spec.html)

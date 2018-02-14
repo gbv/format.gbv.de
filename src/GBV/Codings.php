@@ -106,6 +106,7 @@ class Codings
             if ($coding[0]['local']
                 && $coding[0]['title'] == $coding[1]['title']) {
                 $coding[0]['title'] .= ' Syntax';
+                // $coding[1]['title'] .= ' Modell';
             }
             $codings->codes[] = $coding;
         }

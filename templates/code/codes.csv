@@ -15,3 +15,5 @@ utf-8, unicode, bytes
 hjson, json, unicode
 yaml, json, yaml
 yaml, yaml, unicode
+lido, lido, xml
+museumdat, museumdat, xml

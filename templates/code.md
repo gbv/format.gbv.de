@@ -42,8 +42,12 @@ Die folgenden Kodierungen von Ausgangs-Modell zu Ziel-Format sind auf dieser Sei
                     echo '<a href="'
                         .htmlspecialchars($coding['local'])
                         .'">'
-                        .htmlspecialchars($coding['title'])
-                        .'</a>';
+                        .htmlspecialchars($coding['title']);
+
+                    if (isset($coding['short'])) {
+                        echo " (" . $coding['short'] . ")";
+                    }
+                    echo '</a>';
                 } else {
                     echo htmlspecialchars($coding['title']);
                 }

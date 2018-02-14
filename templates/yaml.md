@@ -1,6 +1,5 @@
 ---
 title: YAML
-short: YAML
 wikidata: Q281876
 homepage: http://www.yaml.org/
 ---
