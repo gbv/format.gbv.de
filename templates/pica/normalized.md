@@ -1,5 +1,7 @@
 ---
 title: Normalisiertes PICA
+model: pica
+base: bytes
 ---
 
 **Normalisiertes PICA** ist eine Kodierung von [PICA+](../pica). Datensätze

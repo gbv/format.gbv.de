@@ -1,5 +1,7 @@
 ---
 title: PICA JSON
+model: pica
+base: json
 ---
 
 **PICA JSON** ermöglicht die Kodierung von [PICA+ Daten](../pica) in

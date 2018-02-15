@@ -1,18 +1,15 @@
 <?php
 
-$codings = \GBV\Codings::fromDir('../templates')->codings($select ?? []);
+$formats = new \GBV\Formats('../templates');
+$codings = $formats->codings([ 'model' => $model, 'base' => $base ]);
 
-if (count($codings)) { ?>
-<ul>
-<?php foreach ($codings as $c) { 
-    $title = $c[0]['title'];
-    if (isset($c[0]['short'])) {
-        $title = "$title (" . $c[0]['short'] . ')';
+if (count($codings)) {
+    echo $content;
+    echo '<ul>';
+    foreach ($codings as $c) {
+        echo '<li>';
+        echo \View::instance()->render('pagelink.php','',['meta' => $c]);
+        echo '</li>';
     }
-?>
-  <li>
-    <a href="<?=$c[0]['local']?>"><?=$title?></a>
-  </li>
-<?php } ?>
-</ul>
-<?php }
+    echo '</ul>';
+}

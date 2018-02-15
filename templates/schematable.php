@@ -1,7 +1,6 @@
 <?php
 
-$codings = \GBV\Codings::fromDir('../templates');
-$schemas = $codings->schemas();
+$formats = new \GBV\Formats('../templates');
 
 ?>
 <table class="table table-bordered sortable">
@@ -12,23 +11,24 @@ $schemas = $codings->schemas();
     </tr>
   </thead>
   <tbody>
-<?php foreach ($schemas as $schema) {
-    $formats = $schema['for'] ?? [];
-    $formats = is_array($formats) ? $formats : [ $formats ];
-?>
+<?php foreach ($formats->listPages('schema/') as $page) {
+    $schema = $formats->pageMeta($page); ?>
   <tr>
     <td>
-      <a href="schema/<?=$schema['local']?>">
-        <?=$schema['title']?>
-        <?=isset($schema['short']) ? ' ('.$schema['short'].')' : ''?>
-      </a>
+    <?= \View::instance()->render('pagelink.php','',['meta'=>$schema]) ?>
     </td>
-    <td><?=implode(', ', array_map(
-        function($format) use ($codings) {
-            $format = $codings->metadata($format, '../templates');
-            $title = $format['short'] ?? $format['title'];
-            return "<a href='".$format['local']."'>$title</a>";
-        }, $formats))?></td>
+    <td><?php
+    
+    $for = $schema['for'] ?? [];
+    $for = is_array($for) ? $for : [ $for ];
+
+    echo implode(', ', array_map(
+        function($format) use ($formats) {
+            $meta = $formats->pageMeta($format);
+            return \View::instance()->render('pagelink.php','',['meta'=>$meta]); 
+        }, $for));
+?>
+</td>
   </tr>
 <?php } ?>
   </tbody>

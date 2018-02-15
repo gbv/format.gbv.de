@@ -2,6 +2,8 @@
 title: YAML
 wikidata: Q281876
 homepage: http://www.yaml.org/
+base: unicode
+model: yaml
 ---
 
 **YAML** (für "YAML Ain’t Markup Language") erweitert Syntax und Modell von

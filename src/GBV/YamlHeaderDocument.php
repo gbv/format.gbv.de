@@ -8,11 +8,13 @@ class YamlHeaderDocument
 {
     protected $header;
     protected $body;
+    protected $file;
 
-    private function __construct($yaml, $body)
+    private function __construct($file, $yaml, $body)
     {
+        $this->file   = $file;
         $this->header = Yaml::parse($yaml);
-        $this->body = $body;
+        $this->body   = $body;
     }
 
     /**
@@ -30,6 +32,7 @@ class YamlHeaderDocument
         }
 
         return new YamlHeaderDocument(
+            $file,
             trim($parts[1]),
             implode(PHP_EOL . "---" . PHP_EOL, array_slice($parts, 2))
         );
@@ -47,6 +50,11 @@ class YamlHeaderDocument
     public function body(): string
     {
         return $this->body;
+    }
+
+    public function file(): string
+    {
+        return $this->file;
     }
 
     public function __get($key)

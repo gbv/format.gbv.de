@@ -6,15 +6,23 @@
 class Tags
 {
 
-    const NAMES = ['codelist', 'phtml', 'php' ];
+    const NAMES = ['codelist', 'codetable', 'schemalist', 'phtml', 'php' ];
 
-    public static function codelist($args)
+    public static function exists($name)
     {
-        return \View::instance()->render(
-            'codelist.php',
-            'text/html',
-            [ 'select' => $args['@attrib'] ]
-        );
+        return in_array($name, self::NAMES);
+    }
+
+    /**
+     * Execute defined tag by calling its template.
+     */
+    public static function __callStatic($name, $args = [])
+    {
+        if (self::exists($name)) {
+            $vars = $args[0]['@attrib'];
+            $vars['content'] = $args[0][0] ?? '';
+            return \View::instance()->render("$name.php", "text/html", $vars);
+        }
     }
 
     public static function phtml($args)

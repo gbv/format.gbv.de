@@ -1,5 +1,7 @@
 ---
 title: Binäres PICA
+model: pica
+base: bytes
 ---
 
 **Binäres PICA** ist eine Kodierung von [PICA+](../pica). Datensätze werden

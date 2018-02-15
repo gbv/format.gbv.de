@@ -14,4 +14,4 @@ ist [UTF-8](utf-8).
 
 Unicode bildet die Basis folgender Datenformate:
 
-<codelist format="unicode"/>
+<codelist base="unicode"/>

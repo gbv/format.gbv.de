@@ -9,8 +9,6 @@ Prädikat und Objekt.  Das RDF-Format bildet die Grundlage des so genannten
 Semantic Web und von Linked (Open) Data. RDF-Daten können in verschiedenen
 *Serialisierungen* vorkommen, die sich verlustfrei ineinander umwandeln lassen.
 
-## RDF-Formate
-
 RDF-Formate basieren auf RDF-Ontologien oder werden mit Ontologien
 gleichgesetzt. Eine Besonderheit von RDF ist dass sich Daten verschiedener
 Ontologien kombinieren lassen.
@@ -27,7 +25,9 @@ verzeichnet und können unter `/rdf/lov/{prefix}` mit ihrem jeweiligen Prefix ab
 
 [Linked Open Vocabularies (LOV)]: http://lov.okfn.org/
 
-## RDF-Serialisierungen
+Zur Spezifikation von Ontologien und RDF-Daten eignen sich:
+
+<schemalist for="rdf"/>
 
 Die wichtigsten RDF-Serialisierungen sind:
 

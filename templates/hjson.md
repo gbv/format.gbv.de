@@ -3,6 +3,8 @@ title: Human JSON
 short: Hjson
 homepage: https://hjson.org/
 wikidata: Q28757970 
+model: json
+base: unicode
 ---
 
 **Hjson** ist eine Erweiterung der Syntax von [JSON](json) um JSON-Daten

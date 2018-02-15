@@ -2,6 +2,7 @@
 title: INI-Format
 short: INI
 wikidata: Q1141412
+model: ini
 ---
 
 Das INI-Format wird häufig zur Konfiguration von Anwendungen verwendet. Im

@@ -1,5 +1,7 @@
 ---
 title: PICA Plain
+model: pica
+base: bytes
 ---
 
 **PICA Plain** ist eine leicht lesbare Kodierung von [PICA+](../pica). Datensätze und Felder werden durch Zeilenumbrüche (Bytecode `0A`) getrennt und Unterfelder mit `$` eingeleitet.

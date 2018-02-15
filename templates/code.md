@@ -22,43 +22,7 @@ Zeichenkette oder anderen Art von Reihenfolge basiert werden auch
 
 Die folgenden Kodierungen von Ausgangs-Modell zu Ziel-Format sind auf dieser Seite dokumentiert.
 
-<phtml>
-<table class="table table-bordered table-striped sortable">
-  <thead>
-    <tr>
-      <th>Kodierung</th>
-      <th>Modell</th>
-      <th>Format</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php 
-        $codes = \GBV\Codings::fromDir('../templates')->codings();
-        foreach ($codes as $codings) {
-            echo "<tr>";
-            foreach ($codings as $coding) {
-                echo "<td>";
-                if ($coding['local']) {
-                    echo '<a href="'
-                        .htmlspecialchars($coding['local'])
-                        .'">'
-                        .htmlspecialchars($coding['title']);
-
-                    if (isset($coding['short'])) {
-                        echo " (" . $coding['short'] . ")";
-                    }
-                    echo '</a>';
-                } else {
-                    echo htmlspecialchars($coding['title']);
-                }
-                echo "</td>";
-            }
-            echo "</tr>";
-        }
-    ?>
-  </tbody>
-</table>
-</phtml>
+<codetable/>
 
 
 <!--
