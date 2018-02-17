@@ -28,12 +28,34 @@ class Formats
         }
     }
 
+    public function findPages(array $criteria = [])
+    {
+        foreach ($this->listPages() as $page) {
+            if ($this->pageMatch($page, $criteria)) {
+                yield $this->pageMeta($page);
+            }
+        }
+    }
+
+    public function pageMatch(string $page, array $criteria = [])
+    {
+        $meta = $this->pageMeta($page);
+        foreach ($criteria as $field => $value) {
+            $field = $meta[$field] ?? null;
+            if (is_array($field) ? in_array($value, $field) : $field === $value) {
+                continue;
+            }
+            return false;
+        }
+        return true;
+    }
+
     protected function loadPage(string $page)
     {
         if (preg_match('!^' . self::NAME_PATTERN .'$!', $page)) {
             $file = $this->base.$page . '.md';
             if (file_exists($file)) {
-                return YamlHeaderDocument::parseFile($file);
+                return new YamlHeaderFile($file);
             }
         }
     }
@@ -50,7 +72,7 @@ class Formats
     {
         $data = $this->page($page);
         if ($data) {
-            $data = $data->header();
+            $data = $data->header;
         }
         $data['page'] = $page;
         return $data;

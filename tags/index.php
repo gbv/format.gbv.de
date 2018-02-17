@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?=$BASE?>/css/boostrap4-vzg.css">
-  <?php foreach (($css ?? []) as $href) {
+<?php
+foreach (($css ?? []) as $href) {
     echo "  <link rel='stylesheet' href='$href'>\n";
-  } ?>
+}
+?>
   <title><?=$short ?? $title?></title>
 </head>
 <header>
@@ -30,23 +32,14 @@
   </nav>
 </header>
 <main role="main" class="container">
-<?php if ($VIEW) {
+<?php
+if ($VIEW) {
     echo \View::instance()->render($VIEW);
 } elseif ($BODY) {
     echo \View::instance()->raw($BODY);
-} ?>
-<?php if ($wikidata || $homepage) { ?>
-    <div class="alert alert-info" role="alert">
-    ➜ Weitere Informationen zu <?=$title?>
-    <?php if ($homepage) { ?>
-      <a href="<?=$homepage?>">auf der Homepage</a>
-    <?php } ?>
-    <?=($wikidata && $homepage) ? ' und ' : ''?>
-    <?php if ($wikidata) { ?>
-      <a href="https://tools.wmflabs.org/hub/<?=$wikidata?>">in Wikipedia/Wikidata</a>
-    <?php } ?>
-    </div>
-<?php } ?>
+}
+include 'seealso.php';
+?>
 </main>
 <footer class="footer">
   <div class="container-fluid text-secondary">

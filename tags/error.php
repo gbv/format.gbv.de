@@ -5,5 +5,5 @@ $messages = [
 ];
 ?>
 <div class="alert alert-warning" role="alert">
-  <?=$messages[$ERROR['code']] ?? $message[500]?>
+    <?=$messages[$ERROR['code']] ?? $message[500]?>
 </div>

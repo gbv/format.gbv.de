@@ -24,7 +24,6 @@ Die folgenden Kodierungen von Ausgangs-Modell zu Ziel-Format sind auf dieser Sei
 
 <codetable/>
 
-
 <!--
 
 ## Eigenschaften von Kodierungen

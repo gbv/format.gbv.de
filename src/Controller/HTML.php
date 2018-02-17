@@ -2,16 +2,15 @@
 
 namespace Controller;
 
-use GBV\YamlHeaderDocument;
+use GBV\YamlHeaderFile;
 use Tags;
 
 /**
  * Show HTML based on Markdown files.
- *
- * Markdown files must exist in the templates (`UI`) directory.
  */
 class HTML
 {
+    public $root = '../pages/';
 
     public function render($f3, $params)
     {
@@ -19,26 +18,25 @@ class HTML
             $this->error($f3);
         };
 
+        $formats = new \GBV\Formats('../pages');
+        $tags = new Tags('../tags', ['formats' => $formats]);
+
         $this->page($f3, $params);
 
         if ($f3['MARKDOWN']) {
             $html = \Parsedown::instance()->text($f3['MARKDOWN']);
 
             // process custom tags
-            $tagnames = implode('|', Tags::NAMES);
+            $tagnames = implode('|', $tags->names());
             $f3['BODY'] = preg_replace_callback(
                 "!<(?'tag'$tagnames)(?'attr'[^>]*?)(/>|>(?'content'.*?)</(?P=tag)>)!s",
-                function ($match) {
+                function ($match) use ($tags) {
                     $xml = '<' . $match['tag'] . $match['attr'] . '/>';
                     $xml = new \SimpleXMLElement($xml);
                     $elem = json_decode(json_encode($xml), true);
-                    return call_user_func(
-                        "Tags::".$match['tag'],
-                        [
-                            0 => $match['content'] ?? '',
-                            '@attrib' => $elem['@attributes']
-                        ]
-                    );
+                    $vars = $elem['@attributes'];
+                    $vars['content'] = $match['content'] ?? '';
+                    return $tags->call($match['tag'], $vars);
                 },
                 $html
             );
@@ -80,12 +78,12 @@ class HTML
             $path = 'index';
         }
 
-        $templates = $f3['UI'];
         if (preg_match('!(([a-z0-9]+)/?)+!', $path)) {
-            if (file_exists("$templates$path.md")) {
-                $doc = YamlHeaderDocument::parseFile("$templates$path.md");
-                $f3->mset($doc->header());
-                $f3['MARKDOWN'] = $doc->body();
+            $file = $this->root .  "$path.md";
+            if (file_exists($file)) {
+                $doc = new YamlHeaderFile($file);
+                $f3->mset($doc->header);
+                $f3['MARKDOWN'] = $doc->body;
 
                 if ($path != 'index') {
                     $breadcrumb = [ '/' => 'Formate'];

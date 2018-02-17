@@ -1,41 +1,44 @@
 <?php declare(strict_types=1);
 
-/**
- * Custom F3 Template tags.
- */
 class Tags
 {
+    protected $files;
+    protected $globals;
 
-    const NAMES = ['codelist', 'codetable', 'schemalist', 'phtml', 'php' ];
-
-    public static function exists($name)
+    public function __construct(string $path, array $globals = [])
     {
-        return in_array($name, self::NAMES);
-    }
-
-    /**
-     * Execute defined tag by calling its template.
-     */
-    public static function __callStatic($name, $args = [])
-    {
-        if (self::exists($name)) {
-            $vars = $args[0]['@attrib'];
-            $vars['content'] = $args[0][0] ?? '';
-            return \View::instance()->render("$name.php", "text/html", $vars);
+        $this->files = [];
+        foreach (new DirectoryIterator($path) as $file) {
+            $name = $file->getFilename();
+            if (preg_match('/^([a-z][a-z0-9]+)\.php$/', $name, $match)) {
+                $this->files[$match[1]] = $file->getPathname();
+            }
         }
+
+        $globals['TAGS'] = $this;
+        $this->globals = $globals;
     }
 
-    public static function phtml($args)
+    public function names(): array
     {
-        $html = $args[0] ?? '';
-        return static::php([ 0 => "?>$html<?php " ]);
+        return array_keys($this->files);
     }
 
-    public static function php($args)
+    public function call(string $name, array $args = [])
     {
-        $php = $args[0] ?? '';
-        ob_start();
-        eval($php); // EVIL!
-        return ob_get_clean();
+        $_file = $this->files[$name] ?? null;
+        if ($_file) {
+            foreach ($args as $name => $value) {
+                if (preg_match('/^[a-z][a-z0-9_]*$/i', $name)) {
+                    ${$name} = $value;
+                }
+            }
+            foreach ($this->globals as $name => $value) {
+                ${$name} = $value;
+            }
+            ob_start();
+            include $_file;
+            return ob_get_clean();
+        }
     }
 }

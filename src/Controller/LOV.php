@@ -56,34 +56,4 @@ class LOV extends HTML
         // TODO: add incoming and outgoing links
         // TODO: add equivalence to Wikidata and BARTOC
     }
-
-    public function index($f3)
-    {
-        $url = 'http://lov.okfn.org/dataset/lov/api/v2/vocabulary/list';
-        $data = file_get_contents($url);
-        $data = json_decode($data, true);
-
-        $vocabularies = [];
-        foreach ($data as $voc) {
-            $prefix = $voc['prefix'];
-            $vocabularies[$prefix] = [
-                'prefix' => $prefix,
-                'title' => $voc['titles'][0]['value']
-            ];
-        }
-        ksort($vocabularies);
-
-        $f3['breadcrumb'] = [
-            $f3->get('BASE') => 'Formate',
-            '../../rdf' => 'RDF'
-        ];
-        $f3['VIEW'] = 'rdf/lov.php';
-
-        $f3->mset([
-            'title' => 'Linked Open Vocabularies',
-            'wikidata' => 'Q39392701',
-            'homepage' => 'http://lov.okfn.org/',
-            'vocabularies' => $vocabularies
-        ]);
-    }
 }

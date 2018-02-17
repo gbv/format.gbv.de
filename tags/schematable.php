@@ -1,8 +1,3 @@
-<?php
-
-$formats = new \GBV\Formats('../templates');
-
-?>
 <table class="table table-bordered sortable">
   <thead>
     <tr>
@@ -15,7 +10,7 @@ $formats = new \GBV\Formats('../templates');
     $schema = $formats->pageMeta($page); ?>
   <tr>
     <td>
-    <?= \View::instance()->render('pagelink.php','',['meta'=>$schema]) ?>
+    <?= $TAGS->call('pagelink', ['meta'=>$schema]) ?>
     </td>
     <td><?php
     
@@ -23,10 +18,12 @@ $formats = new \GBV\Formats('../templates');
     $for = is_array($for) ? $for : [ $for ];
 
     echo implode(', ', array_map(
-        function($format) use ($formats) {
+        function ($format) use ($formats, $TAGS) {
             $meta = $formats->pageMeta($format);
-            return \View::instance()->render('pagelink.php','',['meta'=>$meta]); 
-        }, $for));
+            return $TAGS->call('pagelink', ['meta'=>$meta]);
+        },
+        $for
+    ));
 ?>
 </td>
   </tr>

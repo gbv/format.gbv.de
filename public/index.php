@@ -3,7 +3,7 @@
 require_once('../vendor/autoload.php');
 
 $f3 = Base::instance();
-$f3['UI'] = '../templates/';
+$f3['UI'] = '../tags/';
 $f3['AUTOLOAD'] = '../src/';
 $f3['CACHE'] = 'folder=../cache/';
 
@@ -12,7 +12,6 @@ $f3['configFile'] = '../config/picahelp.json';
 $routes = [
     'pica/@type/schema' => 'PICA',
     'marc/bibliographic/schema' => 'MARC',
-    'rdf/lov' => 'LOV',
 ];
 
 foreach ($routes as $path => $controller) {
@@ -20,6 +19,7 @@ foreach ($routes as $path => $controller) {
     $f3->route("GET /$path/*", "Controller\\{$controller}->render");
 }
 
+$f3->route("GET /rdf/lov/*", "Controller\\LOV->render");
 $f3->route('GET /*', 'Controller\HTML->render');
 
 $f3->run();

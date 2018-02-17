@@ -4,7 +4,9 @@
   
   <!-- PHP PSR-2 Coding Standards
        http://www.php-fig.org/psr/psr-2/ -->
-  <rule ref="PSR2"/>
+  <rule ref="PSR2">
+    <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace"/>
+  </rule>
 
   <file>src</file>
   <file>public</file>

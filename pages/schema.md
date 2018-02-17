@@ -26,7 +26,4 @@ formuliert.
 Im Unterschied zu Anwendungsregeln lassen sich mit Schemas nur strukturelle
 Eigenschaften von Daten festlegen.
 
-<php>
-echo \View::instance()->render('schematable.php');
-</php>
-
+<schematable/>

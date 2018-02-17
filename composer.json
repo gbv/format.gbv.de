@@ -23,9 +23,9 @@
     }
   },
   "scripts": {
-    "style": "./vendor/bin/phpcbf src public",
+    "style": "./vendor/bin/phpcbf src tags public",
     "test": [
-      "vendor/bin/phpcs src public"
+      "vendor/bin/phpcs src tags public"
     ]
   },
   "require-dev": {
