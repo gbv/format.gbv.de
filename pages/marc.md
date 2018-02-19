@@ -4,7 +4,7 @@ wikidata: Q722609
 homepage: https://www.loc.gov/marc/
 javascript:
   - //code.jquery.com/jquery-3.2.1.min.js
-  - /js/demo.js
+  - js/demo.js
 ---
 
 **Machine-Readable Cataloging (MARC)** ist das wichtigste Format für den

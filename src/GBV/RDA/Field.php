@@ -128,7 +128,6 @@ class Field
      */
     protected function checkPath()
     {
-        $this->path = trim($this->path, '/');
         $this->setType();
         $this->preparePath();
         if (empty($this->field) && strlen($this->path) > 0 && $this->isSchema === false) {
@@ -152,7 +151,8 @@ class Field
      */
     protected function preparePath(bool $pica3 = false)
     {
-        if ($this->path == '' || $this->path == 'authority') {
+        error_log($this->path);
+        if ($this->path == 'schema' || $this->path == 'authority/schema') {
             $this->isSchema = true;
             return;
         }

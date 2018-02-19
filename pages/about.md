@@ -34,7 +34,11 @@ Beteiligt an den Inhalten dieser Seite sind oder waren unter Anderem:
 
 ## Verwandte Projekte
 
-* [Wikidata](https://www.wikidata.org/)
-* [Just Solve the File Format Problem](http://fileformats.archiveteam.org)
-* [PRONOM file format registry](https://www.nationalarchives.gov.uk/PRONOM/)
-* [Basel Register of Thesauri, Ontologies & Classifications (BARTOC)](https://bartoc.org/)
+* Soweit möglich sind alle Einträge mit [Wikidata](https://www.wikidata.org/) verknüpft. 
+* Das [Just Solve the File Format Problem](http://fileformats.archiveteam.org)-Wiki und
+  die [PRONOM file format registry](https://www.nationalarchives.gov.uk/PRONOM/) sammeln
+  Informationen zu Dateiformaten.
+* [Linked Open Vocabularies] sammelt [RDF](rdf)-Ontologien. Das Verzeichnis 
+  [ist hier eingebunden](rdf/lov).
+* Im [Basel Register of Thesauri, Ontologies & Classifications (BARTOC)](https://bartoc.org/)
+  sind auch Datenmodelle enthalten.

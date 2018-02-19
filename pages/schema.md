@@ -20,10 +20,12 @@ der beschriebenen Struktur entspricht. Dieser Vorgang wird auch als
 *Validierung* bezeichnet.
 
 Die meisten Datenformate sind durch Schemas beschrieben oder lassen sich durch
-Schemas anpassen. Diese Schemas sind üblicherweise in einer Schemasprache
-formuliert.
+Schemas anpassen. Diese Schemas sind üblicherweise in einer **Schemasprache**
+formuliert. Viele Formate beinhalten allerdings auch Regeln, die nicht in einem
+Schema definiert sind.
 
 Im Unterschied zu Anwendungsregeln lassen sich mit Schemas nur strukturelle
-Eigenschaften von Daten festlegen.
+Eigenschaften von Daten festlegen. 
+
 
 <schematable/>

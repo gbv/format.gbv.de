@@ -15,21 +15,18 @@ class PICA extends JSON
     {
         $db = new DB($f3['configFile']);
 
-        $type = $params['type'];
         $path = $params['*'] ?? '';
 
-        if ($type == 'rda') {
-            try {
-                $field = new Field($path, $db);
+        try {
+            $field = new Field($path, $db);
 
-                if ($field->isPica3()) {
-                    $f3->reroute("/pica/$type/schema/" . $field->getField());
-                }
-
-                return $field->getData();
-            } catch (NotFoundException $e) {
-                return;
+            if ($field->isPica3()) {
+                $f3->reroute("/pica/rda/" . $field->getField());
             }
+
+            return $field->getData();
+        } catch (NotFoundException $e) {
+            return;
         }
     }
 }

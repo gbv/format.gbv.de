@@ -12,6 +12,8 @@ class HTML
 {
     public $root = '../pages/';
 
+    protected $links;
+
     public function render($f3, $params)
     {
         $f3['ONERROR'] = function ($f3) {
@@ -70,6 +72,15 @@ class HTML
         echo \View::instance()->render('index.php');
     }
 
+    public function links()
+    {
+        if (!isset($this->links)) {
+            $file = $this->root . "links.md";
+            $this->links = @file_get_contents($file) ?? '';
+        }
+        return $this->links;
+    }
+
     public function page($f3, $params)
     {
         $path = (string)$params['*'];
@@ -83,7 +94,7 @@ class HTML
             if (file_exists($file)) {
                 $doc = new YamlHeaderFile($file);
                 $f3->mset($doc->header);
-                $f3['MARKDOWN'] = $doc->body;
+                $f3['MARKDOWN'] = $doc->body . "\n\n" . $this->links();
 
                 if ($path != 'index') {
                     $breadcrumb = [ '/' => 'Formate'];
