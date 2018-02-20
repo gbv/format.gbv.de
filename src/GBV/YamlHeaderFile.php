@@ -30,9 +30,10 @@ class YamlHeaderFile
 
         $this->body = $body;
     }
-
+/*
     public function __get($key)
     {
         return $this->header[$key] ?? null;
     }
+ */
 }

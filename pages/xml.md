@@ -7,7 +7,7 @@ model: xml
 
 Die **Extensible Markup Language (XML)** ist ein hierarchisches Datenformat.
 Die Auszeichnungsprache ist Grundlage zahlreicher weiterer Formate.  Als
-einfachere Alternative dient oft [JSON](../json).
+einfachere Alternative dient oft [JSON](json).
 
 Folgende Datenformate basieren auf XML:
 

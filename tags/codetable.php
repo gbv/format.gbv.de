@@ -7,19 +7,20 @@
     </tr>
   </thead>
   <tbody>
-    <?php
-    foreach ($formats->codings() as $coding) {
-        $model = $formats->pageMeta($coding['model']);
-        $base  = $formats->pageMeta($coding['base']);
+<?php
+    $codings = $formats->select(['model' => null, 'base' => null]);
+foreach ($codings as $coding) {
+    $model = $formats->get($coding['model']);
+    $base  = $formats->get($coding['base']);
 
-        $syntax = ($coding['page'] == $model['page']);
+    $syntax = ($coding['page'] == $model['page']);
 
-        echo "<tr>";
-        echo "<td>" . $TAGS->call('pagelink', ['meta' => $coding, 'syntax' => $syntax]) . "</td>";
-        echo "<td>" . $TAGS->call('pagelink', ['meta' => $model]) . "</td>";
-        echo "<td>" . $TAGS->call('pagelink', ['meta' => $base]) . "</td>";
-        echo "</tr>";
-    }
+    echo "<tr>";
+    echo "<td>" . $TAGS->pagelink(['meta' => $coding, 'syntax' => $syntax]) . "</td>";
+    echo "<td>" . $TAGS->pagelink(['meta' => $model]) . "</td>";
+    echo "<td>" . $TAGS->pagelink(['meta' => $base]) . "</td>";
+    echo "</tr>";
+}
     ?>
   </tbody>
 </table>

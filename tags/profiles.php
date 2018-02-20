@@ -1,3 +1,3 @@
 <?php
-$items = $formats->findPages(['profiles' => $of]);
+$items = $formats->select(['profiles' => $of]);
 include 'list.php';

@@ -4,7 +4,7 @@ if (count($items)) {
     echo '<ul>';
     foreach ($items as $item) {
         echo '<li>';
-        echo $TAGS->call('pagelink', ['meta' => $item]);
+        echo $TAGS->pagelink(['meta' => $item]);
         echo '</li>';
     }
     echo '</ul>';

@@ -5,10 +5,8 @@ namespace Controller;
 class LOV extends HTML
 {
 
-    public function page($f3, $params)
+    public function page($f3, string $path)
     {
-        $path = $params['*'] ?? '';
-
         if (!preg_match('/^[a-zA-Z-]+$/', $path)) {
             if ($path == '') {
                 $this->index($f3);

@@ -7,7 +7,7 @@ base: xml
 model: lido
 ---
 
-Das **LIDO-Format** wird zum Austausch von Daten von Museen verwendet. Es
-basiert unter anderem auf seinem Vorläufer [museumdat](museumdat) sowie auf
-[CIDOC-CRM](cidoc-crm), [CDWA](cdwa) und [SPECTRUM](spectrum).  Die genauen
-Verwendung von LIDO ist meist in Anwendungsprofilen festgelegt.
+Das [XML](xml)-Format **LIDO** wird zum Austausch von Daten von Museen
+verwendet. Es basiert unter anderem auf seinem Vorläufer [museumdat](museumdat)
+sowie auf [CIDOC-CRM](cidoc-crm), [CDWA](cdwa) und [SPECTRUM](spectrum).  Die
+genauen Verwendung von LIDO ist meist in Anwendungsprofilen festgelegt.

@@ -3,10 +3,11 @@ php_sapi_name() === 'cli' or die('not allowed!');
 
 require_once './vendor/autoload.php';
 
-$formats = new \GBV\Formats('pages/');
+$formats = new \mytcms\Pages('pages/');
 $metadata = [];
-foreach ($formats->listPages() as $page) {
-    $metadata[$page] = $formats->page($page)->header;
+foreach ($formats->select() as $page) {
+    unset($page['body']);
+    $metadata[$page['page']] = $page;
 }
 
-echo json_encode($metadata, JSON_PRETTY_PRINT);
+echo json_encode($metadata, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);

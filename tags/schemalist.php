@@ -1,4 +1,3 @@
 <?php
-$items = $formats->findPages(['for'=> $for]);
-
+$items = $formats->select(['for'=> $for]);
 include 'list.php';

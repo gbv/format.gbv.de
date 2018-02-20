@@ -7,7 +7,8 @@ model: json
 ---
 
 **JavaScript Object Notation (JSON)** ist ein hierarchisches Datenformat, das
-vor allem in Webanwendungen verwendet wird.
+vor allem in Webanwendungen verwendet wird. Eine übliche Alternative ist
+[XML](xml).
 
 Folgende Datenformate basieren auf JSON:
 

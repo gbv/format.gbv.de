@@ -4,7 +4,9 @@ namespace Controller;
 
 use GBV\YamlHeaderFile;
 use GBV\JsonResponse;
-use Tags;
+
+use mytcms\Tags;
+use mytcms\Pages;
 
 use Symfony\Component\Yaml\Yaml;
 
@@ -36,7 +38,7 @@ class HTML
             }
         }
 
-        $formats = new \GBV\Formats('../pages');
+        $formats = new Pages('../pages');
         $tags = new Tags('../tags', ['formats' => $formats]);
 
         $this->page($f3, $path);
@@ -45,38 +47,28 @@ class HTML
             $html = \Parsedown::instance()->text($f3['MARKDOWN']);
 
             // process custom tags
-            $tagnames = implode('|', $tags->names());
-            $f3['BODY'] = preg_replace_callback(
-                "!<(?'tag'$tagnames)(?'attr'[^>]*?)(/>|>(?'content'.*?)</(?P=tag)>)!s",
-                function ($match) use ($tags) {
-                    $xml = '<' . $match['tag'] . $match['attr'] . '/>';
-                    $xml = new \SimpleXMLElement($xml);
-                    $elem = json_decode(json_encode($xml), true);
-                    $vars = $elem['@attributes'];
-                    $vars['content'] = $match['content'] ?? '';
-                    return $tags->call($match['tag'], $vars);
-                },
-                $html
-            );
+            $html = $tags->expand($html);
 
             // Add header identifiers
-            $f3['BODY'] = preg_replace_callback(
+            $html = preg_replace_callback(
                 "!<(?'tag'h[1-9])>(?'content'.*?)</(?P=tag)>!s",
                 function ($match) {
                     $tag = $match['tag'];
                     $id = preg_replace('![^a-z0-9]!s', '-', strtolower($match['content']));
                     return "<$tag id='$id'>".$match['content']."</$tag>";
                 },
-                $f3['BODY']
+                $html
             );
 
             // clean up tables
-            $f3['BODY'] = str_replace('<table>', '<table class="table table-bordered">', $f3['BODY']);
-            $f3['BODY'] = preg_replace(
+            $html = str_replace('<table>', '<table class="table table-bordered">', $html);
+            $html = preg_replace(
                 '!<thead>\s*<tr>\s*(<th></th>\s*)*</tr>\s*</thead>!s',
                 '',
-                $f3['BODY']
+                $html
             );
+
+            $f3['BODY'] = $html;
         }
 
         echo \View::instance()->render('index.php');

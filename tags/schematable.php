@@ -6,21 +6,20 @@
     </tr>
   </thead>
   <tbody>
-<?php foreach ($formats->listPages('schema/') as $page) {
-    $schema = $formats->pageMeta($page); ?>
+<?php foreach ($formats->select([], 'schema/') as $schema) { ?>
   <tr>
     <td>
-    <?= $TAGS->call('pagelink', ['meta'=>$schema]) ?>
+    <?= $TAGS->pagelink(['meta'=>$schema]) ?>
     </td>
     <td><?php
-    
+
     $for = $schema['for'] ?? [];
     $for = is_array($for) ? $for : [ $for ];
 
     echo implode(', ', array_map(
         function ($format) use ($formats, $TAGS) {
-            $meta = $formats->pageMeta($format);
-            return $TAGS->call('pagelink', ['meta'=>$meta]);
+            $meta = $formats->get($format);
+            return $TAGS->pagelink(['meta'=>$meta]);
         },
         $for
     ));

@@ -24,12 +24,14 @@
     }
   },
   "scripts": {
-    "style": "./vendor/bin/phpcbf src tags public",
+    "style": "./vendor/bin/phpcbf src tags public tests",
     "test": [
-      "vendor/bin/phpcs src tags public"
+      "vendor/bin/phpunit tests",
+      "vendor/bin/phpcs src tags public tests"
     ]
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.2"
+    "squizlabs/php_codesniffer": "^3.2",
+    "phpunit/phpunit": "^6.5"
   }
 }
