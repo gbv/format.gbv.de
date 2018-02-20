@@ -3,7 +3,10 @@
 namespace Controller;
 
 use GBV\YamlHeaderFile;
+use GBV\JsonResponse;
 use Tags;
+
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * Show HTML based on Markdown files.
@@ -20,10 +23,23 @@ class HTML
             $this->error($f3);
         };
 
+        $path = $params['*'];
+
+        // send YAML files as JSON
+        if (preg_match('!^(([a-z0-9-]+)/?)+\.json$!', $path)) {
+            $file = $this->root . substr($path, 0, -4).'yaml';
+            if (file_exists($file)) {
+                $data = Yaml::parse(file_get_contents($file));
+                $res = new JsonResponse($data);
+                $res->send();
+                return;
+            }
+        }
+
         $formats = new \GBV\Formats('../pages');
         $tags = new Tags('../tags', ['formats' => $formats]);
 
-        $this->page($f3, $params);
+        $this->page($f3, $path);
 
         if ($f3['MARKDOWN']) {
             $html = \Parsedown::instance()->text($f3['MARKDOWN']);
@@ -41,6 +57,17 @@ class HTML
                     return $tags->call($match['tag'], $vars);
                 },
                 $html
+            );
+
+            // Add header identifiers
+            $f3['BODY'] = preg_replace_callback(
+                "!<(?'tag'h[1-9])>(?'content'.*?)</(?P=tag)>!s",
+                function ($match) {
+                    $tag = $match['tag'];
+                    $id = preg_replace('![^a-z0-9]!s', '-', strtolower($match['content']));
+                    return "<$tag id='$id'>".$match['content']."</$tag>";
+                },
+                $f3['BODY']
             );
 
             // clean up tables
@@ -81,10 +108,8 @@ class HTML
         return $this->links;
     }
 
-    public function page($f3, $params)
+    public function page($f3, string $path)
     {
-        $path = (string)$params['*'];
-
         if ($path == '') {
             $path = 'index';
         }

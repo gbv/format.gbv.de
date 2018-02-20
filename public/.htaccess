@@ -1,8 +1,8 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
 
-#current work mode
-RewriteBase /gbv/
+# adjust to wheverever application is located at (e.g. '/')
+RewriteBase /format.gbv.de/
 
 # public
 RewriteCond %{SCRIPT_FILENAME} !-d

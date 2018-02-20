@@ -230,10 +230,16 @@ class Field
 
                 if (isset($this->data[$key])) {
                     if (isset($this->data[$key]['subfields'])) {
-                        $this->data[$key]['subfields'][] = $subfield;
-                    } else {
-                        $this->data[$key]['subfields'] = [$subfield];
+                        $this->data[$key]['subfields'] = [];
                     }
+                    $this->data[$key]['subfields'][$subfield['code']] = $subfield;
+                }
+            }
+
+            foreach ($this->data as $key => $fieldschedule) {
+                if (isset($this->data[$key]['subfields'])) {
+                    $this->data[$key]['subfields'] = (object)
+                    $this->data[$key]['subfields'];
                 }
             }
 
@@ -297,7 +303,7 @@ class Field
 
                 $subfield = $this->loadSubfields();
                 if (!empty($subfields)) {
-                    $data['subfields'] = $subfield;
+                    $data['subfields'] = (object)$subfield;
                 }
                 $this->data[] = $data;
             }
@@ -359,7 +365,7 @@ class Field
     protected function subfieldInfo(array $subfield): array
     {
         return [
-            'code'       => $subfield['pica_p_uf'],
+            'code'       => $subfield['pica_p_uf'][1],
             'pica3'      => (
                 preg_match('/^ohne$/i', $subfield['pica_3_uf'])
                 ? null : $subfield['pica_3_uf']),

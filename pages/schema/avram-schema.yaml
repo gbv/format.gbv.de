@@ -1,0 +1,122 @@
+---
+title: Avram Schema Format
+description: JSON Schema of Avram Schema Format to validata Avram Schemas
+type: object
+properties:
+  title:
+    type: string
+  description:
+    type: string
+  url:
+    type: string
+    format: uri
+  $schema:
+    type: string
+    format: uri
+  fields:
+    type: object
+    patternProperties:
+      '^.+$':
+        type: object
+        properties:
+          tag:
+            type: string
+          label:
+            type: string
+          repeatable:
+            type: boolean
+          required:
+            type: boolean
+          url:
+            $ref: '#/definitions/url'
+          occurrence:
+            type: string
+          indicator1:
+            $ref: '#/definitions/indicator'
+          indicator2:
+            $ref: '#/definitions/indicator'
+          pica3:
+            type: string
+          subfields:
+            $ref: '#/definitions/subfield-schedule'
+          positions:
+            $ref: '#/definitions/positions'
+          types:
+            $ref: '#/definitions/field-types'
+          modified:
+            $ref: '#/definitions/timestamp'
+definitions: 
+  url:
+    type: string
+    format: uri
+  timestamp:
+    type: string
+  positions:
+    type: object
+    patternProperties:
+      '^[0-9][0-9](-[0-9][0-9])?$':
+        $ref: '#/definitions/codedvalue'
+  field-types:
+    oneOf:
+      - type: object
+        patternProperties:
+          '^.*$':
+            type: object
+            properties:
+              positions:
+                $ref: '#/definitions/positions'
+            required:
+             - positions
+      - type: object
+        patternProperties:
+          '^.*$':
+            type: object
+            properties:
+              subfields:
+                $ref: '#/definitions/subfield-schedule'
+            required:
+             - subfields
+  subfield-schedule:
+    type: object
+    properties:
+      code:
+        type: string
+      label:
+        type: string
+      repeatable:
+        type: boolean
+      required:
+        type: boolean
+      url:
+        $ref: '#/definitions/url'
+      order:
+        type: integer
+      pica3:
+        type: string
+      modified:
+        $ref: '#/definitions/timestamp'
+  indicator:
+    oneOf:
+      - type: 'null'
+      - $ref: '#/definitions/codedvalue'
+  codedvalue:
+    type: object
+    properties:
+      label:
+        type: string
+      url:
+        $ref: '#/definitions/url'
+      codes:
+        $ref: '#/definitions/codelist'
+      deprecated-codes:
+        $ref: '#/definitions/codelist'
+  codelist:
+    type: object
+    patternProperties:
+      '^.+$':
+        properties:
+          label:
+            type: string
+required:
+  - fields
+$schema: http://json-schema.org/draft-06/schema#
