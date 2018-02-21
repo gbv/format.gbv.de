@@ -7,4 +7,4 @@ eine oder mehrere [Kodierungen](code) auf eine Folge von Bytes zurückführen.
 
 Auf dieser Seite sind folgende binären Kodierungen erfasst:
 
-<codelist base="bytes"/>
+<list-formats base="bytes"/>

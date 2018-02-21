@@ -33,7 +33,7 @@ class Pages
         }
 
         $header['page'] = $page;
-        $header['body'] = $body;
+        $header['markdown'] = $body;
 
         return $header;
     }

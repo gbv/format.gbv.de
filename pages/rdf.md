@@ -32,8 +32,8 @@ jeweiligen Prefix abgerufen werden. Beispiele:
 
 Zur Spezifikation von Ontologien und RDF-Daten eignen sich:
 
-<schemalist for="rdf"/>
+<list-formats for="rdf"/>
 
 Die wichtigsten RDF-Serialisierungen sind:
 
-<codelist model="rdf" />
+<list-formats model="rdf" />

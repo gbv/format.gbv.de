@@ -19,14 +19,18 @@ foreach (($css ?? []) as $href) {
     </a>
     <nav aria-label="breadcrumb" class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto">
-<?php foreach (($breadcrumb ?? []) as $href => $name) { ?>
-        <li class="navbar-item">
-          <a href="<?=$BASE.$href?>" class="nav-link"><?=$name?></a>
-        </li>
-<?php } ?>
-        <li class="navbar-item active">
-          <a href="<?=$URI?>" class="nav-link"><b><?=$title?></b></a>
-        </li>
+<?php
+$menu = ['index','structure','application','code','schema', 'about'];
+$parts = explode('/', $page);
+foreach ($menu as $href) {
+    $active = $href === (in_array($parts[0], $menu) ? $parts[0] : 'index');
+        
+    $url = $BASE . ($href === 'index' ? './' : $href);
+    $p = $PAGES->get($href);
+    $name = $p['short'] ?? $p['title'] ?? $href;
+    echo "<li class='navbar-item".($active?' active':'')."'>";
+    echo "<a href='$url' class='nav-link'>$name</a></li>";
+} ?>
       </ul>
     </nav>
   </nav>
@@ -44,7 +48,9 @@ include 'seealso.php';
 <footer class="footer">
   <div class="container-fluid text-secondary">
     <div class="float-right">
-      <a href="<?=$BASE?>/about">about</a>
+<?php if ($page) { ?>
+      <a href="https://github.com/gbv/format.gbv.de/tree/master/pages/<?=$page?>.md">source</a>
+<?php } ?>
     </div>
     <p><a href="https://www.gbv.de/">Verbundzentrale des GBV (VZG)</a></p>
   </div>

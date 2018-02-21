@@ -2,6 +2,9 @@
 title: allegro
 homepage: http://www.allegro-c.de/doku/form2004/
 wikidata: Q2648226
+application:
+  - bibliographic
+  - authority
 ---
 
 Das Bibliothekssystem **allegro** verwendet ein eigenes Feldbasiertes

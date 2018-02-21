@@ -35,15 +35,19 @@ class Tags
         );
         $_file = $this->files[$name] ?? null;
         $_args = is_array($arguments[0] ?? null) ? $arguments[0] : [];
+        $content = $arguments[1] ?? '';
+        $arguments = [];
         if ($_file) {
             foreach ($_args as $name => $value) {
                 if (preg_match('/^[a-z][a-z0-9_]*$/i', $name)) {
                     ${$name} = $value;
+                    $arguments[] = $name;
                 }
             }
             foreach ($this->globals as $name => $value) {
                 ${$name} = $value;
             }
+
             ob_start();
             include $_file;
             return ob_get_clean();
@@ -52,7 +56,11 @@ class Tags
 
     public function expand(string $body)
     {
-        $tagnames = implode('|', array_keys($this->files));
+        $tagnames = array_keys($this->files);
+        usort($tagnames, function ($a, $b) {
+            return strlen($b)-strlen($a);
+        });
+        $tagnames = implode('|', $tagnames);
         $tags = $this;
         return preg_replace_callback(
             "!<(?'tag'$tagnames)(?'attr'[^>]*?)(/>|>(?'content'.*?)</(?P=tag)>)!s",
@@ -61,8 +69,7 @@ class Tags
                 $xml = new \SimpleXMLElement($xml);
                 $elem = json_decode(json_encode($xml), true);
                 $vars = $elem['@attributes'];
-                $vars['content'] = $match['content'] ?? '';
-                return $tags->{$match['tag']}($vars);
+                return $tags->{$match['tag']}($vars, $match['content'] ?? '');
             },
             $body
         );

@@ -12,12 +12,12 @@ vor allem in Webanwendungen verwendet wird. Eine übliche Alternative ist
 
 Folgende Datenformate basieren auf JSON:
 
-<codelist base="json"/>
+<list-formats base="json"/>
 
 Zur Spezifikation von JSON-basierten Formaten eignen sich:
 
-<schemalist for="json"/>
+<list-formats for="json"/>
 
 Neben der JSON-Syntax kann JSON in folgenden Formaten ausgedrückt werden:
 
-<codelist model="json"/>
+<list-formats model="json"/>

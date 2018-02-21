@@ -7,6 +7,7 @@ $formats = new \mytcms\Pages('pages/');
 $metadata = [];
 foreach ($formats->select() as $page) {
     unset($page['body']);
+    unset($page['arguments']);
     $metadata[$page['page']] = $page;
 }
 

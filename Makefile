@@ -1,3 +1,5 @@
+.PHONY: test style web
+
 test:
 	composer test
 

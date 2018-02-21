@@ -11,9 +11,9 @@ einfachere Alternative dient oft [JSON](json).
 
 Folgende Datenformate basieren auf XML:
 
-<codelist base="xml"/>
+<list-formats base="xml"/>
 
 Zur Spezifikation von XML-basierten Formaten eignen sich:
 
-<schemalist for="xml"/>
+<list-formats for="xml"/>
 

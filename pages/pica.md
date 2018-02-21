@@ -16,6 +16,8 @@ Katalogisierungsrichtlinien ab.
 
 Folgende PICA-Formate können anhand ihrer Katalogisierungsrichtlinien hier über eine API abgerufen werden:
 
+<list-formats profiles="pica"/>
+
 * [RDA von GBV und SWB](pica/rda)
 
 ## Kodierungen
@@ -23,4 +25,4 @@ Folgende PICA-Formate können anhand ihrer Katalogisierungsrichtlinien hier übe
 PICA+ wird in verschiedenen Serialisierungen verwendet, die sich alle
 verlustfrei ineinander umwandeln lassen.
 
-<codelist model="pica"/>
+<list-formats model="pica"/>

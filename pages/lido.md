@@ -5,6 +5,7 @@ homepage: http://www.lido-schema.org
 wikidata: Q1249973
 base: xml
 model: lido
+application: bibliographic
 ---
 
 Das [XML](xml)-Format **LIDO** wird zum Austausch von Daten von Museen

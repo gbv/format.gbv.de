@@ -8,10 +8,10 @@
   </thead>
   <tbody>
 <?php
-    $codings = $formats->select(['model' => null, 'base' => null]);
+    $codings = $PAGES->select(['model' => null, 'base' => null]);
 foreach ($codings as $coding) {
-    $model = $formats->get($coding['model']);
-    $base  = $formats->get($coding['base']);
+    $model = $PAGES->get($coding['model']);
+    $base  = $PAGES->get($coding['base']);
 
     $syntax = ($coding['page'] == $model['page']);
 

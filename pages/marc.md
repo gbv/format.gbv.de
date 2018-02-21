@@ -14,13 +14,11 @@ Formate, beispielsweise MARC für bibliographische Daten und MARC für Normdaten
 
 ## Serialisierungen
 
-<codelist model="marc"/>
-
-* MARC21 (binäres Datenformat)
+<list-formats model="marc"/>
 
 ## MARC-Formate
 
-<profiles of="marc"/>
+<list-formats profiles="marc"/>
 
 Darüber hinaus gibt es viele weitere Erweiterungen und Abweichungen die erst noch erfasst werden müssen.
 

@@ -2,7 +2,6 @@
 
 namespace Controller;
 
-use GBV\YamlHeaderFile;
 use GBV\JsonResponse;
 
 use mytcms\Tags;
@@ -17,7 +16,11 @@ class HTML
 {
     public $root = '../pages/';
 
-    protected $links;
+    public function __construct()
+    {
+        $this->pages = new Pages('../pages');
+        $this->tags = new Tags('../tags', ['PAGES' => $this->pages]);
+    }
 
     public function render($f3, $params)
     {
@@ -38,16 +41,13 @@ class HTML
             }
         }
 
-        $formats = new Pages('../pages');
-        $tags = new Tags('../tags', ['formats' => $formats]);
-
         $this->page($f3, $path);
 
         if ($f3['MARKDOWN']) {
             $html = \Parsedown::instance()->text($f3['MARKDOWN']);
 
             // process custom tags
-            $html = $tags->expand($html);
+            $html = $this->tags->expand($html);
 
             // Add header identifiers
             $html = preg_replace_callback(
@@ -83,9 +83,8 @@ class HTML
         }
 
         $f3->mset([
-            'title'      => $f3['ERROR']['code'] . ': ' . $f3['ERROR']['status'],
-            'breadcrumb' => [ '/' => 'Formate' ],
-            'VIEW'       => 'error.php'
+            'title' => $f3['ERROR']['code'] . ': ' . $f3['ERROR']['status'],
+            'VIEW'  => 'error.php'
         ]);
 
         echo \View::instance()->render('index.php');
@@ -93,11 +92,8 @@ class HTML
 
     public function links()
     {
-        if (!isset($this->links)) {
-            $file = $this->root . "links.md";
-            $this->links = @file_get_contents($file) ?? '';
-        }
-        return $this->links;
+        $links = $this->pages->get('links');
+        return $links ? $links['markdown'] : '';
     }
 
     public function page($f3, string $path)
@@ -106,23 +102,23 @@ class HTML
             $path = 'index';
         }
 
-        if (preg_match('!(([a-z0-9]+)/?)+!', $path)) {
-            $file = $this->root .  "$path.md";
-            if (file_exists($file)) {
-                $doc = new YamlHeaderFile($file);
-                $f3->mset($doc->header);
-                $f3['MARKDOWN'] = $doc->body . "\n\n" . $this->links();
-
-                if ($path != 'index') {
-                    $breadcrumb = [ '/' => 'Formate'];
-                    $parts = explode('/', $path);
-                    $depth = count($parts);
-                    for ($i=0; $i<$depth-1; $i++) {
-                        $breadcrumb[ str_repeat('../', $depth-$i).$parts[$i] ] = strtoupper($parts[$i]);
-                    }
-                    $f3['breadcrumb'] = $breadcrumb;
+        $page = $this->pages->get($path);
+        if ($page) {
+            $f3->mset($page);
+            $f3['MARKDOWN'] = $page['markdown'] . "\n\n" . $this->links();
+            $f3['PAGES'] = $this->pages;
+/*
+            if ($path != 'index') {
+                $breadcrumb = [ '/' => 'Formate'];
+                $parts = explode('/', $path);
+                $depth = count($parts);
+                for ($i=0; $i<$depth-1; $i++) {
+                    $breadcrumb[ str_repeat('../', $depth-$i).$parts[$i] ] = strtoupper($parts[$i]);
                 }
+                $f3['breadcrumb'] = $breadcrumb;
             }
+            }
+ */
         }
 
         if (!$f3['MARKDOWN']) {
