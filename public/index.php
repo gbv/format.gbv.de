@@ -18,7 +18,7 @@ foreach ($routes as $path => $controller) {
     $f3->route("GET /$path/*", "Controller\\{$controller}->render");
 }
 
-$f3->route("GET /pica/rda/*", "Controller\\PICA->render");
+$f3->route("GET /pica/k10plus/*", "Controller\\PICA->render");
 $f3->route("GET /rdf/lov/*", "Controller\\LOV->render");
 $f3->route('GET /*', 'Controller\HTML->render');
 

@@ -24,8 +24,8 @@ $menu = ['index','structure','application','code','schema', 'about'];
 $parts = explode('/', $page);
 foreach ($menu as $href) {
     $active = $href === (in_array($parts[0], $menu) ? $parts[0] : 'index');
-        
-    $url = $BASE . ($href === 'index' ? './' : $href);
+
+    $url = "$BASE/" . ($href === 'index' ? '' : $href);
     $p = $PAGES->get($href);
     $name = $p['short'] ?? $p['title'] ?? $href;
     echo "<li class='navbar-item".($active?' active':'')."'>";

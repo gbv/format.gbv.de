@@ -33,6 +33,11 @@ class Pages
         }
 
         $header['page'] = $page;
+        $parts = explode('/', $page);
+        array_pop($parts);
+        if (count($parts)) {
+            $header['broader'] = implode('/', $parts);
+        }
         $header['markdown'] = $body;
 
         return $header;
@@ -40,6 +45,7 @@ class Pages
 
     public function select(array $criteria = [], string $prefix = '')
     {
+        $pages = [];
         $pattern = '!^' . self::NAME_PATTERN . '\.md$!';
         $iterator = new \RecursiveDirectoryIterator($this->base);
         foreach (new \RecursiveIteratorIterator($iterator) as $file) {
@@ -48,11 +54,12 @@ class Pages
                 if ($prefix === '' || strpos($file, $prefix) === 0) {
                     $page = $this->get(substr($file, 0, -3));
                     if (self::match($page, $criteria)) {
-                        yield $page;
+                        $pages[$page['page']] = $page;
                     }
                 }
             }
         }
+        return $pages;
     }
 
     public function get(string $page)

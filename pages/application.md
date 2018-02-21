@@ -8,13 +8,13 @@ Anwendungsformate für bibliographische Inhalte.
 
 ## Bibliographische Datenformate
 
-<list-formats application="bibliographic"/>
+<formats-tree application="bibliographic"/>
 
 ## Formate für Normdaten
 
-<list-formats application="authority"/>
+<formats-tree application="authority"/>
 
 ## Formate zur Digitalisierung
 
-<list-formats application="digitization"/>
+<formats-tree application="digitization"/>
 

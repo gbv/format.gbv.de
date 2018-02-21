@@ -6,5 +6,5 @@ application: bibliographic
 ---
 
 [MARC 21](../marc) für bibliographische Daten. Eine vereinfachte Teilmenge ist
-[MARC21 Lite](bibliographic/lite).
+[MARC21 Lite](lite).
 

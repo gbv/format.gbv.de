@@ -14,15 +14,14 @@ Katalogisierungsrichtlinien ab.
 
 ## Katalogisierungsrichtlinien
 
-Folgende PICA-Formate können anhand ihrer Katalogisierungsrichtlinien hier über eine API abgerufen werden:
+Die Sammlung von einzelnen PICA-Formaten und dazu gehörigen
+[Avram-Schemas](schema/avram) ist noch im Aufbau.
 
 <list-formats profiles="pica"/>
 
-* [RDA von GBV und SWB](pica/rda)
+## Serialisierungen
 
-## Kodierungen
-
-PICA+ wird in verschiedenen Serialisierungen verwendet, die sich alle
+PICA+ wird in verschiedenen [Kodierungen](code) verwendet, die sich alle
 verlustfrei ineinander umwandeln lassen.
 
 <list-formats model="pica"/>

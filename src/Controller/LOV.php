@@ -24,12 +24,8 @@ class LOV extends HTML
             $f3->error(404);
         }
 
-        $f3->set('breadcrumb', [
-            $f3->get('BASE') => 'Formate',
-            '../../rdf' => 'RDF',
-            '../lov' => 'LOV',
-        ]);
         $f3->set('VIEW', 'lov.php');
+        $f3->set('PAGES', $this->pages);
 
         $title = $data['titles'][0]['value'] ?? $data['prefix'];
         $prefix = $data['prefix'];
