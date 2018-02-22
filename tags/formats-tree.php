@@ -6,19 +6,15 @@ foreach ($arguments as $name) {
 }
 
 $items = $PAGES->select($criteria);
-ksort($items);
-foreach ($items as $page => $item) {
-#    $parts = explode(
-}
 
 usort($items, function ($a, $b) use ($PAGES) {
     $x = $a['title'] ?? '';
     $y = $b['title'] ?? '';
     if (isset($a['broader'])) {
-        $x .= "\n" . ($PAGES->get($a['broader'])['title'] ?? '');
+        $x = ($PAGES->get($a['broader'])['title'] ?? '') . "\n$x";
     }
     if (isset($b['broader'])) {
-        $y .= "\n" . ($PAGES->get($b['broader'])['title'] ?? '');
+        $y = ($PAGES->get($b['broader'])['title'] ?? '') . "\n$y";
     }
     return strtolower($x) <=> strtolower($y);
 });

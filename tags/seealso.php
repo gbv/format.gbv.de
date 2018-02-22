@@ -1,4 +1,5 @@
-<?php if ($wikidata || $homepage) { ?>
+<?php
+if ($wikidata || $homepage) { ?>
     <div class="alert alert-info" role="alert">
     ➜ Weitere Informationen zu <?=$title?>
     <?php if ($homepage) { ?>
@@ -9,4 +10,6 @@
       <a href="https://tools.wmflabs.org/hub/<?=$wikidata?>">in Wikipedia/Wikidata</a>
     <?php } ?>
     </div>
-<?php } ?>
+<?php }
+
+include 'infobox.php';

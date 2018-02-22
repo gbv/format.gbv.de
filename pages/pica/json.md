@@ -22,6 +22,9 @@ Felder.
 ]
 ~~~
 
+Die gleiche Struktur kann als [MARC JSON](../marc/json) zur Kodierung von
+[MARC](../marc) verwendet werden.
+
 ## APIs
 
 Über die unAPI-Schnittstelle der VZG kann PICA JSON mit dem Parameter
