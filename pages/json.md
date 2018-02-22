@@ -10,10 +10,6 @@ model: json
 vor allem in Webanwendungen verwendet wird. Eine übliche Alternative ist
 [XML](xml).
 
-Folgende Datenformate basieren auf JSON:
-
-<list-formats base="json"/>
-
 Zur Spezifikation von JSON-basierten Formaten eignen sich:
 
 <list-formats for="json"/>
@@ -21,3 +17,8 @@ Zur Spezifikation von JSON-basierten Formaten eignen sich:
 Neben der JSON-Syntax kann JSON in folgenden Formaten ausgedrückt werden:
 
 <list-formats model="json"/>
+
+Folgende Datenformate basieren auf JSON:
+
+<list-formats base="json"/>
+

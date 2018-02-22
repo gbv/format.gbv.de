@@ -3,6 +3,8 @@
 $fields = [
     'created'   => 'erstellt',
     'modified'  => 'aktualisiert',
+    'creator'   => 'Autor',
+    'publisher' => 'Herausgeber',
 #    'base'      => ['Format', '<a href="%s'],
 #    'homepage' => 'Homepage',
 #    'wikidata' => 'Wikidata/pedia',
@@ -16,6 +18,20 @@ foreach ($fields as $name => $value) {
         } else {
             $infobox[$value] = ${$name};
         }
+    }
+}
+
+if (count($schemas ?? [])) {
+    $items = [];
+    foreach ($schemas as $schema) {
+        $language = 'schema/'.$schema['language'];
+        $language = $PAGES->get($language);
+        $language = $language['short'] ?? $language['title'];
+        $items[] = "<a href='{$schema['url']}'>$language</a>";
+    }
+    if (count($items)) {
+        $html = implode('<br>', $items);
+        $infobox[count($schemas) > 1 ? 'Schema' : 'Schemas'] = $html;
     }
 }
 
