@@ -47,6 +47,7 @@ Beteiligt an den Inhalten dieser Seite sind oder waren unter Anderem:
 * Jakob Voß (Technische Leitung, Programmierung und Dokumentation)
 * Karsten Achterrath (Programmierung)
 * Péter Király (MARC-Schema)
+* Uschi Klute (Recherche zu MARC-Varianten)
 * VZG und BSZ (K10plus Online-Hilfe)
 * Linked Open Vocabularies (Daten)
 
