@@ -48,8 +48,9 @@ include 'seealso.php';
 <footer class="footer">
   <div class="container-fluid text-secondary">
     <div class="float-right">
+      <a href="<?=$BASE?>/license">Lizenz</a>
 <?php if ($page) { ?>
-      <a href="https://github.com/gbv/format.gbv.de/tree/master/pages/<?=$page?>.md">source</a>
+      <a href="https://github.com/gbv/format.gbv.de/tree/master/pages/<?=$page?>.md">Quelltext</a>
 <?php } ?>
     </div>
     <p><a href="https://www.gbv.de/">Verbundzentrale des GBV (VZG)</a></p>

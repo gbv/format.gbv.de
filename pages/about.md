@@ -39,8 +39,11 @@ zu bringen.
 
 ## Inhalt und Beteiligte
 
-Quellcode ist [auf GitHub](https://github.com/gbv/format.gbv.de). 
-Anregungen, Korrekturen und Verbesserungsvorschläge [sind dort herzlich willkommen](https://github.com/gbv/format.gbv.de/issues)!
+Quellcode ist [auf GitHub](https://github.com/gbv/format.gbv.de).  Anregungen,
+Korrekturen und Verbesserungsvorschläge [sind dort herzlich
+willkommen](https://github.com/gbv/format.gbv.de/issues). Die Inhalte sind ohne
+weitere Bedingungen oder Gewährleistungen nachnutzbar (siehe
+[Lizenz](license)).
 
 Beteiligt an den Inhalten dieser Seite sind oder waren unter Anderem:
 
@@ -49,7 +52,7 @@ Beteiligt an den Inhalten dieser Seite sind oder waren unter Anderem:
 * Péter Király (MARC-Schema)
 * Uschi Klute (Recherche zu MARC-Varianten)
 * VZG und BSZ (K10plus Online-Hilfe)
-* Linked Open Vocabularies (Daten)
+* Linked Open Vocabularies (Daten zu RDF-Formaten)
 
 ## Verwandte Projekte
 
@@ -60,4 +63,4 @@ Beteiligt an den Inhalten dieser Seite sind oder waren unter Anderem:
 * [Linked Open Vocabularies] sammelt [RDF](rdf)-Ontologien. Das Verzeichnis 
   [ist hier eingebunden](rdf/lov).
 * Im [Basel Register of Thesauri, Ontologies & Classifications (BARTOC)](https://bartoc.org/)
-  sind auch Datenmodelle enthalten.
+  sind auch Datenmodelle enthalten, beispielsweise [BIBFRAME](bibframe).

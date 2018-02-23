@@ -21,9 +21,11 @@ Zeichenkette oder anderen Art von Reihenfolge basiert werden auch
 
 Die folgenden Kodierungen von Ausgangs-Modell zu Ziel-Format sind auf dieser Seite dokumentiert.
 
-<codetable/>
+<div class="alert alert-warning" role="alert">
+  <a href="rdf">RDF</a>-basierte Formate sind in dieser Übersicht noch nicht enthalten!
+</div>
 
-<!--
+<codetable/>
 
 ## Eigenschaften von Kodierungen
 
@@ -55,4 +57,3 @@ bis zur Ebene von Bytes ist notwendig um bei Bedarf gleiche Dokumente anhand
 ihrer Prüfsummen identifizieren zu können. In der Praxis ist dies bislang
 jedoch nur für die wenigsten Formate möglich.
 
--->
