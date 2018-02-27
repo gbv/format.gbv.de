@@ -2,9 +2,16 @@
 
 $select = [];
 foreach ($arguments as $name) {
-    $select[$name] = ${$name};
+    if ($name != 'exclude') {
+        $select[$name] = ${$name};
+    }
 }
 $items = $PAGES->select($select);
+
+if ($exclude) {
+    unset($items[$exclude]);
+}
+
 usort($items, function ($a, $b) {
     $a = strtolower($a['title'] ?? '');
     $b = strtolower($b['title'] ?? '');

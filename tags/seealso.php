@@ -13,7 +13,7 @@ if ($wikidata || $homepage || $bartoc) {
 ?>
     <div class="alert alert-info" role="alert">
       ➜ Weitere Informationen zu
-      <?= "$title " . implode(' und ', $links) ?>
+        <?= "$title " . implode(' und ', $links) ?>
     </div>
 <?php }
 

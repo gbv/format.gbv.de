@@ -11,7 +11,7 @@ Strukturierungssprache basiert auf allgemeinen Ordnungsprinzipien:
 | Ordnungsprinzip | Strukturierungssprachen | Beispiele für Anwendungsformate
 |
 | Felder | [INI](ini), [MARC](marc)¹, [PICA](pica)¹ | [MARC 21 für bibliographische Daten](marc/bibliographic), [BibTeX](bibtex)¹
-| Hierarchie/Dokument | [JSON](json), [XML](xml), [SGML](sgml), [YAML](yaml)², [SDLang](sdlang)... | [TEI](tei)
+| Hierarchie/Dokument | [JSON](json), [XML](xml), [SGML](sgml), [YAML](yaml)², [TOML](toml), [SDLang](sdlang)... | [TEI](tei)
 | Tabelle | [CSV](csv), [SQL](sql)³ | [Excel](excel)
 | Graph/Netzwerk | [RDF](rdf), [YAML](yaml)², [SQL](sql)³ | [Ontologien](rdf/lov)
 | Zeichenkette | [Unicode](unicode), [Bytes](bytes) | [ISBD](isbd)
