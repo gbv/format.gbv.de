@@ -3,7 +3,7 @@ title: Text Encoding Initiative
 short: TEI
 wikidata: Q780920 
 homepage: http://www.tei-c.org/
-application: digitization
+application: documents
 ---
 
 Das Dokumentenformat der **Text Encoding Initiative (TEI)** wird zur Kodierung

@@ -12,13 +12,23 @@ Anwendungsformate für bibliographische Inhalte.
 
 ## Bibliographische Datenformate
 
+Formate mit denen sich primär Metadaten über andere Dokumente ausdrücken
+lassen. Auch als *Metadatenformate* bezeichnet.
+
 <formats-tree application="bibliographic"/>
+
+## Dokumentformate
+
+Formate zur Kodierung von Dokumentstrukturen (Texte, Kapitelstruktur...). Auch
+als *Auszeichnungssprachen* bezeichnet. Enthalten oft auch bibliographische
+Elemente.
+
+<formats-tree application="documents"/>
 
 ## Formate für Normdaten
 
+Formate zur Beschreibung von Entitäten (Personen, Orte, Themen...)
+
 <formats-tree application="authority"/>
 
-## Formate zur Digitalisierung
-
-<formats-tree application="digitization"/>
 
