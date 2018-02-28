@@ -41,9 +41,11 @@ zu bringen.
 
 Quellcode ist [auf GitHub](https://github.com/gbv/format.gbv.de).  Anregungen,
 Korrekturen und Verbesserungsvorschläge [sind dort herzlich
-willkommen](https://github.com/gbv/format.gbv.de/issues). Die Inhalte sind ohne
-weitere Bedingungen oder Gewährleistungen nachnutzbar (siehe
-[Lizenz](license)).
+willkommen](https://github.com/gbv/format.gbv.de/issues). Das Datenmodell
+zur Beschreibung von Formaten [befindet sich noch in Entwicklung](aboutdata).
+
+Die Inhalte sind ohne weitere Bedingungen oder Gewährleistungen nachnutzbar
+(siehe [Lizenz](license)).
 
 Beteiligt an den Inhalten dieser Seite sind oder waren unter Anderem:
 

@@ -6,7 +6,7 @@ require_once './vendor/autoload.php';
 use Opis\JsonSchema\{Schema, Validator};
 use mytcms\Util;
 
-$schemafile = 'pages/schema/aboutdata/schema.yaml';
+$schemafile = 'pages/aboutdata/schema.yaml';
 
 $internal = ['markdown', 'arguments', 'page', 'javascript', 'css', 'broader'];
 
