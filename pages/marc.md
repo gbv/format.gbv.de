@@ -4,7 +4,6 @@ wikidata: Q722609
 homepage: https://www.loc.gov/marc/
 modified: 1999
 javascript:
-  - //code.jquery.com/jquery-3.2.1.min.js
   - js/demo.js
 ---
 

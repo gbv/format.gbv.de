@@ -27,7 +27,7 @@
     "style": "./vendor/bin/phpcbf src tags public tests",
     "test": [
       "vendor/bin/phpunit tests",
-      "vendor/bin/phpcs src tags public tests"
+      "vendor/bin/phpcs --ignore=*.min.* src tags public tests"
     ]
   },
   "require-dev": {

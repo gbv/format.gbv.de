@@ -2,7 +2,6 @@
 title: Schemas und Schemasprachen
 short: Schemas
 javascript:
-    - //code.jquery.com/jquery-1.12.4.js
     - //cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js
     - //cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js
     - |

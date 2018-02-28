@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?=$BASE?>/css/boostrap4-vzg.css">
+  <link rel="stylesheet" href="<?=$BASE?>/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?=$BASE?>/css/bootstrap4-vzg.css">
 <?php
 foreach (($css ?? []) as $href) {
     echo "  <link rel='stylesheet' href='$href'>\n";
@@ -13,11 +13,16 @@ foreach (($css ?? []) as $href) {
   <title><?=$short ?? $title?></title>
 </head>
 <header>
-  <nav class="navbar navbar-dark navbar-expand">
-    <a href="//www.gbv.de/" alt="VZG" class="navbar-brand expand-lg d-none d-lg-block">
-    <img src="<?=$BASE?>/img/vzg-logo.jpg"/>
-    </a>
-    <nav aria-label="breadcrumb" class="collapse navbar-collapse">
+  <nav class="navbar navbar-dark navbar-expand-lg">
+    <button class="navbar-toggler" type="button"
+            data-toggle="collapse" data-target="#mainMenu"
+            aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <a href="//www.gbv.de/" alt="VZG" class="navbar-brand expand-lg d-none d-lg-block">
+        <img src="<?=$BASE?>/img/vzg-logo.jpg"/>
+      </a>
+    <div class="collapse navbar-collapse" id="mainMenu">
       <ul class="navbar-nav mr-auto">
 <?php
 $menu = ['index','structure','application','code','schema', 'about'];
@@ -35,14 +40,13 @@ foreach ($menu as $href) {
     echo "<a href='$url' class='nav-link'>$name</a></li>";
 } ?>
       </ul>
-    </nav>
+    </div>
   </nav>
 </header>
 <main role="main" class="container">
 <?php
 if ($page !== $current) {
     echo "<h1>".$title."</h1>";
-    ;
 }
 if ($VIEW) {
     echo \View::instance()->render($VIEW);
@@ -64,6 +68,8 @@ include 'seealso.php';
   </div>
 </footer>
 </body>
+<script src="<?=$BASE?>/js/jquery-3.3.1.min.js"></script>
+<script src="<?=$BASE?>/js/bootstrap.min.js"></script>
 <?php
 foreach (($javascript ?? []) as $js) {
     if (preg_match('/[\r\n]/', $js)) {

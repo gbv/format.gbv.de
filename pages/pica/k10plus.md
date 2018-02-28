@@ -5,7 +5,6 @@ application:
   - bibliographic
   - authority
 javascript:
-  - //code.jquery.com/jquery-3.2.1.min.js
   - js/demo.js
 homepage: https://www.bszgbv.de/
 ---

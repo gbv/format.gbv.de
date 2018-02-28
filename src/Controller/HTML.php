@@ -71,7 +71,7 @@ class HTML
             );
 
             // clean up tables
-            $html = str_replace('<table>', '<table class="table table-bordered">', $html);
+            $html = str_replace('<table>', '<table class="table table-bordered table-responsive">', $html);
             $html = preg_replace(
                 '!<thead>\s*<tr>\s*(<th></th>\s*)*</tr>\s*</thead>!s',
                 '',
