@@ -22,9 +22,12 @@ foreach (($css ?? []) as $href) {
 <?php
 $menu = ['index','structure','application','code','schema', 'about'];
 $parts = explode('/', $page);
+$current = null;
 foreach ($menu as $href) {
     $active = $href === (in_array($parts[0], $menu) ? $parts[0] : 'index');
-
+    if ($active) {
+        $current = $href;
+    }
     $url = "$BASE/" . ($href === 'index' ? '' : $href);
     $p = $PAGES->get($href);
     $name = $p['short'] ?? $p['title'] ?? $href;
@@ -37,6 +40,10 @@ foreach ($menu as $href) {
 </header>
 <main role="main" class="container">
 <?php
+if ($page !== $current) {
+    echo "<h1>".$title."</h1>";
+    ;
+}
 if ($VIEW) {
     echo \View::instance()->render($VIEW);
 } elseif ($BODY) {

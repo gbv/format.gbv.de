@@ -22,7 +22,12 @@ class Pages
     protected function loadPage(string $page)
     {
         $header = [];
-        $body = file_get_contents($this->base . $page . '.md');
+
+        $file = $this->base . $page . '.md';
+        if (!file_exists($file)) {
+            return;
+        }
+        $body = file_get_contents($file);
 
         $pattern = '/[\s\r\n]---[\s\r\n]/s';
         $parts = preg_split($pattern, PHP_EOL . ltrim($body));

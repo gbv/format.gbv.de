@@ -32,9 +32,19 @@ class HTML
 
         // send YAML files as JSON
         if (preg_match('!^(([a-z0-9-]+)/?)+\.json$!', $path)) {
-            $file = $this->root . substr($path, 0, -4).'yaml';
+            $id = substr($path, 0, -5);
+            $file = $this->root . $id . '.yaml';
             if (file_exists($file)) {
                 $data = Yaml::parse(file_get_contents($file));
+            } else {
+                $data = $this->pages->get($id);
+                if ($data) {
+                    foreach (['markdown', 'arguments', 'page', 'javascript', 'css', 'broader'] as $key) {
+                        unset($data[$key]);
+                    }
+                }
+            }
+            if ($data) {
                 $res = new JsonResponse($data);
                 $res->send();
                 return;
@@ -107,18 +117,6 @@ class HTML
             $f3->mset($page);
             $f3['MARKDOWN'] = $page['markdown'] . "\n\n" . $this->links();
             $f3['PAGES'] = $this->pages;
-/*
-            if ($path != 'index') {
-                $breadcrumb = [ '/' => 'Formate'];
-                $parts = explode('/', $path);
-                $depth = count($parts);
-                for ($i=0; $i<$depth-1; $i++) {
-                    $breadcrumb[ str_repeat('../', $depth-$i).$parts[$i] ] = strtoupper($parts[$i]);
-                }
-                $f3['breadcrumb'] = $breadcrumb;
-            }
-            }
- */
         }
 
         if (!$f3['MARKDOWN']) {
