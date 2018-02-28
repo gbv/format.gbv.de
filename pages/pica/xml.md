@@ -1,8 +1,8 @@
 ---
 title: PICA XML
 homepage: https://verbundwiki.gbv.de/display/VZG/PICA+XML+Version+1.0
-ids:
-  - info:srw/schema/5/picaXML-v1.0
+#ids:
+#  - info:srw/schema/5/picaXML-v1.0
 model: pica
 base: xml
 ---

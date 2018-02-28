@@ -10,8 +10,8 @@ Publikationen. Die in der Formatatenbank erfassten Anwendungsformate sind
 grob unterteilt in:
 
 * [Bibliografische Datenformate](application/bibliographic)
-* [Dokumentformate](application/documents)
 * [Formate für Normdaten](application/authority)
+* [Dokumentformate](application/documents)
 
 <div class="alert alert-warning" role="alert">
   <a href="rdf">RDF</a>-basierte Formate sind in den Übersichten noch nicht enthalten!

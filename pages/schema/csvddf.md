@@ -8,7 +8,7 @@ base: json
 for: csv
 schemas:
   - url: https://frictionlessdata.io/schemas/csv-dialect.json
-    language: json-schema
+    type: json-schema
 ---
 
 Mit dem **CSV Dialect Description Format** können Syntax-Varianten von

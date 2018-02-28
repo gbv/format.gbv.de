@@ -1,0 +1,76 @@
+---
+title: About Data Formats Schema
+$schema: http://json-schema.org/draft-06/schema#
+type: object
+properties:
+
+  title:
+    type: string
+  short:
+    type: string
+  homepage:
+    $ref: '#/definitions/url'
+  wikidata:
+    $ref: '#/definitions/qid'
+  bartoc:
+    $ref: '#/definitions/bartoc'
+  language:
+    type: string # TODO: en|de
+  
+  application:
+    $ref: '#/definitions/links'
+
+  for:
+    $ref: '#/definitions/links'
+  model:
+    $ref: '#/definitions/name'
+  base:
+    $ref: '#/definitions/links'
+  profiles:
+    $ref: '#/definitions/links'
+  schemas:
+    type: array
+    items:  
+      type: object    
+      properties:
+        url:
+          $ref: '#/definitions/url'
+        type:
+          $ref: '#/definitions/name'
+      additionalProperties: false
+
+  created:
+    $ref: '#/definitions/date'
+  modified:
+    $ref: '#/definitions/date'
+  creator:
+    type: string
+  contributor:
+    type: string
+
+additionalProperties: false
+
+definitions:
+  name:
+    type: string
+    # TODO: format
+  url:
+    type: string
+    format: uri
+  qid:
+    type: string
+    # TODO: Q...
+  bartoc:
+    type: integer
+  date:
+    oneOf:
+      - type: string
+      - type: integer
+    # TODO: format
+  links:
+    oneOf:
+     - $ref: '#/definitions/name'
+     - type: array
+       items:
+         $ref: '#/definitions/name'
+

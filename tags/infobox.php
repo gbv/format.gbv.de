@@ -24,14 +24,14 @@ foreach ($fields as $name => $value) {
 if (count($schemas ?? [])) {
     $items = [];
     foreach ($schemas as $schema) {
-        $language = 'schema/'.$schema['language'];
+        $language = 'schema/'.$schema['type'];
         $language = $PAGES->get($language);
         $language = $language['short'] ?? $language['title'];
         $items[] = "<a href='{$schema['url']}'>$language</a>";
     }
     if (count($items)) {
         $html = implode('<br>', $items);
-        $infobox[count($schemas) > 1 ? 'Schema' : 'Schemas'] = $html;
+        $infobox[count($schemas) > 1 ? 'Schemas' : 'Schema'] = $html;
     }
 }
 

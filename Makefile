@@ -1,6 +1,6 @@
-.PHONY: test style web
+.PHONY: test style web metadata
 
-test:
+test: metadata
 	composer test
 
 style:
@@ -8,3 +8,7 @@ style:
 
 web:
 	php -S localhost:8020 -t public
+
+metadata:
+	php bin/metadata.php > formats.json
+

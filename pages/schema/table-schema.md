@@ -7,7 +7,7 @@ for:
   - csv
 schemas:
   - url: https://frictionlessdata.io/schemas/table-schema.json
-    language: json-schema
+    type: json-schema
 ---
 
 Mit einem **JSON Table Schema** können [Tabellen- und Feldbasierte

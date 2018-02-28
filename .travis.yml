@@ -12,7 +12,7 @@ install:
 
 script:
     - mkdir -p build/logs
-    - composer test
+    - make test
 
 after_script:
     - composer require satooshi/php-coveralls
