@@ -1,5 +1,5 @@
 ---
-title: ZETA Addressformat
+title: ZDB-Addressformat
 profiles: pica 
 application: authority
 homepage: http://sigel.staatsbibliothek-berlin.de/vergabe/adressenformat/
