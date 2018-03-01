@@ -1,0 +1,75 @@
+---
+$schema: https://format.gbv.de/schema/avram/schema.json
+title: ZDB-Addressformat
+description: PICA-Format für Adressdatensätze von ZDB und ISIL-Agentur    
+url: http://sigel.staatsbibliothek-berlin.de/vergabe/adressenformat/
+fields:
+  007N:
+    pica3: 039
+    label: Frühere ID-Nr. des Datensatzes
+  008H:
+    pica3: 092
+    label: Kennzeichen der Einrichtung
+  029A:
+    pica3: 110
+    label: Name der Einrichtung
+  032P:
+    pica3: 371
+    label: Adresse, Zugang
+  029@:
+    pica3: 410
+    label: Weitere Namensformen der Einrichtung
+  029R:        
+    pica3: 510
+    label: Übergeordnete Einrichtung
+  050C:
+    pica3: 667
+    label: Redaktionelle Bemerkungen (intern)
+  050D: 
+    pica3: 680
+    label: Redaktionelle Bemerkungen ISIL-Agentur (intern)
+  035B:
+    pica3: 802
+    label: Kommunikation
+  035G:
+    pica3: 803
+    label: Schlagwörter der Sammelschwerpunkte
+  035H:
+    pica3: 804
+    label: Betreute Sondersammelgebiete der DFG
+  035E:
+    pica3: 805
+    label: Codes für ZDB und Sigelverzeichnis / Bezüge zu anderen Einrichtungen
+  035D:
+    pica3: 806
+    label: Übernommene Einrichtungen
+  035I:
+    pica3: 807
+    label: Codes und Informationen für die Fernleihe
+  035J:
+    pica3: 808
+    label: Allgemeine Anmerkungen zur Fernleihe
+  035K:
+    pica3: 809
+    label: Liefersysteme, Altbestand und Codes
+  035L:
+    pica3: 810
+    label: Fristen und besondere Kontakt-E-Mails für die Fernleihe
+  035M:
+    pica3: 811
+    label: Weitere Angaben zur Fernleihe
+  035N:
+    pica3: 812
+    label: URL-Templates für die Fernleihe
+  035O:
+    pica3: 813
+    label: Büchertransport
+  035P:
+    pica3: 814
+    label: Spezielle Felder für Produktsätze (Pakete)
+  009Q:
+    pica3: 856
+    label: Endnutzer Service-URLs
+  047A:
+    pica3: 900
+    label: Allgemeine Bemerkungen zum gesamten Eintrag
