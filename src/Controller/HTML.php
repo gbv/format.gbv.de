@@ -2,10 +2,9 @@
 
 namespace Controller;
 
-use GBV\JsonResponse;
-
 use mytcms\Tags;
 use mytcms\Pages;
+use mytcms\JSON;
 
 use Symfony\Component\Yaml\Yaml;
 
@@ -19,7 +18,6 @@ class HTML
     public function __construct()
     {
         $this->pages = new Pages('../pages');
-        $this->tags = new Tags('../tags', ['PAGES' => $this->pages]);
     }
 
     public function render($f3, $params)
@@ -39,14 +37,15 @@ class HTML
             } else {
                 $data = $this->pages->get($id);
                 if ($data) {
-                    foreach (['markdown', 'arguments', 'page', 'javascript', 'css', 'broader'] as $key) {
+                    foreach (['markdown', 'arguments', 'javascript', 'css', 'broader'] as $key) {
                         unset($data[$key]);
                     }
+                    $data['@context'] = "http://format.gbv.de/data/context.json";
+                    $data['$schema']  = "http://format.gbv.de/data/schema.json";
                 }
             }
             if ($data) {
-                $res = new JsonResponse($data);
-                $res->send();
+                (new JSON($data))->sendJson();
                 return;
             }
         }
@@ -57,6 +56,12 @@ class HTML
             $html = \Parsedown::instance()->text($f3['MARKDOWN']);
 
             // process custom tags
+            if (!$this->tags) {
+                $this->tags = new Tags('../tags', [
+                    'PAGES' => $this->pages,
+                    'BASE' => $f3['BASE'],
+                ]);
+            }
             $html = $this->tags->expand($html);
 
             // Add header identifiers

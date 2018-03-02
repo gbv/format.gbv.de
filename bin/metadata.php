@@ -6,9 +6,9 @@ require_once './vendor/autoload.php';
 use Opis\JsonSchema\{Schema, Validator};
 use mytcms\Util;
 
-$schemafile = 'pages/aboutdata/schema.yaml';
+$schemafile = 'pages/data/schema.yaml';
 
-$internal = ['markdown', 'arguments', 'page', 'javascript', 'css', 'broader'];
+$internal = ['markdown', 'arguments', 'javascript', 'css', 'broader'];
 
 $schema = new Schema(Util::loadJsonYaml($schemafile));
 $validator = new Validator();
@@ -17,8 +17,7 @@ $formats = new \mytcms\Pages('pages/');
 $metadata = [];
 $links = [];
 $result;
-foreach ($formats->select() as $page) {
-    $id = $page['page'];
+foreach ($formats->select() as $id => $page) {
 
     foreach ($internal as $key) {
         unset($page[$key]);

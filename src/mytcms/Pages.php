@@ -37,7 +37,7 @@ class Pages
             $body = implode(PHP_EOL . "---" . PHP_EOL, array_slice($parts, 2));
         }
 
-        $header['page'] = $page;
+        $header['id'] = $page;
         $parts = explode('/', $page);
         array_pop($parts);
         if (count($parts)) {
@@ -59,7 +59,7 @@ class Pages
                 if ($prefix === '' || strpos($file, $prefix) === 0) {
                     $page = $this->get(substr($file, 0, -3));
                     if (self::match($page, $criteria)) {
-                        $pages[$page['page']] = $page;
+                        $pages[$page['id']] = $page;
                     }
                 }
             }

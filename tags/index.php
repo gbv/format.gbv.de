@@ -26,7 +26,7 @@ foreach (($css ?? []) as $href) {
       <ul class="navbar-nav mr-auto">
 <?php
 $menu = ['index','structure','application','code','schema', 'about'];
-$parts = explode('/', $page);
+$parts = explode('/', $id);
 $current = null;
 foreach ($menu as $href) {
     $active = $href === (in_array($parts[0], $menu) ? $parts[0] : 'index');
@@ -45,7 +45,7 @@ foreach ($menu as $href) {
 </header>
 <main role="main" class="container">
 <?php
-if ($page !== $current) {
+if ($id !== $current) {
     echo "<h1>".$title."</h1>";
 }
 if ($VIEW) {
@@ -59,10 +59,12 @@ include 'seealso.php';
 <footer class="footer">
   <div class="container-fluid text-secondary">
     <div class="float-right">
-      <a href="<?=$BASE?>/license">Lizenz</a>
-<?php if ($page) { ?>
-      <a href="https://github.com/gbv/format.gbv.de/tree/master/pages/<?=$page?>.md">Quelltext</a>
+<?php if ($id) { ?>
+      <a href="<?=$id?>.json">Daten</a>
+      / <a href="https://github.com/gbv/format.gbv.de/tree/master/pages/<?=$id?>.md">Quelltext</a>
+      /
 <?php } ?>
+      <a href="<?=$BASE?>/license">Lizenz</a>
     </div>
     <p><a href="https://www.gbv.de/">Verbundzentrale des GBV (VZG)</a></p>
   </div>

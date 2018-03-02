@@ -4,6 +4,8 @@ $schema: http://json-schema.org/draft-06/schema#
 type: object
 properties:
 
+  id:
+    $ref: '#/definitions/id'
   title:
     type: string
   short:
@@ -23,7 +25,7 @@ properties:
   for:
     $ref: '#/definitions/links'
   model:
-    $ref: '#/definitions/name'
+    $ref: '#/definitions/id'
   base:
     $ref: '#/definitions/links'
   profiles:
@@ -36,7 +38,7 @@ properties:
         url:
           $ref: '#/definitions/url'
         type:
-          $ref: '#/definitions/name'
+          $ref: '#/definitions/id'
       additionalProperties: false
 
   created:
@@ -51,7 +53,7 @@ properties:
 additionalProperties: false
 
 definitions:
-  name:
+  id:
     type: string
     # TODO: format
   url:
@@ -69,8 +71,8 @@ definitions:
     # TODO: format
   links:
     oneOf:
-     - $ref: '#/definitions/name'
+     - $ref: '#/definitions/id'
      - type: array
        items:
-         $ref: '#/definitions/name'
+         $ref: '#/definitions/id'
 

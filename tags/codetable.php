@@ -13,7 +13,7 @@ foreach ($codings as $coding) {
     $model = $PAGES->get($coding['model']);
     $base  = $PAGES->get($coding['base']);
 
-    $syntax = ($coding['page'] == $model['page']);
+    $syntax = ($coding['id'] == $model['id']);
 
     echo "<tr>";
     echo "<td>" . $TAGS->pagelink(['meta' => $coding, 'syntax' => $syntax]) . "</td>";

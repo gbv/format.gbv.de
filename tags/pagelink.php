@@ -1,5 +1,5 @@
-<a href="<?=$BASE?>/<?=$meta['page']?>">
+<a href="<?=$BASE?>/<?=$meta['id']?>">
     <?= $meta['title'] ?>
     <?= $syntax ? ' Syntax' : '' ?>
-    <?= $meta['short'] ? ' (' . $meta['short'] . ')' : '' ?>    
+    <?= $meta['short'] ? ' (' . $meta['short'] . ')' : '' ?>
 </a>
