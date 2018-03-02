@@ -1,5 +1,5 @@
 ---
-title: Maschinelle Austauschformat für Bibliotheken
+title: Maschinelles Austauschformat für Bibliotheken
 short: MAB
 homepage: http://www.dnb.de/DE/Standardisierung/Formate/MAB/mab_node.html
 wikidata: Q1906834
@@ -16,3 +16,4 @@ deutschsprachigen Bibliothekswesen verbreitet. Die aktuelle Version ist
 
 * MAB2 (Binärformat)
 * MABxml
+* ...

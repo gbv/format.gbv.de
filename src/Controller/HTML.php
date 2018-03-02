@@ -86,6 +86,7 @@ class HTML
             $f3['BODY'] = $html;
         }
 
+        $f3['TAGS'] = $this->tags;
         echo \View::instance()->render('index.php');
     }
 

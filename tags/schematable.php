@@ -6,10 +6,10 @@
     </tr>
   </thead>
   <tbody>
-<?php foreach ($PAGES->select([], 'schema/') as $schema) { ?>
+<?php foreach ($PAGES->select([], 'schema/') as $id => $schema) { ?>
   <tr>
     <td>
-    <?= $TAGS->pagelink(['meta'=>$schema]) ?>
+    <?= $TAGS->link(['id' => $id]) ?>
     </td>
     <td><?php
 
@@ -18,8 +18,7 @@
 
     echo implode(', ', array_map(
         function ($format) use ($PAGES, $TAGS) {
-            $meta = $PAGES->get($format);
-            return $TAGS->pagelink(['meta'=>$meta]);
+            return $TAGS->link(['id'=>$format]);
         },
         $for
     ));

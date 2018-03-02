@@ -21,6 +21,16 @@ foreach ($fields as $name => $value) {
     }
 }
 
+if ($application) {
+    $apps = [];
+    foreach (is_array($application) ? $application : [$application] as $app) {
+        $apps[] = $TAGS->link(['id'=>"application/$app"]);
+    }
+    $infobox['Anwendung'] = implode('<br>', $apps);
+} elseif($for) {
+    $infobox['Anwendung'] = "<a href='$BASE/schema'>Schemasprache</a>";
+}
+
 if (count($schemas ?? [])) {
     $items = [];
     foreach ($schemas as $schema) {
@@ -31,15 +41,19 @@ if (count($schemas ?? [])) {
     }
     if (count($items)) {
         $html = implode('<br>', $items);
-        $infobox[count($schemas) > 1 ? 'Schemas' : 'Schema'] = $html;
+        $title = count($schemas) > 1 ? 'Schemas' : 'Schema';
+        if ($for) {
+            $title = 'Meta-'.$title;
+        }
+        $infobox[$title] = $html;
     }
 }
 
 if (count($infobox)) { ?>
   <table class="table table-sm">
-    <thead>
+    <!--thead>
       <tr><th colspan="2"><?=$title?></th></tr>
-    </thead>
+    </thead-->
     <tbody>
 <?php foreach ($infobox as $key => $value) {
     echo "<tr><td>$key</td><td>$value</td></tr>\n";

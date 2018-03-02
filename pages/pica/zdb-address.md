@@ -8,5 +8,6 @@ schemas:
     type: avram
 ---
 
-Das Adressenformat der Zeitschriftendatenbank wird für die Daten des
-ISIL-Verzeichnis eingesetzt.
+Das Adressenformat der Zeitschriftendatenbank (ZDB) wird für die Daten des
+ISIL-Verzeichnis eingesetzt. Für die weiteren Inhalte der ZDB gibt es das
+[ZDB-Format](zdb).

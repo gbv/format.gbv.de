@@ -54,13 +54,14 @@ if ($VIEW) {
     echo \View::instance()->raw($BODY);
 }
 include 'seealso.php';
+include 'infobox.php';
 ?>
 </main>
 <footer class="footer">
   <div class="container-fluid text-secondary">
     <div class="float-right">
 <?php if ($id) { ?>
-      <a href="<?=$id?>.json">Daten</a>
+      <a href="<?="$BASE/$id"?>.json">Daten</a>
       / <a href="https://github.com/gbv/format.gbv.de/tree/master/pages/<?=$id?>.md">Quelltext</a>
       /
 <?php } ?>

@@ -12,7 +12,7 @@ if ($exclude) {
     unset($items[$exclude]);
 }
 
-usort($items, function ($a, $b) {
+uasort($items, function ($a, $b) {
     $a = strtolower($a['title'] ?? '');
     $b = strtolower($b['title'] ?? '');
     return $a <=> $b;

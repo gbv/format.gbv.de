@@ -1,0 +1,28 @@
+---
+'@context':
+
+  # Ontologies
+  
+  # includes obo:OBI_0000658 (Data Representation Model = Data Structure [Specification])
+  obo: http://purl.obolibrary.org/obo/
+        
+  # defines datatypes as sets of distinct values with properties and operations
+  # See <https://doi.org/10.1016/j.ins.2015.08.006>
+  ontodt: http://ontodm.com/OntoDT#
+
+  # Base IRI
+  
+  '@base': http://format.gbv.de/
+
+  # Properties
+
+  id: '@id'
+  title: http://purl.org/dc/terms/title
+  homepage: http://xmlns.com/foaf/0.1/page
+
+  created: http://purl.org/dc/terms/created
+  modified: http://purl.org/dc/terms/modified
+
+#  wikidata:
+#    '@type': '@id'
+#    '@vocab': http://entity.wikidata.org/

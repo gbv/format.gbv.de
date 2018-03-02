@@ -16,5 +16,3 @@ if ($wikidata || $homepage || $bartoc) {
         <?= "$title " . implode(' und ', $links) ?>
     </div>
 <?php }
-
-include 'infobox.php';

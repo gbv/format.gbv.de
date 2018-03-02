@@ -7,7 +7,7 @@ foreach ($arguments as $name) {
 
 $items = $PAGES->select($criteria);
 
-usort($items, function ($a, $b) use ($PAGES) {
+uasort($items, function ($a, $b) use ($PAGES) {
     $x = $a['title'] ?? '';
     $y = $b['title'] ?? '';
     if (isset($a['broader'])) {
@@ -22,19 +22,19 @@ usort($items, function ($a, $b) use ($PAGES) {
 $prevParent = null;
 if (count($items)) {
     echo '<ul>';
-    foreach ($items as $item) {
+    foreach ($items as $id => $item) {
         $parent = $item['broader'] ?? '';
         if ($parent !== $prevParent) {
             if ($prevParent) {
                 echo '</ul>';
             }
             if ($parent) {
-                echo '<li>' . $TAGS->pagelink(['meta' => $PAGES->get($parent)]);
+                echo '<li>' . $TAGS->link(['id' => $parent]);
                 echo '<ul>';
             }
             $prevParent = $parent;
         }
-        echo '<li>' . $TAGS->pagelink(['meta' => $item]) . '</li>';
+        echo '<li>' . $TAGS->link(['id' => $id]) . '</li>';
     }
     if ($prevParent !== null) {
         echo '</ul>';

@@ -10,15 +10,12 @@
 <?php
     $codings = $PAGES->select(['model' => null, 'base' => null]);
 foreach ($codings as $coding) {
-    $model = $PAGES->get($coding['model']);
-    $base  = $PAGES->get($coding['base']);
-
-    $syntax = ($coding['id'] == $model['id']);
+    $syntax = ($coding['id'] == $coding['model']);
 
     echo "<tr>";
-    echo "<td>" . $TAGS->pagelink(['meta' => $coding, 'syntax' => $syntax]) . "</td>";
-    echo "<td>" . $TAGS->pagelink(['meta' => $model]) . "</td>";
-    echo "<td>" . $TAGS->pagelink(['meta' => $base]) . "</td>";
+    echo "<td>" . $TAGS->link(['id' => $coding['id'], 'syntax' => $syntax]) . "</td>";
+    echo "<td>" . $TAGS->link(['id' => $coding['model']]) . "</td>";
+    echo "<td>" . $TAGS->link(['id' => $coding['base']]) . "</td>";
     echo "</tr>";
 }
     ?>
