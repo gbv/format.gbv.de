@@ -1,5 +1,6 @@
 ---
-'@context':
+"@context":
+  "@version: 1.1,
 
   # Ontologies
   
@@ -12,17 +13,50 @@
 
   # Base IRI
   
-  '@base': http://format.gbv.de/
+  "@base": http://format.gbv.de/
 
   # Properties
 
-  id: '@id'
+  id: "@id"
   title: http://purl.org/dc/terms/title
   homepage: http://xmlns.com/foaf/0.1/page
 
   created: http://purl.org/dc/terms/created
   modified: http://purl.org/dc/terms/modified
+  creator: http://purl.org/dc/terms/creator
+  contributor: http://purl.org/dc/terms/contributor
 
-#  wikidata:
-#    '@type': '@id'
-#    '@vocab': http://entity.wikidata.org/
+  # links (TODO: refine)
+
+  for:
+    "@id": http://www.w3.org/2000/01/rdf-schema#seeAlso
+    "@type": "@id"
+  model:
+    "@id": http://www.w3.org/2000/01/rdf-schema#seeAlso
+    "@type": "@id"
+  base:
+    "@id": http://www.w3.org/2000/01/rdf-schema#seeAlso
+    "@type": "@id"
+  profiles:
+    "@id": http://www.w3.org/2000/01/rdf-schema#seeAlso
+    "@type": "@id"
+  application:
+    "@id": http://www.w3.org/2000/01/rdf-schema#seeAlso
+    "@type": "@id"
+  
+  # schemas: TODO
+
+  # Identifier
+
+  wikidata:
+    "@id": http://www.w3.org/2002/07/owl#sameAs
+    "@type": "@id"
+    "@context":
+      "@base": http://www.wikidata.org/entity/
+
+  bartoc:
+    "@id": http://www.w3.org/2002/07/owl#sameAs
+    "@type": "@id"
+    "@context":
+      "@base": http://bartoc.org/en/node/
+
