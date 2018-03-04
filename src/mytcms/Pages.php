@@ -48,15 +48,15 @@ class Pages
         return $header;
     }
 
-    public function select(array $criteria = [], string $prefix = '')
+    public function select(array $criteria = [], string $pattern = '')
     {
         $pages = [];
-        $pattern = '!^' . self::NAME_PATTERN . '\.md$!';
+        $filepattern = '!^' . self::NAME_PATTERN . '\.md$!';
         $iterator = new \RecursiveDirectoryIterator($this->base);
         foreach (new \RecursiveIteratorIterator($iterator) as $file) {
             $file = substr("$file", strlen($this->base));
-            if (preg_match($pattern, $file)) {
-                if ($prefix === '' || strpos($file, $prefix) === 0) {
+            if (preg_match($filepattern, $file)) {
+                if (!$pattern || preg_match($pattern, $file)) {
                     $page = $this->get(substr($file, 0, -3));
                     if (self::match($page, $criteria)) {
                         $pages[$page['id']] = $page;

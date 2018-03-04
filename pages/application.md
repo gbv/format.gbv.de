@@ -13,8 +13,8 @@ grob unterteilt in:
 * [Formate für Normdaten](application/authority)
 * [Dokumentformate](application/documents)
 
-Darüber hinaus können [Schemasprachen](schema) auch als Anwendungsformate zur
-Formatbeschreibung angesehen werden.
+Darüber hinaus können [Schemasprachen](schema/language) auch als
+Anwendungsformate zur Formatbeschreibung angesehen werden.
 
 <div class="alert alert-warning" role="alert">
   <a href="rdf">RDF</a>-basierte Formate sind in den Übersichten noch nicht enthalten!

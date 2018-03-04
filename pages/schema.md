@@ -1,16 +1,6 @@
 ---
 title: Schemas und Schemasprachen
 short: Schemas
-javascript:
-    - //cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js
-    - //cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js
-    - |
-        $(document).ready(function() {
-            $('.sortable').DataTable({ paging: false, search: false, info: false });
-        } );
-css: 
-    - //cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css
-
 ---
 
 Ein **Schema** ist eine formale Beschreibung der Struktur von Daten. Mit einem
@@ -19,12 +9,10 @@ der beschriebenen Struktur entspricht. Dieser Vorgang wird auch als
 *Validierung* bezeichnet.
 
 Die meisten Datenformate sind durch Schemas beschrieben oder lassen sich durch
-Schemas anpassen. Diese Schemas sind üblicherweise in einer **Schemasprache**
-formuliert. Viele Formate beinhalten allerdings auch Regeln, die nicht in einem
-Schema definiert sind.
-
-Im Unterschied zu Anwendungsregeln lassen sich mit Schemas nur strukturelle
+Schemas anpassen. Diese Schemas sind üblicherweise in einer
+**[Schemasprache](schema/language)** formuliert. Viele Formate beinhalten
+allerdings auch Regeln, die nicht in einem Schema definiert sind.  Im
+Unterschied zu Anwendungsregeln lassen sich mit Schemas nur strukturelle
 Eigenschaften von Daten festlegen. 
 
-
-<schematable/>
+<schemas/>

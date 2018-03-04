@@ -36,7 +36,7 @@ properties:
       type: object    
       properties:
         url:
-          $ref: '#/definitions/url'
+          type: string
         type:
           $ref: '#/definitions/id'
       additionalProperties: false

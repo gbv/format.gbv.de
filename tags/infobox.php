@@ -27,23 +27,24 @@ if ($application) {
         $apps[] = $TAGS->link(['id'=>"application/$app"]);
     }
     $infobox['Anwendung'] = implode('<br>', $apps);
-} elseif($for) {
+} elseif ($for) {
     $infobox['Anwendung'] = "<a href='$BASE/schema'>Schemasprache</a>";
 }
 
 if (count($schemas ?? [])) {
     $items = [];
     foreach ($schemas as $schema) {
-        $language = 'schema/'.$schema['type'];
-        $language = $PAGES->get($language);
-        $language = $language['short'] ?? $language['title'];
-        $items[] = "<a href='{$schema['url']}'>$language</a>";
+        $id = 'schema/'.$schema['type'];
+        $url = $schema['url'];
+        $items[] =
+            "<a href='$url'>$url</a>"
+            . ' ('. $TAGS->link(['id'=>$id]) . ')';
     }
     if (count($items)) {
         $html = implode('<br>', $items);
         $title = count($schemas) > 1 ? 'Schemas' : 'Schema';
         if ($for) {
-            $title = 'Meta-'.$title;
+            $title = 'Metas'.substr($title, 1);
         }
         $infobox[$title] = $html;
     }

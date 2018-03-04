@@ -6,7 +6,11 @@
     </tr>
   </thead>
   <tbody>
-<?php foreach ($PAGES->select([], 'schema/') as $id => $schema) { ?>
+<?php foreach ($PAGES->select([], '!^schema/[^/]+$!') as $id => $schema) {
+    if ($id == 'schema/language') {
+        continue;
+    }
+    ?>
   <tr>
     <td>
     <?= $TAGS->link(['id' => $id]) ?>

@@ -82,8 +82,8 @@ identifiers](#field-identifier) to [field definitons](#field-definition).
 
 ~~~json
 {
-  "010": { "label": "Library of Congress Control Number" }
-  "084": { "label": "Classification Scheme and Edition" },
+  "010": { "label": "Library of Congress Control Number" },
+  "084": { "label": "Classification Scheme and Edition" }
 }
 ~~~
 

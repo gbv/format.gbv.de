@@ -1,0 +1,29 @@
+{
+  "$schema": "https://format.gbv.de/schema/avram/schema.json",
+  "title": "MARC 21 Format for Classification Data",
+  "description": "MARC format for classification numbers and captions associated with them",
+  "url": "https://www.loc.gov/marc/classification/",
+  "fields": {
+    "010": { "label": "Library of Congress Control Number" },
+    "084": { "label": "Classification Scheme and Edition" },
+    "007": {
+      "tag": "007",
+      "label": "Physical Description",
+      "types": {
+        "Electronic resource": {
+          "positions": {
+            "00": {
+              "label": "Category of material",
+              "url": "https://www.loc.gov/marc/bibliographic/bd007c.html",
+              "codes": {
+                "c": {
+                  "label": "Electronic resource"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

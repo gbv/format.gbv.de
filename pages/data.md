@@ -1,7 +1,7 @@
 ---
-title: Datenmodell
+title: Datenmodell der Formatdatenbank
 schemas:
-  - url: https://format.gbv.de/data/schema.json
+  - url: data/schema.json
     type: json-schema
 ---
 
