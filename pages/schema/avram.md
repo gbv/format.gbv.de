@@ -22,7 +22,7 @@ auf Basis von [JSON](../json).
 
 * Perl-Modul [MARC::Schema](https://metacpan.org/release/MARC-Schema) zur
   Validierung von MARC-Daten
-* Perl-Modul [PICA::Data](https://metacpan.org/pod/PICA::Schema)zur
+* Perl-Modul [PICA::Data](https://metacpan.org/pod/PICA::Schema) zur
   Validierung von PICA-Daten
 
 <!--

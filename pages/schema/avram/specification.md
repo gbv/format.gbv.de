@@ -8,7 +8,7 @@ language: en
 related formats such as [PICA](../../pica) and [MAB](../../mab).
 
 * author: Jakob Voß
-* version: 0.1.1
+* version: 0.2.0
 * date: 2018-03-09
 
 ## Introduction
@@ -41,8 +41,8 @@ A **timestamp** is a date or datetime as defined with XML Schema datatype
 [gYearMonth](https://www.w3.org/TR/xmlschema-2/#gYearMonth) (`-?YYYY-MM`),
 or [gYear](https://www.w3.org/TR/xmlschema-2/#gYear) (`-?YYYY`).
 
-A **regular expression** is a string e in the [ECMA 262 (2015) regular expression
-grammar](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-patterns).
+A **regular expression** is a string that conforms to the [ECMA 262 (2015)
+regular expression grammar](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-patterns).
 The expression is interpreted as Unicode pattern.
 
 ## Schema format
@@ -188,9 +188,11 @@ having field `subfields`.
 [positions]: #positions
 
 Fixed fields can be specified with a JSON object that maps **character
-positions** to data element definitions. A character position is either two
-digits (e.g.  `09`) or two digits followed by `-` and another two digits (e.g.
-`12-16`). A **data element definition** is a JSON object that SHOULD contain:
+positions** to data element definitions. A character position is sequence of
+digits (e.g.  `09`) or two sequences separated by `-` (e.g. `12-16`). It is
+RECOMMENDED to use sequences of two digits. If two sequences are given, the
+second interpreted as number MUST NOT be smaller than the first interpreted as
+number. A **data element definition** is a JSON object that SHOULD contain:
 
 * key `label` with the name of the data element
 
@@ -199,6 +201,10 @@ The data element definition MAY further contain:
 * key `url` with an URL link to documentation
 * key `codes` with a [codelist]
 * key `deprecated-codes` with a [codelist] of deprecated codes
+* key `pattern` with a regular expression
+
+A data element definition MUST NOT contain more than one of the keys `codes`
+and `pattern`.
 
 #### Subfield schedule
 
@@ -217,6 +223,7 @@ definition** is a JSON object that SHOULD contain:
 The subfield schedule MAY further contain:
 
 * key `pattern` with a regular expression
+* key `positions` with a specification of [positions]
 * key `url` with an URL link to documentation
 * key `order` with a non-negative integer used to specify a partial or complete order
   of subfields
@@ -303,9 +310,12 @@ An Avram schema can be used to check:
 
 ### Changes
 
-#### 0.1.1 (2018-03-09)
+#### 0.2.0 (2018-03-09)
 
-* Add `pattern` field
+* Add `pattern` at subfields and positions
+* Add `position` at subfields
+* Extend definition of positions
+* Disallow empty strings
 
 #### 0.1.0 (2018-02-20)
 

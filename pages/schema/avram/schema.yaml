@@ -27,6 +27,8 @@ properties:
             type: boolean
           required:
             type: boolean
+          pattern:
+            type: string
           url:
             $ref: '#/definitions/url'
           occurrence:
@@ -54,7 +56,7 @@ definitions:
   positions:
     type: object
     patternProperties:
-      '^[0-9][0-9](-[0-9][0-9])?$':
+      '^[0-9]+(-[0-9]+)?$':
         $ref: '#/definitions/codedvalue'
   field-types:
     oneOf:
@@ -91,6 +93,8 @@ definitions:
         $ref: '#/definitions/url'
       order:
         type: integer
+      positions:
+        $ref: '#/definitions/positions'
       pica3:
         type: string
       modified:
@@ -108,6 +112,8 @@ definitions:
         $ref: '#/definitions/url'
       codes:
         $ref: '#/definitions/codelist'
+      pattern:
+        type: string
       deprecated-codes:
         $ref: '#/definitions/codelist'
   codelist:
