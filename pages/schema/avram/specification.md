@@ -8,8 +8,8 @@ language: en
 related formats such as [PICA](../../pica) and [MAB](../../mab).
 
 * author: Jakob Voß
-* version: 0.1.0
-* date: 2018-02-20
+* version: 0.1.1
+* date: 2018-03-09
 
 ## Introduction
 
@@ -209,11 +209,16 @@ definition** is a JSON object that SHOULD contain:
 
 The subfield schedule MAY further contain:
 
+* key `pattern` with a regular expression
 * key `url` with an URL link to documentation
 * key `order` with a non-negative integer used to specify a partial or complete order
   of subfields
 * key `pica3` with a corresponding Pica3 syntax definition
 * key `modified` with a timestamp
+
+Regular expressions MUST be given in the [ECMA 262 (2015) regular expression
+grammar](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-patterns).
+The expression is interpreted as Unicode pattern.
 
 #### Indicators
 
@@ -282,6 +287,9 @@ An Avram schema can be used to check:
 * T. Bray: *The JavaScript Object Notation (JSON) Data Interchange Format*.
   RFC 7159, March 2014. <https://tools.ietf.org/html/rfc7159>
 
+* *ECMAScript 2015 Language Specification (ECMA-262, 6ᵗʰ edition)*
+   June 2015. <http://www.ecma-international.org/ecma-262/6.0/>
+
 [RFC 2119]: https://tools.ietf.org/html/rfc2119
 [RFC 7159]: https://tools.ietf.org/html/rfc7159
 
@@ -289,4 +297,14 @@ An Avram schema can be used to check:
 
 * <http://pkiraly.github.io/2018/01/28/marc21-in-json/>
 * [MARCspec - A common MARC record path language](http://marcspec.github.io/MARCspec/marc-spec.html)
+
+### Changes
+
+#### 0.1.1 (2018-03-09)
+
+* Add `pattern` field
+
+#### 0.1.0 (2018-02-20)
+
+* First version
 
