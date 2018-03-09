@@ -41,6 +41,10 @@ A **timestamp** is a date or datetime as defined with XML Schema datatype
 [gYearMonth](https://www.w3.org/TR/xmlschema-2/#gYearMonth) (`-?YYYY-MM`),
 or [gYear](https://www.w3.org/TR/xmlschema-2/#gYear) (`-?YYYY`).
 
+A **regular expression** is a string e in the [ECMA 262 (2015) regular expression
+grammar](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-patterns).
+The expression is interpreted as Unicode pattern.
+
 ## Schema format
 
 An **Avram Schema** is a JSON object given as JSON document or any other format
@@ -70,6 +74,9 @@ The schema MAY contain:
   "fields": { }
 }
 ~~~
+
+String values such as values of key `title` and `description` SHOULD NOT be
+empty if the corresponding key is given.
 
 #### Field schedule
 
@@ -215,10 +222,6 @@ The subfield schedule MAY further contain:
   of subfields
 * key `pica3` with a corresponding Pica3 syntax definition
 * key `modified` with a timestamp
-
-Regular expressions MUST be given in the [ECMA 262 (2015) regular expression
-grammar](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-patterns).
-The expression is interpreted as Unicode pattern.
 
 #### Indicators
 
