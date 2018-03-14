@@ -31,6 +31,20 @@ if ($application) {
     $infobox['Anwendung'] = "<a href='$BASE/schema'>Schemasprache</a>";
 }
 
+if ($homepage) {
+    $infobox['Homepage'] = "<a href='$homepage'>$homepage</a>";
+}
+
+if ($wikidata) {
+    // TODO: use JavaScript to add label and link to Wikipedia
+    $infobox['Wiki(data|pedia)'] =
+        "<a href='https://tools.wmflabs.org/hub/$wikidata'>http://www.wikidata.org/entity/$wikidata</a>";
+}
+
+if ($bartoc) {
+    $infobox['BARTOC'] = "<a href='https://bartoc.org/en/node/$bartoc'>http://bartoc.org/en/node/$bartoc</a>";
+}
+
 if (count($schemas ?? [])) {
     $items = [];
     foreach ($schemas as $schema) {

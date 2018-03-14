@@ -53,7 +53,6 @@ if ($VIEW) {
 } elseif ($BODY) {
     echo \View::instance()->raw($BODY);
 }
-include 'seealso.php';
 include 'infobox.php';
 ?>
 </main>
