@@ -1,75 +1,448 @@
 ---
 $schema: https://format.gbv.de/schema/avram/schema.json
 title: ZDB-Addressformat
-description: PICA-Format für Adressdatensätze von ZDB und ISIL-Agentur    
+description: PICA+-Format für Adressdatensätze der ISIL-Agentur
 url: http://sigel.staatsbibliothek-berlin.de/vergabe/adressenformat/
 fields:
   007N:
-    pica3: 039
+    pica3: "039"
     label: Frühere ID-Nr. des Datensatzes
+    subfields:
+        0:
+            code: "0"
+            label: Frühere ID-Nr. des Datensatzes (ZDB-Pica-PPN)
+            repeatable: true
   008H:
-    pica3: 092
+    pica3: "092"
     label: Kennzeichen der Einrichtung
+    subfields:
+        a:
+            code: "a"
+            label: ZDB-Bibliothekskennung (BIK)
+        b:
+            code: "b"
+            label: Identifikationsnummer der DBS
+        c:
+            code: "c"
+            label: Regionales Bibliothekskennzeichen
+        d:
+            code: "d"
+            label: Sigel
+        e:
+            code: "e"
+            label: ISIL
+        f:
+            code: "f"
+            label: Bibliotheks-ID der EZB
+        g:
+            code: "g"
+            label: OCLC Registry ID
+        h:
+            code: "h"
+            label: Weitere ISIL
+
   029A:
-    pica3: 110
+    pica3: "110"
     label: Name der Einrichtung
+    required: true
+    subfields:
+        a:
+            code: "a"
+            label: Name der Einrichtung
   032P:
-    pica3: 371
+    pica3: "371"
     label: Adresse, Zugang
+    repeatable: true
+    subfields:
+        a:
+            code: "a"
+            label: Straße und Hausnummer
+        b:
+            code: "b"
+            label: Ort
+        d:
+            code: "d"
+            label: Ländercode (ISO 3166)
+        e:
+            code: "e"
+            label: Postleitzahl
+        f:
+            code: "f"
+            label: Bundesland/Provinz
+        g:
+            code: "g"
+            label: Postfach
+        h:
+            code: "h"
+            label: Gebäude, Gebäudeteil, Zustellanweisung
+        i:
+            code: "i"
+            label: Öffnungszeiten (allgemein)
+        j:
+            code: "j"
+            label: Öffnungszeiten (Anmerkungen)
+        k:
+            code: "k"
+            label: Geografische Länge
+        l:
+            code: "l"
+            label: Geografische Breite
+        n:
+            code: "n"
+            label: Statistische Kennzahl des Ortes
+        o:
+            code: "o"
+            label:  Informationen für Menschen mit Behinderungen
+        p:
+            code: "p"
+            label: Adresse öffentlich anzeigen?
+        z:
+            code: "z"
+            label: Bemerkungen zur Anschrift allgemein
+        "2":
+            code: "2"
+            label: Code Adresse
+        "3":
+            code: "3"
+            label: Bezeichnung Adresse
   029@:
-    pica3: 410
+    pica3: "410"
     label: Weitere Namensformen der Einrichtung
-  029R:        
-    pica3: 510
+    repeatable: true
+    subfields:
+        a:
+            code: "a"
+            label: Weitere Namensform / Text
+        4:
+            code: "4"
+            label: Weitere Namensform / Code
+
+  029R:
+    pica3: "510"
     label: Übergeordnete Einrichtung
+    subfields:
+        "7":
+            code: "7"
+            label: Entität des verknüpften Satzes, bei Adressensätzen immer "Tw" (nur in Offline-Expansion für Datenlieferungen)
+        "9":
+            code: "9"
+            label: ID-Nr. der übergeordneten Einrichtung (ZDB-Pica-PPN)
+        a:
+            code: "a"
+            label: Ansetzungsform des verknüpften Satzes (nur in Offline-Expansion für Datenlieferungen)
+        e:
+            code: "e"
+            label: ISIL des verknüpften Satzes (nur in Offline-Expansion für Datenlieferungen)
   050C:
-    pica3: 667
+    pica3: "667"
     label: Redaktionelle Bemerkungen (intern)
+    repeatable: true
+    subfields:
+        a:
+            code: "a"
+            label: Redaktionelle Bemerkungen / Text
+        "5":
+            code: "5"
+            label: Urheberkennung = Verbund-ISIL
   050D: 
-    pica3: 680
+    pica3: "680"
     label: Redaktionelle Bemerkungen ISIL-Agentur (intern)
+    subfields:
+        a:
+            code: "a"
+            label: Redaktionelle Bemerkungen ISIL-Agentur (intern)
   035B:
-    pica3: 802
+    pica3: "802"
     label: Kommunikation
+    repeatable: true
+    subfields:
+        a:
+            code: "a"
+            label: Code Kommunikationsbereich
+        b:
+            code: "b"
+            label: Bezeichnung Kommunikationsbereich
+        c:
+            code: "c"
+            label: Kommunikation öffentlich anzeigen?
+        d:
+            code: "d"
+            label: Telefon Ländervorwahl
+        e:
+            code: "e"
+            label: Telefon Ortsvorwahl
+        f:
+            code: "f"
+            label: Telefonnummer, ggf. mit Durchwahl
+        g:
+            code: "g"
+            label: Telefax Ländervorwahl
+        h:
+            code: "h"
+            label: Telefax Ortsvorwahl
+        i:
+            code: "i"
+            label: Telefaxnummer
+        j:
+            code: "j"
+            label: Telex
+        k:
+            code: "k"
+            label: E-Mail-Adresse
+        l:
+            code: "l"
+            label: Bemerkungen zu den Kommunikationsverbindungen
   035G:
-    pica3: 803
+    pica3: "803"
     label: Schlagwörter der Sammelschwerpunkte
+    subfields:
+        a:
+            code: "a"
+            label: Schlagwörter der Sammelschwerpunkte
+            repeatable: true
   035H:
-    pica3: 804
+    pica3: "804"
     label: Betreute Sondersammelgebiete der DFG
+    subfields:
+        a:
+            code: "a"
+            label: Fachinformationsdienste und Sondersammelgebiete
+            repeatable: true
   035E:
-    pica3: 805
+    pica3: "805"
     label: Codes für ZDB und Sigelverzeichnis / Bezüge zu anderen Einrichtungen
+    subfields:
+        a:
+            code: "a"
+            label: Status der Adresse
+            required: true
+        b:
+            code: "b"
+            label: Abrufzeichen ZDB
+        c:
+            code: "c"
+            label: ZDB-Melderkennung (ILN)
+        d:
+            code: "d"
+            label: Lieferkategorie Verbundsystem
+            repeatable: true
+        e:
+            code: "e"
+            label: Importkennzeichen der ZDB
+        f:
+            code: "f"
+            label: Typ der Einrichtung
+        g:
+            code: "g"
+            label: Unterhaltsträger
+        h:
+            code: "h"
+            label: Bestandsgrößenklasse
+        i:
+            code: "i"
+            label: Benutzungsbeschränkungen
+        j:
+            code: "j"
+            label: ILN anderer Systeme
+            repeatable: true
+        k:
+            code: "k"
+            label: früheres Sigel
+        l:
+            code: "l"
+            label: Lizenzinformation Bestandsdaten ZDB
   035D:
-    pica3: 806
+    pica3: "806"
     label: Übernommene Einrichtungen
+    repeatable: true
+    subfields:
+        a:
+            code: "a"
+            label: ehem. Sigel der übernommenen Einrichtung
+        b:
+            code: "b"
+            label: ehem. ISIL der übernommenen Einrichtung
   035I:
-    pica3: 807
+    pica3: "807"
     label: Codes und Informationen für die Fernleihe
+    subfields:
+        a:
+            code: "a"
+            label: Leihverkehrsregion
+        b:
+            code: "b"
+            label: Leihverkehrsart
+        c:
+            code: "c"
+            label: Zuständiges Verbundsystem
+        d:
+            code: "d"
+            label: Weitere(s) Verbundsystem(e)
+        e:
+            code: "e"
+            label: Fernleihindikator
+        f:
+            code: "f"
+            label: Fernleihindikator Ausland
+        g:
+            code: "g"
+            label: Typ Online-Fernleihe
+
   035J:
-    pica3: 808
+    pica3: "808"
     label: Allgemeine Anmerkungen zur Fernleihe
+    subfields:
+        a:
+            code: "a"
+            label: Allgemeine Anmerkungen zur Fernleihe (öffentlich)
+        b:
+            code: "b"
+            label: Allgemeine Anmerkungen zur Fernleihe (intern)
   035K:
-    pica3: 809
+    pica3: "809"
     label: Liefersysteme, Altbestand und Codes
+    subfields:
+        a:
+            code: "a"
+            label: Dokumentenliefersystem
+        b:
+            code: "b"
+            label: Teilnahme am Altbestandszertifikat
+        c:
+            code: "c"
+            label: Altbestandsgrenze
+        d:
+            code: "d"
+            label: URL Altbestandausstattung
+        e:
+            code: "e"
+            label: Art das Lokalsystems (Protokoll FL-System)
+        f:
+            code: "f"
+            label: Automatisierte FL (Online FL regional)
+        g:
+            code: "g"
+            label: Bestandslücken Verbunddatenbank
+        h:
+            code: "h"
+            label: Materielcodes
   035L:
-    pica3: 810
+    pica3: "810"
     label: Fristen und besondere Kontakt-E-Mails für die Fernleihe
+    repeatable: true
+    subfields:
+        a:
+            code: "a"
+            label: Code für Inhalt
+        b:
+            code: "a"
+            label: Wird Service angeboten?
+        c:
+            code: "a"
+            label: Fristlänge
+        d:
+            code: "a"
+            label: Kontakt-E-Mail
   035M:
-    pica3: 811
+    pica3: "811"
     label: Weitere Angaben zur Fernleihe
+    subfields:
+        a:
+            code: "a"
+            label: Leihfristen
+        b:
+            code: "b"
+            label: Lieferformen
+        c:
+            code: "c"
+            label: Preis Kopie
+        d:
+            code: "d"
+            label: ISIL Fernleih-Abteilung
+        e:
+            code: "e"
+            label: ISIL Leitbibliothek
+        f:
+            code: "f"
+            label: Zuständiger Zentralkatalog/zuständige Leihverkehrszentrale
   035N:
-    pica3: 812
+    pica3: "812"
     label: URL-Templates für die Fernleihe
+    repeatable: true
+    subfields:
+        a:
+            code: "a"
+            label: Art des Templates / Code
+        b:
+            code: "b"
+            label: URL-Template / String mit Parametersyntax
   035O:
-    pica3: 813
+    pica3: "813"
     label: Büchertransport
+    repeatable: true
+    subfields:
+        a:
+            code: "a"
+            label: Typ der Post-/Frachtgutverbindung im Leihverkehr
+        b:
+            code: "b"
+            label: Art der Sendungen für diese Post-/Frachtgutverbindung
+        c:
+            code: "c"
+            label: Bemerkungen zu dieser Post-/Frachtgutverbindung
+        d:
+            code: "d"
+            label: Kontakt E-Mail Transport
   035P:
-    pica3: 814
+    pica3: "814"
     label: Spezielle Felder für Produktsätze (Pakete)
+    subfields:
+        a:
+            code: "a"
+            label: Art des Pakets
+        b:
+            code: "b"
+            label: Logodatei
+        c:
+            code: "c"
+            label: Verhandlungsrunde
+        d:
+            code: "d"
+            label: Zeitschriften enthalten?
+        e:
+            code: "e"
+            label: Enthaltene Titel (Anbieter)
+        f:
+            code: "f"
+            label: Enthaltene Titel (ZDB)
+        g:
+            code: "g"
+            label: Anbieter
+        h:
+            code: "h"
+            label: URL im CMS "Datenbankinfo"
+        i:
+            code: "i"
+            label: Finanzierungsmodell
   009Q:
-    pica3: 856
+    pica3: "856"
     label: Endnutzer Service-URLs
+    repeatable: true
+    subfields:
+        u:
+            code: "f"
+            label: URL
+        x:
+            code: "f"
+            label: Art der URL / Text
+        z:
+            code: "f"
+            label: Art der URL / Code
   047A:
-    pica3: 900
+    pica3: "900"
     label: Allgemeine Bemerkungen zum gesamten Eintrag
+    repeatable: true
+    subfields:
+        a:
+            code: "a"
+            label: Allgemeine Bemerkungen zum gesamten Eintrag
