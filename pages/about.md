@@ -42,7 +42,7 @@ zu bringen.
 Quellcode ist [auf GitHub](https://github.com/gbv/format.gbv.de).  Anregungen,
 Korrekturen und Verbesserungsvorschläge [sind dort herzlich
 willkommen](https://github.com/gbv/format.gbv.de/issues). Das Datenmodell
-zur Beschreibung von Formaten [befindet sich noch in Entwicklung](aboutdata).
+zur Beschreibung von Formaten [befindet sich noch in Entwicklung](data).
 
 Die Inhalte sind ohne weitere Bedingungen oder Gewährleistungen nachnutzbar
 (siehe [Lizenz](license)).

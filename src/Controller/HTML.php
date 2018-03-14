@@ -15,8 +15,10 @@ class HTML
 {
     public $root = '../pages/';
 
-    static $mimetypes = [
-        'dtd' => 'application/xml-dtd'
+    protected static $mimetypes = [
+        'dtd'   => 'application/xml-dtd',
+        'yaml'  => 'text/yaml',
+        'md'    => 'text/markdown; charset=UTF-8',
     ];
 
     public function __construct()
@@ -32,12 +34,11 @@ class HTML
 
         $path = $params['*'];
 
-        if (preg_match('!^(([a-z0-9-]+)/?)+\.([a-z]+)$!', $path, $match)) {
-            $extension = $match[3];
+        if (preg_match('!^((([a-z0-9-]+)/?)+)\.([a-z]+)$!', $path, $match)) {
+            $extension = $match[4];
             if ($extension == 'json') {
                 // send YAML files as JSON
-                $id = $match[1];
-                $file = $this->root . $id . '.yaml';
+                $file = $this->root . $match[1] . '.yaml';
                 if (file_exists($file)) {
                     $data = Yaml::parse(file_get_contents($file));
                 } else {
