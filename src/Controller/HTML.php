@@ -15,6 +15,10 @@ class HTML
 {
     public $root = '../pages/';
 
+    static $mimetypes = [
+        'dtd' => 'application/xml-dtd'
+    ];
+
     public function __construct()
     {
         $this->pages = new Pages('../pages');
@@ -28,29 +32,41 @@ class HTML
 
         $path = $params['*'];
 
-        // send YAML files as JSON
-        if (preg_match('!^(([a-z0-9-]+)/?)+\.json$!', $path)) {
-            $id = substr($path, 0, -5);
-            $file = $this->root . $id . '.yaml';
-            if (file_exists($file)) {
-                $data = Yaml::parse(file_get_contents($file));
-            } else {
-                $data = $this->pages->get($id);
-                if ($data) {
-                    foreach (['markdown', 'arguments', 'javascript', 'css', 'broader'] as $key) {
-                        unset($data[$key]);
+        if (preg_match('!^(([a-z0-9-]+)/?)+\.([a-z]+)$!', $path, $match)) {
+            $extension = $match[3];
+            if ($extension == 'json') {
+                // send YAML files as JSON
+                $id = $match[1];
+                $file = $this->root . $id . '.yaml';
+                if (file_exists($file)) {
+                    $data = Yaml::parse(file_get_contents($file));
+                } else {
+                    $data = $this->pages->get($id);
+                    if ($data) {
+                        foreach (['markdown', 'arguments', 'javascript', 'css', 'broader'] as $key) {
+                            unset($data[$key]);
+                        }
+                        $data['@context'] = "http://format.gbv.de/data/context.json";
+                        $data['$schema']  = "http://format.gbv.de/data/schema.json";
                     }
-                    $data['@context'] = "http://format.gbv.de/data/context.json";
-                    $data['$schema']  = "http://format.gbv.de/data/schema.json";
                 }
-            }
-            if ($data) {
-                $options = JSON_PRETTY_PRINT;
-                if ($data['$schema'] == 'https://format.gbv.de/schema/avram/schema.json') {
-                    $options |= JSON_FORCE_OBJECT;
+                if ($data) {
+                    $options = JSON_PRETTY_PRINT;
+                    if ($data['$schema'] == 'https://format.gbv.de/schema/avram/schema.json') {
+                        $options |= JSON_FORCE_OBJECT;
+                    }
+                    (new JSON($data))->sendJson($options);
+                    return;
                 }
-                (new JSON($data))->sendJson($options);
-                return;
+            } else {
+                $type = static::$mimetypes[$extension] ?? null;
+                $file = $this->root . $path;
+                if ($type and file_exists($file)) {
+                    header("Content-Type: $type");
+                    header('Access-Control-Allow-Origin *');
+                    readfile($file);
+                    return;
+                }
             }
         }
 
