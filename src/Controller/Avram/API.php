@@ -22,6 +22,6 @@ class API
                 'message' => 'Not found'
             ], 404);
         }
-        $data->sendJson();
+        $data->sendJson(JSON_PRETTY_PRINT | JSON_FORCE_OBJECT);
     }
 }

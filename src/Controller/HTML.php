@@ -30,7 +30,6 @@ class HTML
 
         // send YAML files as JSON
         if (preg_match('!^(([a-z0-9-]+)/?)+\.json$!', $path)) {
-            error_log("PATH: $path");
             $id = substr($path, 0, -5);
             $file = $this->root . $id . '.yaml';
             if (file_exists($file)) {
@@ -46,7 +45,11 @@ class HTML
                 }
             }
             if ($data) {
-                (new JSON($data))->sendJson();
+                $options = JSON_PRETTY_PRINT;
+                if ($data['$schema'] == 'https://format.gbv.de/schema/avram/schema.json') {
+                    $options |= JSON_FORCE_OBJECT;
+                }
+                (new JSON($data))->sendJson($options);
                 return;
             }
         }

@@ -38,7 +38,7 @@ if (count($schemas ?? [])) {
         $url = $schema['url'];
         $items[] =
             "<a href='$url'>$url</a>"
-            . ' ('. $TAGS->link(['id'=>$id]) . ')';
+            . ' ('. $TAGS->link(['id'=>$id,'short'=>true]) . ')';
     }
     if (count($items)) {
         $html = implode('<br>', $items);
