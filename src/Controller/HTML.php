@@ -30,6 +30,7 @@ class HTML
 
         // send YAML files as JSON
         if (preg_match('!^(([a-z0-9-]+)/?)+\.json$!', $path)) {
+            error_log("PATH: $path");
             $id = substr($path, 0, -5);
             $file = $this->root . $id . '.yaml';
             if (file_exists($file)) {

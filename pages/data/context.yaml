@@ -1,6 +1,6 @@
 ---
 "@context":
-  "@version: 1.1,
+  "@version": 1.1,
 
   # Ontologies
   
@@ -50,13 +50,13 @@
 
   wikidata:
     "@id": http://www.w3.org/2002/07/owl#sameAs
-    "@type": "@id"
+    "@type": "@vocab"
     "@context":
-      "@base": http://www.wikidata.org/entity/
+      "@vocab": http://www.wikidata.org/entity/
 
   bartoc:
     "@id": http://www.w3.org/2002/07/owl#sameAs
-    "@type": "@id"
+    "@type": "@vocab"
     "@context":
-      "@base": http://bartoc.org/en/node/
+      "@vocab": http://bartoc.org/en/node/
 
