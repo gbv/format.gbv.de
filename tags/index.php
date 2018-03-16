@@ -23,23 +23,7 @@ foreach (($css ?? []) as $href) {
         <img src="<?=$BASE?>/img/vzg-logo.jpg"/>
       </a>
     <div class="collapse navbar-collapse" id="mainMenu">
-      <ul class="navbar-nav mr-auto">
-<?php
-$menu = ['index','structure','application','code','schema', 'about'];
-$parts = explode('/', $id);
-$current = null;
-foreach ($menu as $href) {
-    $active = $href === (in_array($parts[0], $menu) ? $parts[0] : 'index');
-    if ($active) {
-        $current = $href;
-    }
-    $url = "$BASE/" . ($href === 'index' ? '' : $href);
-    $p = $PAGES->get($href);
-    $name = $p['short'] ?? $p['title'] ?? $href;
-    echo "<li class='navbar-item".($active?' active':'')."'>";
-    echo "<a href='$url' class='nav-link'>$name</a></li>";
-} ?>
-      </ul>
+        <?php include 'menu.php'; ?>
     </div>
   </nav>
 </header>

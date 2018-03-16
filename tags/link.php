@@ -9,7 +9,7 @@ if ($page) {
             $title .= ' (' . $page['short'] . ')';
         }
     }
-    echo "<a href='$BASE/{$page['id']}'>$title</a>";
+    echo "<a href='$BASE/{$page['id']}' $attr>$title</a>";
 } else {
     echo $id;
 }

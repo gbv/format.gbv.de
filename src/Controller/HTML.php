@@ -73,6 +73,11 @@ class HTML
 
         $this->page($f3, $path);
 
+        $file = $this->root . 'menu.yaml';
+        if (file_exists($file)) {
+            $f3['MENU'] = Yaml::parse(file_get_contents($file));
+        }
+
         if ($f3['MARKDOWN']) {
             $html = \Parsedown::instance()->text($f3['MARKDOWN']);
 

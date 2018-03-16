@@ -1,5 +1,6 @@
 ---
 title: Datenmodell der Formatdatenbank
+short: Datenmodell
 schemas:
   - url: data/schema.json
     type: json-schema
