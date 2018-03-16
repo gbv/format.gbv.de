@@ -23,7 +23,7 @@ class HTML
 
     public function __construct()
     {
-        $this->pages = new Pages('../pages');
+        $this->pages = new Pages($this->root);
     }
 
     public function render($f3, $params)

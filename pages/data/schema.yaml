@@ -39,6 +39,13 @@ properties:
           type: string
         type:
           $ref: '#/definitions/id'
+        doi:
+          $ref: '#/definitions/url'
+        version:
+          type: string
+      required:
+        - type
+        - url
       additionalProperties: false
 
   created:

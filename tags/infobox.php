@@ -50,9 +50,13 @@ if (count($schemas ?? [])) {
     foreach ($schemas as $schema) {
         $id = 'schema/'.$schema['type'];
         $url = $schema['url'];
-        $items[] =
+        $html =
             "<a href='$url'>$url</a>"
             . ' ('. $TAGS->link(['id'=>$id,'short'=>true]) . ')';
+        if (isset($schema['version'])) {
+            $html .= ' version '.$schema['version'];
+        }
+        $items[] = $html;
     }
     if (count($items)) {
         $html = implode('<br>', $items);
