@@ -51,7 +51,7 @@ Beteiligt an den Inhalten dieser Seite sind oder waren unter Anderem:
 
 * Jakob Voß (Technische Leitung, Programmierung und Dokumentation)
 * Karsten Achterrath (Programmierung)
-* Péter Király (MARC-Schema)
+* Péter Király und Carsten Klee (Avram-Schemas)
 * Uschi Klute (Recherche zu MARC-Varianten)
 * VZG und BSZ (K10plus Online-Hilfe)
 * Linked Open Vocabularies (Daten zu RDF-Formaten)
@@ -66,3 +66,5 @@ Beteiligt an den Inhalten dieser Seite sind oder waren unter Anderem:
   [ist hier eingebunden](rdf/lov).
 * Im [Basel Register of Thesauri, Ontologies & Classifications (BARTOC)](https://bartoc.org/)
   sind auch Datenmodelle enthalten, beispielsweise [BIBFRAME](bibframe).
+* Das [Seeing Standards](http://jennriley.com/metadatamap/) Poster von Jenn Riley enthält
+  105 Metadaten-Standards, die letzendlich alle in der Formatdatenbank verzeichnet werden sollen
