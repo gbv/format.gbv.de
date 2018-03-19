@@ -19,6 +19,13 @@ uasort($items, function ($a, $b) use ($PAGES) {
     return strtolower($x) <=> strtolower($y);
 });
 
+# remove parent items
+foreach ($items as $id => $item) {
+    if (isset($item['broader'])) {
+        unset($items[$item['broader']]);
+    }
+}
+
 $prevParent = null;
 if (count($items)) {
     echo '<ul>';
