@@ -15,5 +15,5 @@ deutschsprachigen Bibliothekswesen verbreitet. Die aktuelle Version ist
 ## Serialisierungen
 
 * MAB2 (Binärformat)
-* MABxml
-* ...
+* [MABxml](mab/xml)
+
