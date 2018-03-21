@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="<?=$BASE?>/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?=$BASE?>/css/bootstrap4-vzg.css">
 <?php
+$ID = $id;
 foreach (($css ?? []) as $href) {
     echo "  <link rel='stylesheet' href='$href'>\n";
 }
@@ -29,7 +30,7 @@ foreach (($css ?? []) as $href) {
 </header>
 <main role="main" class="container">
 <?php
-if ($id !== $current) {
+if ($ID !== $current) {
     echo "<h1>".$title."</h1>";
 }
 if ($VIEW) {
@@ -43,9 +44,9 @@ include 'infobox.php';
 <footer class="footer">
   <div class="container-fluid text-secondary">
     <div class="float-right">
-<?php if ($id) { ?>
-      <a href="<?="$BASE/$id"?>.json">Daten</a>
-      / <a href="https://github.com/gbv/format.gbv.de/tree/master/pages/<?=$id?>.md">Quelltext</a>
+<?php if ($ID) { ?>
+      <a href="<?="$BASE/$ID"?>.json">Daten</a>
+      / <a href="https://github.com/gbv/format.gbv.de/tree/master/pages/<?=$ID?>.md">Quelltext</a>
       /
 <?php } ?>
       <a href="<?=$BASE?>/license">Lizenz</a>
