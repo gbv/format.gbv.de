@@ -24,6 +24,11 @@ class HTML
     public function __construct()
     {
         $this->pages = new Pages($this->root);
+        $this->menu = Yaml::parse(file_get_contents($this->root . 'menu.yaml'));
+        $this->tags = new Tags('../tags', [
+            'PAGES' => $this->pages,
+            'BASE' => $f3['BASE'],
+        ]);
     }
 
     public function render($f3, $params)
@@ -31,6 +36,8 @@ class HTML
         $f3['ONERROR'] = function ($f3) {
             $this->error($f3);
         };
+        $f3['MENU'] = $this->menu;
+        $f3['TAGS'] = $this->tags;
 
         $path = $params['*'];
 
@@ -75,21 +82,9 @@ class HTML
 
         $this->page($f3, $path);
 
-        $file = $this->root . 'menu.yaml';
-        if (file_exists($file)) {
-            $f3['MENU'] = Yaml::parse(file_get_contents($file));
-        }
-
         if ($f3['MARKDOWN']) {
             $html = \Parsedown::instance()->text($f3['MARKDOWN']);
 
-            // process custom tags
-            if (!$this->tags) {
-                $this->tags = new Tags('../tags', [
-                    'PAGES' => $this->pages,
-                    'BASE' => $f3['BASE'],
-                ]);
-            }
             $html = $this->tags->expand($html);
 
             // Add header identifiers
@@ -114,7 +109,6 @@ class HTML
             $f3['BODY'] = $html;
         }
 
-        $f3['TAGS'] = $this->tags;
         echo \View::instance()->render('index.php');
     }
 
@@ -128,7 +122,7 @@ class HTML
 
         $f3->mset([
             'title' => $f3['ERROR']['code'] . ': ' . $f3['ERROR']['status'],
-            'VIEW'  => 'error.php'
+            'VIEW'  => 'error.php',
         ]);
 
         echo \View::instance()->render('index.php');

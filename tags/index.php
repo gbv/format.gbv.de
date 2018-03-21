@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="<?=$BASE?>/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?=$BASE?>/css/bootstrap4-vzg.css">
 <?php
-$ID = $id;
 foreach (($css ?? []) as $href) {
     echo "  <link rel='stylesheet' href='$href'>\n";
 }
@@ -30,6 +29,7 @@ foreach (($css ?? []) as $href) {
 </header>
 <main role="main" class="container">
 <?php
+$ID = $id;
 if ($ID !== $current) {
     echo "<h1>".$title."</h1>";
 }
@@ -49,7 +49,7 @@ include 'infobox.php';
       / <a href="https://github.com/gbv/format.gbv.de/tree/master/pages/<?=$ID?>.md">Quelltext</a>
       /
 <?php } ?>
-      <a href="<?=$BASE?>/license">Lizenz</a>
+      <a href="<?=$BASE?>/about/license">Lizenz</a>
     </div>
     <p><a href="https://www.gbv.de/">Verbundzentrale des GBV (VZG)</a></p>
   </div>
