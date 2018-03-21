@@ -6,6 +6,8 @@ properties:
 
   id:
     $ref: '#/definitions/id'
+  type:
+    $ref: '#/definitions/url'
   title:
     type: string
   short:
@@ -20,6 +22,10 @@ properties:
     type: string # TODO: en|de
   
   application:
+    $ref: '#/definitions/links'
+
+  # SKOS
+  topConceptOf:
     $ref: '#/definitions/links'
 
   for:

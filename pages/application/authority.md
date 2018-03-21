@@ -1,5 +1,6 @@
 ---
 title: Normdatenformate
+topConceptOf: application
 ---
 
 **Normdatenformate** sind [Anwendungsformate](../application) für

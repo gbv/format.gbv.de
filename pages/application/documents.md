@@ -1,5 +1,6 @@
 ---
 title: Dokumentformate
+topConceptOf: application
 ---
 
 **Dokumentformate** dienen der Kodierung von Dokumentstrukturen (Texte,

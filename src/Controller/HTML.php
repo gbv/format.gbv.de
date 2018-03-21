@@ -35,21 +35,23 @@ class HTML
         $path = $params['*'];
 
         if (preg_match('!^((([a-z0-9-]+)/?)+)\.([a-z]+)$!', $path, $match)) {
+            $id = $match[1];
             $extension = $match[4];
             if ($extension == 'json') {
                 // send YAML files as JSON
-                $file = $this->root . $match[1] . '.yaml';
-                if (file_exists($file)) {
+                $file = $this->root . "$id.yaml";
+                $data = $this->pages->get($id);
+                if (!$data && file_exists($file)) {
                     $data = Yaml::parse(file_get_contents($file));
-                } else {
-                    $data = $this->pages->get($id);
-                    if ($data) {
-                        foreach (['markdown', 'arguments', 'javascript', 'css', 'broader'] as $key) {
-                            unset($data[$key]);
-                        }
-                        $data['@context'] = "http://format.gbv.de/data/context.json";
-                        $data['$schema']  = "http://format.gbv.de/data/schema.json";
+                }
+                if ($data) {
+                    # TODO: repeated at bin/metadata
+                    foreach (['markdown', 'javascript', 'css', 'broader'] as $key) {
+                        unset($data[$key]);
                     }
+                    # TODO: expand with type, backlinks etc.
+                    $data['@context'] = "http://format.gbv.de/data/context.json";
+                    $data['$schema']  = "http://format.gbv.de/data/schema.json";
                 }
                 if ($data) {
                     $options = JSON_PRETTY_PRINT;

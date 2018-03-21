@@ -1,5 +1,6 @@
 ---
 title: Bibliografische Datenformate
+topConceptOf: application
 ---
 
 **Bibliografische Datenformate** sind [Anwendungsformate](../application) für

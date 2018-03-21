@@ -16,8 +16,9 @@
   "@base": http://format.gbv.de/
 
   # Properties
-
   id: "@id"
+  type: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+
   title: http://purl.org/dc/terms/title
   homepage: http://xmlns.com/foaf/0.1/page
 
@@ -27,6 +28,10 @@
   contributor: http://purl.org/dc/terms/contributor
 
   # links (TODO: refine)
+
+  topConceptOf:
+    "@id": http://www.w3.org/2004/02/skos/core#Concept
+    "@type": "@id"
 
   for:
     "@id": http://www.w3.org/2000/01/rdf-schema#seeAlso
