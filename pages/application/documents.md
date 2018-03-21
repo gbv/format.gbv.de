@@ -1,6 +1,7 @@
 ---
 title: Dokumentformate
 topConceptOf: application
+wikidata: Q336705
 ---
 
 **Dokumentformate** dienen der Kodierung von Dokumentstrukturen (Texte,

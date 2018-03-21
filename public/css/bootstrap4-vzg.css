@@ -1,6 +1,13 @@
+/* navbar */
 .navbar-dark {
   background-color: #577fbb;
 }
+
+.navbar-item.active, .nav-item.dropdown.active > a {
+  font-weight: bold;
+}
+
+/* responsive padding */
 @media (min-width: 768px) {
   main.container {
     padding-top: 30px;

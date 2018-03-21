@@ -6,9 +6,11 @@
   - application/bibliographic
   - application/authority
   - application/documents
+  - schema/language
 - code
 - schema
 - 
-  - about  
-  - data
-  - license
+  - about
+  - about/data
+  - about/license
+  - about/related
