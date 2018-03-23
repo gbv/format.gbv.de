@@ -51,6 +51,7 @@ class HTML
                 if (!$data && file_exists($file)) {
                     $data = Yaml::parse(file_get_contents($file));
                 }
+                
                 if ($data) {
                     # TODO: repeated at bin/metadata
                     foreach (['markdown', 'javascript', 'css', 'broader'] as $key) {
@@ -60,6 +61,7 @@ class HTML
                     $data['@context'] = "http://format.gbv.de/data/context.json";
                     $data['$schema']  = "http://format.gbv.de/data/schema.json";
                 }
+
                 if ($data) {
                     $options = JSON_PRETTY_PRINT;
                     if ($data['$schema'] == 'https://format.gbv.de/schema/avram/schema.json') {
@@ -69,6 +71,7 @@ class HTML
                     return;
                 }
             } else {
+                // send static files
                 $type = static::$mimetypes[$extension] ?? null;
                 $file = $this->root . $path;
                 if ($type and file_exists($file)) {
@@ -80,7 +83,10 @@ class HTML
             }
         }
 
-        $this->page($f3, $path);
+        $data = $this->page($f3, $path) ?? [];
+        foreach ($data as $key => $value) {
+            $f3[$key] = $value;
+        }
 
         if ($f3['MARKDOWN']) {
             $html = \Parsedown::instance()->text($f3['MARKDOWN']);
@@ -109,6 +115,8 @@ class HTML
             $f3['BODY'] = $html;
         }
 
+        $f3['PAGES'] = $this->pages;
+
         echo \View::instance()->render('index.php');
     }
 
@@ -128,27 +136,20 @@ class HTML
         echo \View::instance()->render('index.php');
     }
 
-    public function links()
-    {
-        $links = $this->pages->get('links');
-        return $links ? $links['markdown'] : '';
-    }
-
     public function page($f3, string $path)
     {
-        if ($path == '') {
-            $path = 'index';
-        }
+        $data = $this->pages->get($path == '' ? 'index' : $path) ?? [];
+        $markdown = $data['markdown'] ?? '';
 
-        $page = $this->pages->get($path);
-        if ($page) {
-            $f3->mset($page);
-            $f3['MARKDOWN'] = $page['markdown'] . "\n\n" . $this->links();
-            $f3['PAGES'] = $this->pages;
-        }
+        if ($markdown) {
+            $links = $this->pages->get('links');
+            $links = $links ? $links['markdown'] : '';
 
-        if (!$f3['MARKDOWN']) {
-            $f3->error(404);
+            $data['MARKDOWN'] = "$markdown\n\n$links";
+            unset($data['markdown']);
+            return $data;
+        } else {
+            return;
         }
     }
 }

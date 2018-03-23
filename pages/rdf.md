@@ -14,12 +14,12 @@ gleichgesetzt. Eine Besonderheit von RDF ist dass sich Daten verschiedener
 Ontologien kombinieren lassen.
 
 Die meisten relevanten Ontologien sind bei [Linked Open Vocabularies
-(LOV)](rdf/lov) verzeichnet und können unter `/rdf/lov/{prefix}` mit ihrem
+(LOV)](rdf/voc) verzeichnet und können unter `/rdf/voc/{prefix}` mit ihrem
 jeweiligen Prefix abgerufen werden. Beispiele:
 
-* [schema.org vocabulary](rdf/lov/schema)
-* [BIBFRAME Vocabulary](rdf/lov/bf)
-* [RDA Classes](rdf/lov/rdac)
+* [schema.org vocabulary](rdf/voc/schema)
+* [BIBFRAME Vocabulary](rdf/voc/bf)
+* [RDA Classes](rdf/voc/rdac)
 
 <!-- 
 - Ontologien bauen aufeinander auf

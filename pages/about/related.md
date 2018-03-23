@@ -18,7 +18,7 @@ Informationen dort verwaltet werden können.
 
 **[Linked Open Vocabularies]** konzentriert sich auf [RDF](../rdf)-Ontologien.
 Die Inhalte des Verzeichnis werden sowohl in BARTOC als auch in die 
-Formatdatenbank übernommen ([siehe hier](../rdf/lov)).
+Formatdatenbank übernommen ([siehe hier](../rdf/voc)).
 
 Die Library of Congress betreibt mit **[Sustainability of Digital
 Formats](https://www.loc.gov/preservation/digital/formats/)** eine

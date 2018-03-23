@@ -1,23 +1,41 @@
 <?php
 
+$showURL = function ($url) {
+    return "<a href='$url'>$url</a>";
+};
+
 $fields = [
-    'created'   => 'erstellt',
-    'modified'  => 'aktualisiert',
-    'creator'   => 'Autor',
-    'publisher' => 'Herausgeber',
-#    'base'      => ['Format', '<a href="%s'],
-#    'homepage' => 'Homepage',
-#    'wikidata' => 'Wikidata/pedia',
+    'created'   => ['erstellt'],
+    'modified'  => ['aktualisiert'],
+    'creator'   => ['Autor'],
+    'publisher' => ['Herausgeber'],
+    'uri'       => ['URI', $showURL],
+    'homepage'  => ['Homepage', $showURL],
+    'wikidata'  => ['Wiki(data|pedia)', function ($qid) {
+        // TODO: use JavaScript to add label and link to Wikipedia
+        return "<a href='https://tools.wmflabs.org/hub/$qid'>$qid</a>";
+    }],
+    'bartoc'    => ['BARTOC', function ($id) {
+        return "<a href='https://bartoc.org/en/node/$id'>http://bartoc.org/en/node/$id</a>";
+    }],
+    'lov'       => ['LOV', $showURL],
+    'base'      => ['Format', function ($base) use ($TAGS) {
+        return $TAGS->link(['id'=>$base]);
+    }],
 ];
 
 $infobox = [];
-foreach ($fields as $name => $value) {
-    if (${$name}) {
-        if (is_array($value)) {
-            $infobox[$value[0]] = ${$name}; # TODO
-        } else {
-            $infobox[$value] = ${$name};
+foreach ($fields as $name => $field) {
+    $label = $field[0];
+    $value = ${$name};
+    if ($value) {
+        if (!is_array($value)) {
+            $value = [$value];
         }
+        if (isset($field[1])) {
+            $value = array_map($field[1], $value);
+        }
+        $infobox[$label] = implode(',', $value);
     }
 }
 
@@ -29,20 +47,6 @@ if ($application) {
     $infobox['Anwendung'] = implode('<br>', $apps);
 } elseif ($for) {
     $infobox['Anwendung'] = "<a href='$BASE/schema'>Schemasprache</a>";
-}
-
-if ($homepage) {
-    $infobox['Homepage'] = "<a href='$homepage'>$homepage</a>";
-}
-
-if ($wikidata) {
-    // TODO: use JavaScript to add label and link to Wikipedia
-    $infobox['Wiki(data|pedia)'] =
-        "<a href='https://tools.wmflabs.org/hub/$wikidata'>http://www.wikidata.org/entity/$wikidata</a>";
-}
-
-if ($bartoc) {
-    $infobox['BARTOC'] = "<a href='https://bartoc.org/en/node/$bartoc'>http://bartoc.org/en/node/$bartoc</a>";
 }
 
 if (count($schemas ?? [])) {
@@ -70,13 +74,8 @@ if (count($schemas ?? [])) {
 
 if (count($infobox)) { ?>
   <table class="table table-sm">
-    <!--thead>
-      <tr><th colspan="2"><?=$title?></th></tr>
-    </thead-->
-    <tbody>
 <?php foreach ($infobox as $key => $value) {
     echo "<tr><td>$key</td><td>$value</td></tr>\n";
 } ?>
-    </tbody>
   </table>
 <?php }
