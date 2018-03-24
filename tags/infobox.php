@@ -35,7 +35,7 @@ foreach ($fields as $name => $field) {
         if (isset($field[1])) {
             $value = array_map($field[1], $value);
         }
-        $infobox[$label] = implode(',', $value);
+        $infobox[$label] = implode('<br>', $value);
     }
 }
 

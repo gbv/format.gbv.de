@@ -24,3 +24,5 @@ Wikipedia enthält eine [umfangreichere Liste von Varianten regulärer Ausdrück
 Die Syntax-Varianten regulärer Ausdrücke lassen sich in der Regel nicht durch reguläre Ausdrücke beschreiben, sondern nur durch kontextfreie Grammatiken (z.B. BNF).
 
 -->
+
+<list-schemas format="regex"/>

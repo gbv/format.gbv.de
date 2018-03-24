@@ -10,3 +10,5 @@ schemas:
 ---
 
 **JSON Schema** ist eine Schema-Sprache für [JSON](../json).
+
+<list-schemas format="json-schema"/>

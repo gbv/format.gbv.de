@@ -12,3 +12,8 @@ web:
 metadata:
 	php bin/metadata.php > formats.json
 
+formats.json: metadata
+formats.dot: formats.json
+	perl bin/graph.pl < $< > $@
+formats.png: formats.dot
+	dot -Gbackground=white -Tpng -oformats.png formats.dot	
