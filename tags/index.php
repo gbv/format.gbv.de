@@ -58,7 +58,7 @@ include 'infobox.php';
 </footer>
 </body>
 <script src="<?=$BASE?>/js/jquery-3.3.1.min.js"></script>
-<script src="<?=$BASE?>/js/bootstrap.min.js"></script>
+<script src="<?=$BASE?>/js/bootstrap.bundle.min.js"></script>
 <?php
 foreach (($javascript ?? []) as $js) {
     if (preg_match('/[\r\n]/', $js)) {
@@ -70,4 +70,9 @@ foreach (($javascript ?? []) as $js) {
     }
 }
 ?>
+<script>
+$(function(){
+  $('[data-toggle="tooltip"]').tooltip()
+});
+</script>
 </html>

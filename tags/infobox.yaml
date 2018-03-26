@@ -1,0 +1,67 @@
+---
+uri:
+    label: URI
+    style: url
+    icon: info-outline
+
+homepage:
+    label: Homepage
+    style: url
+    icon: home
+
+created:
+    label: erstellt
+    icon: access-time
+
+modified:
+    label: aktualisiert
+    icon: access-time
+
+creator:
+    label: Autor
+    icon: person
+
+publisher:
+    label: Herausgeber
+    icon: people
+
+wikidata:
+    label: Wikidata
+    style: qid
+    icon: info-outline
+
+bartoc:
+    label: BARTOC
+    style: bartoc
+    icon: qid
+    tooltip: Entsprechender Eintrag im Verzeichnis BARTOC
+
+lov:
+    label: LOV
+    style: url
+    icon: qid
+
+base:
+    label: Format
+    style: link
+    icon: arrow-up
+    tooltip: Dieses Format dient als Grundlage
+
+application:
+    label: Anwendung
+    plural: Anwendungen
+    style: link
+    icon: build
+
+profiles:
+    label: Anwendungsprofil von
+    style: link
+    icon: arrow-up
+    tooltip: Dieses Format dient als Grundlage
+
+schemas:
+    label: Schema
+    plural: Schemas
+    style: schema
+    icon: border-none-variant
+
