@@ -14,6 +14,7 @@ foreach (($css ?? []) as $href) {
 </head>
 <header>
   <nav class="navbar navbar-dark navbar-expand-lg">
+  <div class="container">
     <button class="navbar-toggler" type="button"
             data-toggle="collapse" data-target="#mainMenu"
             aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,6 +25,7 @@ foreach (($css ?? []) as $href) {
       </a>
     <div class="collapse navbar-collapse" id="mainMenu">
         <?php include 'menu.php'; ?>
+    </div>
     </div>
   </nav>
 </header>
