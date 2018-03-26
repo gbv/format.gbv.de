@@ -1,8 +1,10 @@
-<span aria-hiden="true" <?php if ($tooltip) {
+<span aria-hiden="true" <?php
+if ($tooltip) {
     echo " data-toggle='tooltip' title='$tooltip'";
 }?>><?php
 
 use Symfony\Component\Yaml\Yaml;
+
 $icons = Yaml::parse(file_get_contents(__DIR__.'/icons.yaml'));
 
 if (isset($icons[$icon])) {

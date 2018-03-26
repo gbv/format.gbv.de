@@ -2,10 +2,12 @@
 
 if ($application) {
     $application = array_map(
-        function ($id) { return "application/$id"; },
+        function ($id) {
+            return "application/$id";
+        },
         is_array($application) ? $application : [$application]
     );
-} else if ($for) {
+} elseif ($for) {
     $application = 'schema/language';
 }
 
@@ -37,6 +39,7 @@ $styles = [
 ];
 
 use Symfony\Component\Yaml\Yaml;
+
 $fields = Yaml::parse(file_get_contents(__DIR__.'/infobox.yaml'));
 
 if ($schemas && $for) {
@@ -47,7 +50,9 @@ if ($schemas && $for) {
 $infobox = [];
 foreach ($fields as $name => $field) {
     $value = ${$name};
-    if (!$value) continue;
+    if (!$value) {
+        continue;
+    }
 
     if (!is_array($value)) {
         $value = [$value];
