@@ -3,6 +3,9 @@
 $showURL = function ($url) {
     return "<a href='$url'>$url</a>";
 };
+$showLink = function ($base) use ($TAGS) {
+    return $TAGS->link(['id'=>$base]);
+};
 
 $fields = [
     'created'   => ['erstellt'],
@@ -19,9 +22,8 @@ $fields = [
         return "<a href='https://bartoc.org/en/node/$id'>http://bartoc.org/en/node/$id</a>";
     }],
     'lov'       => ['LOV', $showURL],
-    'base'      => ['Format', function ($base) use ($TAGS) {
-        return $TAGS->link(['id'=>$base]);
-    }],
+    'base'      => ['Format', $showLink],
+    'profiles'  => ['Profil von', $showLink]
 ];
 
 $infobox = [];
