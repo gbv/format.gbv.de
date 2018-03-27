@@ -1,64 +1,80 @@
 <?php
 
-$fields = [
-    'created'   => 'erstellt',
-    'modified'  => 'aktualisiert',
-    'creator'   => 'Autor',
-    'publisher' => 'Herausgeber',
-#    'base'      => ['Format', '<a href="%s'],
-#    'homepage' => 'Homepage',
-#    'wikidata' => 'Wikidata/pedia',
-];
-
-$infobox = [];
-foreach ($fields as $name => $value) {
-    if (${$name}) {
-        if (is_array($value)) {
-            $infobox[$value[0]] = ${$name}; # TODO
-        } else {
-            $infobox[$value] = ${$name};
-        }
-    }
-}
-
 if ($application) {
-    $apps = [];
-    foreach (is_array($application) ? $application : [$application] as $app) {
-        $apps[] = $TAGS->link(['id'=>"application/$app"]);
-    }
-    $infobox['Anwendung'] = implode('<br>', $apps);
+    $application = array_map(
+        function ($id) {
+            return "application/$id";
+        },
+        is_array($application) ? $application : [$application]
+    );
 } elseif ($for) {
-    $infobox['Anwendung'] = "<a href='$BASE/schema'>Schemasprache</a>";
+    $application = 'schema/language';
 }
 
-if (count($schemas ?? [])) {
-    $items = [];
-    foreach ($schemas as $schema) {
+$styles = [
+    'url' => function ($url) {
+        return "<a href='$url'>$url</a>";
+    },
+    'link' => function ($base) use ($TAGS) {
+        return $TAGS->link(['id'=>$base]);
+    },
+    'qid' => function ($qid) {
+        // TODO: use JavaScript to add label and link to Wikipedia
+        return "<a href='https://tools.wmflabs.org/hub/$qid'>$qid</a>";
+    },
+    'bartoc' => function ($id) {
+        return "<a href='https://bartoc.org/en/node/$id'>http://bartoc.org/en/node/$id</a>";
+    },
+    'schema' => function ($schema) use ($TAGS) {
         $id = 'schema/'.$schema['type'];
         $url = $schema['url'];
-        $items[] =
+        $html =
             "<a href='$url'>$url</a>"
-            . ' ('. $TAGS->link(['id'=>$id]) . ')';
-    }
-    if (count($items)) {
-        $html = implode('<br>', $items);
-        $title = count($schemas) > 1 ? 'Schemas' : 'Schema';
-        if ($for) {
-            $title = 'Metas'.substr($title, 1);
+            . ' ('. $TAGS->link(['id'=>$id,'short'=>true]) . ')';
+        if (isset($schema['version'])) {
+            $html .= ' version '.$schema['version'];
         }
-        $infobox[$title] = $html;
-    }
+        return $html;
+    },
+];
+
+use Symfony\Component\Yaml\Yaml;
+
+$fields = Yaml::parse(file_get_contents(__DIR__.'/infobox.yaml'));
+
+if ($schemas && $for) {
+    $fields['schemas']['label'] = 'Metaschema';
+    $fields['schemas']['plural'] = 'Metaschemas';
 }
+
+$infobox = [];
+foreach ($fields as $name => $field) {
+    $value = ${$name};
+    if (!$value) {
+        continue;
+    }
+
+    if (!is_array($value)) {
+        $value = [$value];
+    }
+
+    if (isset($field['style'])) {
+        $value = array_map($styles[$field['style']], $value);
+    }
+
+    $label = $field[count($value) > 1 ? 'plural' : 'label'] ?? $field['label'];
+
+    if ($field['tooltip'] ?? $field['icon'] ?? false) {
+        $label = $TAGS->icon($field) . $label;
+    }
+    $infobox[$label] = implode('<br>', $value);
+}
+
 
 if (count($infobox)) { ?>
   <table class="table table-sm">
-    <!--thead>
-      <tr><th colspan="2"><?=$title?></th></tr>
-    </thead-->
-    <tbody>
 <?php foreach ($infobox as $key => $value) {
     echo "<tr><td>$key</td><td>$value</td></tr>\n";
 } ?>
-    </tbody>
   </table>
 <?php }

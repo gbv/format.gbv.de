@@ -13,3 +13,5 @@ schemas:
 
 Mit dem **CSV Dialect Description Format** können Syntax-Varianten von
 [CSV](../csv) definiert werden. Das Format basiert auf [JSON](../json).
+
+<list-schemas format="csvddf"/>

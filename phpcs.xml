@@ -8,7 +8,10 @@
     <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace"/>
   </rule>
 
-  <file>src</file>
-  <file>public</file>
-  <file>tests</file>
+  <rule ref="PSR1.Files.SideEffects">
+    <exclude-pattern>tags/*</exclude-pattern>
+  </rule>
+
+  <exclude-pattern>*.min.*</exclude-pattern>
+
 </ruleset>

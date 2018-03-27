@@ -8,8 +8,8 @@ language: en
 related formats such as [PICA](../../pica) and [MAB](../../mab).
 
 * author: Jakob Voß
-* version: 0.2.0
-* date: 2018-03-09
+* version: 0.3.0
+* date: 2018-03-16
 
 ## Introduction
 
@@ -62,6 +62,7 @@ The schema SHOULD contain keys documenting the format defined by the schema:
 The schema MAY contain:
 
 * key `$schema` with an URL of an [Avram metaschema](#metaschema)
+* key `deprecated-fields` with a [field schedule](#field-schedule)
 
 *Example:*
 
@@ -138,15 +139,15 @@ The field definition MAY further contain:
 * key `pica3` with corresponding Pica3 number
 * key `positions` with a specification of [positions] (for fixed fields)
 * key `subfields` with a [subfield schedule] (for variable fields)
-* key `types` with specification of [field types]
+* key `types` with specification of [field types] (for alternatives)
 * key `modified` with a timestamp
 
 If a field definition is given in a [field schedule], the `tag` and
 `occurrence` MUST either match the corresponding field identifier or both be
 missing.
 
-A field definition MUST NOT have more than one of the keys `positions` (for
-fixed fields), `subfields` (for variable fields) or `types` (for alternatives).
+A field definition MUST NOT mix keys for fixed fields (`position`), variable
+fields (`subfields` and `deprecated-subfields`), and alternatives (`types`).
 
 *Example:*
 

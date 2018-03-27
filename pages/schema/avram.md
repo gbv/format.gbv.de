@@ -25,9 +25,5 @@ auf Basis von [JSON](../json).
 * Perl-Modul [PICA::Data](https://metacpan.org/pod/PICA::Schema) zur
   Validierung von PICA-Daten
 
-<!--
-## Schemas
+<list-schemas format="avram"/>
 
-schema | format | API
-
--->

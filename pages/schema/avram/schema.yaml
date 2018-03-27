@@ -14,6 +14,18 @@ properties:
     type: string
     format: uri
   fields:
+    $ref: '#/definitions/field-schedule'
+  deprecated-fields:
+    $ref: '#/definitions/field-schedule'
+required:
+  - fields
+definitions:
+  url:
+    type: string
+    format: uri
+  timestamp:
+    type: string
+  field-schedule:
     type: object
     patternProperties:
       '^.+$':
@@ -41,18 +53,14 @@ properties:
             type: string
           subfields:
             $ref: '#/definitions/subfield-schedule'
+          deprecated-subfields:
+            $ref: '#/definitions/subfield-schedule'
           positions:
             $ref: '#/definitions/positions'
           types:
             $ref: '#/definitions/field-types'
           modified:
             $ref: '#/definitions/timestamp'
-definitions: 
-  url:
-    type: string
-    format: uri
-  timestamp:
-    type: string
   positions:
     type: object
     patternProperties:
@@ -123,6 +131,4 @@ definitions:
         properties:
           label:
             type: string
-required:
-  - fields
 $schema: http://json-schema.org/draft-06/schema#

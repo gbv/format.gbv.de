@@ -14,6 +14,7 @@ foreach (($css ?? []) as $href) {
 </head>
 <header>
   <nav class="navbar navbar-dark navbar-expand-lg">
+  <div class="container">
     <button class="navbar-toggler" type="button"
             data-toggle="collapse" data-target="#mainMenu"
             aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,29 +24,15 @@ foreach (($css ?? []) as $href) {
         <img src="<?=$BASE?>/img/vzg-logo.jpg"/>
       </a>
     <div class="collapse navbar-collapse" id="mainMenu">
-      <ul class="navbar-nav mr-auto">
-<?php
-$menu = ['index','structure','application','code','schema', 'about'];
-$parts = explode('/', $id);
-$current = null;
-foreach ($menu as $href) {
-    $active = $href === (in_array($parts[0], $menu) ? $parts[0] : 'index');
-    if ($active) {
-        $current = $href;
-    }
-    $url = "$BASE/" . ($href === 'index' ? '' : $href);
-    $p = $PAGES->get($href);
-    $name = $p['short'] ?? $p['title'] ?? $href;
-    echo "<li class='navbar-item".($active?' active':'')."'>";
-    echo "<a href='$url' class='nav-link'>$name</a></li>";
-} ?>
-      </ul>
+        <?php include 'menu.php'; ?>
+    </div>
     </div>
   </nav>
 </header>
 <main role="main" class="container">
 <?php
-if ($id !== $current) {
+$ID = $id;
+if ($ID !== $current) {
     echo "<h1>".$title."</h1>";
 }
 if ($VIEW) {
@@ -53,26 +40,25 @@ if ($VIEW) {
 } elseif ($BODY) {
     echo \View::instance()->raw($BODY);
 }
-include 'seealso.php';
 include 'infobox.php';
 ?>
 </main>
 <footer class="footer">
   <div class="container-fluid text-secondary">
     <div class="float-right">
-<?php if ($id) { ?>
-      <a href="<?="$BASE/$id"?>.json">Daten</a>
-      / <a href="https://github.com/gbv/format.gbv.de/tree/master/pages/<?=$id?>.md">Quelltext</a>
+<?php if ($ID) { ?>
+      <a href="<?="$BASE/$ID"?>.json">Daten</a>
+      / <a href="https://github.com/gbv/format.gbv.de/tree/master/pages/<?=$ID?>.md">Quelltext</a>
       /
 <?php } ?>
-      <a href="<?=$BASE?>/license">Lizenz</a>
+      <a href="<?=$BASE?>/about/license">Lizenz</a>
     </div>
     <p><a href="https://www.gbv.de/">Verbundzentrale des GBV (VZG)</a></p>
   </div>
 </footer>
 </body>
 <script src="<?=$BASE?>/js/jquery-3.3.1.min.js"></script>
-<script src="<?=$BASE?>/js/bootstrap.min.js"></script>
+<script src="<?=$BASE?>/js/bootstrap.bundle.min.js"></script>
 <?php
 foreach (($javascript ?? []) as $js) {
     if (preg_match('/[\r\n]/', $js)) {
@@ -84,4 +70,9 @@ foreach (($javascript ?? []) as $js) {
     }
 }
 ?>
+<script>
+$(function(){
+  $('[data-toggle="tooltip"]').tooltip()
+});
+</script>
 </html>

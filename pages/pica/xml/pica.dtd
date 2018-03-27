@@ -1,0 +1,40 @@
+<!-- 
+
+PICA XML 1.1 Document Type Definition.
+
+This DTD defines a superset of PICA XML without restriction on attribute values
+and without namespace requirement. Please use the PICA XML Schema for extended
+validation.
+
+Usage example:
+
+    <?xml version="1.0" standalone="no"?>
+    <!DOCTYPE collection SYSTEM "http://format.gbv.de/pica/xml/pica.dtd">
+    <collection>
+      ...
+    </collection>
+
+-->
+<!ELEMENT collection (record+)>
+
+<!ELEMENT record (datafield+)>
+<!ATTLIST record 
+    schema     CDATA #IMPLIED
+>
+
+<!ELEMENT datafield (subfield+)>
+<!ATTLIST datafield 
+    tag        CDATA #REQUIRED
+    occurrence CDATA #IMPLIED
+    label      CDATA #IMPLIED
+    url        CDATA #IMPLIED
+    pica3      CDATA #IMPLIED
+>
+
+<!ELEMENT subfield (#PCDATA)*>
+<!ATTLIST subfield 
+    code       CDATA #REQUIRED
+    label      CDATA #IMPLIED
+    url        CDATA #IMPLIED
+    pica3      CDATA #IMPLIED
+>

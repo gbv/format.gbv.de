@@ -42,7 +42,7 @@ zu bringen.
 Quellcode ist [auf GitHub](https://github.com/gbv/format.gbv.de).  Anregungen,
 Korrekturen und Verbesserungsvorschläge [sind dort herzlich
 willkommen](https://github.com/gbv/format.gbv.de/issues). Das Datenmodell
-zur Beschreibung von Formaten [befindet sich noch in Entwicklung](aboutdata).
+zur Beschreibung von Formaten [befindet sich noch in Entwicklung](about/data).
 
 Die Inhalte sind ohne weitere Bedingungen oder Gewährleistungen nachnutzbar
 (siehe [Lizenz](license)).
@@ -51,18 +51,12 @@ Beteiligt an den Inhalten dieser Seite sind oder waren unter Anderem:
 
 * Jakob Voß (Technische Leitung, Programmierung und Dokumentation)
 * Karsten Achterrath (Programmierung)
-* Péter Király (MARC-Schema)
+* Péter Király und Carsten Klee (Avram-Schemas)
 * Uschi Klute (Recherche zu MARC-Varianten)
 * VZG und BSZ (K10plus Online-Hilfe)
 * Linked Open Vocabularies (Daten zu RDF-Formaten)
 
 ## Verwandte Projekte
 
-* Soweit möglich sind alle Einträge mit [Wikidata](https://www.wikidata.org/) verknüpft. 
-* Das [Just Solve the File Format Problem](http://fileformats.archiveteam.org)-Wiki und
-  die [PRONOM file format registry](https://www.nationalarchives.gov.uk/PRONOM/) sammeln
-  Informationen zu Dateiformaten.
-* [Linked Open Vocabularies] sammelt [RDF](rdf)-Ontologien. Das Verzeichnis 
-  [ist hier eingebunden](rdf/lov).
-* Im [Basel Register of Thesauri, Ontologies & Classifications (BARTOC)](https://bartoc.org/)
-  sind auch Datenmodelle enthalten, beispielsweise [BIBFRAME](bibframe).
+Siehe [verwandte Projekte](about/related).
+

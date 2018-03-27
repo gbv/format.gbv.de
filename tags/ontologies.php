@@ -17,7 +17,7 @@ ksort($vocabularies);
 echo '<div class="list-group">';
 
 foreach ($vocabularies as $voc) { ?>
-    <a href="lov/<?=$voc['prefix']?>" class="list-group-item list-group-item-action">
+    <a href="voc/<?=$voc['prefix']?>" class="list-group-item list-group-item-action">
     <div class="row">
       <div class="col-1"><code><?=$voc['prefix']?></code></div>
       <div class="col"><?=$voc['title']?></div>

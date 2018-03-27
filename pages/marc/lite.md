@@ -5,4 +5,4 @@ profiles: marc
 application: bibliographic
 ---
 
-Eine Teilmenge des [MARC 21 Format für bibliographische Daten](../bibliographic).
+Eine Teilmenge des [MARC 21 Format für bibliographische Daten](bibliographic).

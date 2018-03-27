@@ -1,25 +1,47 @@
-# REST-API für PICA+ Felder des GBV und SWB (K10Plus)
+# GBV-Formatdatenbank
 
 [![Build Status](https://img.shields.io/travis/gbv/format.gbv.de.svg?style=flat-square)](https://travis-ci.org/gbv/format.gbv.de)
 [![Quality Score](https://img.shields.io/scrutinizer/g/gbv/format.gbv.de.svg?style=flat-square)](https://scrutinizer-ci.com/g/gbv/format.gbv.de)
 
+Dieses Repository enthält den Quellcode und die Quelldaten der unter
+<https://format.gbv.de/> zugänglichen Formatdatenbank.
+
+## Systemanforderungen
+
+Erfordert mindestens PHP 7 mit Erweiterungen für MySQL-PDO und XML.
+
+Die Konfigurationsdatei (siehe Beispiel `config/picahelp.example.json`) muss
+nach `config/picahelp.json` kopiert und angepasst werden.
+
+Weitere verwendeten PHP-Module müssen mit Composer installiert werden:
+
+    $ composer install
+
+## Quellcode
+
+<https://github.com/gbv/format.gbv.de>
+
+## Nutzung
+
+### REST-API für PICA+ Felder des GBV und SWB (K10Plus)
+
 Stellt ein JSON-API zur Verfügung um auf die Definition der PICA+ Felder nach RDA des gemeinsamen Kataloges des GBV und SWB zuzugreifen.
 
-# API Aufbau
+#### API Aufbau
 
 Der Aufruf erfolgt über die URL: [`http://format.gbv.de/pica/rda/`](http://format.gbv.de/pica/rda/).
 
 Aktuelle erfolgt die Rückgabe nur im JSON-Format. Der MIME-Typ ist `application/json`.
 
-## Abruf aller definierten PICA+ Felder
+##### Abruf aller definierten PICA+ Felder
 
 Wenn eine Liste aller Felder geladen werden soll, reicht es, wenn die API ohne Pfad-Angabe aufgerufen wird.
 
-### Beispiel
+##### Beispiel
 
 * **URL**: [`http://format.gbv.de/pica/rda/`](http://format.gbv.de/pica/rda/)
 
-### Ausgabe
+##### Ausgabe
 
 ```json
 {
@@ -41,18 +63,18 @@ Wenn eine Liste aller Felder geladen werden soll, reicht es, wenn die API ohne P
 }
 ```
 
-## Abruf eines bestimmten PICA+ Feldes
+#### Abruf eines bestimmten PICA+ Feldes
 
 Wenn die Definition zu einem bestimmten Feld abgerufen werden soll, so muss die URL um das gewünschte Feld als Pfadangabe erweitert werden: `http://format.gbv.de/pica/rda/{FELD}`
 
-### Beispiel
+##### Beispiel
 
 * **Feld** : *021A* - Haupttitel, Titelzusatz, Verantwortlichkeitsangabe.
 * **URL**: [`http://format.gbv.de/pica/rda/021A`](http://format.gbv.de/pica/rda/021A)
 
 Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Feldes *021A* und seiner Unterfelder.
 
-### Ausgabe
+##### Ausgabe
 
 ```json
 [
@@ -67,11 +89,11 @@ Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Feldes *0
 ]
 ```
 
-## Abruf eines bestimmten Unterfeldes
+#### Abruf eines bestimmten Unterfeldes
 
 Wenn die Definition eines bestimmten Unterfeldes zu einem PICA+ Feld geladen werden soll, so wird das Unterfeld durch ein `*$*` getrennt an das Feld angehangen: `http://format.gbv.de/pica/rda/{feld}${unterfeld}`
 
-### Beispiel
+##### Beispiel
 
 * **Feld** : *021A* - Haupttitel, Titelzusatz, Verantwortlichkeitsangabe
 * **Unterfeld** : *a* - Haupttitel
@@ -79,7 +101,7 @@ Wenn die Definition eines bestimmten Unterfeldes zu einem PICA+ Feld geladen wer
 
 Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Unterfeldes *a* des Feldes *021A*.
 
-### Ausgabe
+##### Ausgabe
 
 ```json
 {
@@ -93,7 +115,7 @@ Der Aufruf erzeugt einen Rückgabe mit den genauen Spezifikationen des Unterfeld
 }
 ```
 
-## Fehlerrückmeldungen
+#### Fehlerrückmeldungen
 
 Sollte eine Anfrage zu keinem Ergebnis führen oder kann nicht bearbeitet werden, wird eine entsprechende Fehlermeldung erzeugt. Es werden Fehlercodes nach [HTTP-Standard]( https://de.wikipedia.org/wiki/HTTP-Statuscode) verwendet.
 
@@ -108,15 +130,10 @@ Sollte eine Anfrage zu keinem Ergebnis führen oder kann nicht bearbeitet werden
 
 Sollte ein Feld oder Unterfeld nicht in RDA nicht zugelassen sein, dann erfolgt eine Fehlerausgabe so, als wäre das Feld nicht gefunden worden.
 
-### Fehlercodes
+##### Fehlercodes
 
 - 404 – Not Found : Das gesuchte Feld oder Unterfeld wurde nicht gefunden.*
 - 405 – Method Not Allowed : Die Anfrage erfolgte nicht per **GET-Method**
 - 503 - Service Unavailable : Es liegt eine technische Störung vor.
 
-## Installation
-
-Erfordert mindestens PHP 7 und die MySQL-PDO extension.
-
-Die Konfigurationsdatei (siehe Beispiel `config/picahelp.example.json`) muss nach `config/picahelp.json` kopiert und angepasst werden.
 

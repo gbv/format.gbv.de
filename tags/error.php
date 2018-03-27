@@ -7,3 +7,6 @@ $messages = [
 <div class="alert alert-warning" role="alert">
     <?=$messages[$ERROR['code']] ?? $message[500]?>
 </div>
+<!--p>
+  <a href="https://en.wikipedia.org/wiki/Mojibake">�</a>
+</p-->

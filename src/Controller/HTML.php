@@ -15,9 +15,20 @@ class HTML
 {
     public $root = '../pages/';
 
+    protected static $mimetypes = [
+        'dtd'   => 'application/xml-dtd',
+        'yaml'  => 'text/yaml',
+        'md'    => 'text/markdown; charset=UTF-8',
+    ];
+
     public function __construct()
     {
-        $this->pages = new Pages('../pages');
+        $this->pages = new Pages($this->root);
+        $this->menu = Yaml::parse(file_get_contents($this->root . 'menu.yaml'));
+        $this->tags = new Tags('../tags', [
+            'PAGES' => $this->pages,
+            'BASE' => $f3['BASE'],
+        ]);
     }
 
     public function render($f3, $params)
@@ -25,43 +36,61 @@ class HTML
         $f3['ONERROR'] = function ($f3) {
             $this->error($f3);
         };
+        $f3['MENU'] = $this->menu;
+        $f3['TAGS'] = $this->tags;
 
         $path = $params['*'];
 
-        // send YAML files as JSON
-        if (preg_match('!^(([a-z0-9-]+)/?)+\.json$!', $path)) {
-            $id = substr($path, 0, -5);
-            $file = $this->root . $id . '.yaml';
-            if (file_exists($file)) {
-                $data = Yaml::parse(file_get_contents($file));
-            } else {
+        if (preg_match('!^((([a-z0-9-]+)/?)+)\.([a-z]+)$!', $path, $match)) {
+            $id = $match[1];
+            $extension = $match[4];
+            if ($extension == 'json') {
+                // send YAML files as JSON
+                $file = $this->root . "$id.yaml";
                 $data = $this->pages->get($id);
+                if (!$data && file_exists($file)) {
+                    $data = Yaml::parse(file_get_contents($file));
+                }
+                
                 if ($data) {
-                    foreach (['markdown', 'arguments', 'javascript', 'css', 'broader'] as $key) {
+                    # TODO: repeated at bin/metadata
+                    foreach (['markdown', 'javascript', 'css', 'broader'] as $key) {
                         unset($data[$key]);
                     }
+                    # TODO: expand with type, backlinks etc.
                     $data['@context'] = "http://format.gbv.de/data/context.json";
                     $data['$schema']  = "http://format.gbv.de/data/schema.json";
                 }
-            }
-            if ($data) {
-                (new JSON($data))->sendJson();
-                return;
+
+                if ($data) {
+                    $options = JSON_PRETTY_PRINT;
+                    if ($data['$schema'] == 'https://format.gbv.de/schema/avram/schema.json') {
+                        $options |= JSON_FORCE_OBJECT;
+                    }
+                    (new JSON($data))->sendJson($options);
+                    return;
+                }
+            } else {
+                // send static files
+                $type = static::$mimetypes[$extension] ?? null;
+                $file = $this->root . $path;
+                if ($type and file_exists($file)) {
+                    header("Content-Type: $type");
+                    header('Access-Control-Allow-Origin *');
+                    readfile($file);
+                    return;
+                }
             }
         }
 
-        $this->page($f3, $path);
+        $data = $this->page($f3, $path) ?? [];
+        foreach ($data as $key => $value) {
+            $f3[$key] = $value;
+        }
 
         if ($f3['MARKDOWN']) {
             $html = \Parsedown::instance()->text($f3['MARKDOWN']);
 
-            // process custom tags
-            if (!$this->tags) {
-                $this->tags = new Tags('../tags', [
-                    'PAGES' => $this->pages,
-                    'BASE' => $f3['BASE'],
-                ]);
-            }
             $html = $this->tags->expand($html);
 
             // Add header identifiers
@@ -86,7 +115,8 @@ class HTML
             $f3['BODY'] = $html;
         }
 
-        $f3['TAGS'] = $this->tags;
+        $f3['PAGES'] = $this->pages;
+
         echo \View::instance()->render('index.php');
     }
 
@@ -100,33 +130,26 @@ class HTML
 
         $f3->mset([
             'title' => $f3['ERROR']['code'] . ': ' . $f3['ERROR']['status'],
-            'VIEW'  => 'error.php'
+            'VIEW'  => 'error.php',
         ]);
 
         echo \View::instance()->render('index.php');
     }
 
-    public function links()
-    {
-        $links = $this->pages->get('links');
-        return $links ? $links['markdown'] : '';
-    }
-
     public function page($f3, string $path)
     {
-        if ($path == '') {
-            $path = 'index';
-        }
+        $data = $this->pages->get($path == '' ? 'index' : $path) ?? [];
+        $markdown = $data['markdown'] ?? '';
 
-        $page = $this->pages->get($path);
-        if ($page) {
-            $f3->mset($page);
-            $f3['MARKDOWN'] = $page['markdown'] . "\n\n" . $this->links();
-            $f3['PAGES'] = $this->pages;
-        }
+        if ($markdown) {
+            $links = $this->pages->get('links');
+            $links = $links ? $links['markdown'] : '';
 
-        if (!$f3['MARKDOWN']) {
-            $f3->error(404);
+            $data['MARKDOWN'] = "$markdown\n\n$links";
+            unset($data['markdown']);
+            return $data;
+        } else {
+            return;
         }
     }
 }

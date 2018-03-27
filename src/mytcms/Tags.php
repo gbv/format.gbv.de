@@ -2,6 +2,8 @@
 
 namespace mytcms;
 
+use SimpleXMLElement;
+
 /**
  * Provides Tags given as PHP files in a common directory.
  */
@@ -66,7 +68,7 @@ class Tags
             "!<(?'tag'$tagnames)(?'attr'[^>]*?)(/>|>(?'content'.*?)</(?P=tag)>)!s",
             function ($match) use ($tags) {
                 $xml = '<' . $match['tag'] . $match['attr'] . '/>';
-                $xml = new \SimpleXMLElement($xml);
+                $xml = new SimpleXMLElement($xml);
                 $elem = json_decode(json_encode($xml), true);
                 $vars = $elem['@attributes'];
                 return $tags->{$match['tag']}($vars, $match['content'] ?? '');

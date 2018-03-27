@@ -5,3 +5,5 @@ for: json
 ---
 
 **Rx** ist eine Schemasprache für [JSON](../json). 
+
+<list-schemas format="rx"/>

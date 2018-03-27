@@ -5,3 +5,5 @@ for: xml
 ---
 
 **RELAG NG** ist eine Schemasprache für [XML](../xml).
+
+<list-schemas format="relax-ng"/>

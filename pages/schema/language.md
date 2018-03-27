@@ -5,12 +5,17 @@ javascript:
     - //cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js
     - |
         $(document).ready(function() {
-            $('.sortable').DataTable({ paging: false, search: false, info: false });
+            $('.sortable').DataTable({
+              paging: false, search: false, info: false, searching: false 
+            });
         } );
 css: 
     - //cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css
 ---
 
-Eine **Schemasprache** ist ein Datenformat für [Schemas](../schema).
+**Schemasprachen** sind [Anwendungsformate](../application) für
+[Schemas](../schema), die ihrerseits zur formalen Beschreibung von
+Datenformaten dienen. Jede Schemasprache ist für Formate einer oder weniger
+bestimmter [Strukturierungssprache](../structure) ausgelegt.
 
 <schema-languages/>

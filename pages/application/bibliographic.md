@@ -1,5 +1,7 @@
 ---
 title: Bibliografische Datenformate
+topConceptOf: application
+wikidata: Q18616720
 ---
 
 **Bibliografische Datenformate** sind [Anwendungsformate](../application) für
