@@ -17,6 +17,8 @@ class HTML
 
     protected static $mimetypes = [
         'dtd'   => 'application/xml-dtd',
+        'xsd'   => 'application/xml',
+        'xml'   => 'application/xml',
         'yaml'  => 'text/yaml',
         'md'    => 'text/markdown; charset=UTF-8',
     ];
@@ -51,7 +53,7 @@ class HTML
                 if (!$data && file_exists($file)) {
                     $data = Yaml::parse(file_get_contents($file));
                 }
-                
+
                 if ($data) {
                     # TODO: repeated at bin/metadata
                     foreach (['markdown', 'javascript', 'css', 'broader'] as $key) {
