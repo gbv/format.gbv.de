@@ -111,7 +111,7 @@ For PICA-based formats
 
 * the field tag MUST be three digits, the first `0` to `2`, followed by an
   uppercase letter (`A` to `Z`) or `@`, and
-* the field occurrences MUST be three digits and MUST NOT exist if the field
+* the field occurrences MUST be two digits and MUST NOT exist if the field
   tag starts with a digit other than `0`.
 
 *Examples:*
