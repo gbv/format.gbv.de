@@ -28,18 +28,20 @@ publisher:
 wikidata:
     label: Wikidata
     style: qid
-    icon: info-outline
+    icon: web-asset
+    tooltip: Eintrag in Wikidata (und ggf. Wikipedia)
 
 bartoc:
     label: BARTOC
     style: bartoc
-    icon: qid
-    tooltip: Entsprechender Eintrag im Verzeichnis BARTOC
+    icon: web-asset
+    tooltip: Eintrag im Terminologie-Verzeichnis BARTOC
 
 lov:
     label: LOV
     style: url
-    icon: qid
+    icon: web-asset
+    tooltip: Eintrag im Ontologie-Verzeichnis Linked Open Vocabularies (LOV)
 
 base:
     label: Format
