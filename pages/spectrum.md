@@ -1,7 +1,10 @@
 ---
 title: Spectrum
-homepage: https://www.wikidata.org/wiki/Special:EntityPage/
+homepage: https://collectionstrust.org.uk/spectrum/
 application: bibliographic
 ---
 
-**Spectrum** ist ein Standard zur Erfassung von Daten in Museen.
+**Spectrum** ist ein Standard zur Erfassung von Daten in Museen. Der Standard
+enthält Angaben dazu [welche Informationen erfasst werden
+sollen](https://collectionstrust.org.uk/spectrum/information-requirements/)
+ohne Vorgabe eines konkreten Datenschemas.
