@@ -47,13 +47,7 @@ class HTML
             $id = $match[1];
             $extension = $match[4];
             if ($extension == 'json') {
-                // send YAML files as JSON
-                $file = $this->root . "$id.yaml";
                 $data = $this->pages->get($id);
-                if (!$data && file_exists($file)) {
-                    $data = Yaml::parse(file_get_contents($file));
-                }
-
                 if ($data) {
                     # TODO: repeated at bin/metadata
                     foreach (['markdown', 'javascript', 'css', 'broader'] as $key) {
@@ -62,6 +56,11 @@ class HTML
                     # TODO: expand with type, backlinks etc.
                     $data['@context'] = "http://format.gbv.de/data/context.json";
                     $data['$schema']  = "http://format.gbv.de/data/schema.json";
+                } else {
+                    $file = $this->root . "$id.yaml";
+                    if (file_exists($file)) {
+                        $data = Yaml::parse(file_get_contents($file));
+                    }
                 }
 
                 if ($data) {
