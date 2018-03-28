@@ -37,8 +37,15 @@ Digital Format Registry](http://udfr.org/) (UFDR, 2010-2016). Allgemein sind
 Normdaten- und bibliographische Formate in den bisherigen Verzeichnissen
 unterrepräsentiert.
 
+Das Projekt [Wikidata for digital Preservation](http://wikidp.org) verwendet
+Wikidata um Informationen zu Dateiformaten und Software zusammenzustellen.
+
 Das Poster **[Seeing Standards](http://jennriley.com/metadatamap/)** von Jenn
 Riley enthält 105 Metadaten-Standards.
+
+Die [DLF Metadata Assessment Working
+Group](https://dlfmetadataassessment.github.io/) sammelt unter Anderem
+Anwendungsprofile für digitale Sammlungen.
 
 Die theoretische Grundlage der Metadatenbeschreibung basiert auf
 der Dissertation **[Describing Data Patterns](http://aboutdata.org/)**.
