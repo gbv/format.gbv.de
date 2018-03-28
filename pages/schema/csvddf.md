@@ -1,7 +1,7 @@
 ---
 title: CSV Dialect
 short: CSVDDF
-homepage: http://dataprotocols.org/csv-dialect/
+homepage: https://frictionlessdata.io/specs/csv-dialect/
 created: 2013
 creator: Rufus Pollock
 base: json
