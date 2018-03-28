@@ -8,9 +8,9 @@ foreach ($PAGES->select(['schemas'=>null]) as $id => $page) {
         }
     }
 }
- 
+
 if (count($schemas)) { ?>
-<h3>Schemas</h3>
+<h3><?=$title ?? 'Schemas'?></h3>
 <ul>
 <?php
 foreach ($schemas as $schema) {

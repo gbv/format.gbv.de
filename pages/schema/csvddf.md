@@ -1,5 +1,5 @@
 ---
-title: CSV Dialect Description Format
+title: CSV Dialect
 short: CSVDDF
 homepage: http://dataprotocols.org/csv-dialect/
 created: 2013
@@ -11,7 +11,8 @@ schemas:
     type: json-schema
 ---
 
-Mit dem **CSV Dialect Description Format** können Syntax-Varianten von
-[CSV](../csv) definiert werden. Das Format basiert auf [JSON](../json).
+Mit dem **CSV Dialect Description Format** (kurz **CSV Dialect**) können
+Syntax-Varianten von [CSV](../csv) definiert werden. Das Format basiert auf
+[JSON](../json).
 
-<list-schemas format="csvddf"/>
+<list-schemas format="csvddf" title="Mit CSV Dialect beschriebene Formate"/>

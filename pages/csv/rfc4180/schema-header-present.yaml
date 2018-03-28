@@ -1,0 +1,10 @@
+---
+dialect:
+  csvddfVersion: 1.2
+  lineTerminator: "\r\n"
+  delimiter: ","
+  quoteChar: '"'
+  doubleQuote: true
+  skipInitialSpace: false
+  caseSensitiveHeader: true
+  header: true
