@@ -49,6 +49,11 @@ base:
     icon: arrow-up
     tooltip: Dieses Format dient als Grundlage
 
+model:
+    label: Datenmodell
+    style: link
+    icon: arrow-up
+
 application:
     label: Anwendung
     plural: Anwendungen

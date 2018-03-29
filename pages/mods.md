@@ -20,6 +20,4 @@ der Library of Congress entwickelt, die auch Mappings zum [MARC-Format für
 bibliographische Daten](marc/bibliographic) bereitstellt. Das Format wird von
 verschiedenen Literaturverwaltungsprogrammen unterstützt.
 
-<!--
 Ein entsprechende XML-Format für Normdaten ist [MADS](mads).
--->

@@ -2,7 +2,7 @@
 
 $select = [];
 foreach ($arguments as $name) {
-    if ($name != 'exclude') {
+    if ($name != 'exclude' && $name != 'title') {
         $select[$name] = ${$name};
     }
 }
@@ -18,4 +18,7 @@ uasort($items, function ($a, $b) {
     return $a <=> $b;
 });
 
+if ($title) {
+    $content = "<h3>$title</h3>";
+}
 include 'list.php';
