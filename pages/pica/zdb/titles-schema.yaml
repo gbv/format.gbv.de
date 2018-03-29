@@ -95,11 +95,6 @@ fields:
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/0500.pdf
     subfields:
       "0":
-        "3":
-          label: "Pos.4: Zuordnung des Datensatzes"
-          codes:
-            z:
-              label: Datensatz im ZDB-Bestand
         code: "0"
         label: Bibliografische Gattung/Status
         pattern: "^[ABCEOSZaso][bdm][aqvx]z$"
@@ -147,6 +142,11 @@ fields:
                 label: Korrekturberechtigung nur bei ZR-Titel
               x:
                 label: Füllzeichen
+          "3":
+          label: "Pos.4: Zuordnung des Datensatzes"
+          codes:
+            z:
+              label: Datensatz im ZDB-Bestand
   002C:
     repeatable: true
     tag: "002C"
@@ -722,6 +722,7 @@ fields:
       A:
         code: "A"
       V:
+        repeatable: true
         code: "V"
   013D:
     repeatable: true
@@ -755,6 +756,7 @@ fields:
       A:
         code: A
       V:
+        repeatable: true
         code: "V"
   013E:
     tag: "013E"
@@ -796,6 +798,7 @@ fields:
       A:
         code: A
       V:
+        repeatable: true
         code: V
   013H:
     tag: "013H"
@@ -1274,6 +1277,7 @@ fields:
         code: G
         label: "Expansionsfeld des referenzierten GND-Datensatzes"
       V:
+        repeatable: true
         code: V
         label: "Expansionsfeld des referenzierten GND-Datensatzes"
   028C:
@@ -1285,6 +1289,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
         label: "Expansionsfeld des referenzierten GND-Datensatzes"
       B:
         code: B
@@ -1339,6 +1344,7 @@ fields:
         code: l
         label: "Expansionsfeld des referenzierten GND-Datensatzes"
       V:
+        repeatable: true
         code: V
         label: "Expansionsfeld des referenzierten GND-Datensatzes"
       T:
@@ -1356,6 +1362,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
         label: "Expansionsfeld des referenzierten GND-Datensatzes"
       "4":
         code: "4"
@@ -1381,6 +1388,7 @@ fields:
       b:
         code: b
         label: "Expansionsfeld des referenzierten GND-Datensatzes"
+        repeatable: true
       B:
         code: B
         repeatable: true
@@ -1394,6 +1402,7 @@ fields:
         label: "Expansionsfeld des referenzierten GND-Datensatzes"
       g:
         code: g
+        repeatable: true
         label: "Expansionsfeld des referenzierten GND-Datensatzes"
       "n":
         code: "n"
@@ -1405,6 +1414,7 @@ fields:
        code: U
        label: Schriftcode nach ISO 15924
       V:
+        repeatable: true
         code: V
         label: "Expansionsfeld des referenzierten GND-Datensatzes"
   029F:
@@ -1416,6 +1426,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "4":
         code: "4"
         repeatable: true
@@ -1442,7 +1453,7 @@ fields:
         code: A
       b:
         code: b
-        repeatable: 1
+        repeatable: true
       B:
         code: B
         repeatable: true
@@ -1454,6 +1465,7 @@ fields:
         code: d
       g:
         code: g
+        repeatable: true
       "n":
         code: "n"
       T:
@@ -1463,6 +1475,7 @@ fields:
        code: U
        label: Schriftcode nach ISO 15924
       V:
+        repeatable: true
         code: V
   022A:
     tag: "022A"
@@ -1599,7 +1612,7 @@ fields:
         label: Körperschaftl. Ergänzung zur Unterreihe
   032@:
     label: Ausgabevermerk
-    pica3: "420"
+    pica3: "4020"
     repeatable: true
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/4020.pdf
     subfields:
@@ -1679,7 +1692,7 @@ fields:
     deprecated-subfields:
       f:
         code: f
-        repetable: true
+        repeatable: true
         label: Bandbezeichnung
       g:
         code: g
@@ -1809,6 +1822,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "7":
         code: "7"
       "9":
@@ -1817,12 +1831,26 @@ fields:
         label: GND-ID-Nummer
       a:
         code: a
+      b:
+        code: b
+        repeatable: true
       A:
         code: A
       g:
         code: g
+        repeatable: true
       V:
+        repeatable: true
         code: V
+      "n":
+        code: "n"
+        repeatable: true
+      x:
+        code: x
+        repeatable: true
+      z:
+        code: z
+        repeatable: true
   034D:
     tag: "034D"
     label: Umfang
@@ -1900,6 +1928,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
         label: Einleitungstext zur URL für den Zugriff im Multimedia-Bereitstellungssystem
       S:
         code: S
@@ -2283,6 +2312,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "3":
             code: "3"
           "4":
@@ -2297,6 +2327,7 @@ fields:
           a:
             code: a
             label: Beziehungskennzeichnung
+            repeatable: true
             codes:
               "Supplement zu":
                 label: "Supplement zu"
@@ -2304,12 +2335,14 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           D:
             code: D
           F:
             code: F
           g:
             code: g
+            repeatable: true
           H:
             code: H
           I:
@@ -2318,6 +2351,7 @@ fields:
             code: L
           M:
             code: M
+            repeatable: true
           "n":
             code: "n"
             label: zeitliche Gültigkeit der Beziehung
@@ -2325,11 +2359,13 @@ fields:
             code: "N"
           O:
             code: O
+            repeatable: true
           Q:
             code: Q
           r:
             code: r
           V:
+            repeatable: true
             code: V
           "Y":
             code: "Y"
@@ -2388,6 +2424,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "3":
             code: "3"
           "4":
@@ -2402,6 +2439,7 @@ fields:
           a:
             code: a
             label: Beziehungskennzeichnung
+            repeatable: true
             codes:
               "Supplement":
                 label: "Supplement"
@@ -2409,12 +2447,14 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           D:
             code: D
           F:
             code: F
           g:
             code: g
+            repeatable: true
           H:
             code: H
           I:
@@ -2423,18 +2463,22 @@ fields:
             code: L
           M:
             code: M
+            repeatable: true
           "n":
             code: "n"
             label: zeitliche Gültigkeit der Beziehung
           "N":
             code: "N"
+            repeatable: true
           O:
             code: O
+            repeatable: true
           Q:
             code: Q
           r:
             code: r
           V:
+            repeatable: true
             code: V
           "Y":
             code: "Y"
@@ -2507,6 +2551,7 @@ fields:
           a:
             code: a
             label: Beziehungskennzeichnung
+            repeatable: true
             codes:
               "Erscheint auch als":
                 label: "Erscheint auch als"
@@ -2516,12 +2561,14 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           D:
             code: D
           F:
             code: F
           g:
             code: g
+            repeatable: true
           H:
             code: H
           I:
@@ -2537,11 +2584,13 @@ fields:
             code: "N"
           O:
             code: O
+            repeatable: true
           Q:
             code: Q
           r:
             code: r
           V:
+            repeatable: true
             code: V
           "Y":
             code: "Y"
@@ -2602,6 +2651,7 @@ fields:
           b:
             code: b
             label: Beziehungskennzeichnung Code
+            repeatable: true
             codes:
               f:
                 label: Vorgänger
@@ -2610,6 +2660,7 @@ fields:
           a:
             code: a
             label: Vorgänger-/ Nachfolger-Beziehungskennzeichnungen
+            repeatable: true
             codes:
               "Fortsetzung von":
                 label: "Fortsetzung von"
@@ -2739,6 +2790,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "3":
             code: "3"
           "4":
@@ -2753,6 +2805,7 @@ fields:
           a:
             code: a
             label: Beziehungskennzeichnung
+            repeatable: true
             codes:
               "Parallele Sprachausgabe":
                 label: "Parallele Sprachausgabe"
@@ -2764,12 +2817,14 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           D:
             code: D
           F:
             code: F
           g:
             code: g
+            repeatable: true
           H:
             code: H
           I:
@@ -2778,18 +2833,22 @@ fields:
             code: L
           M:
             code: M
+            repeatable: true
           "n":
             code: "n"
             label: Materialart, zeitliche Gültigkeit der Beziehung
           "N":
             code: "N"
+            repeatable: true
           O:
             code: O
+            repeatable: true
           Q:
             code: Q
           r:
             code: r
           V:
+            repeatable: true
             code: V
           "Y":
             code: "Y"
@@ -2852,6 +2911,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "3":
             code: "3"
           "4":
@@ -2866,6 +2926,7 @@ fields:
           a:
             code: a
             label: Beziehungskennzeichnung
+            repeatable: true
             codes:
               "Abstract als":
                 label: Abstract als
@@ -2911,12 +2972,14 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           D:
             code: D
           F:
             code: F
           g:
             code: g
+            repeatable: true
           H:
             code: H
           I:
@@ -2925,18 +2988,22 @@ fields:
             code: L
           M:
             code: M
+            repeatable: true
           "n":
             code: "n"
             label: zeitliche Gültigkeit der Beziehung
           "N":
             code: "N"
+            repeatable: true
           O:
             code: O
+            repeatable: true
           Q:
             code: Q
           r:
             code: r
           V:
+            repeatable: true
             code: V
           "Y":
             code: "Y"
@@ -3047,6 +3114,7 @@ fields:
           a:
             code: a
             label: Beziehungskennzeichnung
+            repeatable: true
             codes:
               "Faksimile von":
                 label: Faksimile von
@@ -3060,12 +3128,14 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           D:
             code: D
           F:
             code: F
           g:
             code: g
+            repeatable: true
           H:
             code: H
           I:
@@ -3078,11 +3148,13 @@ fields:
             code: "N"
           O:
             code: O
+            repeatable: true
           Q:
             code: Q
           r:
             code: r
           V:
+            repeatable: true
             code: V
           "Y":
             code: "Y"
@@ -3158,6 +3230,7 @@ fields:
           a:
             code: a
             label: Beziehungskennzeichnung
+            repeatable: true
             codes:
               "Reproduktion von":
                 label: Reproduktion von
@@ -3171,12 +3244,14 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           D:
             code: D
           F:
             code: F
           g:
             code: g
+            repeatable: true
           H:
             code: H
           I:
@@ -3189,11 +3264,13 @@ fields:
             code: "N"
           O:
             code: O
+            repeatable: true
           Q:
             code: Q
           r:
             code: r
           V:
+            repeatable: true
             code: V
           "Y":
             code: "Y"
@@ -3510,6 +3587,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "7":
         code: "7"
       "9":
@@ -3518,12 +3596,14 @@ fields:
         label: Verknüpfungsnummer eines GND-Satzes
       a:
         code: a
+        repeatable: true
       l:
         code: l
       A:
         code: A
       b:
         code: b
+        repeatable: true
       c:
         code: c
       d:
@@ -3534,6 +3614,7 @@ fields:
         code: E
       g:
         code: g
+        repeatable: true
       G:
         code: G
       "n":
@@ -3545,6 +3626,7 @@ fields:
       t:
         code: t
       V:
+        repeatable: true
         code: V
       x:
         code: x
@@ -3561,6 +3643,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -3569,12 +3652,14 @@ fields:
             label: Verknüpfungsnummer eines GND-Satzes
           a:
             code: a
+            repeatable: true
           l:
             code: l
           A:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -3585,6 +3670,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -3596,6 +3682,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -3617,6 +3704,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -3625,12 +3713,14 @@ fields:
             label: Verknüpfungsnummer eines GND-Satzes
           a:
             code: a
+            repeatable: true
           l:
             code: l
           A:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -3641,6 +3731,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -3652,6 +3743,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -3673,6 +3765,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -3681,12 +3774,14 @@ fields:
             label: Verknüpfungsnummer eines GND-Satzes
           a:
             code: a
+            repeatable: true
           l:
             code: l
           A:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -3697,6 +3792,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -3708,6 +3804,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -3729,6 +3826,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -3737,12 +3835,14 @@ fields:
             label: Verknüpfungsnummer eines GND-Satzes
           a:
             code: a
+            repeatable: true
           l:
             code: l
           A:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -3753,6 +3853,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -3764,6 +3865,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -3786,6 +3888,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -3794,12 +3897,14 @@ fields:
             label: Verknüpfungsnummer eines GND-Satzes
           a:
             code: a
+            repeatable: true
           l:
             code: l
           A:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -3810,6 +3915,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -3821,6 +3927,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -3840,6 +3947,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "7":
         code: "7"
       "9":
@@ -3848,12 +3956,14 @@ fields:
         label: Verknüpfungsnummer eines GND-Satzes
       a:
         code: a
+        repeatable: true
       l:
         code: l
       A:
         code: A
       b:
         code: b
+        repeatable: true
       c:
         code: c
       d:
@@ -3864,6 +3974,7 @@ fields:
         code: E
       g:
         code: g
+        repeatable: true
       G:
         code: G
       "n":
@@ -3875,6 +3986,7 @@ fields:
       t:
         code: t
       V:
+        repeatable: true
         code: V
       x:
         code: x
@@ -3891,6 +4003,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -3899,12 +4012,14 @@ fields:
             label: Verknüpfungsnummer eines GND-Satzes
           a:
             code: a
+            repeatable: true
           l:
             code: l
           A:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -3915,6 +4030,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -3926,6 +4042,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -3947,6 +4064,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -3955,12 +4073,14 @@ fields:
             label: Verknüpfungsnummer eines GND-Satzes
           a:
             code: a
+            repeatable: true
           l:
             code: l
           A:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -3971,6 +4091,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -3982,6 +4103,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4003,6 +4125,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4017,6 +4140,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4027,6 +4151,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4038,6 +4163,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4059,6 +4185,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4073,6 +4200,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4083,6 +4211,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4094,6 +4223,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4116,6 +4246,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4130,6 +4261,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4140,6 +4272,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4151,6 +4284,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4170,6 +4304,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "7":
         code: "7"
       "9":
@@ -4184,6 +4319,7 @@ fields:
         code: A
       b:
         code: b
+        repeatable: true
       c:
         code: c
       d:
@@ -4194,6 +4330,7 @@ fields:
         code: E
       g:
         code: g
+        repeatable: true
       G:
         code: G
       "n":
@@ -4205,6 +4342,7 @@ fields:
       t:
         code: t
       V:
+        repeatable: true
         code: V
       x:
         code: x
@@ -4221,6 +4359,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4235,6 +4374,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4245,6 +4385,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4256,6 +4397,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4277,6 +4419,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4291,6 +4434,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4301,6 +4445,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4312,6 +4457,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4333,6 +4479,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4347,6 +4494,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4357,6 +4505,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4368,6 +4517,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4389,6 +4539,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4403,6 +4554,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4413,6 +4565,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4424,6 +4577,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4446,6 +4600,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4460,6 +4615,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4470,6 +4626,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4481,6 +4638,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4500,6 +4658,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "7":
         code: "7"
       "9":
@@ -4514,6 +4673,7 @@ fields:
         code: A
       b:
         code: b
+        repeatable: true
       c:
         code: c
       d:
@@ -4524,6 +4684,7 @@ fields:
         code: E
       g:
         code: g
+        repeatable: true
       G:
         code: G
       "n":
@@ -4535,6 +4696,7 @@ fields:
       t:
         code: t
       V:
+        repeatable: true
         code: V
       x:
         code: x
@@ -4551,6 +4713,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4565,6 +4728,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4575,6 +4739,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4586,6 +4751,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4607,6 +4773,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4621,6 +4788,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4631,6 +4799,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4642,6 +4811,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4663,6 +4833,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4677,6 +4848,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4687,6 +4859,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4698,6 +4871,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4719,6 +4893,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4733,6 +4908,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4743,6 +4919,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4754,6 +4931,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4776,6 +4954,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4790,6 +4969,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4800,6 +4980,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4811,6 +4992,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4830,6 +5012,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "7":
         code: "7"
       "9":
@@ -4854,6 +5037,7 @@ fields:
         code: E
       g:
         code: g
+        repeatable: true
       G:
         code: G
       "n":
@@ -4865,6 +5049,7 @@ fields:
       t:
         code: t
       V:
+        repeatable: true
         code: V
       x:
         code: x
@@ -4881,6 +5066,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4895,6 +5081,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4905,6 +5092,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4916,6 +5104,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4937,6 +5126,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -4951,6 +5141,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -4961,6 +5152,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -4972,6 +5164,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -4993,6 +5186,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5007,6 +5201,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5017,6 +5212,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5028,6 +5224,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5049,6 +5246,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5063,6 +5261,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5073,6 +5272,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5084,6 +5284,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5106,6 +5307,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5120,6 +5322,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5130,6 +5333,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5141,6 +5345,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5160,6 +5365,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "7":
         code: "7"
       "9":
@@ -5184,6 +5390,7 @@ fields:
         code: E
       g:
         code: g
+        repeatable: true
       G:
         code: G
       "n":
@@ -5195,6 +5402,7 @@ fields:
       t:
         code: t
       V:
+        repeatable: true
         code: V
       x:
         code: x
@@ -5211,6 +5419,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5225,6 +5434,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5235,6 +5445,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5246,6 +5457,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5267,6 +5479,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5281,6 +5494,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5291,6 +5505,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5302,6 +5517,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5323,6 +5539,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5337,6 +5554,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5347,6 +5565,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5358,6 +5577,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5379,6 +5599,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5393,6 +5614,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5403,6 +5625,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5414,6 +5637,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5436,6 +5660,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5450,6 +5675,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5460,6 +5686,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5471,6 +5698,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5490,6 +5718,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "7":
         code: "7"
       "9":
@@ -5514,6 +5743,7 @@ fields:
         code: E
       g:
         code: g
+        repeatable: true
       G:
         code: G
       "n":
@@ -5525,6 +5755,7 @@ fields:
       t:
         code: t
       V:
+        repeatable: true
         code: V
       x:
         code: x
@@ -5541,6 +5772,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5555,6 +5787,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5565,6 +5798,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5576,6 +5810,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5597,6 +5832,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5611,6 +5847,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5621,6 +5858,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5632,6 +5870,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5653,6 +5892,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5667,6 +5907,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5677,6 +5918,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5688,6 +5930,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5709,6 +5952,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5723,6 +5967,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5733,6 +5978,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5744,6 +5990,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5766,6 +6013,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5780,6 +6028,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5790,6 +6039,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5801,6 +6051,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5820,6 +6071,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "7":
         code: "7"
       "9":
@@ -5844,6 +6096,7 @@ fields:
         code: E
       g:
         code: g
+        repeatable: true
       G:
         code: G
       "n":
@@ -5855,6 +6108,7 @@ fields:
       t:
         code: t
       V:
+        repeatable: true
         code: V
       x:
         code: x
@@ -5871,6 +6125,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5885,6 +6140,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5895,6 +6151,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5906,6 +6163,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5927,6 +6185,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5941,6 +6200,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -5951,6 +6211,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -5962,6 +6223,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -5983,6 +6245,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -5997,6 +6260,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -6007,6 +6271,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -6018,6 +6283,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -6039,6 +6305,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -6053,6 +6320,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -6063,6 +6331,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -6074,6 +6343,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -6096,6 +6366,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -6110,6 +6381,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -6120,6 +6392,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -6131,6 +6404,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -6150,6 +6424,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "7":
         code: "7"
       "9":
@@ -6174,6 +6449,7 @@ fields:
         code: E
       g:
         code: g
+        repeatable: true
       G:
         code: G
       "n":
@@ -6185,6 +6461,7 @@ fields:
       t:
         code: t
       V:
+        repeatable: true
         code: V
       x:
         code: x
@@ -6201,6 +6478,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -6215,6 +6493,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -6225,6 +6504,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -6236,6 +6516,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -6257,6 +6538,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -6271,6 +6553,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -6281,6 +6564,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -6292,6 +6576,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -6313,6 +6598,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -6327,6 +6613,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -6337,6 +6624,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -6348,6 +6636,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -6369,6 +6658,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -6383,6 +6673,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -6393,6 +6684,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -6404,6 +6696,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -6426,6 +6719,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -6440,6 +6734,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -6450,6 +6745,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -6461,6 +6757,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -6480,6 +6777,7 @@ fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "7":
         code: "7"
       "9":
@@ -6504,6 +6802,7 @@ fields:
         code: E
       g:
         code: g
+        repeatable: true
       G:
         code: G
       "n":
@@ -6515,6 +6814,7 @@ fields:
       t:
         code: t
       V:
+        repeatable: true
         code: V
       x:
         code: x
@@ -6531,6 +6831,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -6545,6 +6846,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -6555,6 +6857,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -6566,6 +6869,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -6587,6 +6891,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -6601,6 +6906,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -6611,6 +6917,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -6622,6 +6929,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -6643,6 +6951,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -6657,6 +6966,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -6667,6 +6977,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -6678,6 +6989,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -6699,6 +7011,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -6713,6 +7026,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -6723,6 +7037,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -6734,6 +7049,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -6756,6 +7072,7 @@ fields:
         subfields:
           "0":
             code: "0"
+            repeatable: true
           "7":
             code: "7"
           "9":
@@ -6770,6 +7087,7 @@ fields:
             code: A
           b:
             code: b
+            repeatable: true
           c:
             code: c
           d:
@@ -6780,6 +7098,7 @@ fields:
             code: E
           g:
             code: g
+            repeatable: true
           G:
             code: G
           "n":
@@ -6791,6 +7110,7 @@ fields:
           t:
             code: t
           V:
+            repeatable: true
             code: V
           x:
             code: x
@@ -7847,6 +8167,7 @@ fields:
         subfields:
           b:
             code: b
+            repeatable: true
             label: Kennung für Art des Schlagworts/Quelle
           "9":
             code: "9"
@@ -8006,6 +8327,7 @@ deprecated-fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
         label: ISBN (mit Bindestrichen); ohne die Zeichenfolge "ISBN¬"
         pattern: "^(?:97[89]-)?[0-9]{1,5}-[0-9]+-[0-9]+[-][0-9X]$"
         required: true
@@ -8043,6 +8365,7 @@ deprecated-fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "4":
         code: "4"
         repeatable: true
@@ -8081,6 +8404,7 @@ deprecated-fields:
         code: d
       g:
         code: g
+        repeatable: true
       "n":
         code: "n"
       T:
@@ -8090,6 +8414,7 @@ deprecated-fields:
        code: U
        label: Schriftcode nach ISO 15924
       V:
+        repeatable: true
         code: V
   029F/02:
     tag: "029F"
@@ -8100,6 +8425,7 @@ deprecated-fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "4":
         code: "4"
         repeatable: true
@@ -8138,6 +8464,7 @@ deprecated-fields:
         code: d
       g:
         code: g
+        repeatable: true
       "n":
         code: "n"
       T:
@@ -8147,6 +8474,7 @@ deprecated-fields:
        code: U
        label: Schriftcode nach ISO 15924
       V:
+        repeatable: true
         code: V
   029F/03:
     tag: "029F"
@@ -8157,6 +8485,7 @@ deprecated-fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "4":
         code: "4"
         repeatable: true
@@ -8195,6 +8524,7 @@ deprecated-fields:
         code: d
       g:
         code: g
+        repeatable: true
       "n":
         code: "n"
       T:
@@ -8204,6 +8534,7 @@ deprecated-fields:
        code: U
        label: Schriftcode nach ISO 15924
       V:
+        repeatable: true
         code: V
   029F/04:
     tag: "029F"
@@ -8214,6 +8545,7 @@ deprecated-fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "4":
         code: "4"
         repeatable: true
@@ -8252,6 +8584,7 @@ deprecated-fields:
         code: d
       g:
         code: g
+        repeatable: true
       "n":
         code: "n"
       T:
@@ -8261,6 +8594,7 @@ deprecated-fields:
        code: U
        label: Schriftcode nach ISO 15924
       V:
+        repeatable: true
         code: V
   029F/05:
     tag: "029F"
@@ -8271,6 +8605,7 @@ deprecated-fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "4":
         code: "4"
         repeatable: true
@@ -8309,6 +8644,7 @@ deprecated-fields:
         code: d
       g:
         code: g
+        repeatable: true
       "n":
         code: "n"
       T:
@@ -8318,6 +8654,7 @@ deprecated-fields:
        code: U
        label: Schriftcode nach ISO 15924
       V:
+        repeatable: true
         code: V
   029F/06:
     tag: "029F"
@@ -8328,6 +8665,7 @@ deprecated-fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "4":
         code: "4"
         repeatable: true
@@ -8366,6 +8704,7 @@ deprecated-fields:
         code: d
       g:
         code: g
+        repeatable: true
       "n":
         code: "n"
       T:
@@ -8375,6 +8714,7 @@ deprecated-fields:
        code: U
        label: Schriftcode nach ISO 15924
       V:
+        repeatable: true
         code: V
   029F/07:
     tag: "029F"
@@ -8385,6 +8725,7 @@ deprecated-fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "4":
         code: "4"
         repeatable: true
@@ -8423,6 +8764,7 @@ deprecated-fields:
         code: d
       g:
         code: g
+        repeatable: true
       "n":
         code: "n"
       T:
@@ -8432,6 +8774,7 @@ deprecated-fields:
        code: U
        label: Schriftcode nach ISO 15924
       V:
+        repeatable: true
         code: V
   029F/08:
     tag: "029F"
@@ -8442,6 +8785,7 @@ deprecated-fields:
     subfields:
       "0":
         code: "0"
+        repeatable: true
       "4":
         code: "4"
         repeatable: true
@@ -8480,6 +8824,7 @@ deprecated-fields:
         code: d
       g:
         code: g
+        repeatable: true
       "n":
         code: "n"
       T:
@@ -8489,6 +8834,7 @@ deprecated-fields:
        code: U
        label: Schriftcode nach ISO 15924
       V:
+        repeatable: true
         code: V
   033B:
     tag: "033B"
@@ -8563,8 +8909,12 @@ deprecated-fields:
     pica3: "4245"
     url: http://www.zeitschriftendatenbank.de/erschliessung/arbeitsunterlagen/zeta/4245/
     subfields:
+      O:
+        code: O
+        repeatable: true
       "0":
         code: "0"
+        repeatable: true
       "3":
         code: "3"
       "4":
@@ -8579,10 +8929,12 @@ deprecated-fields:
       a:
         code: a
         label: Spezifischer Vortext / Beziehungskennzeichnung
+        repeatable: true
       A:
         code: A
       b:
         code: b
+        repeatable: true
       c:
         code: c
       d:
@@ -8595,6 +8947,7 @@ deprecated-fields:
         code: F
       g:
         code: g
+        repeatable: true
       h:
         code: h
         label: Physische Beschreibung
@@ -8606,13 +8959,13 @@ deprecated-fields:
         code: L
       M:
         code: M
+        repeatable: true
       "n":
         code: "n"
         label: Anmerkung
       "N":
         code: "N"
-      O:
-        code: O
+        repeatable: true
       Q:
         code: Q
       r:
@@ -8625,6 +8978,7 @@ deprecated-fields:
         code: U
         label: Schriftcode nach ISO 15924
       V:
+        repeatable: true
         code: V
       "Y":
         code: "Y"
