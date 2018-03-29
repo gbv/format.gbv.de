@@ -45,7 +45,7 @@ willkommen](https://github.com/gbv/format.gbv.de/issues). Das Datenmodell
 zur Beschreibung von Formaten [befindet sich noch in Entwicklung](about/data).
 
 Die Inhalte sind ohne weitere Bedingungen oder Gewährleistungen nachnutzbar
-(siehe [Lizenz](license)).
+(siehe [Lizenz](about/license)).
 
 Beteiligt an den Inhalten dieser Seite sind oder waren unter Anderem:
 
