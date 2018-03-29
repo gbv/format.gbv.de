@@ -81,7 +81,7 @@ fields:
       "0":
         code: "0"
         label: Kennung bei Statusänderung; Datum
-        pattern: "^\\d{4}:((0[1-9]|[12]\\d|3[01])-(0[1-9]|1[0-2])-\\d{2})$"
+        pattern: "^\\d{4}:((0[1-9]|[12]\\d|3[01])-(0[1-9]|1[0-2])-\\d{2}|99-99-99)$"
         positions:
           0-3:
             label: Erfassungskennung der Zentralredaktion/DNB
@@ -510,10 +510,11 @@ fields:
       a:
         code: a
         label: Datum (JJ-MM-TT)
-        pattern: "^(\\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))$"
+        repeatable: true
       b:
         code: b
         label: Änderungscodierung
+        repeatable: true
         positions:
           "0":
             label: Pos 1
@@ -535,6 +536,26 @@ fields:
                 label: Rumpfdatensatz nach Löschung (nur zusammen mit Pos. 1 "z")
               u:
                 label: Rumpfdatensatz nach Umlenkung (nur zusammen mit Pos. 1 "z")
+      "0":
+        code: "0"
+      "4":
+        code: "4"
+      "7":
+        code: "7"
+      A:
+        code: A
+      F:
+        code: F
+      g:
+        code: g
+        repeatable: true
+      h:
+        code: h
+      V:
+        code: V
+        repeatable: true
+      "Y":
+        code: "Y"
   017A:
     tag: "017A"
     label: Code-Angaben der ZDB
@@ -646,7 +667,7 @@ fields:
       a:
         code: a
         label: Codierte Angaben
-        pattern: "^(c([abcfhjmoruzx](x([abcgmnuzx]([aegijnouvzx]([ aux]([0-9mn-x]([0-9mn-x]([0-9mn-x]([amux]([abcdmnux]([abdmux][anprux]?)?)?)?)?)?)?)?)?)?)?)?)$"
+        pattern: "^(c([abcfhjmoruzx](x([abcgmnuzx]([aegijnouvzx]([ aux]([0-9mn-x]([0-9mn-x]([0-9mn-x]([amux]([anpux]([abcdmnux]([abdmux][anprux]?)?)?)?)?)?)?)?)?)?)?)?)?)$"
   016E:
     repeatable: true
     tag: "016E"
@@ -1149,7 +1170,7 @@ fields:
         code: "0"
         label: Identifikationsnummer des Verzeichnis lieferbarer Bücher (VLB) oder sonstige eindeutige Identifizierung bei Netzpublikationen
   006X:
-    tag: "006Y"
+    tag: "006X"
     label: Eindeutige Identifizierung der abliefernden Stelle (z.B IDO)
     pica3: "2198"
     repeatable: true
