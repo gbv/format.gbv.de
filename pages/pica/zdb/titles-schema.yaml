@@ -4,6 +4,12 @@ title: PICA+ ZDB-Format Titel
 description: PICA+ Format for ZDB Bibliographic Titles Data.
 url: http://www.zeitschriftendatenbank.de/erschliessung/zdbformat/
 fields:
+  001U:
+    tag: "001U"
+    label: Unicode-Kennzeichen
+    subfields:
+      "0":
+        label: Unicode-Kennzeichen
   001@:
     tag: "001@"
     label: Suppliercode / Userbits
@@ -60,11 +66,11 @@ fields:
             label: Änderungskennung
           4-12:
             label: Datum (:TT-MM-JJ)
-        t:
-          code: t
-          label: Uhrzeit HH:MM:SS
-          required: true
-          pattern: "^(?:(?:([01]?\\d|2[0-3]):)?([0-5]?\\d):)?([0-5]?\\d)$"
+      t:
+        code: t
+        label: Uhrzeit HH:MM:SS
+        required: true
+        pattern: "^(?:(?:([01]?\\d|2[0-3]):)?([0-5]?\\d):)?([0-5]?\\d)"
   001D:
     tag: "001D"
     label: Kennung bei Statusänderung; Datum
@@ -116,14 +122,11 @@ fields:
               Z:
                 label: Medienkombination (wird bei Neuaufnahmen nicht mehr verwendet)
               a:
-                label: Kennzeichnung von Informationsdatensätzen (Mailboxsätze
-                  oder ungezählte monografische Reihen)
+                label: Kennzeichnung von Informationsdatensätzen (Mailboxsätze oder ungezählte monografische Reihen)
               s:
-                label: Kennzeichnung von Informationsdatensätzen (ungezählte monografische
-                  Reihen)
+                label: Kennzeichnung von Informationsdatensätzen (ungezählte monografische Reihen)
               o:
-                label: Kennzeichnung von Informationsdatensätzen (ungezählte monografische
-                  Reihen)
+                label: Kennzeichnung von Informationsdatensätzen (ungezählte monografische Reihen)
           "1":
             label: "Pos.2: Bibliografische Erscheinungsform"
             codes:
@@ -229,42 +232,41 @@ fields:
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/0502.pdf
     required: true
     subfields:
-      subfields:
-        "2":
-          code: "2"
-          label: Quelle
-          codes:
-            rdamedia:
-              label: Quelle
-        "3":
-          code: "3"
-          label: Umschreibung
-        a:
-          code: a
-          label: Medientyp in ausgeschriebener Form
-          required: true
-        b:
-          code: b
-          label: Medientyp in codierter Form
-          required: true
-          codes:
-            "n":
-              label: ohne Hilfsmittel zu benutzen
-            c:
-              label: Computermedien
-            h:
-              label: Mikroform
-            s:
-              label: audio
-            v:
-              label: video
-            x:
-              label: sonstige
-            z:
-              label: nicht spezifiziert
-        X:
-          code: X
-          label: Zuordnung
+      "2":
+        code: "2"
+        label: Quelle
+        codes:
+          rdamedia:
+            label: Quelle
+      "3":
+        code: "3"
+        label: Umschreibung
+      a:
+        code: a
+        label: Medientyp in ausgeschriebener Form
+        required: true
+      b:
+        code: b
+        label: Medientyp in codierter Form
+        required: true
+        codes:
+          "n":
+            label: ohne Hilfsmittel zu benutzen
+          c:
+            label: Computermedien
+          h:
+            label: Mikroform
+          s:
+            label: audio
+          v:
+            label: video
+          x:
+            label: sonstige
+          z:
+            label: nicht spezifiziert
+      X:
+        code: X
+        label: Zuordnung
   002E:
     repeatable: true
     tag: "002E"
@@ -273,116 +275,115 @@ fields:
     required: true
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/0503.pdf
     subfields:
-      subfields:
-        "2":
-          code: "2"
-          label: Quelle
-          codes:
-            rdacarrier:
-              label: Quelle
-        "3":
-          code: "3"
-          label: Umschreibung
-        a:
-          code: a
-          label: Datenträgertyp in ausgeschriebener Form
-          required: true
-        b:
-          code: b
-          label: Datenträgertyp in codierter Form
-          required: true
-          codes:
-            nc:
-              label: Band
-            nn:
-              label: Flipchart
-            "no":
-              label: Karte
-            na:
-              label: Rolle
-            nz:
-              label: Sonstige Datenträger, die ohne Hilfsmittel zu benutzen sind
-            cb:
-              label: Computerchip-Cartridge
-            cd:
-              label: Computerdisc
-            ce:
-              label: Computerdisk-Cartridge
-            ca:
-              label: Magnetbandcartridge
-            cf:
-              label: Magnetbandkassette
-            ch:
-              label: Magnetbandspule
-            cr:
-              label: Online-Ressource
-            ck:
-              label: Speicherkarte
-            cz:
-              label: Sonstige Computermedien
-            hg:
-              label: Lichtundurchlässiger Mikrofiche
-            he:
-              label: Mikrofiche
-            hf:
-              label: Mikrofichekassette
-            hb:
-              label: Mikrofilm-Cartridge
-            hc:
-              label: Mikrofilmkassette
-            ha:
-              label: Mikrofilmlochkarte
-            hj:
-              label: Mikrofilmrolle
-            hh:
-              label: Mikrofilmstreifen
-            hz:
-              label: Sonstige Mikroformen
-            gs:
-              label: Dia
-            mc:
-              label: Filmdose
-            mf:
-              label: Filmkassette
-            mo:
-              label: Filmrolle
-            mr:
-              label: Filmspule
-            gf:
-              label: Filmstreifen
-            gc:
-              label: Filmstreifen-Cartridge
-            gd:
-              label: Filmstreifen für Einzelbildvorführung
-            gt:
-              label: Overheadfolie
-            mz:
-              label: Sonstige projizierbare Bilder
-            sg:
-              label: Audiocartridge
-            sd:
-              label: Audiodisk
-            ss:
-              label: Audiokassette
-            sq:
-              label: Notenrolle
-            se:
-              label: Phonographenzylinder
-            sz:
-              label: Sonstige Tonträger
-            vc:
-              label: Videocartridge
-            vd:
-              label: Videodisk
-            vf:
-              label: Videokassette
-            vz:
-              label: Sonstige Videodatenträger
-            zu:
-              label: nicht spezifiziert
-        X:
-          code: X
-          label: Zuordnung
+      "2":
+        code: "2"
+        label: Quelle
+        codes:
+          rdacarrier:
+            label: Quelle
+      "3":
+        code: "3"
+        label: Umschreibung
+      a:
+        code: a
+        label: Datenträgertyp in ausgeschriebener Form
+        required: true
+      b:
+        code: b
+        label: Datenträgertyp in codierter Form
+        required: true
+        codes:
+          nc:
+            label: Band
+          nn:
+            label: Flipchart
+          "no":
+            label: Karte
+          na:
+            label: Rolle
+          nz:
+            label: Sonstige Datenträger, die ohne Hilfsmittel zu benutzen sind
+          cb:
+            label: Computerchip-Cartridge
+          cd:
+            label: Computerdisc
+          ce:
+            label: Computerdisk-Cartridge
+          ca:
+            label: Magnetbandcartridge
+          cf:
+            label: Magnetbandkassette
+          ch:
+            label: Magnetbandspule
+          cr:
+            label: Online-Ressource
+          ck:
+            label: Speicherkarte
+          cz:
+            label: Sonstige Computermedien
+          hg:
+            label: Lichtundurchlässiger Mikrofiche
+          he:
+            label: Mikrofiche
+          hf:
+            label: Mikrofichekassette
+          hb:
+            label: Mikrofilm-Cartridge
+          hc:
+            label: Mikrofilmkassette
+          ha:
+            label: Mikrofilmlochkarte
+          hj:
+            label: Mikrofilmrolle
+          hh:
+            label: Mikrofilmstreifen
+          hz:
+            label: Sonstige Mikroformen
+          gs:
+            label: Dia
+          mc:
+            label: Filmdose
+          mf:
+            label: Filmkassette
+          mo:
+            label: Filmrolle
+          mr:
+            label: Filmspule
+          gf:
+            label: Filmstreifen
+          gc:
+            label: Filmstreifen-Cartridge
+          gd:
+            label: Filmstreifen für Einzelbildvorführung
+          gt:
+            label: Overheadfolie
+          mz:
+            label: Sonstige projizierbare Bilder
+          sg:
+            label: Audiocartridge
+          sd:
+            label: Audiodisk
+          ss:
+            label: Audiokassette
+          sq:
+            label: Notenrolle
+          se:
+            label: Phonographenzylinder
+          sz:
+            label: Sonstige Tonträger
+          vc:
+            label: Videocartridge
+          vd:
+            label: Videodisk
+          vf:
+            label: Videokassette
+          vz:
+            label: Sonstige Videodatenträger
+          zu:
+            label: nicht spezifiziert
+      X:
+        code: X
+        label: Zuordnung
   002M:
     tag: "002M"
     pica3: "0550"
@@ -607,8 +608,7 @@ fields:
             label: Zeitung
         deprecated-codes:
           sm:
-            label: sekundäre Mikroform (wird mit dem Umstieg auf RDA nicht mehr
-              verwendet)
+            label: sekundäre Mikroform (wird mit dem Umstieg auf RDA nicht mehr verwendet)
   017B:
     tag: "017B"
     label: Kennzeichnungsfeld für Nationallizenzen und digitale Sammlungen
@@ -635,8 +635,7 @@ fields:
         pattern: "^\\d{4}$"
       "n":
         code: "n"
-        label: Erscheinungsdatum in Vorlageform, sofern abweichend von der Angabe
-          in Sortierform
+        label: Erscheinungsdatum in Vorlageform, sofern abweichend von der Angabe in Sortierform
   016A:
     repeatable: true
     tag: "016A"
@@ -1049,8 +1048,12 @@ fields:
     subfields:
       "0":
         code: "0"
-        label: Formal falsche ISSN
+        label: ISSN mit Bindestrich
     tag: "005B"
+    deprecated-subfields:
+      c:
+        code: c
+        label: Kommentar zur ISSN
   004K:
     repeatable: true
     label: Europäische Artikel Nummer (EAN)
@@ -1208,7 +1211,7 @@ fields:
         code: "0"
         label: ID-Nummer
   007I:
-    tag: "007G"
+    tag: "007I"
     label: Überregionale Identifikationsnummern
     pica3: "2242"
     repeatable: true
@@ -1230,6 +1233,7 @@ fields:
     label: Person, Familie - 1. geistiger Schöpfer
     pica3: "3000"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/3000.pdf
+    repeatable: true
     subfields:
       "9":
         code: "9"
@@ -3358,8 +3362,8 @@ fields:
       f:
         code: f
         label: Freitext
-  047L:
-    tag: "047L"
+  047I:
+    tag: "047I"
     label: Elektronische Adresse für Dateien mit inhaltlichen Beschreibungen zum Dokument
     pica3: "4715"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/4715.pdf
@@ -3402,6 +3406,7 @@ fields:
     label: Sachgruppen der Deutschen Nationalbibliografie
     pica3: "5050"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5050.pdf
+    repeatable: true
     subfields:
       a:
         code: a
@@ -3826,6 +3831,55 @@ fields:
           a:
             code: a
             label: Schlagworttext
+  041A/10:
+    tag: "041A"
+    occurrence: "10"
+    label: 1. Element der 2. Schlagwortfolge
+    pica3: "5110"
+    url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5100-5199.pdf
+    subfields:
+      "0":
+        code: "0"
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        required: true
+        label: Verknüpfungsnummer eines GND-Satzes
+      a:
+        code: a
+      l:
+        code: l
+      A:
+        code: A
+      b:
+        code: b
+      c:
+        code: c
+      d:
+        code: d
+      D:
+        code: D
+      E:
+        code: E
+      g:
+        code: g
+      G:
+        code: G
+      "n":
+        code: "n"
+      p:
+        code: p
+      P:
+        code: P
+      t:
+        code: t
+      V:
+        code: V
+      x:
+        code: x
+      z:
+        code: z
   041A/11:
     tag: "041A"
     occurrence: "11"
@@ -4107,6 +4161,55 @@ fields:
           a:
             code: a
             label: Schlagworttext
+  041A/20:
+    tag: "041A"
+    occurrence: "20"
+    label: 1. Element der 3. Schlagwortfolge
+    pica3: "5120"
+    url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5100-5199.pdf
+    subfields:
+      "0":
+        code: "0"
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        required: true
+        label: Verknüpfungsnummer eines GND-Satzes
+      a:
+        code: a
+      l:
+        code: l
+      A:
+        code: A
+      b:
+        code: b
+      c:
+        code: c
+      d:
+        code: d
+      D:
+        code: D
+      E:
+        code: E
+      g:
+        code: g
+      G:
+        code: G
+      "n":
+        code: "n"
+      p:
+        code: p
+      P:
+        code: P
+      t:
+        code: t
+      V:
+        code: V
+      x:
+        code: x
+      z:
+        code: z
   041A/21:
     tag: "041A"
     occurrence: "21"
@@ -4388,6 +4491,55 @@ fields:
           a:
             code: a
             label: Schlagworttext
+  041A/30:
+    tag: "041A"
+    occurrence: "30"
+    label: 1. Element der 4. Schlagwortfolge
+    pica3: "5130"
+    url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5100-5199.pdf
+    subfields:
+      "0":
+        code: "0"
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        required: true
+        label: Verknüpfungsnummer eines GND-Satzes
+      a:
+        code: a
+      l:
+        code: l
+      A:
+        code: A
+      b:
+        code: b
+      c:
+        code: c
+      d:
+        code: d
+      D:
+        code: D
+      E:
+        code: E
+      g:
+        code: g
+      G:
+        code: G
+      "n":
+        code: "n"
+      p:
+        code: p
+      P:
+        code: P
+      t:
+        code: t
+      V:
+        code: V
+      x:
+        code: x
+      z:
+        code: z
   041A/31:
     tag: "041A"
     occurrence: "31"
@@ -4669,6 +4821,55 @@ fields:
           a:
             code: a
             label: Schlagworttext
+  041A/40:
+    tag: "041A"
+    occurrence: "40"
+    label: 1. Element der 5. Schlagwortfolge
+    pica3: "5140"
+    url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5100-5199.pdf
+    subfields:
+      "0":
+        code: "0"
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        required: true
+        label: Verknüpfungsnummer eines GND-Satzes
+      a:
+        code: a
+      l:
+        code: l
+      A:
+        code: A
+      b:
+        code: b
+      c:
+        code: c
+      d:
+        code: d
+      D:
+        code: D
+      E:
+        code: E
+      g:
+        code: g
+      G:
+        code: G
+      "n":
+        code: "n"
+      p:
+        code: p
+      P:
+        code: P
+      t:
+        code: t
+      V:
+        code: V
+      x:
+        code: x
+      z:
+        code: z
   041A/41:
     tag: "041A"
     occurrence: "41"
@@ -4950,6 +5151,55 @@ fields:
           a:
             code: a
             label: Schlagworttext
+  041A/50:
+    tag: "041A"
+    occurrence: "50"
+    label: 1. Element der 6. Schlagwortfolge
+    pica3: "5150"
+    url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5100-5199.pdf
+    subfields:
+      "0":
+        code: "0"
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        required: true
+        label: Verknüpfungsnummer eines GND-Satzes
+      a:
+        code: a
+      l:
+        code: l
+      A:
+        code: A
+      b:
+        code: b
+      c:
+        code: c
+      d:
+        code: d
+      D:
+        code: D
+      E:
+        code: E
+      g:
+        code: g
+      G:
+        code: G
+      "n":
+        code: "n"
+      p:
+        code: p
+      P:
+        code: P
+      t:
+        code: t
+      V:
+        code: V
+      x:
+        code: x
+      z:
+        code: z
   041A/51:
     tag: "041A"
     occurrence: "51"
@@ -5231,6 +5481,55 @@ fields:
           a:
             code: a
             label: Schlagworttext
+  041A/60:
+    tag: "041A"
+    occurrence: "60"
+    label: 1. Element der 7. Schlagwortfolge
+    pica3: "5160"
+    url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5100-5199.pdf
+    subfields:
+      "0":
+        code: "0"
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        required: true
+        label: Verknüpfungsnummer eines GND-Satzes
+      a:
+        code: a
+      l:
+        code: l
+      A:
+        code: A
+      b:
+        code: b
+      c:
+        code: c
+      d:
+        code: d
+      D:
+        code: D
+      E:
+        code: E
+      g:
+        code: g
+      G:
+        code: G
+      "n":
+        code: "n"
+      p:
+        code: p
+      P:
+        code: P
+      t:
+        code: t
+      V:
+        code: V
+      x:
+        code: x
+      z:
+        code: z
   041A/61:
     tag: "041A"
     occurrence: "61"
@@ -5512,6 +5811,55 @@ fields:
           a:
             code: a
             label: Schlagworttext
+  041A/70:
+    tag: "041A"
+    occurrence: "70"
+    label: 1. Element der 8. Schlagwortfolge
+    pica3: "5170"
+    url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5100-5199.pdf
+    subfields:
+      "0":
+        code: "0"
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        required: true
+        label: Verknüpfungsnummer eines GND-Satzes
+      a:
+        code: a
+      l:
+        code: l
+      A:
+        code: A
+      b:
+        code: b
+      c:
+        code: c
+      d:
+        code: d
+      D:
+        code: D
+      E:
+        code: E
+      g:
+        code: g
+      G:
+        code: G
+      "n":
+        code: "n"
+      p:
+        code: p
+      P:
+        code: P
+      t:
+        code: t
+      V:
+        code: V
+      x:
+        code: x
+      z:
+        code: z
   041A/71:
     tag: "041A"
     occurrence: "71"
@@ -5793,6 +6141,55 @@ fields:
           a:
             code: a
             label: Schlagworttext
+  041A/80:
+    tag: "041A"
+    occurrence: "80"
+    label: 1. Element der 9. Schlagwortfolge
+    pica3: "5180"
+    url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5100-5199.pdf
+    subfields:
+      "0":
+        code: "0"
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        required: true
+        label: Verknüpfungsnummer eines GND-Satzes
+      a:
+        code: a
+      l:
+        code: l
+      A:
+        code: A
+      b:
+        code: b
+      c:
+        code: c
+      d:
+        code: d
+      D:
+        code: D
+      E:
+        code: E
+      g:
+        code: g
+      G:
+        code: G
+      "n":
+        code: "n"
+      p:
+        code: p
+      P:
+        code: P
+      t:
+        code: t
+      V:
+        code: V
+      x:
+        code: x
+      z:
+        code: z
   041A/81:
     tag: "041A"
     occurrence: "81"
@@ -6074,6 +6471,55 @@ fields:
           a:
             code: a
             label: Schlagworttext
+  041A/90:
+    tag: "041A"
+    occurrence: "90"
+    label: 1. Element der 10. Schlagwortfolge
+    pica3: "5190"
+    url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5100-5199.pdf
+    subfields:
+      "0":
+        code: "0"
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        required: true
+        label: Verknüpfungsnummer eines GND-Satzes
+      a:
+        code: a
+      l:
+        code: l
+      A:
+        code: A
+      b:
+        code: b
+      c:
+        code: c
+      d:
+        code: d
+      D:
+        code: D
+      E:
+        code: E
+      g:
+        code: g
+      G:
+        code: G
+      "n":
+        code: "n"
+      p:
+        code: p
+      P:
+        code: P
+      t:
+        code: t
+      V:
+        code: V
+      x:
+        code: x
+      z:
+        code: z
   041A/91:
     tag: "041A"
     occurrence: "91"
@@ -6714,10 +7160,20 @@ fields:
         code: "9"
         label: IDN des BK-Normdatensatzes
         required: true
+  045V:
+    tag: "045V"
+    label: 1. Verknüpfung zur SMM-Klassifikation
+    pica3: "5310"
+    url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5310-5319.pdf
+    subfields:
+      "9":
+        code: "9"
+        label: IDN des SMM-Normdatensatzes
+        required: true
   045V/01:
     tag: "045V"
     occurrence: "01"
-    label: 1. Verknüpfung zur SMM-Klassifikation
+    label: 2. Verknüpfung zur SMM-Klassifikation
     pica3: "5311"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5310-5319.pdf
     subfields:
@@ -6728,7 +7184,7 @@ fields:
   045V/02:
     tag: "045V"
     occurrence: "02"
-    label: 2. Verknüpfung zur SMM-Klassifikation
+    label: 3. Verknüpfung zur SMM-Klassifikation
     pica3: "5312"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5310-5319.pdf
     subfields:
@@ -6739,7 +7195,7 @@ fields:
   045V/03:
     tag: "045V"
     occurrence: "03"
-    label: 3. Verknüpfung zur SMM-Klassifikation
+    label: 4. Verknüpfung zur SMM-Klassifikation
     pica3: "5313"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5310-5319.pdf
     subfields:
@@ -6750,7 +7206,7 @@ fields:
   045V/04:
     tag: "045V"
     occurrence: "04"
-    label: 4. Verknüpfung zur SMM-Klassifikation
+    label: 5. Verknüpfung zur SMM-Klassifikation
     pica3: "5314"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5310-5319.pdf
     subfields:
@@ -6761,7 +7217,7 @@ fields:
   045V/05:
     tag: "045V"
     occurrence: "05"
-    label: 5. Verknüpfung zur SMM-Klassifikation
+    label: 6. Verknüpfung zur SMM-Klassifikation
     pica3: "5315"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5310-5319.pdf
     subfields:
@@ -6772,7 +7228,7 @@ fields:
   045V/06:
     tag: "045V"
     occurrence: "06"
-    label: 6. Verknüpfung zur SMM-Klassifikation
+    label: 7. Verknüpfung zur SMM-Klassifikation
     pica3: "5316"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5310-5319.pdf
     subfields:
@@ -6783,7 +7239,7 @@ fields:
   045V/07:
     tag: "045V"
     occurrence: "07"
-    label: 7. Verknüpfung zur SMM-Klassifikation
+    label: 8. Verknüpfung zur SMM-Klassifikation
     pica3: "5317"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5310-5319.pdf
     subfields:
@@ -6794,7 +7250,7 @@ fields:
   045V/08:
     tag: "045V"
     occurrence: "08"
-    label: 8. Verknüpfung zur SMM-Klassifikation
+    label: 9. Verknüpfung zur SMM-Klassifikation
     pica3: "5318"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5310-5319.pdf
     subfields:
@@ -6805,7 +7261,7 @@ fields:
   045V/09:
     tag: "045V"
     occurrence: "09"
-    label: 9. Verknüpfung zur SMM-Klassifikation
+    label: 10. Verknüpfung zur SMM-Klassifikation
     pica3: "5319"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5310-5319.pdf
     subfields:
@@ -6818,6 +7274,7 @@ fields:
     label: 1. Verknüpfung zu weiteren Klassifikationen (internes Feld der DNB)
     pica3: "5320"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5320-5329.pdf
+    repeatable: true
     subfields:
       "9":
         code: "9"
@@ -6829,6 +7286,7 @@ fields:
     label: 2. Verknüpfung zu weiteren Klassifikationen (internes Feld der DNB)
     pica3: "5321"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5320-5329.pdf
+    repeatable: true
     subfields:
       "9":
         code: "9"
@@ -6840,6 +7298,7 @@ fields:
     label: 3. Verknüpfung zu weiteren Klassifikationen (internes Feld der DNB)
     pica3: "5322"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5320-5329.pdf
+    repeatable: true
     subfields:
       "9":
         code: "9"
@@ -6851,6 +7310,7 @@ fields:
     label: 4. Verknüpfung zu weiteren Klassifikationen (internes Feld der DNB)
     pica3: "5323"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5320-5329.pdf
+    repeatable: true
     subfields:
       "9":
         code: "9"
@@ -6862,6 +7322,7 @@ fields:
     label: 5. Verknüpfung zu weiteren Klassifikationen (internes Feld der DNB)
     pica3: "5324"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5320-5329.pdf
+    repeatable: true
     subfields:
       "9":
         code: "9"
@@ -6873,6 +7334,7 @@ fields:
     label: 6. Verknüpfung zu weiteren Klassifikationen (internes Feld der DNB)
     pica3: "5325"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5320-5329.pdf
+    repeatable: true
     subfields:
       "9":
         code: "9"
@@ -6884,6 +7346,7 @@ fields:
     label: 7. Verknüpfung zu weiteren Klassifikationen (internes Feld der DNB)
     pica3: "5326"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5320-5329.pdf
+    repeatable: true
     subfields:
       "9":
         code: "9"
@@ -6895,6 +7358,7 @@ fields:
     label: 8. Verknüpfung zu weiteren Klassifikationen (internes Feld der DNB)
     pica3: "5327"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5320-5329.pdf
+    repeatable: true
     subfields:
       "9":
         code: "9"
@@ -6906,6 +7370,7 @@ fields:
     label: 9. Verknüpfung zu weiteren Klassifikationen (internes Feld der DNB)
     pica3: "5328"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5320-5329.pdf
+    repeatable: true
     subfields:
       "9":
         code: "9"
@@ -6938,6 +7403,7 @@ fields:
   045F/01:
     tag: "045F"
     occurrence: "01"
+    repeatable: true
     label: "DDC-Notation der DNB: Grundnotation"
     pica3: "5401"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5400-5404.pdf
@@ -6948,6 +7414,7 @@ fields:
   045F/02:
     tag: "045F"
     occurrence: "02"
+    repeatable: true
     label: "DDC-Notation der DNB: Notationen anderer Haupttafeln"
     pica3: "5402"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5400-5404.pdf
@@ -6958,6 +7425,7 @@ fields:
   045F/03:
     tag: "045F"
     occurrence: "03"
+    repeatable: true
     label: "DDC-Notation der DNB: Notationen aus Hilfstafeln"
     pica3: "5403"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5400-5404.pdf
@@ -6991,6 +7459,7 @@ fields:
   045F/04:
     tag: "045F"
     occurrence: "04"
+    repeatable: true
     label: "DDC-Notation der DNB: Notationen aus einer Anhängetafel"
     pica3: "5404"
     url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/5400-5404.pdf
@@ -7481,11 +7950,42 @@ fields:
       D:
         code: D
         label: Datum der automatischen Einspielung (JJJJ-MM-TT)
+  089A:
+    tag: "089A"
+    label: Verknüpfungsnummer des zu korrigierenden Satzes
+    pica3: "8900"
+    url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/8900.pdf
+    subfields:
+      "9":
+        code: "9"
+        label: Verknüpfungsnummer
+  089B:
+    tag: "089B"
+    label: Datum und Empfänger des Mailboxsatzes
+    pica3: "8901"
+    url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/8901.pdf
+    subfields:
+      a:
+        code: a
+        label: Datum (später m)
+      b:
+        code: b
+        label: Empfangsadresse
+  089C:
+    tag: "089C"
+    label: Text des Mailboxsatzes (Mailboxsätze)
+    pica3: "8902"
+    url: http://www.zeitschriftendatenbank.de/fileadmin/user_upload/ZDB/pdf/zdbformat/8902.pdf
+    subfields:
+      a:
+        code: a
+        label: Mitteilungstext
 deprecated-fields:
   011B:
     tag: "011B"
-    label: Erscheinungsjahr der Sekundärausgabe
+    label: Erscheinungsjahr der Sekundärausgabe (wird mit Umstieg auf RDA nicht mehr verwendet)
     pica3: "1109"
+    repeatable: true
     subfields:
       a:
         code: a
@@ -7501,15 +8001,565 @@ deprecated-fields:
   004G:
     tag: "004G"
     pica3: "2015"
-    label: ISBN der Sekundärausgabe
+    label: ISBN der Sekundärausgabe (Feld wird mit RDA-Umstieg nicht mehr belegt)
+    repeatable: true
+    subfields:
+      "0":
+        code: "0"
+        label: ISBN (mit Bindestrichen); ohne die Zeichenfolge "ISBN¬"
+        pattern: "^(?:97[89]-)?[0-9]{1,5}-[0-9]+-[0-9]+[-][0-9X]$"
+        required: true
+      c:
+        code: c
+        label: Kommentar zur ISBN
+      f:
+        code: f
+        label: Bindeart, Bezugs- und Zugangsinformationen
   004H:
     tag: "004H"
     pica3: "2016"
     label: Formal falsche ISBN der Sekundärausgabe
+  025@:
+    tag: "025@"
+    label: Ansetzungssachtitel
+    pica3: "3220"
+    repeatable: true
+    subfields:
+      T:
+        code: T
+        label: Feldzuordnung bei nicht-lateinischen Schriftzeichen
+      U:
+        code: U
+        label: Schriftcode nach ISO 15924
+      a:
+        code: a
+        label: Ansetzungssachtitel
+  029F/01:
+    tag: "029F"
+    occurrence: "01"
+    label: 2. Sekundärkörperschaft (Feld wird mit RDA-Umstieg nicht mehr belegt)
+    repeatable: true
+    pica3: "3111"
+    subfields:
+      "0":
+        code: "0"
+      "4":
+        code: "4"
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Code)
+        codes:
+          aut:
+            label: Verfasser
+          isb:
+            label: Herausgebendes Organ
+          pbl:
+            label: Verleger
+          prt:
+            label: Drucker
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        label: IDN eines Körperschaftssatzes aus der Gemeinsamen Normdatei (GND) mit Prüfziffer
+        required: true
+      a:
+        code: a
+      A:
+        code: A
+      b:
+        code: b
+        repeatable: 1
+      B:
+        code: B
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Text)
+      c:
+        code: c
+      d:
+        code: d
+      g:
+        code: g
+      "n":
+        code: "n"
+      T:
+       code: T
+       label: Feldzuordnung bei nicht-lateinischen Schriftzeichen
+      U:
+       code: U
+       label: Schriftcode nach ISO 15924
+      V:
+        code: V
+  029F/02:
+    tag: "029F"
+    occurrence: "02"
+    label: 3. Sekundärkörperschaft
+    repeatable: true
+    pica3: "3112"
+    subfields:
+      "0":
+        code: "0"
+      "4":
+        code: "4"
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Code)
+        codes:
+          aut:
+            label: Verfasser
+          isb:
+            label: Herausgebendes Organ
+          pbl:
+            label: Verleger
+          prt:
+            label: Drucker
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        label: IDN eines Körperschaftssatzes aus der Gemeinsamen Normdatei (GND) mit Prüfziffer
+        required: true
+      a:
+        code: a
+      A:
+        code: A
+      b:
+        code: b
+        repeatable: 1
+      B:
+        code: B
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Text)
+      c:
+        code: c
+      d:
+        code: d
+      g:
+        code: g
+      "n":
+        code: "n"
+      T:
+       code: T
+       label: Feldzuordnung bei nicht-lateinischen Schriftzeichen
+      U:
+       code: U
+       label: Schriftcode nach ISO 15924
+      V:
+        code: V
+  029F/03:
+    tag: "029F"
+    occurrence: "03"
+    label: 4. Sekundärkörperschaft
+    repeatable: true
+    pica3: "3113"
+    subfields:
+      "0":
+        code: "0"
+      "4":
+        code: "4"
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Code)
+        codes:
+          aut:
+            label: Verfasser
+          isb:
+            label: Herausgebendes Organ
+          pbl:
+            label: Verleger
+          prt:
+            label: Drucker
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        label: IDN eines Körperschaftssatzes aus der Gemeinsamen Normdatei (GND) mit Prüfziffer
+        required: true
+      a:
+        code: a
+      A:
+        code: A
+      b:
+        code: b
+        repeatable: 1
+      B:
+        code: B
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Text)
+      c:
+        code: c
+      d:
+        code: d
+      g:
+        code: g
+      "n":
+        code: "n"
+      T:
+       code: T
+       label: Feldzuordnung bei nicht-lateinischen Schriftzeichen
+      U:
+       code: U
+       label: Schriftcode nach ISO 15924
+      V:
+        code: V
+  029F/04:
+    tag: "029F"
+    occurrence: "04"
+    label: 5. Sekundärkörperschaft
+    repeatable: true
+    pica3: "3114"
+    subfields:
+      "0":
+        code: "0"
+      "4":
+        code: "4"
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Code)
+        codes:
+          aut:
+            label: Verfasser
+          isb:
+            label: Herausgebendes Organ
+          pbl:
+            label: Verleger
+          prt:
+            label: Drucker
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        label: IDN eines Körperschaftssatzes aus der Gemeinsamen Normdatei (GND) mit Prüfziffer
+        required: true
+      a:
+        code: a
+      A:
+        code: A
+      b:
+        code: b
+        repeatable: 1
+      B:
+        code: B
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Text)
+      c:
+        code: c
+      d:
+        code: d
+      g:
+        code: g
+      "n":
+        code: "n"
+      T:
+       code: T
+       label: Feldzuordnung bei nicht-lateinischen Schriftzeichen
+      U:
+       code: U
+       label: Schriftcode nach ISO 15924
+      V:
+        code: V
+  029F/05:
+    tag: "029F"
+    occurrence: "05"
+    label: 6. Sekundärkörperschaft
+    repeatable: true
+    pica3: "3115"
+    subfields:
+      "0":
+        code: "0"
+      "4":
+        code: "4"
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Code)
+        codes:
+          aut:
+            label: Verfasser
+          isb:
+            label: Herausgebendes Organ
+          pbl:
+            label: Verleger
+          prt:
+            label: Drucker
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        label: IDN eines Körperschaftssatzes aus der Gemeinsamen Normdatei (GND) mit Prüfziffer
+        required: true
+      a:
+        code: a
+      A:
+        code: A
+      b:
+        code: b
+        repeatable: 1
+      B:
+        code: B
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Text)
+      c:
+        code: c
+      d:
+        code: d
+      g:
+        code: g
+      "n":
+        code: "n"
+      T:
+       code: T
+       label: Feldzuordnung bei nicht-lateinischen Schriftzeichen
+      U:
+       code: U
+       label: Schriftcode nach ISO 15924
+      V:
+        code: V
+  029F/06:
+    tag: "029F"
+    occurrence: "06"
+    label: 7. Sekundärkörperschaft
+    repeatable: true
+    pica3: "3116"
+    subfields:
+      "0":
+        code: "0"
+      "4":
+        code: "4"
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Code)
+        codes:
+          aut:
+            label: Verfasser
+          isb:
+            label: Herausgebendes Organ
+          pbl:
+            label: Verleger
+          prt:
+            label: Drucker
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        label: IDN eines Körperschaftssatzes aus der Gemeinsamen Normdatei (GND) mit Prüfziffer
+        required: true
+      a:
+        code: a
+      A:
+        code: A
+      b:
+        code: b
+        repeatable: 1
+      B:
+        code: B
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Text)
+      c:
+        code: c
+      d:
+        code: d
+      g:
+        code: g
+      "n":
+        code: "n"
+      T:
+       code: T
+       label: Feldzuordnung bei nicht-lateinischen Schriftzeichen
+      U:
+       code: U
+       label: Schriftcode nach ISO 15924
+      V:
+        code: V
+  029F/07:
+    tag: "029F"
+    occurrence: "07"
+    label: 8. Sekundärkörperschaft
+    repeatable: true
+    pica3: "3117"
+    subfields:
+      "0":
+        code: "0"
+      "4":
+        code: "4"
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Code)
+        codes:
+          aut:
+            label: Verfasser
+          isb:
+            label: Herausgebendes Organ
+          pbl:
+            label: Verleger
+          prt:
+            label: Drucker
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        label: IDN eines Körperschaftssatzes aus der Gemeinsamen Normdatei (GND) mit Prüfziffer
+        required: true
+      a:
+        code: a
+      A:
+        code: A
+      b:
+        code: b
+        repeatable: 1
+      B:
+        code: B
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Text)
+      c:
+        code: c
+      d:
+        code: d
+      g:
+        code: g
+      "n":
+        code: "n"
+      T:
+       code: T
+       label: Feldzuordnung bei nicht-lateinischen Schriftzeichen
+      U:
+       code: U
+       label: Schriftcode nach ISO 15924
+      V:
+        code: V
+  029F/08:
+    tag: "029F"
+    occurrence: "08"
+    label: 9. Sekundärkörperschaft
+    repeatable: true
+    pica3: "3118"
+    subfields:
+      "0":
+        code: "0"
+      "4":
+        code: "4"
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Code)
+        codes:
+          aut:
+            label: Verfasser
+          isb:
+            label: Herausgebendes Organ
+          pbl:
+            label: Verleger
+          prt:
+            label: Drucker
+      "7":
+        code: "7"
+      "9":
+        code: "9"
+        label: IDN eines Körperschaftssatzes aus der Gemeinsamen Normdatei (GND) mit Prüfziffer
+        required: true
+      a:
+        code: a
+      A:
+        code: A
+      b:
+        code: b
+        repeatable: 1
+      B:
+        code: B
+        repeatable: true
+        required: true
+        label: Beziehungskennzeichnung (Text)
+      c:
+        code: c
+      d:
+        code: d
+      g:
+        code: g
+      "n":
+        code: "n"
+      T:
+       code: T
+       label: Feldzuordnung bei nicht-lateinischen Schriftzeichen
+      U:
+       code: U
+       label: Schriftcode nach ISO 15924
+      V:
+        code: V
+  033B:
+    tag: "033B"
+    label: Angaben zu früheren Verlagsorten und Verlegern bei Zeitschriften/Schriftenreihen
+    pica3: "4035"
+    repeatable: true
+    subfields:
+      T:
+        code: T
+        label: Feldzuordnung bei nicht-lateinischen Schriftzeichen
+      U:
+        code: U
+        label: Schriftcode nach ISO 15924
+      p:
+        code: p
+        label: Verlagsort
+        repeatable: true
+      "n":
+        code: "n"
+        label: Verlag
+      h:
+        code: h
+        label: Datierung
+  033N:
+    tag: "033N"
+    label: Verlagsort, Verlag der Sekundärausgabe (Feld wird mit RDA-Umstieg nicht mehr belegt)
+    pica3: "4048"
+    repeatable: true
+    subfields:
+      p:
+        code: p
+        label: Verlagsort
+        repeatable: true
+      "n":
+        code: "n"
+        label: Verlag
+  036L/09:
+    tag: "036L"
+    occurrence: "09"
+    label: Ungezählte Schriftenreihen der Sekundärausgabe (Vorlageform) (Feld wird mit RDA-Umstieg nicht mehr belegt)
+    pica3: "4119"
+    repeatable: true
+    subfields:
+      a:
+        code: a
+        label: Sachtitel (VF)
+      b:
+        code: b
+        label: KV-Ergänzung zum Sachtitel
+  037G:
+    tag: "037G"
+    label: Spezifische Fußnote zur Sekundärausgabe (Feld wird mit RDA-Umstieg nicht mehr belegt)
+    pica3: "4237"
+    repeatable: true
+    subfields:
+      T:
+        code: T
+        label: Feldzuordnung bei nicht-lateinischen Schriftzeichen
+      U:
+        code: U
+        label: Schriftcode nach ISO 15924
+      a:
+        code: a
+        label: einleitende Wendung zur Fußnote der Sekundärausgabe
+      b:
+        code: b
+        label: Angaben zur Sekundärausgabe
   039S:
     repeatable: true
     tag: "039S"
-    label: Titelkonkordanzen
+    label: Titelkonkordanzen (Teil-Ganzes-Beziehung auf Werkebene) (Feld wird mit RDA-Umstieg nicht mehr belegt)
     pica3: "4245"
     url: http://www.zeitschriftendatenbank.de/erschliessung/arbeitsunterlagen/zeta/4245/
     subfields:
@@ -7528,7 +8578,7 @@ deprecated-fields:
         label: IDN des zu verknüpfenden Bezugswerkes
       a:
         code: a
-        label: Spezifischer Vortext
+        label: Spezifischer Vortext / Beziehungskennzeichnung
       A:
         code: A
       b:
@@ -7537,6 +8587,8 @@ deprecated-fields:
         code: c
       d:
         code: d
+        label: Ort
+        repeatable: true
       D:
         code: D
       F:
@@ -7545,6 +8597,7 @@ deprecated-fields:
         code: g
       h:
         code: h
+        label: Physische Beschreibung
       H:
         code: H
       I:
@@ -7555,6 +8608,7 @@ deprecated-fields:
         code: M
       "n":
         code: "n"
+        label: Anmerkung
       "N":
         code: "N"
       O:
@@ -7574,6 +8628,21 @@ deprecated-fields:
         code: V
       "Y":
         code: "Y"
+      l:
+        code: l
+        label: Geistiger Schöpfer
+      t:
+        code: t
+        label: Titel
+      e:
+        code: e
+        label: Verlag
+      f:
+        code: f
+        label: Datum
+      o:
+        code: o
+        label: Sonstige Identifier für die andere Ausgabe
   041A/08:
     tag: "041A"
     occurrence: "08"
@@ -7664,3 +8733,56 @@ deprecated-fields:
       f:
         code: f
         label: Permutationsmuster
+  046F:
+    tag: "046F"
+    label: Vermerke zur Verfasserangabe (Feld wird mit RDA-Umstieg nicht mehr belegt)
+    pica3: "4215"
+    repeatable: true
+    subfields:
+      T:
+        code: T
+        label: Feldzuordnung bei nicht-lateinischen Schriftzeichen
+      U:
+        code: U
+        label: Schriftcode nach ISO 15924
+      a:
+        code: a
+        label: Vermerke zur Verfasserangabe
+  046N:
+    tag: "046N"
+    label: Deutsche Übersetzung des Hauptsachtitels
+    pica3: "4202"
+    subfields:
+      a:
+        code: a
+        label: Deutsche Übersetzung
+  046O:
+    tag: "046O"
+    label: Teilungsvermerk bei fortlaufenden Sammelwerken (Feld wird mit RDA-Umstieg nicht mehr belegt)
+    pica3: "4224"
+    repeatable: true
+    subfields:
+      a:
+        code: a
+        label: Teilungsvermerk
+      T:
+        code: T
+        label: Feldzuordnung bei nicht-lateinischen Schriftzeichen
+      U:
+        code: U
+        label: Schriftcode nach ISO 15924
+  046Q:
+    tag: "046Q"
+    label: Anmerkung auf unselbständig enthaltene Werke (Feld wird mit RDA-Umstieg nicht mehr belegt)
+    pica3: "4226"
+    repeatable: true
+    subfields:
+      T:
+        code: T
+        label: Feldzuordnung bei nicht-lateinischen Schriftzeichen
+      U:
+        code: U
+        label: Schriftcode nach ISO 15924
+      a:
+        code: a
+        label: Anmerkung auf unselbständig enthaltene Werke
