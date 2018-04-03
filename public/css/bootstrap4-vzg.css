@@ -43,3 +43,12 @@ footer {
   vertical-align: text-center;
   fill: currentColor;
 }
+
+/* specific to the GBV format database */
+a[href^="http://bartoc.org/"]:after {
+  content: "";
+  display: inline-block;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAABhklEQVQY0z2RMUsjURSFz7x5A/MU1pkMJmGDEJAFkXSmTBWSLoUgFkkR8S9Ma7n+iPwASWmflUXYsVkNQgiTOKiFTdTZTNQxZhiSzN3iibc53HtPcTifQkQAACyXyyAIkiQBoKqqaZqcc/n6FNd1f52dGamUxjkB8zgO394ajUY6nQYAIur1ej+Pj8cPD1PPi+7vo7u7xfv783hcr9cXiwURIY7jVqv1FASPJyfOxsZVqXRVKv3d2YkGg5fX12azSUSMMVar1TKplKJp34rFouMUHUczzZfLS2NtrVAoDIdDzjnP5XIy2ez2dnBwkMQx07T13V0A1Wq12+2yyWTieZ40aZa1vrf3/fBQEeLf6SmA2Wym6zoTQmQyGWlShVjd2lrZ3tZMc+q6ANrtdrlc5kII3/dVXUeSfNzc9Pf3AYjNzR9HR38uLrLZrGVZICLf923bvu73p/Q54Xz++/zctm25KrLxKIo6nc5oNArDEIBhGPl8vlKpyNKVLyySjMTCGFNV9ev+H/qQvO+iD4/6AAAAAElFTkSuQmCC) no-repeat top right;
+  width: 14px;
+  height: 12px;
+}
