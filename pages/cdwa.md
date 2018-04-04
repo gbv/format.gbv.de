@@ -6,5 +6,7 @@ homepage: http://www.getty.edu/research/publications/electronic_publications/cdw
 application: bibliographic
 ---
 
-CDWA ist ein Datenmodell zur Beschreibung von Museumsobjekten. Eine Umsetzung
-als Datenformat ist [CDWA Lite](cdwa-lite).
+CDWA ist ein Datenmodell zur Beschreibung von Museumsobjekten. Eine teilweise
+Umsetzung als Datenformat ist [CDWA Lite](cdwa/lite).
+
+<list-formats profiles="cdwa" title="Formate"/>

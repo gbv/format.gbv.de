@@ -17,10 +17,11 @@ community, function, and purpose.
 
 This list contains all 104 metadata standards linked to either
 [BARTOC](http://bartoc.org/) for knowledge organization systems (thesauri,
-classifications, subject headings...) or to their entry in this format
-database.  A later comparision will highlight differences or combine the
-categorization of *Seeing Standards* and the categorization of the GBV format
-database.
+classifications, subject headings...), to entries from [Linked Open
+Vocabularies](../../rdf/voc/) for Ontologies, or to a corresponding entry in
+this format database.  A later comparision will highlight differences or
+combine the categorization of *Seeing Standards* and the categorization of the
+GBV format database.
 
 * AACR2
 * ADL
@@ -30,10 +31,10 @@ database.
 * [Art & Architecture Thesaurus (AAT)](http://bartoc.org/en/node/75)
 * Atom
 * [BISAC Subject Headings](http://bartoc.org/en/node/961)
-* Cataloging Cultural Objects (CCO)
-* Categories for the Description of Works of Art Lite (CDWA Lite)
-* Categories for the Description of Works of Art (CDWA)
-* CIDOC Conceptual Reference Model (CIDOC/CRM)
+* [Cataloging Cultural Objects (CCO)](../../cco)
+* [Categories for the Description of Works of Art (CDWA)](../../cdwa)
+* [Categories for the Description of Works of Art Lite (CDWA Lite)](../../cdwa/lite)
+* [CIDOC Conceptual Reference Model (CIDOC/CRM)](../../cidoc-crm)
 * Contextual Query Language (CQL)
 * CanCore		
 * Describing Archives: A Content Standard (DACS)
@@ -42,40 +43,40 @@ database.
 * [Dewey Decimal Classification (DDC)](http://bartoc.org/en/node/241)
 * Discovery Interchange Format (DIF)
 * Digital Imaging Group 35 (DIG35)
-* Document Type Definition (DTD)
+* [Document Type Definition (DTD)](../../schema/dtd)
 * Darwin Core
-* Encoded Archival Context - Corporate Bodies, Persons, and Families (EAC-CPF)
-* Encoded Archival Description (EAD)
+* [Encoded Archival Description (EAD)](../../ead)
+* [Encoded Archival Context - Corporate Bodies, Persons, and Families (EAC-CPF)](../../eac-cpf)
 * Ecological Markup Language (EML)
 * FGDC/CSDGM
-* Friend of a Friend (FOAF)
-* Functional Requirements for Authority Data (FRAD)
+* [Friend of a Friend (FOAF)](../../rdf/voc/foaf)
+* [Functional Requirements for Authority Data (FRAD)](../../frad)
 * Functional Requirements for Bibliographic Records (FRBR)
-* Functional Requirements for Subject Authority Data (FRSAD)
+* [Functional Requirements for Subject Authority Data (FRSAD)](../../frsad)
 * Gateway to Educational Materials (GEM)
 * Government Information Locator Service (GILS)
 * OpenGIS Geography Markup Language (GML)
 * ID3
-* Learning Object Metadata (LOM)
-* ISAAR(CPF)
+* [Learning Object Metadata (LOM)](../../lom)
+* [ISAAR(CPF)](../../isaar-cpf)
 * ISAD(G)
-* ISBD
+* [ISBD](../../isbd)
 * ISO 19115
 * Keyhole Markup Language (KML)
 * [Library of Congress Classification (LCC)](http://bartoc.org/en/node/486)
 * [Library of Congress Subject Headings (LCSH)](http://bartoc.org/en/node/454)
 * Linked Data
-* Metadata Authority Description Schema (MADS)
+* [Metadata Authority Description Schema (MADS)](../../mads)
 * MARC Relator Codes
-* Machine Readable Cataloging (MARC)
-* MARCXML
+* [Machine Readable Cataloging (MARC)](../../marc)
+* [MARCXML](../../marc/xml)
 * Music Encoding Initiative (MEI)
+* [Music Ontology](../../rdf/voc/mo)
 * [Medical Subject Headings (MeSH)](http://bartoc.org/en/node/391)
 * METS Rights Declaration Schema
 * Metadata Encoding and Transmission Standard (METS)
 * NISO Metadata for Images in XML Schema (MIX)
-* Music Ontology
-* Metadata Object Description Schema (MODS)
+* [Metadata Object Description Schema (MODS)](../../mods)
 * MPEG-21 Digital Item Description Language (MPEG-21 DIDL)
 * MPEG Multimedia Content Description Interface (MPEG-7)
 * Material Exchange Format (MXL)
@@ -88,7 +89,7 @@ database.
 * Open Archival Information System (OAIS)
 * Open Digital Rights Language (ODRL)
 * Online Information Exchange (ONIX)
-* Ontology for Media Resource
+* [Ontology for Media Resource](../../rdf/voc/ma-ont)
 * OpenURL (ANSI/NISO Z39.88)
 * Public Broadcasting Core Metadata Dictionary (PB Core)
 * Preservation Metadata Implementation Strategies (PREMIS)
@@ -96,18 +97,18 @@ database.
 * Qualified Dublin Core
 * Rules for Archival Description (RAD)
 * Resource Description and Access (RDA)
-* Resource Description Framework (RDF)
-* RELAX NG
+* [Resource Description Framework (RDF)](../../rdf)
+* [RELAX NG](../../schema/relax-ng)
 * Really Simple Syndication (RSS)
 * Sharable Content Object Reference Model (SCORM)
-* Standard Generalized Markup Language (SGML)
-* Simple Knowledge Organization System (SKOS)
+* [Standard Generalized Markup Language (SGML)](../../sgml)
+* [Simple Knowledge Organization System (SKOS)](../../skos)
 * Synchronized Multimedia Integration Language (SMIL)
-* SPECTRUM
+* [SPECTRUM](../../spectrum)
 * Search and Retrieve via URL (SRU)
 * Scholarly Works Application Profile (SWAP)
 * [Sears List of Subject Headings](http://bartoc.org/en/node/1035)
-* Text Encoding Initiative (TEI)
+* [Text Encoding Initiative (TEI)](../../tei)
 * Thesaurus for Graphic Materials I: Subject Terms (TGM I)
 * Thesaurus for Graphic Materials II: Genre and Physical Characteristic Terms (TGM II)
 * [Thesaurus for Geographic Names (TGN)](http://bartoc.org/en/node/109)
@@ -116,12 +117,12 @@ database.
 * [Union List of Artist Names (ULAN)](http://bartoc.org/en/node/118)
 * Visual Resources Association Core Categories (VRA Core)
 * Virtual Solar Observatory Data Model (VSO)
-* eXtensible Markup Language (XML)
+* [eXtensible Markup Language (XML)](../../xml)
 * Extensible Metadata Platform (XMP)
 * XML Organic Bibliographic Information Schema (XOBIS)
 * XML Path Language (XPath)
 * XML Query Language (XQuery)
-* XML Schema (XSD)
+* [XML Schema (XSD)](../../schema/xsd)
 * eXtensible Stylesheet Language Transformations (XSLT)
 * eXtensible Rights Markup Language (XrML)
 * Z39.50

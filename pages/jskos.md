@@ -5,6 +5,7 @@ base: json
 model: jskos
 homepage: https://gbv.github.io/jskos/
 application: authority
+profiles: skos
 ---
 
 Mit dem **JSKOS data format for Knowledge Organization Systems (JSKOS)** lassen
