@@ -1,34 +1,39 @@
 ---
-title: Eine strukturiertes Verzeichnis von Datenformaten
+title: Ein strukturiertes Verzeichnis von Datenformaten
+creator: Jakob Voß
 created: '2018-04-11'
 ---
 
 *Lightning Talk für den [KIM Workshop 2018](https://wiki.dnb.de/display/DINIAGKIM/KIM+Workshop+2018) über die Formatdatenbank [format.gbv.de](http://format.gbv.de/)*
 
+*Slides-Ansicht unter [`kimws2018.html`](kimws2018.html)*
+
 ---
 
-## format.gbv.de
+# format.gbv.de
 
 * Verzeichnis von Datenformaten und Anwendungsprofilen
-* Schwerpunkt bibliographische Formate und Normdaten ("Metadaten")
-* Deutsche Kurzerklärungen
-* Einige Überschneidungen mit LOV (Ontologien) und BARTOC (Datenmodelle)
+* Schwerpunkt bibliographische Formate und Normdaten (**Metadaten**)
+* Primär deutsche Kurzerklärungen
  
-## Inhalt
+# Inhalt 1
 
-* Datenformate ([MARC](../marc), [PICA](../pica), [TEI](../tei)...) 
-* Anwendungsprofile ([MARC21 Authority](../marc/authority), [GND-PICA](../pica/gnd) ...)
-* Datenmodelle ([BIBFRAME](../bibframe), Dublin Core, CIDOC-CRM...)
+* Modelle: [BIBFRAME](../bibframe), [CIDOC-CRM](../cidoc-crm)...
+* Formate: [MARC](../marc), [PICA](../pica), [TEI](../tei)...
+* Profile: [MARC21 Authority](../marc/authority), [GND-PICA](../pica/gnd)...
+
+# Inhalt 2
+
 * Kodierungen
     * [JSON](../json) →  [HJSON](../hjson), [CSON](../cson)...
     * [RDF](../rdf) →  [RDF/XML](../rdf/xml), [JSON-LD](../rdf/json-ld)...
     * ...
 * Schemas
-    * [XML](../xml) ← [XSD](../schema/xsd), [RELAX NG](../schema/relax-ng)...
-    * [MARC](../marc), [PICA](../pica), [MAB](../mab) ←  [Avram](../schema/avram)
+    * [XML](../xml) →  [XSD](../schema/xsd), [RELAX NG](../schema/relax-ng)...
+    * [MARC](../marc), [PICA](../pica), [MAB](../mab) →  [Avram](../schema/avram)
     * ...
 
-## Aufbau
+# Aufbau
 
 * Formatname
 * Kurzbeschreibung (ein Absatz)
@@ -36,7 +41,7 @@ created: '2018-04-11'
 * Wikidata-ID
 * Beziehungen zu anderen Formaten
 
-## Beziehungen zwischen Formaten
+# Beziehungen zwischen Formaten
 
 * [MARC](../marc) 
 * →  [MARCXML](../marc/xml) 
@@ -44,9 +49,11 @@ created: '2018-04-11'
 * →  [MARC21 Authority](../marc/authority) 
 * →  `083 $2` *DDC Edition number (non-repeatbale)*
 
-## Ausblick
+# Ausblick
 
-* Formatbeschreibungen in RDF
-* Abgleich mit anderen Verzeichnissen (Wikidata, BARTOC, PRONOM...)
-* Mitarbeit erwünscht! <https://github.com/gbv/format.gbv.de>
+* Formatbeschreibungen in JSON-LD/RDF
+* Abgleich mit anderen Verzeichnissen\
+  (LOV, Wikidata, BARTOC, PRONOM...)
+* Mitarbeit erwünscht!\
+  <https://github.com/gbv/format.gbv.de>
 

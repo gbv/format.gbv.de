@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Ein strukturiertes Verzeichnis von Datenformaten</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/moon.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'http://lab.hakim.se/reveal-js/css/print/pdf.css' : 'http://lab.hakim.se/reveal-js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="http://lab.hakim.se/reveal-js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Ein strukturiertes Verzeichnis von Datenformaten</h1>
+</section>
+
+<section class="slide level1">
+
+<p><em>Lightning Talk für den <a href="https://wiki.dnb.de/display/DINIAGKIM/KIM+Workshop+2018">KIM Workshop 2018</a> über die Formatdatenbank <a href="http://format.gbv.de/">format.gbv.de</a></em></p>
+<p><em>Slides-Ansicht unter <a href="kimws2018.html"><code>kimws2018.html</code></a></em></p>
+</section>
+<section id="format.gbv.de" class="slide level1">
+<h1>format.gbv.de</h1>
+<ul>
+<li>Verzeichnis von Datenformaten und Anwendungsprofilen</li>
+<li>Schwerpunkt bibliographische Formate und Normdaten (<strong>Metadaten</strong>)</li>
+<li>Primär deutsche Kurzerklärungen</li>
+</ul>
+</section>
+<section id="inhalt-1" class="slide level1">
+<h1>Inhalt 1</h1>
+<ul>
+<li>Modelle: <a href="../bibframe">BIBFRAME</a>, <a href="../cidoc-crm">CIDOC-CRM</a>...</li>
+<li>Formate: <a href="../marc">MARC</a>, <a href="../pica">PICA</a>, <a href="../tei">TEI</a>...</li>
+<li>Profile: <a href="../marc/authority">MARC21 Authority</a>, <a href="../pica/gnd">GND-PICA</a>...</li>
+</ul>
+</section>
+<section id="inhalt-2" class="slide level1">
+<h1>Inhalt 2</h1>
+<ul>
+<li>Kodierungen
+<ul>
+<li><a href="../json">JSON</a> → <a href="../hjson">HJSON</a>, <a href="../cson">CSON</a>...</li>
+<li><a href="../rdf">RDF</a> → <a href="../rdf/xml">RDF/XML</a>, <a href="../rdf/json-ld">JSON-LD</a>...</li>
+<li>...</li>
+</ul></li>
+<li>Schemas
+<ul>
+<li><a href="../xml">XML</a> → <a href="../schema/xsd">XSD</a>, <a href="../schema/relax-ng">RELAX NG</a>...</li>
+<li><a href="../marc">MARC</a>, <a href="../pica">PICA</a>, <a href="../mab">MAB</a> → <a href="../schema/avram">Avram</a></li>
+<li>...</li>
+</ul></li>
+</ul>
+</section>
+<section id="aufbau" class="slide level1">
+<h1>Aufbau</h1>
+<ul>
+<li>Formatname</li>
+<li>Kurzbeschreibung (ein Absatz)</li>
+<li>Homepage</li>
+<li>Wikidata-ID</li>
+<li>Beziehungen zu anderen Formaten</li>
+</ul>
+</section>
+<section id="beziehungen-zwischen-formaten" class="slide level1">
+<h1>Beziehungen zwischen Formaten</h1>
+<ul>
+<li><a href="../marc">MARC</a></li>
+<li>→ <a href="../marc/xml">MARCXML</a></li>
+<li>→ <a href="../schema/avram">Avram</a></li>
+<li>→ <a href="../marc/authority">MARC21 Authority</a></li>
+<li>→ <code>083 $2</code> <em>DDC Edition number (non-repeatbale)</em></li>
+</ul>
+</section>
+<section id="ausblick" class="slide level1">
+<h1>Ausblick</h1>
+<ul>
+<li>Formatbeschreibungen in JSON-LD/RDF</li>
+<li>Abgleich mit anderen Verzeichnissen<br />
+(LOV, Wikidata, BARTOC, PRONOM...)</li>
+<li>Mitarbeit erwünscht!<br />
+<a href="https://github.com/gbv/format.gbv.de" class="uri">https://github.com/gbv/format.gbv.de</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+  <script src="http://lab.hakim.se/reveal-js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -16,6 +16,7 @@ class HTML
     public $root = '../pages/';
 
     protected static $mimetypes = [
+        'html'  => 'text/html',
         'dtd'   => 'application/xml-dtd',
         'xsd'   => 'application/xml',
         'xml'   => 'application/xml',
@@ -84,7 +85,11 @@ class HTML
             }
         }
 
-        $data = $this->page($f3, $path) ?? [];
+        $data = $this->page($f3, $path);
+        if (!$data) {
+            $f3->error('404');
+        }
+
         foreach ($data as $key => $value) {
             $f3[$key] = $value;
         }
