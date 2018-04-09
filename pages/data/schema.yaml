@@ -59,9 +59,9 @@ properties:
   modified:
     $ref: '#/definitions/date'
   creator:
-    type: string
+    $ref: '#/definitions/strings'
   contributor:
-    type: string
+    $ref: '#/definitions/strings'
 
 additionalProperties: false
 
@@ -82,6 +82,12 @@ definitions:
       - type: string
       - type: integer
     # TODO: format
+  strings:
+    oneOf:
+      - type: string
+      - type: array
+        items:
+          type: string
   links:
     oneOf:
      - $ref: '#/definitions/id'
