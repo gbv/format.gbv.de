@@ -1,0 +1,69 @@
+---
+'@context': 
+  '@version': 1.1
+  dct: http://purl.org/dc/terms/
+  foaf: http://xmlns.com/foaf/0.1/
+  void: http://rdfs.org/ns/void#
+  dcat: http://www.w3.org/ns/dcat#
+
+  dct:hasPart:
+    '@id': http://purl.org/dc/terms/hasPart
+    '@container': '@index'
+    '@context': http://format.gbv.de/data/context.json
+
+  # TODO: use dcat:dataset to refer to individual schema files
+  
+# Description of the format registry
+
+'@id': http://format.gbv.de/
+'@type':
+- http://rdfs.org/ns/void#Dataset
+- http://www.w3.org/ns/dcat#Dataset
+- http://www.w3.org/ns/dcat#Catalog
+
+dct:title:
+- '@value': GBV Formatverzeichnis
+  '@language': de
+
+foaf:homepage:
+  '@id': https://format.gbv.de/
+
+dct:publisher:
+  '@id': http://www.wikidata.org/entity/Q27863572   # VZG
+
+dct:creator: Jakob Voß
+
+dct:source:
+  '@id': http://lov.okfn.org/dataset/lov
+  dct:license:
+    '@id': http://creativecommons.org/licenses/by/4.0/
+
+dct:license:
+  '@id': http://creativecommons.org/publicdomain/zero/1.0/
+
+dct:subject:
+- '@id': http://www.wikidata.org/entity/Q494823    # data format
+- '@id': http://www.wikidata.org/entity/Q1172480   # data model
+
+void:feature:
+  '@id': http://www.w3.org/ns/formats/JSON-LD
+
+void:exampleResource:
+- '@id': http://format.gbv.de/marc/xml
+- '@id': http://format.gbv.de/rdf
+- '@id': http://format.gbv.de/schema/xsd
+
+void:uriSpace: "http://format.gbv.de/"
+
+dcat:landingPage:
+  '@id': https://format.gbv.de/about
+
+# TODO: add void:vocabulary (used vocabularies)
+# TODO: add dct:created and dct:modified dynamically
+# TODO: add contributors
+# TODO: add void:dataDump to RDF file
+# TODO: add dcat:Distribution for download URLs
+# TODO: add void:openSearchDescription
+# TODO: add void:entities (number of formats)
+# TODO: add dcat:themeTaxonomy for SKOS taxonomy of formats
+# TODO: add format.gbv.de/.well-known/void as 302 redirect to this document

@@ -1,7 +1,9 @@
 #!/usr/bin/env perl
 use v5.14;
 use Pandoc;
+use Pandoc::Elements;
 use File::Find;
+use JSON::PP;
 
 my %items;
 
@@ -17,7 +19,7 @@ find({
     } 
   }, 'pages');
 
-# TODO: read items from LOV or cache?
+# TODO: read items from LOV and/or from cache
 
 # check hyperlinks between items
 foreach my $id (keys %items) {
@@ -37,3 +39,14 @@ foreach my $id (keys %items) {
         }
     });
 }
+
+# remove internal keys
+foreach my $format (values %items) {
+    foreach (qw(markdown arguments javascript css broader)) {
+        delete $format->meta->{$_};
+    }
+}
+
+# TODO: extend Pandoc::Metadata to ->tree (see open GitHub issue)
+
+#JSON->new->utf8->pretty->encode(

@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+/**
+ * Convert JSON-LD to NTriples
+ * Requirements:
+ * $ npm install jsonld
+ */
+const args = process.argv.splice(/node$/.test(process.argv[0]) ? 2 : 1)
+const input = args.length > 0 ? args[0] : '/dev/stdin'
+
+require('jsonld').toRDF(
+    JSON.parse(require('fs').readFileSync(input)),
+    { format: 'application/n-quads' },
+    (err, nquads) => {
+        if (err) {
+            console.error(err)
+        } else {
+            process.stdout.write(nquads)
+        }
+    }
+)

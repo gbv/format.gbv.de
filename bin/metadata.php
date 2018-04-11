@@ -54,6 +54,7 @@ foreach ($formats->select() as $id => $page) {
     $metadata[$id] = $page;
 }
 
+
 foreach ($links as $id => $list) {
     foreach ($list as $link) {
         if (!isset($metadata[$link])) {
@@ -67,6 +68,9 @@ if ($error) {
     exit(1);
 }
 
+// create full dump
 if ($result && $result->isValid()) {
-    echo json_encode($metadata, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+    $about = Util::loadJsonYaml('pages/index.yaml');
+    $about->{'dct:hasPart'} = $metadata;
+    echo json_encode($about, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 }
