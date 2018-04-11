@@ -3,6 +3,7 @@ title: XML Schema
 short: XSD
 wikidata: Q16342
 for: xml
+base: xml
 schemas:
 - url: http://www.w3.org/2009/XMLSchema/XMLSchema.xsd
   version: '1.1'

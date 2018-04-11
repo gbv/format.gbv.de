@@ -3,6 +3,7 @@ title: Web Ontology Language
 short: OWL
 wikidata: Q826165
 for: rdf
+base: rdf
 ---
 
 Die **Web Ontology Language (OWL)** besteht aus mehreren

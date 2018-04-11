@@ -3,6 +3,7 @@ title: Document Type Definition
 short: DTD
 wikidata: Q212327
 for: xml
+base: unicode
 ---
 
 **Document Type Definition (DTD)** ist eine Schema-Sprache für
