@@ -1,14 +1,22 @@
 ---
 title: Comma-separated values
 short: CSV
-wikidata: Q935809
+wikidata: 
+- Q935809
+- Q3021669
+base: chars
 ---
 
-Unter **Comma-separated values (CSV)** werden verschiedene Varianten der
-Kodierung von Daten in Tabellen oder Listenform zusammengefasst. Konkrete
-Syntax-Varianten lassen sich mittels [CSVDDF](schema/csvddf) definieren.
+Unter **Comma-separated values (CSV)** oder allgemeiner **Delimiter-separated
+values (DSV)** werden verschiedene Varianten der Kodierung von Daten in
+Tabellen oder Listenform zusammengefasst. Konkrete Syntax-Varianten lassen sich
+mittels [CSVDDF](schema/csvddf) definieren.
 
 Zur Spezifikation von CSV-basierten Formaten eignen sich:
 
 <list-formats for="csv"/>
+
+Einige konkreten CSV-Dialekte:
+
+<list-formats profiles="csv"/>
 

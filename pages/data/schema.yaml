@@ -14,8 +14,15 @@ properties:
     type: string
   homepage:
     $ref: '#/definitions/url'
+
+  # Mapping to Wikidata may be 1-to-1 or 1-to-n
   wikidata:
-    $ref: '#/definitions/qid'
+    oneOf:
+    - $ref: '#/definitions/qid'
+    - type: array
+      items:  
+        $ref: '#/definitions/qid'
+
   bartoc:
     $ref: '#/definitions/bartoc'
   language:

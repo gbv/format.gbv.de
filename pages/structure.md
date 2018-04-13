@@ -14,7 +14,7 @@ Strukturierungssprache basiert auf allgemeinen Ordnungsprinzipien:
 | Hierarchie/Dokument | [JSON](json), [XML](xml), [SGML](sgml), [YAML](yaml)², [TOML](toml), [SDLang](sdlang)... | [TEI](tei)
 | Tabelle | [CSV](csv), [SQL](sql)³ | [Excel](excel)
 | Graph/Netzwerk | [RDF](rdf), [YAML](yaml)², [SQL](sql)³ | [Ontologien](rdf/voc)
-| Zeichenkette | [Unicode](unicode), [Bytes](bytes) | [ISBD](isbd)
+| Zeichenkette | [Zeichenkette](chars), [Unicode](unicode), [Bytes](bytes) | [ISBD](isbd)
 
 ¹Bei feldbasierten Formaten wird oft nicht zwischen ihrer allgemeinen Struktur und konkreten Anwendungen wie Normdaten und bibliographischen Daten unterschieden.
 

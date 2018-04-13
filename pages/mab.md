@@ -17,3 +17,4 @@ deutschsprachigen Bibliothekswesen verbreitet. Die aktuelle Version ist
 * MAB2 (Binärformat)
 * [MABxml](mab/xml)
 
+<!-- TODO: see https://www.obvsg.at/katalogisierung/formate/ -->

@@ -75,4 +75,7 @@ $(function(){
   $('[data-toggle="tooltip"]').tooltip()
 });
 </script>
+<?php if ($wikidata) { ?>
+<!--script src="//unpkg.com/wikidata-sdk/dist/wikidata-sdk.min.js"></script-->
+<?php } ?>
 </html>
