@@ -575,6 +575,8 @@ fields:
             label: Allianzlizenz
           dm:
             label: Digitalisierungsmaster
+          ee: 
+            label: Erscheinen eingestellt (nur DNB)
           es:
             label: entsäuertes Papier
           fp:
@@ -611,20 +613,38 @@ fields:
             label: Paketzugehörigkeit
           pu:
             label: Pay-per-use Datenbank
+          ra:
+            label: Reihe A (nur DNB)
+          rb:
+            label: Reihe B (nur DNB)
+          rc:
+            label: Reihe C (nur DNB)
+          rm:
+            label: Reihe M (nur DNB)
+          rg:
+            label: Reihe G, Teil 1 (nur DNB)
+          ro:
+            label: Reihe O (nur DNB)
           rs:
             label: Restitutionsbestand vorhanden
+          rt:
+            label: Reihe T (nur DNB)
+          ru:
+            label: Reihe G, Teil 2 (nur DNB)
           sf:
             label: säurefreies, alterungsbeständiges Papier
           sw:
             label: Software
           tt:
-            label: Tonträger
+            label: Sprachtonträger
           wk:
-            label: Webclient-Katalogisat
+            label: Webclient-Katalogisat (m)
           wl:
             label: Weblog
           vi:
             label: Video-Publikation
+          vt:
+            label: Verfilmte Tageszeitung (nur DNB)
           zt:
             label: Zeitung
         deprecated-codes:
@@ -700,6 +720,9 @@ fields:
       p:
         code: p
         label: Herstellungsdatum in Vorlageform
+      "n":
+        code: "n"
+        label: Copyright-und Phonogrammdatum in Vorlageform
   011E:
     tag: "011E"
     label: Erscheinungsdatum oder Entstehungsdatum, zeitliche Einordnung
