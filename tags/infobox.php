@@ -31,6 +31,9 @@ $styles = [
         $html =
             "<a href='$url'>$url</a>"
             . ' ('. $TAGS->link(['id'=>$id,'short'=>true]) . ')';
+        if ($schema['type'] == 'avram') {
+            $html .= ": <a href='?schema=$url&format=txt'>show as text</a>";
+        }
         if (isset($schema['version'])) {
             $html .= ' version '.$schema['version'];
         }

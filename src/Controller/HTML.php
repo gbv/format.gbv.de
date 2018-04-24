@@ -43,10 +43,12 @@ class HTML
         $f3['TAGS'] = $this->tags;
 
         $path = $params['*'];
+        $query = $f3->get('GET');
 
         if (preg_match('!^((([a-z0-9-]+)/?)+)\.([a-z]+)$!', $path, $match)) {
             $id = $match[1];
             $extension = $match[4];
+
             if ($extension == 'json') {
                 $data = $this->pages->get($id);
                 if ($data) {
@@ -80,6 +82,26 @@ class HTML
                     header("Content-Type: $type");
                     header('Access-Control-Allow-Origin *');
                     readfile($file);
+                    return;
+                }
+            }
+        }
+
+        # load Avram Schema
+        if (preg_match('!^http://format\.gbv\.de/(.+)\.json$!', $query['schema'] ?? '', $match)) {
+            $file = $this->root . $match[1] . ".yaml";
+            if (file_exists($file)) {
+                $data = Yaml::parse(file_get_contents($file));
+                if ($data['$schema'] == 'https://format.gbv.de/schema/avram/schema.json') {
+                    if (($query['format'] ?? '') == 'txt') {
+                        header("Content-Type: text/plain; charset=utf-8");
+                        header('Access-Control-Allow-Origin *');
+                        echo $this->tags->avramTxt(['schema'=>$data]);
+                        return;
+                    } else {
+                        $options = JSON_PRETTY_PRINT | JSON_FORCE_OBJECT;
+                        (new JSON($data))->sendJson($options);
+                    }
                     return;
                 }
             }
