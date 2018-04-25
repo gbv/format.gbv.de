@@ -10,10 +10,10 @@ class AvramTest extends TestCase
     {
         $schema = new Schema(Util::loadJsonYaml('tests/avram-example.json'));
 
-        $this->assertSame(null, $schema->lookup('42'));
+        $this->assertSame(null, $schema->lookupField('42'));
         $this->assertEquals(
             (object)['label'=>'Library of Congress Control Number'],
-            $schema->lookup('010')
+            $schema->lookupField('010')
         );
     }
 }
