@@ -2,23 +2,20 @@
 
 namespace Avram;
 
+/**
+ * Query an Avram Schema via HTTP.
+ */
 class API
 {
-    protected $schema;
-
-    public function __construct(Schema $schema)
-    {
-        $this->schema = $schema;
-    }
-
-    public function render($query)
+    public function request($schema, $query)
     {
         $field = $query['field'] ?? '';
+        $format = $query['format'] ?? 'json';
 
         if ($field === '') {
-            $response = $this->schema;
+            $response = $schema;
         } else {
-            $response = $this->schema->lookupField($params['*']);
+            $response = $schema->lookupField($field);
         }
 
         if (!$response) {
@@ -26,10 +23,16 @@ class API
             $response = [ 'message' => 'Not found' ];
         }
 
-        header('Content-Type: application/json; charset=UTF-8');
         header('Access-Control-Allow-Origin *');
 
-        echo json_encode($response, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT |
-            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        if ($format === 'text') {
+            header("Content-Type: text/plain; charset=utf-8");
+            echo $this->tags->avramTxt(['schema'=>$data]);
+        } else {
+            header('Content-Type: application/json; charset=UTF-8');
+            header('Access-Control-Allow-Origin *');
+            echo json_encode($response, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT
+                            | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        }
     }
 }

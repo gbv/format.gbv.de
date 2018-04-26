@@ -94,17 +94,8 @@ class HTML
                 $data = Yaml::parse(file_get_contents($file));
                 if ($data['$schema'] == 'https://format.gbv.de/schema/avram/schema.json') {
                     $schema = new \Avram\Schema($data);
-                    # TODO: move to Avram\API
-                    if (($query['format'] ?? '') == 'txt') {
-                        header("Content-Type: text/plain; charset=utf-8");
-                        header('Access-Control-Allow-Origin *');
-
-                        echo $this->tags->avramTxt(['schema'=>$data]);
-                        return;
-                    } else {
-                        $api = new \Avram\API($schema);
-                        $api->render($query);
-                    }
+                    $api = new \Avram\API();
+                    $api->request($schema, $query);
                     return;
                 }
             }

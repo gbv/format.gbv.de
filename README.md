@@ -21,6 +21,7 @@ Weitere verwendeten PHP-Module müssen mit Composer installiert werden:
 
 <https://github.com/gbv/format.gbv.de>
 
+<!--
 ## Nutzung
 
 ### REST-API für PICA+ Felder des GBV und SWB (K10Plus)
@@ -136,4 +137,4 @@ Sollte ein Feld oder Unterfeld nicht in RDA nicht zugelassen sein, dann erfolgt 
 - 405 – Method Not Allowed : Die Anfrage erfolgte nicht per **GET-Method**
 - 503 - Service Unavailable : Es liegt eine technische Störung vor.
 
-
+-->

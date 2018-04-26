@@ -1,14 +1,13 @@
 <?php declare(strict_types=1);
 
-use PHPUnit\Framework\TestCase;
-use Avram\Schema;
-use mytcms\Util;
+namespace Avram;
 
-class AvramTest extends TestCase
+class SchemaTest extends \PHPUnit\Framework\TestCase
 {
     public function testSchema()
     {
-        $schema = new Schema(Util::loadJsonYaml('tests/avram-example.json'));
+        $json = file_get_contents('tests/Avram/example.json');
+        $schema = new Schema(json_decode($json));
 
         $this->assertSame(null, $schema->lookupField('42'));
         $this->assertEquals(
