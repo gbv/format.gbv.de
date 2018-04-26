@@ -1,6 +1,7 @@
 ---
 title: RDF
 wikidata: Q54872
+application: structure
 ---
 
 Das **Resource Description Framework (RDF)** ist ein Graph-basiertes

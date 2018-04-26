@@ -5,6 +5,7 @@ wikidata:
 - Q935809
 - Q3021669
 base: chars
+application: structure
 ---
 
 Unter **Comma-separated values (CSV)** oder allgemeiner **Delimiter-separated

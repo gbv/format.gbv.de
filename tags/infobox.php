@@ -3,7 +3,8 @@
 if ($application) {
     $application = array_map(
         function ($id) {
-            return "application/$id";
+            return $id == 'structure' || $id == 'model'
+                ? $id : "application/$id";
         },
         is_array($application) ? $application : [$application]
     );

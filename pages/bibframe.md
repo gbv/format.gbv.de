@@ -2,6 +2,7 @@
 title: BIBFRAME
 application:
   - authority
+  - model
 homepage: https://www.loc.gov/bibframe/
 wikidata: Q17050075
 bartoc: 857

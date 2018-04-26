@@ -27,3 +27,6 @@ Weitere Datenstrukturierungssprachen sind durch grundlegende **Datentypen** von
 Programmiersprachen und Data Binding Languages (ASN.1, Thrift, Avro, Protocol
 Buffers...) gegeben.
 
+Folgende Datenstrukturierungssprachen sind in der Formatdatenbank erfasst:
+
+<list-formats application="structure"/>

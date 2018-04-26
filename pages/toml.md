@@ -5,6 +5,7 @@ wikidata: Q28449455
 homepage: https://github.com/toml-lang/toml
 base: unicode
 model: toml
+application: structure
 ---
 
 **TOML** ist eine [Datenstrukturierungssprache](structure) deren Syntax an

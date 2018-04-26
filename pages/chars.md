@@ -1,6 +1,9 @@
 ---
 title: Zeichenkette
 wikidata: Q184754
+application:
+- model
+- structure
 ---
 
 Eine Zeichenkette ist eine abstrakte Folge von **Zeichen** (Buchstaben,

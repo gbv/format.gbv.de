@@ -2,6 +2,7 @@
 title: Simple Declarative Language
 short: SDLang
 homepage: https://sdlang.org/
+application: structure
 ---
 
 Die **Simple Declarative Language** ist eine allgemeine

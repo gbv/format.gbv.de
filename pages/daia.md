@@ -2,6 +2,7 @@
 title: Document Availability Information API
 short: DAIA
 homepage: http://purl.org/NET/DAIA
+application: bibliographic
 ---
 
 Die **Document Availability Information API** ermöglicht die Abfrage der

@@ -2,6 +2,7 @@
 title: MARC
 wikidata: Q722609
 homepage: https://www.loc.gov/marc/
+application: structure
 modified: 1999
 javascript:
   - js/demo.js

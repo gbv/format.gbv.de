@@ -47,7 +47,7 @@ include 'infobox.php';
   <div class="container-fluid text-secondary">
     <div class="float-right">
 <?php if ($ID) { ?>
-      <a href="<?="$BASE/$ID"?>.json">Daten</a>
+      <a href="<?="$BASE/$ID"?>.json">JSON</a>
       / <a href="https://github.com/gbv/format.gbv.de/tree/master/pages/<?=$ID?>.md">Quelltext</a>
       /
 <?php } ?>

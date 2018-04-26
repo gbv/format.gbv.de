@@ -3,14 +3,25 @@ php_sapi_name() === 'cli' or die('not allowed!');
 
 require_once './vendor/autoload.php';
 
+use Symfony\Component\Yaml\Yaml;
 use Opis\JsonSchema\{Schema, Validator};
-use mytcms\Util;
+
+function loadJsonYaml(string $file, bool $assoc = false)
+{
+    $data = file_get_contents($file);
+    if (preg_match('/\.yaml$/', $file)) {
+        $option = $assoc ? 0 : Yaml::PARSE_OBJECT_FOR_MAP;
+        return Yaml::parse($data, $option);
+    } else {
+        return json_decode($data, $assoc);
+    }
+}
 
 $schemafile = 'pages/data/schema.yaml';
 
 $internal = ['markdown', 'arguments', 'javascript', 'css', 'broader'];
 
-$schema = new Schema(Util::loadJsonYaml($schemafile));
+$schema = new Schema(loadJsonYaml($schemafile));
 $validator = new Validator();
 
 $formats = new \mytcms\Pages('pages/');
@@ -70,7 +81,7 @@ if ($error) {
 
 // create full dump
 if ($result && $result->isValid()) {
-    $about = Util::loadJsonYaml('pages/index.yaml');
+    $about = loadJsonYaml('pages/index.yaml');
     $about->{'dct:hasPart'} = $metadata;
     echo json_encode($about, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 }

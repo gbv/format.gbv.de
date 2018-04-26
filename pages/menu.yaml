@@ -1,13 +1,14 @@
 ---
 - index
-- structure
 - 
   - application
   - application/bibliographic
   - application/authority
   - application/documents
   - schema/language
+- structure
 - code
+- model
 - schema
 - 
   - about

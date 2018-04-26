@@ -2,7 +2,7 @@
 
 $select = [];
 foreach ($arguments as $name) {
-    if ($name != 'exclude' && $name != 'title') {
+    if (!in_array($name, ['exclude', 'title'])) {
         $select[$name] = ${$name};
     }
 }

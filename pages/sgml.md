@@ -2,6 +2,7 @@
 title: Standard Generalized Markup Language
 short: SGML
 wikidata: Q207819
+application: structure
 ---
 
 Die **Standard Generalized Markup Language (SGML)** ist eine einflussreiches

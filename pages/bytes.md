@@ -1,5 +1,6 @@
 ---
 title: Bytes
+application: structure
 ---
 
 Letzendlich lassen sich alle Datenformate und alle digitalen Dokumente über

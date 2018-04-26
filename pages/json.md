@@ -4,6 +4,7 @@ wikidata: Q2063
 homepage: https://json.org/
 base: unicode
 model: json
+application: structure
 ---
 
 **JavaScript Object Notation (JSON)** ist ein hierarchisches Datenformat, das

@@ -3,6 +3,7 @@ title: INI-Format
 short: INI
 wikidata: Q1141412
 model: ini
+application: structure
 ---
 
 Das **INI-Format** wird häufig zur Konfiguration von Anwendungen verwendet. Im

@@ -1,6 +1,7 @@
 ---
 title: PICA-Format
 short: PICA
+application: structure
 ---
 
 Das PICA-Format ist das Datenbankformat der Katalogsysteme CBS und LBS.  Die
