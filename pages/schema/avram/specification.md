@@ -190,10 +190,11 @@ having field `subfields`.
 
 Fixed fields can be specified with a JSON object that maps **character
 positions** to data element definitions. A character position is sequence of
-digits (e.g.  `09`) or two sequences separated by `-` (e.g. `12-16`). It is
-RECOMMENDED to use sequences of two digits. If two sequences are given, the
-second interpreted as number MUST NOT be smaller than the first interpreted as
-number. A **data element definition** is a JSON object that SHOULD contain:
+digits (e.g.  `09`) or two sequences separated by `-` (e.g. `12-16`). A
+sequence of digit MUST NOT consists of zeroes only.  It is RECOMMENDED to use
+sequences of two digits. If two sequences are given, the second interpreted as
+number MUST NOT be smaller than the first interpreted as number. A **data
+element definition** is a JSON object that SHOULD contain:
 
 * key `label` with the name of the data element
 
@@ -251,7 +252,7 @@ The indicator MAY further contain:
 [codelist]: #codelist
 
 A **codelist** is a JSON object that maps values to descriptions. Each
-description is a JSON object with key `label`.
+description is a JSON object with optional key `label`.
 
 *Example:*
 
@@ -262,7 +263,8 @@ description is a JSON object with key `label`.
   },
   "a": {
     "label": "Archival"
-  }
+  },
+  "x": { }
 }
 ~~~
 
