@@ -268,6 +268,7 @@ fields:
         code: X
         label: Zuordnung
   002E:
+    modified: 2018-08-01
     repeatable: true
     tag: "002E"
     label: Datenträgertyp
@@ -294,11 +295,13 @@ fields:
         required: true
         codes:
           nc:
-            label: Band
+            label: Band (auch für Atlanten)
+          nb:
+            label: Blatt (kartografische Ressource)
           nn:
             label: Flipchart
           "no":
-            label: Karte
+            label: Karte (Ein Datenträgertyp, der aus einem kleinen Blatt aus lichtundurchlässigem Material besteht)
           na:
             label: Rolle
           nz:
@@ -1757,6 +1760,8 @@ fields:
         label: Zählung
         required: true
   035E:
+    modified: 2018-08-01
+    repeatable: true
     tag: "035E"
     label: "Kartographische Materialien: mathematische Angaben"
     pica3: "4026"
@@ -8385,6 +8390,10 @@ deprecated-fields:
     tag: "004H"
     pica3: "2016"
     label: Formal falsche ISBN der Sekundärausgabe
+  006N:
+    tag: "006N"
+    pica3: "2185"
+    label: Swets-Nummer
   025@:
     tag: "025@"
     label: Ansetzungssachtitel
@@ -8946,6 +8955,86 @@ deprecated-fields:
       b:
         code: b
         label: Angaben zur Sekundärausgabe
+  037H:
+    tag: "037H"
+    repeatable: true
+    label: "Kartografische Materialien: Geografische Koordinaten"
+    pica3: "4028"
+    subfields:
+      A:
+        label: Indikator
+        positions:
+          "0":
+            codes:
+              x:
+                label: Darstellung nicht anwendbar
+              a:
+                label: analoge Darestellung
+              d:
+                label: dezimale Darstellung
+          "1":
+            codes:
+              x:
+                label: Exaktheit nicht anwendbar
+              g:
+                label: genaue Koordinaten
+              c:
+                label: ungenaue (ca.) Koordinaten
+          "2":
+            codes:
+              x:
+                label: Ring-Typ nicht anwendbar
+              "0":
+                label: äußerer Ring
+              "1":
+                label: auszuschließender Ring
+      d:
+        label: Koordinaten - westlichster Längengrad
+      e:
+        label: Koordinaten - östlichster Längengrad
+      f:
+        label: Koordinaten - nördlichster Längengrad
+      g:
+        label: Koordinaten - südlichster Längengrad
+      j:
+        label: Deklination - nördliche Grenze
+      k:
+        label: Deklination - südliche Grenze
+      m:
+        label: Rekaszension - östliche Grenze
+      "n":
+        label: Rekaszension - westliche Grenze
+      p:
+        label: Äquinoktium
+      r:
+        label: Distanz zur Erde
+      s:
+        repeatable: true
+        label: G-Ring Breitengrad
+      t:
+        repeatable: true
+        label: G-Ring Längengrad
+      x:
+        label: Anfangsdatum
+      "y":
+        label: Enddatum
+      z:
+        label: Name des extraterrestrischen Körpers
+      u:
+        repeatable: true
+        label: URI der Web-Ressource
+      S:
+        label: ISIL der Referenz-Datei
+      "0":
+        label: Identifikationsnummer der Referenz-Datei
+      "2":
+        label: Quelle
+      "3":
+        label: Koordinaten-Spezifikation
+      v:
+        label: Bemerkungen
+
+
   039S:
     repeatable: true
     tag: "039S"
