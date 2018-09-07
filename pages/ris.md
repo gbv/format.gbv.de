@@ -11,3 +11,13 @@ Das **RIS-Format** ist ein einfaches Feldbasiertes Format. Es wurde
 ursprünglich für das Literaturverwaltungsprogramm *Reference Manager*
 entwickelt.
 
+<example>
+    TY  - BOOK
+    TI  - Das Schloss
+    AU  - Kafka, Franz
+    CY  - München
+    PY  - 1926
+    LA  - ger
+    PB  - Wolff
+    ER  - 
+</example>

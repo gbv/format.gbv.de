@@ -9,3 +9,14 @@ Literaturangaben.
 
 Eine Alternative zur Erstellung von Literaturangaben und -verzeichnissen ist
 [CSL-JSON](csl-json).
+
+<example>
+    @book{Kafka1926,
+        title = {Das {Schloss}},
+        author = {Kafka, Franz},
+        year = {1926},
+        publisher = {Wolff},
+        address = {München},
+        language = {ger}
+    }
+</example>

@@ -10,8 +10,7 @@ Das Endnote-Format des gleichnamigen Literaturverwaltungsprogramms basiert auf
 einfachen Feldern die mit einem Prozentzeichen eingeleitet werden. Übliche
 Alternativen sind [RIS](ris) und [BibTeX](bibtex).
 
-Hier ein Beispiel: 
-
+<example>
     %0 Book
     %A Kafka, Franz
     %T Das Schloss
@@ -20,3 +19,4 @@ Hier ein Beispiel:
     %G ger
     %I Wolff
     %P 503 S.
+</example>
