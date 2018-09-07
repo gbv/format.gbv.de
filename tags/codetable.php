@@ -15,7 +15,12 @@ foreach ($codings as $coding) {
     <tr>
       <td><?= $TAGS->link(['id' => $coding['id'], 'syntax' => $syntax]); ?></td>
       <td><?= $TAGS->link(['id' => $coding['model']]); ?></td>
-      <td><?= $TAGS->link(['id' => $coding['base']]); ?></td>
+      <td><?php
+        $bases = is_array($coding['base']) ? $coding['base'] : [ $coding['base'] ];
+        echo implode(', ', array_map(function ($id) use ($TAGS) {
+            return $TAGS->link(['id' => $id]);
+        }, $bases));
+      ?></td>
     </tr>
 <?php } ?>
   </tbody>
