@@ -5,6 +5,7 @@ homepage: https://json.org/
 base: unicode
 model: json
 application: structure
+mimetype: application/json
 ---
 
 **JavaScript Object Notation (JSON)** ist ein hierarchisches Datenformat, das

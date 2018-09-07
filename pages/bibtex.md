@@ -2,6 +2,7 @@
 title: BibTeX
 wikidata: Q8029
 application: bibliographic
+mimetype: application/x-bibtex
 ---
 
 Das **BibTeX-Format** für des gleichnamigen Programms ist ein Standard für

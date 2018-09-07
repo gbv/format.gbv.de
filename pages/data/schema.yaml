@@ -35,6 +35,8 @@ properties:
   topConceptOf:
     $ref: '#/definitions/links'
 
+  mimetype:
+    type: string
   for:
     $ref: '#/definitions/links'
   model:

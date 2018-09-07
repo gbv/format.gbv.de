@@ -25,6 +25,10 @@ publisher:
     label: Herausgeber
     icon: people
 
+mimetype:
+    label: Content Type
+    icon: description
+    
 wikidata:
     label: Wikidata
     style: qid

@@ -3,6 +3,7 @@ title: CodeMeta
 homepage: https://codemeta.github.io/
 application: bibliographic
 base: json
+mimetype: application/vnd.codemeta.ld+json
 ---
 
 **CodeMeta** ist ein Format für bibliographische Daten von Software. Das

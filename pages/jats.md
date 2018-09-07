@@ -7,6 +7,7 @@ application:
 homepage: https://jats.nlm.nih.gov/
 wikidata: Q17060731
 base: xml
+mimetype: application/vnd.jats+xml
 ---
 
 Die **Journal Article Tag Suite (JATS)** ist ein [XML](xml)-Format für

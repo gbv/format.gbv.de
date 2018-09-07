@@ -4,6 +4,7 @@ short: DataCite
 homepage: https://schema.datacite.org/
 base: xml
 model: datacite
+mimetype: application/vnd.datacite.datacite+xml
 schemas:
   - url: https://schema.datacite.org/meta/kernel-4.1/metadata.xsd
     type: xsd

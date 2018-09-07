@@ -3,9 +3,33 @@ title: CSL-JSON
 homepage: https://github.com/citation-style-language/schema#csl-json-schema
 base: json
 application: bibliographic
+mimetype: application/vnd.citationstyles.csl+json
+schemas:
+  - url: https://github.com/citation-style-language/schema/raw/master/csl-data.json
+    type: json-schema
 ---
 
 Die **Citation Style Language (CSL)** beinhaltet ein Datenmodell für
 bibliographische Informationen, um daraus Literaturangaben und -Listen zu
-erstellen. Das Datenmodell ist als [JSON](json)-Format durch ein [JSON
-Schemas](schema/json-schema) beschrieben.
+erstellen. Das Datenmodell wird in der Regel als [JSON](json)-Format verwendet
+(auch etwas ungenauer als "**Citeproc JSON** bezeichnet).
+
+<example>
+    {
+      "id": "http://example.org/some/identifier/1234",
+      "type": "book",
+      "title": "Das Schloss",
+      "publisher": "Wolff",
+      "publisher-place": "München",
+      "language": "de",
+      "author": [
+        {
+          "family": "Kafka",
+          "given": "Franz"
+        }
+      ],
+      "issued": {
+        "date-parts": [ [ "1926" ] ]
+      }
+    }
+</example>
