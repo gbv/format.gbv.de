@@ -37,6 +37,9 @@ properties:
 
   mimetype:
     type: string
+  publisher:
+    type: string
+
   for:
     $ref: '#/definitions/links'
   model:
