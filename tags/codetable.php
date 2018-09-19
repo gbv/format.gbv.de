@@ -20,7 +20,7 @@ foreach ($codings as $coding) {
         echo implode(', ', array_map(function ($id) use ($TAGS) {
             return $TAGS->link(['id' => $id]);
         }, $bases));
-      ?></td>
+        ?></td>
     </tr>
 <?php } ?>
   </tbody>
