@@ -20,8 +20,8 @@ foreach (($css ?? []) as $href) {
             aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-      <a href="//www.gbv.de/" alt="VZG" class="navbar-brand expand-lg d-none d-lg-block">
-        <img src="<?=$BASE?>/img/vzg-logo.jpg"/>
+      <a href="//format.gbv.de/" alt="VZG format" class="navbar-brand expand-lg d-none d-lg-block">
+        <img src="<?=$BASE?>/img/vzg-format-logo.jpg"/>
       </a>
     <div class="collapse navbar-collapse" id="mainMenu">
         <?php include 'menu.php'; ?>
@@ -48,12 +48,19 @@ include 'infobox.php';
     <div class="float-right">
 <?php if ($ID) { ?>
       <a href="<?="$BASE/$ID"?>.json">JSON</a>
-      / <a href="https://github.com/gbv/format.gbv.de/tree/master/pages/<?=$ID?>.md">Quelltext</a>
-      /
+      &#183;
+      <a href="https://github.com/gbv/format.gbv.de/tree/master/pages/<?=$ID?>.md">Quelltext</a>
+      &#183;
 <?php } ?>
       <a href="<?=$BASE?>/about/license">Lizenz</a>
     </div>
-    <p><a href="https://www.gbv.de/">Verbundzentrale des GBV (VZG)</a></p>
+    <p>
+      <a href="https://www.gbv.de/">Verbundzentrale des GBV (VZG)</a>
+      &#183;
+      <a href="https://www.gbv.de/impressum">Impressum</a>
+      &#183;
+      <a href="https://www.gbv.de/datenschutz">Datenschutz</a>
+    </p>
   </div>
 </footer>
 </body>
