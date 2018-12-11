@@ -84,7 +84,7 @@ class Pages
             $value = $meta[$field];
             if (is_array($value) && in_array($check, $value)) {
                 continue;
-            } elseif ($check === null || $value === $check) {
+            } elseif ($check === null || $check === '*' || $value === $check) {
                 continue;
             }
             return false;
