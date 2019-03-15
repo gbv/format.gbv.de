@@ -23,9 +23,16 @@ creator: Ross Singer
         "subfields": [
           { "9": "(DLC)   93707283" }
         ]
+      } },
+    { "245":
+      {
+        "ind1": "1",
+        "ind2": "0",
+        "subfields": [
+          { "a": "Title :" },
+          { "b": "subtitle." }
+        ]
       } }
   ]
 }
 ~~~
-
-
