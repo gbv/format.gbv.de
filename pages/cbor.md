@@ -4,6 +4,7 @@ wikidata: Q28455556
 homepage: http://cbor.io/
 base: bytes
 model: cbor
+multicodec: 0x50
 ---
 
 CBOR ist eine binäre [Datenstrukturierungssprache](structure), deren

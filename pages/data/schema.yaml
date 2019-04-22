@@ -23,6 +23,9 @@ properties:
       items:  
         $ref: '#/definitions/qid'
 
+  multicodec:
+    type: integer
+
   bartoc:
     $ref: '#/definitions/bartoc'
   language:
