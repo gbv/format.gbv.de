@@ -9,6 +9,9 @@ Dieses Repository enthält den Quellcode und die Quelldaten der unter
 ## Systemanforderungen
 
 Erfordert mindestens PHP 7 mit Erweiterungen für MySQL-PDO und XML.
+    
+    $ sudo apt-get install php-mysql
+    $ sudo apt-get install php-xml
 
 Die Konfigurationsdatei (siehe Beispiel `config/picahelp.example.json`) muss
 nach `config/picahelp.json` kopiert und angepasst werden.
@@ -20,6 +23,10 @@ Weitere verwendeten PHP-Module müssen mit Composer installiert werden:
 ## Quellcode
 
 <https://github.com/gbv/format.gbv.de>
+
+Zum Testen kann ein eigener Webserver auf Port 8020 gestartet werden.
+	
+	$ make web
 
 <!--
 ## Nutzung
