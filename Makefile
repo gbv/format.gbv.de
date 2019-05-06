@@ -10,6 +10,7 @@ web:
 	php -S localhost:8020 -t public
 
 metadata:
+	mkdir -p pages/data/dumps
 	php bin/metadata.php > pages/data/dumps/latest.json
 
 formats.json: metadata
