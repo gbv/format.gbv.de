@@ -45,6 +45,9 @@ A **regular expression** is a string that conforms to the [ECMA 262 (2015)
 regular expression grammar](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-patterns).
 The expression is interpreted as Unicode pattern.
 
+A **language** is a natural language identifier as defined with XML Schema
+datatype [language](https://www.w3.org/TR/xmlschema-2/#language).
+
 ## Schema format
 
 An **Avram Schema** is a JSON object given as JSON document or any other format
@@ -58,6 +61,8 @@ The schema SHOULD contain keys documenting the format defined by the schema:
 * key `title` with the name of the format
 * key `description` with a short description of the format
 * key `url` with a homepage URL of the format
+* key `language` with the language values of keys `title`, `description`,
+  and `label` used throughout the schema. Can be assumed as `und` by defe t.
 
 The schema MAY contain:
 
@@ -72,6 +77,7 @@ The schema MAY contain:
   "$schema": "https://format.gbv.de/schema/avram/schema.json",
   "title": "MARC 21 Format for Classification Data",
   "description": "MARC format for classification numbers and captions associated with them",
+  "language": "en",
   "url": "https://www.loc.gov/marc/classification/",
   "fields": { }
 }
@@ -355,7 +361,7 @@ An Avram schema can be used to check:
 * whether all fields and subfields of a given record have been defined
 * whether defined fields and subfields of a given record conform the their definition
 
-The value of [schema field](#schema-format) `count` if used for validation MUST
+The value of [schema key](#schema-format) `count` if used for validation MUST
 match the number of records that have been analyzed.
 
 ## References
