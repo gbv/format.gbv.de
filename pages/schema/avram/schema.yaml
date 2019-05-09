@@ -17,6 +17,9 @@ properties:
     $ref: '#/definitions/field-schedule'
   deprecated-fields:
     $ref: '#/definitions/field-schedule'
+  count:
+    type: integer
+    minimum: 0
 required:
   - fields
 definitions:

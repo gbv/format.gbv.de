@@ -8,8 +8,8 @@ language: en
 related formats such as [PICA](../../pica) and [MAB](../../mab).
 
 * author: Jakob Voß
-* version: 0.3.0
-* date: 2018-03-16
+* version: 0.4.0
+* date: 2019-05-09
 
 ## Introduction
 
@@ -63,6 +63,7 @@ The schema MAY contain:
 
 * key `$schema` with an URL of an [Avram metaschema](#metaschema)
 * key `deprecated-fields` with a [field schedule](#field-schedule)
+* key `count` with a non-negative integer
 
 ##### Example
 
@@ -354,6 +355,9 @@ An Avram schema can be used to check:
 * whether all fields and subfields of a given record have been defined
 * whether defined fields and subfields of a given record conform the their definition
 
+The value of [schema field](#schema-format) `count` if used for validation MUST
+match the number of records that have been analyzed.
+
 ## References
 
 ### Normative references
@@ -380,6 +384,10 @@ An Avram schema can be used to check:
 * [MARCspec - A common MARC record path language](http://marcspec.github.io/MARCspec/marc-spec.html)
 
 ### Changes
+
+#### 0.4.0 (2019-05-09)
+
+* Add `count`
 
 #### 0.3.0 (2018-03-16)
 
