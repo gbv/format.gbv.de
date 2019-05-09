@@ -393,7 +393,8 @@ match the number of records that have been analyzed.
 
 #### 0.4.0 (2019-05-09)
 
-* Add `count`
+* Add `count` and `language`
+* Change `occurrence` from three to two digits
 
 #### 0.3.0 (2018-03-16)
 
