@@ -64,7 +64,7 @@ The schema MAY contain:
 * key `$schema` with an URL of an [Avram metaschema](#metaschema)
 * key `deprecated-fields` with a [field schedule](#field-schedule)
 
-*Example:*
+##### Example
 
 ~~~json
 {
@@ -86,7 +86,7 @@ empty if the corresponding key is given.
 A **field schedule** is a JSON object that maps [field
 identifiers](#field-identifier) to [field definitons](#field-definition).
 
-*Example:*
+##### Example
 
 ~~~json
 {
@@ -114,7 +114,7 @@ For PICA-based formats
 * the field occurrences MUST be two digits and MUST NOT exist if the field
   tag starts with a digit other than `0`.
 
-*Examples:*
+##### Examples
 
 * `LDR`, `001`, `850`... (MARC)
 * `021A`, `045B/00`, `209K`... (PICA)
@@ -149,31 +149,20 @@ missing.
 A field definition MUST NOT mix keys for fixed fields (`position`), variable
 fields (`subfields` and `deprecated-subfields`), and alternatives (`types`).
 
-*Example:*
+##### Example
 
-In the following example MARC field `007` byte position `00` has the fixed
-value `c` for Electronic resources:
+*   MARC field `240` specified as mandatory and non-repeatable:
 
-~~~json
-{
-  "tag": "007",
-  "label": "Physical Description",
-  "types": {
-    "Electronic resource": {
-      "positions": {
-		"00": {
-          "label": "Category of material",
-          "url": "https://www.loc.gov/marc/bibliographic/bd007c.html",
-          "codes": {
-		    "c": {
-              "label": "Electronic resource"
-            }
-          }
-        }
-      }
-    },
-    ...
-~~~
+    ~~~json
+    {
+      "tag": "240",
+      "label": "Uniform Title",
+      "url": "https://www.loc.gov/marc/bibliographic/bd240.html",
+      "required": true,
+      "repeatable": false,
+      "modified": "2017-12"
+    }
+    ~~~
 
 #### Field types
 
@@ -183,6 +172,26 @@ value `c` for Electronic resources:
 part of a [field definition]. A specification of field types is a JSON object
 maps type names to JSON objects either all having field `positions` or all
 having field `subfields`.
+
+*Note:* field types make Avram schemas more complicated. An alternative is to
+provide multiple schemas, one for each type.
+
+##### Example
+
+~~~json
+{
+  "Map": {
+    "positions": { "00": { "codes": { "a": { } } } } 
+  },
+  "Electronic resource": { 
+    "positions": { "00": { "codes": { "c": { } } } } 
+  },
+  "Globe": { 
+    "positions": { "00": { "codes": { "d": { } } } } 
+  },
+  ...
+}
+~~~
 
 #### Positions
 
@@ -208,6 +217,21 @@ The data element definition MAY further contain:
 A data element definition MUST NOT contain more than one of the keys `codes`
 and `pattern`.
 
+##### Example
+
+* Positions for MARC 21 field `005`:
+
+    ~~~json
+    {
+      "00-03": { "label": "year" },
+      "04-05": { "label": "month" },
+      "06-07": { "label": "day" },
+      "08-09": { "label": "hour" },
+      "10-11": { "label": "minute" },
+      "12-15": { "label": "second" }
+    }
+    ~~~
+
 #### Subfield schedule
 
 [subfield schedule]: #subfield-schedule
@@ -232,6 +256,32 @@ The subfield schedule MAY further contain:
 * key `pica3` with a corresponding Pica3 syntax definition
 * key `modified` with a timestamp
 
+##### Example
+
+*   Subfield schedule for MARC 21 bibliographic field `250` (Edition Statement):
+
+    ~~~json
+    {
+      "a": {
+        "label": "Edition statement",
+        "repeatable": false,
+        "pattern": "\\.$"
+      },
+      "b": {
+        "label": "Remainder of edition statement",
+        "repeatable": false
+      },
+      "3": {
+        "label": "Materials specified",
+        "repeatable": false
+      },
+      "6": {
+        "label": "Field link and sequence number",
+        "repeatable": true
+      }
+    }
+    ~~~
+
 #### Indicators
 
 [indicator]: #indicators
@@ -254,7 +304,7 @@ The indicator MAY further contain:
 A **codelist** is a JSON object that maps values to descriptions. Each
 description is a JSON object with optional key `label`.
 
-*Example:*
+##### Example
 
 ~~~json
 {

@@ -40,13 +40,28 @@ ul.navbar-nav li.active:before {
 /* Boostrap bug */
 .table-responsive { display: table; }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4 {
   color: #355FB8;
 }
 h1 { font-size: 2.25rem; }
 h2 { font-size: 1.75rem; }
 h3 { font-size: 1.25rem; }
 h4 { font-size: 1rem; }
+
+h5 {
+  font-size: 1rem;
+  background-color: #f7f7f9;
+  margin-bottom: 0;
+  padding: 0.5rem 0.5rem 0rem; 0.5rem;
+  color: #818a91;
+}
+h5 + * {
+  background-color: #f7f7f9;
+  padding: 0.5rem 1rem;
+}
+h5 + ul {
+  list-style-type: none;
+}
 
 footer {
   border-top: 12px solid #6791C9;
