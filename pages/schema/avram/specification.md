@@ -97,12 +97,13 @@ identifiers](#field-identifier) to [field definitons](#field-definition).
 
 #### Field identifier
 
-A **field identifiers** is can be any non-empty string that uniquely identfies
-a field. The identifier consists of a **field tag**, optionally followed by `/`
-and a **field occurrence**. Applications SHOULD add further restrictions on
-field identifier syntax.
+A **field identifiers** is can be any non-empty string that uniquely identifies
+a field. The identifier consists of a **field tag**, optionally followed by a
+slash (`/`) and a **field occurrence**. Applications SHOULD add further
+restrictions on field identifier syntax.
 
-For formats based on MARC a field identifiers MUST be field tags being
+For MARC-based formats a field identifier MUST consist of a plain field tag
+being
 
 * either the character sequence `LDR` for specification of the record leader,
 * or three digits (e.g. `001`).
@@ -118,6 +119,7 @@ For PICA-based formats
 
 * `LDR`, `001`, `850`... (MARC)
 * `021A`, `045B/00`, `209K`... (PICA)
+* `001`, `100`, `805`... (MAB)
 
 #### Field definition
 
@@ -143,8 +145,8 @@ The field definition MAY further contain:
 * key `modified` with a timestamp
 
 If a field definition is given in a [field schedule], the `tag` and
-`occurrence` MUST either match the corresponding field identifier or both be
-missing.
+`occurrence` MUST either both be missing or match the corresponding
+[field identifier].
 
 A field definition MUST NOT mix keys for fixed fields (`position`), variable
 fields (`subfields` and `deprecated-subfields`), and alternatives (`types`).
@@ -161,6 +163,22 @@ fields (`subfields` and `deprecated-subfields`), and alternatives (`types`).
       "required": true,
       "repeatable": false,
       "modified": "2017-12"
+    }
+    ~~~
+
+*   PICA field `045B/02` in K10plus format
+
+    ~~~json
+    {
+      "tag": "045B",
+      "occurrence": "02",
+      "pica3": "5022",
+      "label": "Systematik für Bibliotheken (SfB)",
+      "repeatable": true,
+      "subfields": {
+        "a": { "label": "Notation", "repeatable": true },
+        "A": { "label": "Quelle", "repeatable": true }
+      }
     }
     ~~~
 
@@ -362,6 +380,10 @@ An Avram schema can be used to check:
 * [MARCspec - A common MARC record path language](http://marcspec.github.io/MARCspec/marc-spec.html)
 
 ### Changes
+
+#### 0.3.0 (2018-03-16)
+
+* Add `deprecated-subfields`
 
 #### 0.2.0 (2018-03-09)
 
