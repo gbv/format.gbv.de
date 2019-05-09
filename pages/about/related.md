@@ -28,7 +28,7 @@ Solve the File Format Problem](http://fileformats.archiveteam.org)** und die
 Webseite [fileformat.info](http://www.fileformat.info) sammeln ebenfalls
 Informationen zu Dateiformaten. Alle drei haben starke Überschneidungen mit der
 Formatdatenbank aber unterschiedliche inhaltliche Schwerpunkte und weniger
-Informationen zu [Schemas](../schema), [Kodierungen](../code).
+Informationen zu [Schemas](../schema) und [Kodierungen](../code).
 
 Weitere mittlerweile eingestellte Projekte aus dem Bereich der digitalen
 Archivierung sind die [Global Digital Format
