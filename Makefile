@@ -6,6 +6,10 @@ test: metadata
 style:
 	composer style
 
+init:
+	rm -rf pages/schema/avram
+	git clone https://github.com/gbv/avram.git pages/schema/avram
+
 web:
 	php -S localhost:8020 -t public
 

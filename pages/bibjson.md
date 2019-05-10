@@ -3,7 +3,7 @@ title: BibJSON
 base: json
 application: bibliographic
 homepage: http://okfnlabs.org/bibjson/
-# created: 2011 (or earlier?)
+created: 2011
 ---
 
 **BibJSON** ist ein [JSON](json)-basiertes [bibliographisches Datenformat](application/bibliographic) das von der Open Knowledge Foundation für die Katalogsoftware [BibServer](https://bibserver.okfn.org/) entwickelt wurde. Das Format ist an [BibTeX](bibtex) angelehnt. Eine gebräuchlichere Alternative ist [CSL-JSON](csl-json).

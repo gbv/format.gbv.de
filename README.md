@@ -19,6 +19,10 @@ Weitere verwendeten PHP-Module werden mit Composer installiert:
 
     $ composer install
 
+Die Avram-Spezifikation und das dazu gehörige JSON Schema werden [in einem
+eigenen repository](https://github.com/gbv/avram), das mittels `make init`
+an die richtige Stelle geklont werden kann.
+
 ## Quellcode
 
 <https://github.com/gbv/format.gbv.de>
