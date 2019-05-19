@@ -16,4 +16,4 @@ Basistypen (`double`, `int32`, `bool`, `string`...), komplexe Datentypen sowie
 optionale, notwendige, und wiederholbare Felder.
 
 Alternative Serialisierungsformate die von Protocol Buffers beeinflusst wurden
-sind unter Anderem FlatBuffers und Cap'n Proto.
+sind unter Anderem Cap'n Proto, FlatBuffers, [SBE](sbe).
