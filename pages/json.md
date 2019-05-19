@@ -14,6 +14,18 @@ mimetype: application/json
 vor allem in Webanwendungen verwendet wird. Eine übliche Alternative ist
 [XML](xml).
 
+<example>
+    {
+      "value": 42,
+      "name": [ "forty-two", "forty two", "42" ],
+      "question": null,
+      "source": {
+        "author": "Douglas Adams",
+        "work": "The Hitchhiker's Guide to the Galaxy"
+      }
+    }
+</example>
+
 Zur Spezifikation von JSON-basierten Formaten eignen sich:
 
 <list-formats for="json"/>
