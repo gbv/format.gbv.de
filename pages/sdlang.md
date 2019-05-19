@@ -10,10 +10,10 @@ Die **Simple Declarative Language** ist eine allgemeine
 basiert jedoch nicht auf dem Datenmodell von [JSON](json).
 
 <example>
-   value 42
-   name "forty-two" "forty two" "42"
-   question null
-   source author="Douglas Adams" \
-          work=The Hitchhiker's Guide to the Galaxy"
+    value 42
+    name "forty-two" "forty two" "42"
+    question null
+    source author="Douglas Adams" \
+           work=The Hitchhiker's Guide to the Galaxy"
 </example>
 
