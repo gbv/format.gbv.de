@@ -4,6 +4,7 @@ wikidata: Q2661480
 homepage: http://bsonspec.org/
 base: bytes
 model: bson
+application: structure
 ---
 
 BSON ist eine binäre [Datenstrukturierungssprache](structure), deren

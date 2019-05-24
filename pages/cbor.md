@@ -4,6 +4,7 @@ wikidata: Q28455556
 homepage: http://cbor.io/
 base: bytes
 model: cbor
+application: structure
 multicodec: 0x50
 ---
 

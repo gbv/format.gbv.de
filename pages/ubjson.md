@@ -8,4 +8,5 @@ base: bytes
 mimetype: application/ubjson
 ---
 
-UBJSON ist eine binäre Kodierung von [JSON](json). Vergleichbare Kodierungen sind [CBOR](cbor) und [BSON](bson).
+UBJSON ist eine binäre Kodierung von [JSON](json), vergleichbar mit der weniger
+gebräuchlichen Alternative [Smile](smile).
