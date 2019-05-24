@@ -1,0 +1,8 @@
+{
+  "name": "format.gbv.de",
+  "dependencies": {
+    "ajv": "^6.10.0",
+    "front-matter": "^3.0.2",
+    "minimist": "^1.2.0"
+  }
+}

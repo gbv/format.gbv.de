@@ -17,6 +17,9 @@ metadata:
 	mkdir -p pages/data/dumps
 	php bin/metadata.php > pages/data/dumps/latest.json
 
+validate:
+	@./bin/metadata.js $$(find pages -name '*.md') >/dev/null
+
 formats.json: metadata
 formats.dot: formats.json
 	perl bin/graph.pl < $< > $@
