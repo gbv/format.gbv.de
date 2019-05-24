@@ -36,10 +36,10 @@ werden:
 <list-formats model="json" exclude="json"/>
 
 Außerdem ist [YAML](yaml) eine Verallgemeinerung von JSON und damit direkt für
-JSON-Dokumente einsetzbar.
+JSON-Dokumente einsetzbar. Die binären Strukturierungssprachen [BSON](bson) und
+[CBOR](cbor) decken ebenfalls einen Großteil des JSON-Modells ab.  In der Regel
+treten JSON-Daten als [I-JSON](i-json) und/oder ndjson auf.
 
 Folgende Datenformate basieren auf JSON:
 
 <list-formats base="json"/>
-
-In der Regel treten JSON-Daten als [I-JSON](i-json) und/oder ndjson auf.
