@@ -42,3 +42,4 @@ Folgende Datenformate basieren auf JSON:
 
 <list-formats base="json"/>
 
+In der Regel treten JSON-Daten als [I-JSON](i-json) und/oder ndjson auf.
