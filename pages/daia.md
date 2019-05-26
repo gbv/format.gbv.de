@@ -13,4 +13,4 @@ Publikationen, Exemplare, Standorten und Verfügbarkeiten in [XML](xml) und in
 [JSON](json) ausgedrückt werden. Ab Version 1.0 ist nur noch JSON vorgesehen.
 Darüber hinaus können DAIA-Daten nach [RDF](rdf) gemappt werden.
 
-<list-formats model="daia"/>
+<list-encodings model="daia"/>

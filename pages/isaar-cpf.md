@@ -10,4 +10,4 @@ Der **International Standard Archival Authority Record** ist ein vom
 internationalen Archivrat definierter Standard für Normdateien im
 Archivbereich.
 
-<list-formats model="isaar-cpf" title="Umsetzungen"/>
+<list-encodings model="isaar-cpf"/>

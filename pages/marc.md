@@ -18,9 +18,7 @@ Die in der Regel [nach ISO 2709 kodierte](marc/iso) Variante UNIMARC kann von
 seiner Struktur mit MARC gleichgesetzt werden, verfügt allerdings über eigene
 Anwendungsformate.
 
-## Serialisierungen
-
-<list-formats model="marc"/>
+<list-encodings model="marc"/>
 
 ## MARC-Formate
 

@@ -25,4 +25,4 @@ Die Sammlung von einzelnen PICA-Formaten und dazu gehörigen
 PICA+ wird in verschiedenen [Kodierungen](code) verwendet, die sich alle
 verlustfrei ineinander umwandeln lassen.
 
-<list-formats model="pica"/>
+<list-encodings model="pica" title=""/>

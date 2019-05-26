@@ -35,6 +35,4 @@ Zur Spezifikation von Ontologien und RDF-Daten eignen sich:
 
 <list-formats for="rdf"/>
 
-Die wichtigsten RDF-Serialisierungen sind:
-
-<list-formats model="rdf" />
+<list-encodings model="rdf"/>

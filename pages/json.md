@@ -30,10 +30,7 @@ Zur Spezifikation von JSON-basierten Formaten eignen sich:
 
 <list-formats for="json"/>
 
-Neben der JSON-Syntax kann JSON in verschiedenen Kodierungen ausgedrückt
-werden:
-
-<list-formats model="json" exclude="json"/>
+<list-encodings model="json"/> <!-- TODO include JSON-Syntax -->
 
 Außerdem ist [YAML](yaml) eine Verallgemeinerung von JSON und damit direkt für
 JSON-Dokumente einsetzbar. Die binären Strukturierungssprachen [CBOR](cbor),

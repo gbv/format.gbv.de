@@ -9,9 +9,7 @@ application: bibliographic
 LOM ist ein Standard zur Beschreibung von Lernobjekten. Neben der offiziellen
 [XML-Kodierung](lom/xml) kann gibt es eine [LOM-Ontologie](rdf/voc/lom).
 
-### Kodierungen
-
-<list-formats model="lom"/>
+<list-encodings model="lom" title="Kodierungen"/>
 
 ### Anwendungsprofile
 
