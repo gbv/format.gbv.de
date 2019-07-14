@@ -18,3 +18,6 @@ Zur Spezifikation von XML-basierten Formaten eignen sich:
 
 <list-formats for="xml"/>
 
+Neben der Standard-XML-Syntax kann XML ausgedrückt werden in:
+
+<list-encodings model="xml" title=""/>
