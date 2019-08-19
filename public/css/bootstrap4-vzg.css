@@ -92,11 +92,12 @@ a[href*="/rdf/voc/"]:after {
 
 
 h3.example {
-  background-color: #f7f7f9;
+  background-color: #f5f2f0;
   margin-bottom: 0;
   padding:  0.5em 0.5em 0em 0.5em;
 }
 h3.example + pre {
-  background-color: #f7f7f9;
-  padding: 1em;
+  background-color: #f5f2f0;
+  padding: 0.5em 1em 0.5em 1em;
+  margin-top: 0;  
 }

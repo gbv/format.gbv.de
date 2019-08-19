@@ -30,7 +30,7 @@ Die letzte Regeln zur Behandlung von Mixed Content weicht von Goessners
 Vorschlag dahingehend ab, dass Pragmatic XML in diesem Fall Textelemente
 ignoriert.
 
-<example>
+<example highlight="json">
 { 
   "a": ["some", "text"]
   "b": null,

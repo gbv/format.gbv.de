@@ -14,9 +14,9 @@ bibliographische Informationen, um daraus Literaturangaben und -Listen zu
 erstellen. Das Datenmodell wird in der Regel als [JSON](json)-Format verwendet
 (auch etwas ungenauer als "**Citeproc JSON** bezeichnet).
 
-<example>
+<example highlight="json">
     {
-      "id": "http://example.org/some/identifier/1234",
+      "id": "http://example.org/id/1234",
       "type": "book",
       "title": "Das Schloss",
       "publisher": "Wolff",

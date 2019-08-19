@@ -11,7 +11,7 @@ Literaturangaben.
 Eine Alternative zur Erstellung von Literaturangaben und -verzeichnissen ist
 [CSL-JSON](csl-json).
 
-<example>
+<example highlight="bibtex">
     @book{Kafka1926,
         title = {Das {Schloss}},
         author = {Kafka, Franz},

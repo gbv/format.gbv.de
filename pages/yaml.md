@@ -11,7 +11,7 @@ application: structure
 [JSON](json). Während JSON hierarchisch aufgebaut ist, sind mit YAML
 beispielsweise auch Graph-Strukturen abbildbar.
 
-<example>
+<example highlight="yaml">
     ---
     value: 42
     name:

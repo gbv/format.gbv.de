@@ -14,7 +14,7 @@ mimetype: application/json
 vor allem in Webanwendungen verwendet wird. Eine übliche Alternative ist
 [XML](xml).
 
-<example>
+<example highlight="json">
     {
       "value": 42,
       "name": [ "forty-two", "forty two", "42" ],

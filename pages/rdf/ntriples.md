@@ -5,4 +5,4 @@ model: rdf
 base: unicode
 ---
 
-**N-Triples** ist eine Serialisierung von [RDF](../rdf).
+**N-Triples** ist eine Serialisierung von [RDF](../rdf). Die Syntax ist eine Teilmenge von [Turtle](turtle).

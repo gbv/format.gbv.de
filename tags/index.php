@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="<?=$BASE?>/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?=$BASE?>/css/bootstrap4-vzg.css">
+  <link rel="stylesheet" href="<?=$BASE?>/css/prism.css">
+  <style>.hljs { padding: 0; }</style>
 <?php
 foreach (($css ?? []) as $href) {
     echo "  <link rel='stylesheet' href='$href'>\n";
@@ -66,6 +68,7 @@ include 'infobox.php';
 </body>
 <script src="<?=$BASE?>/js/jquery-3.3.1.min.js"></script>
 <script src="<?=$BASE?>/js/bootstrap.bundle.min.js"></script>
+<script src="<?=$BASE?>/js/prism.js"></script>
 <?php
 foreach (($javascript ?? []) as $js) {
     if (preg_match('/[\r\n]/', $js)) {

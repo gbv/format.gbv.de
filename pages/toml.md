@@ -13,7 +13,7 @@ application: structure
 eine Erweiterung des Modells von [JSON](json) ohne `null`-Werte um Datentypen
 für Zeit und Datum.
 
-<example>
+<example highlight="toml">
     value = 42
     name = [ "forty-two", "forty two", "42" ]
 

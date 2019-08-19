@@ -11,6 +11,14 @@ contributor: Aaron Swartz
 üblichste Form ist als [CommonMark](http://commonmark.org/) definiert. Darüber
 hinaus gibt es mehrere Erweiterungen und Varianten.
 
+<example highlight="md">
+**Das Schloß** ist ein posthum erschienener unvollendeter
+Roman von [*Frank Kafka*](http://www.franzkafka.de):
+
+* Erscheinungsdatum: 1926
+* Herausgeber: Max Brod
+</example>
+
 <!--
 * CommonMark
 * Github Flavored Markdown (GFM)
