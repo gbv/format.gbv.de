@@ -1,0 +1,22 @@
+@page {
+  size: A4;
+  margin: 0mm;
+}
+@media print {
+  html, body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0mm;
+  }    
+  .card {
+    padding: 3mm 10mm 3mm 10mm;
+    border-bottom: 1px dotted #aaa;
+    width: 100%;
+    height: 102mm;
+    page-break-inside: avoid;
+  }
+  .card pre {
+    font-size: 1.2em !important;
+    line-height: 1.5;
+  }
+}
