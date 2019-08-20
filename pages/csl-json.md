@@ -23,13 +23,8 @@ erstellen. Das Datenmodell wird in der Regel als [JSON](json)-Format verwendet
       "publisher-place": "München",
       "language": "de",
       "author": [
-        {
-          "family": "Kafka",
-          "given": "Franz"
-        }
+        { "family": "Kafka", "given": "Franz" }
       ],
-      "issued": {
-        "date-parts": [ [ "1926" ] ]
-      }
+      "issued": { "date-parts": [ [ "1926" ] ] }
     }
 </example>
