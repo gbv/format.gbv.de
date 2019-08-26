@@ -29,7 +29,7 @@
       "vendor/bin/phpunit tests",
       "vendor/bin/phpunit tests/mytcms",
       "vendor/bin/phpunit tests/Avram",
-      "vendor/bin/phpcs --ignore=*.min.* src tags public tests"
+      "vendor/bin/phpcs --ignore=*.js,*.css src tags public tests"
     ]
   },
   "require-dev": {
