@@ -8,12 +8,10 @@ base: bytes
 
 Enthält ein Unterfeld das Zeichen `$` so wird dieses verdoppelt (`$$`).
 
-## Beispiel
-
-~~~
+<example>
 003@ $012345X
 021A $aEin Buch$hzum Lesen
-~~~
+</example>
 
 ## APIs
 
