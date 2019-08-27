@@ -8,7 +8,8 @@ model: endnote
 
 Das Endnote-Format des gleichnamigen Literaturverwaltungsprogramms basiert auf
 einfachen Feldern die mit einem Prozentzeichen eingeleitet werden. Übliche
-Alternativen sind [RIS](ris) und [BibTeX](bibtex).
+Alternativen sind [RIS](ris) und [BibTeX](bibtex). Daneben gibt es [EndNote
+XML](endnote/xml).
 
 <example>
     %0 Book
