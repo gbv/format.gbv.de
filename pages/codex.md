@@ -2,7 +2,9 @@
 title: Codex Metadata Model
 short: Codex
 homepage: https://wiki.folio.org/pages/viewpage.action?pageId=1415393
-application: model
+application:
+  - bibliographic
+  - model
 ---
 
 **Codex** ist ein abstraktes Datenmodell zur Integration von Metadaten

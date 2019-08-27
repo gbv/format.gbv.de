@@ -13,7 +13,7 @@ Abschnitten gruppiert werden können.
 <example highlight="ini">
 [book]
 title = Das Schloß
-author = Frank Kafka
+author = Franz Kafka
 year = 1926
 
 [publisher]

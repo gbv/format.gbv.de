@@ -14,3 +14,5 @@ RDF-Ontologie](rdf/voc/bf) ausgedrückt.
 
 Die Library of Congress stellt Skripte zur Konvertierung ausgewählter
 MARC-Formate nach BIBFRAME bereit.
+
+![](https://upload.wikimedia.org/wikipedia/commons/4/4d/Bibframe2-model.jpg)

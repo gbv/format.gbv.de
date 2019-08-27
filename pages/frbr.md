@@ -9,7 +9,7 @@ application:
   - model
 ---
 
-**FRAD** ist ein von der IFLA entwickeltes Datenmodell für die wesentlichen
+**FRBR** ist ein von der IFLA entwickeltes Datenmodell für die wesentlichen
 Entitätstypen bibliographischer Daten.
 
-Verwandte Datenmodelle für Normdaten sind [FRAD](frasd) und [FRAD](frad).
+Verwandte Datenmodelle für Normdaten sind [FRASD](frsad) und [FRAD](frad).

@@ -13,7 +13,7 @@ hinaus gibt es mehrere Erweiterungen und Varianten.
 
 <example highlight="md">
 **Das Schloß** ist ein posthum erschienener unvollendeter
-Roman von [*Frank Kafka*](http://www.franzkafka.de):
+Roman von [*Franz Kafka*](http://www.franzkafka.de):
 
 * Erscheinungsdatum: 1926
 * Herausgeber: Max Brod
