@@ -13,14 +13,12 @@ vorhanden) oder `null`. Es folgen abwechselnd Unterfeld-Code und
 Unterfeld-Inhalt. Ein PICA-Datensatz ist in PICA JSON ein JSON-Array aller
 Felder. 
 
-## Beispiel
-
-~~~json
+<example highlight="json">
 [
   [ "003@", null, "0", "12345X" ],
   [ "021A", null, "a", "Ein Buch", "h", "zum Lesen" ]
 ]
-~~~
+</example>
 
 Die gleiche Struktur kann als [MARC JSON](../marc/json) zur Kodierung von
 [MARC](../marc) verwendet werden.

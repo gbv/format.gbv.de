@@ -24,16 +24,14 @@ Dokumentation von Feldern und Unterfeldern mit Angaben aus einem
 [Avram-Schema](../schema/avram). Der XML-Namensraum
 `info:srw/schema/5/picaXML-v1.0` bleibt gleich.
 
-## Beispiel
-
-~~~xml
-<record xmlns="info:srw/schema/5/picaXML-v1.0">
-  <datafield tag="003@">
-    <subfield code="0">12345X</ppxml:subf>
-  </datafield>
-  <datafield tag="021A">
-    <subfield code="a">Ein Buch</ppxml:subf>
-    <subfield code="h">zum Lesen</ppxml:subf>
-  </datafield>
-</tag>
-~~~
+<example highlight="xml">
+    &lt;record xmlns="info:srw/schema/5/picaXML-v1.0">
+      &lt;datafield tag="003@">
+        &lt;subfield code="0">12345X&lt;/ppxml:subf>
+      &lt;/datafield>
+      &lt;datafield tag="021A">
+        &lt;subfield code="a">Ein Buch&lt;/ppxml:subf>
+        &lt;subfield code="h">zum Lesen&lt;/ppxml:subf>
+      &lt;/datafield>
+    &lt;/tag>
+</example>

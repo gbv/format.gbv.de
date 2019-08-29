@@ -9,13 +9,11 @@ base: json
 
 Die entsprechende Kodierung von [PICA](../pica) ist [PICA JSON](../pica/json).
 
-## Beispiel
-
-~~~json
+<example highlight="json">
 [
   ["LDR", null, null, "_", "01471cjm a2200349 a 4500"], 
   ["001", null, null, "_", "5674874"], 
   ["035", " ", " ", "9", "(DLC)   93707283"],
   ["245", "1", "0", "a", "Title :", "b", "subtitle."]
 ]
-~~~
+</example>
