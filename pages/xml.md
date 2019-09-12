@@ -27,10 +27,16 @@ Folgende Datenformate basieren auf XML:
 
 <list-formats base="xml"/>
 
+Neben der Standard-XML-Syntax kann XML ausgedrückt werden in:
+
+<list-encodings model="xml" title=""/>
+
+Zur Abfrage von XML-Daten gibt es:
+
+<list-formats over="xml"/>
+
 Zur Spezifikation von XML-basierten Formaten eignen sich:
 
 <list-formats for="xml"/>
 
-Neben der Standard-XML-Syntax kann XML ausgedrückt werden in:
 
-<list-encodings model="xml" title=""/>

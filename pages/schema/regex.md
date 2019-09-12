@@ -2,6 +2,12 @@
 title: Reguläre Ausdrücke
 short: Regex
 wikidata: Q185612 
+application:
+  - schema
+  - query
+over:
+  - unicode
+  - bytes 
 for:
   - unicode
   - bytes 

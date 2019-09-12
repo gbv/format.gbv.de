@@ -30,6 +30,10 @@ Zur Spezifikation von JSON-basierten Formaten eignen sich:
 
 <list-formats for="json"/>
 
+Zur Abfrage von JSON-Daten gibt es unter Anderem:
+
+<list-formats over="json"/>
+
 <list-encodings model="json"/> <!-- TODO include JSON-Syntax -->
 
 Außerdem ist [YAML](yaml) eine Verallgemeinerung von JSON und damit direkt für

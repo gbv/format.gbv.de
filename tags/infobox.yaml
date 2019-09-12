@@ -29,6 +29,40 @@ mimetype:
     label: Content Type
     icon: description
     
+base:
+    label: Format
+    style: link
+    icon: arrow-up
+    tooltip: Dieses Format dient als Grundlage
+
+model:
+    label: Datenmodell
+    style: link
+    icon: arrow-up
+
+application:
+    label: Anwendung
+    plural: Anwendungen
+    style: link
+    icon: build
+
+over:
+    label: Zur Abfrage von
+    style: link
+    icon: query
+
+profiles:
+    label: Anwendungsprofil von
+    style: link
+    icon: arrow-up
+    tooltip: Dieses Format dient als Grundlage
+
+schemas:
+    label: Schema
+    plural: Schemas
+    style: schema
+    icon: border-none-variant
+
 wikidata:
     label: Wikidata
     style: qid
@@ -47,32 +81,4 @@ lov:
     icon: web-asset
     tooltip: Eintrag im Ontologie-Verzeichnis Linked Open Vocabularies (LOV)
 
-base:
-    label: Format
-    style: link
-    icon: arrow-up
-    tooltip: Dieses Format dient als Grundlage
-
-model:
-    label: Datenmodell
-    style: link
-    icon: arrow-up
-
-application:
-    label: Anwendung
-    plural: Anwendungen
-    style: link
-    icon: build
-
-profiles:
-    label: Anwendungsprofil von
-    style: link
-    icon: arrow-up
-    tooltip: Dieses Format dient als Grundlage
-
-schemas:
-    label: Schema
-    plural: Schemas
-    style: schema
-    icon: border-none-variant
 

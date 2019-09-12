@@ -6,6 +6,8 @@
   - application/authority
   - application/documents
   - schema/language
+  - application/query
+
 - structure
 - code
 - model

@@ -1,5 +1,7 @@
 <?php
 
+$schemas = [];
+
 foreach ($PAGES->select(['schemas'=>null]) as $id => $page) {
     foreach ($page['schemas'] as $schema) {
         if ($schema['type'] == $format) {
