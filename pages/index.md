@@ -47,6 +47,10 @@ Standards aber nicht vollständig mit Schemas formalisieren.
 
 <list-formats application="model"/>
 
+### [Abfragesprachen](application/query)
+
+<list-formats over="*"/>
+
 ### [Schemasprachen](schema/language)
 
 <list-formats for="*"/>
