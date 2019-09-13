@@ -1,4 +1,4 @@
-.PHONY: test style web metadata
+.PHONY: test style web metadata validate
 
 test: metadata
 	composer test
@@ -14,11 +14,10 @@ web:
 	php -S localhost:8020 -t public
 
 metadata:
-	mkdir -p pages/data/dumps
-	php bin/metadata.php > pages/data/dumps/latest.json
+	@npm run metadata
 
 validate:
-	@./bin/metadata.js $$(find pages -name '*.md') >/dev/null
+	@npm run validate
 
 formats.json: metadata
 formats.dot: formats.json

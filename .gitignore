@@ -10,7 +10,10 @@ config/picahelp.json
 # Avram specification
 pages/schema/avram
 
-# WebPublisher
+# node dependencies
+node_modules/
+
+# PHP dependencies
 composer.phar
 composer.lock
 vendor/*
