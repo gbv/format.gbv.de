@@ -11,8 +11,8 @@ mimetype: application/json
 ---
 
 **JavaScript Object Notation (JSON)** ist ein hierarchisches Datenformat, das
-vor allem in Webanwendungen verwendet wird. Eine übliche Alternative ist
-[XML](xml).
+vor allem in Webanwendungen verwendet wird. Verbreitete Alternativen sind
+[XML](xml) und [YAML](yaml).
 
 <example highlight="json">
     {
@@ -26,22 +26,24 @@ vor allem in Webanwendungen verwendet wird. Eine übliche Alternative ist
     }
 </example>
 
-Zur Spezifikation von JSON-basierten Formaten eignen sich:
+<list-encodings model="json">
+Neben der JSON-Syntax kann JSON ausgedrückt werden in:
+</list-encodings>
 
-<list-formats for="json"/>
+Außerdem ist [YAML](yaml) eine Verallgemeinerung von JSON und damit auch zum
+Serialisieren von JSON-Dokumenten einsetzbar. Die binären
+Strukturierungssprachen [CBOR](cbor), [BSON](bson) und [MessagePack](msgpack)
+decken ebenfalls einen Großteil des JSON-Modells ab.  In der Regel treten
+JSON-Daten als [I-JSON](i-json) oder [NDJSON](ndjson) auf.
 
+<list-formats over="json" title="Abfragesprachen">
 Zur Abfrage von JSON-Daten gibt es unter Anderem:
+</list-formats>
 
-<list-formats over="json"/>
+<list-formats for="json" title="Schemasprachen">
+Zur Spezifikation von JSON-basierten Formaten eignen sich:
+</list-formats>
 
-<list-encodings model="json"/> <!-- TODO include JSON-Syntax -->
-
-Außerdem ist [YAML](yaml) eine Verallgemeinerung von JSON und damit direkt für
-JSON-Dokumente einsetzbar. Die binären Strukturierungssprachen [CBOR](cbor),
-[BSON](bson) und [MessagePack](msgpack) decken ebenfalls einen Großteil des
-JSON-Modells ab.  In der Regel treten JSON-Daten als [I-JSON](i-json) und/oder
-ndjson auf.
-
-Folgende Datenformate basieren auf JSON:
-
-<list-formats base="json"/>
+<list-formats base="json" title="Datenformate">
+Folgende hier erfasste Datenformate basieren auf JSON:
+</list-formats>

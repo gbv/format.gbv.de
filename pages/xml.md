@@ -23,20 +23,18 @@ einfachere Alternative dient oft [JSON](json).
 &lt;/book>
 </example>
 
-Folgende Datenformate basieren auf XML:
-
-<list-formats base="xml"/>
-
+<list-encodings model="xml" title="Serialisierungen">
 Neben der Standard-XML-Syntax kann XML ausgedrückt werden in:
+</list-encodings>
 
-<list-encodings model="xml" title=""/>
-
+<list-formats over="xml" title="Abfragesprachen">
 Zur Abfrage von XML-Daten gibt es:
+</list-formats>
 
-<list-formats over="xml"/>
-
+<list-formats for="xml" title="Schemasprachen">
 Zur Spezifikation von XML-basierten Formaten eignen sich:
+</list-formats>
 
-<list-formats for="xml"/>
-
-
+<list-formats base="xml" title="Datenformate">
+Folgende hier erfasste Datenformate basieren auf XML:
+</list-formats>

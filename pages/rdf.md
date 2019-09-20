@@ -31,8 +31,8 @@ jeweiligen Prefix abgerufen werden. Beispiele:
 
 [Linked Open Vocabularies (LOV)]: http://lov.okfn.org/
 
+<list-formats for="rdf" title="Schemasprachen">
 Zur Spezifikation von Ontologien und RDF-Daten eignen sich:
-
-<list-formats for="rdf"/>
+</list-formats>
 
 <list-encodings model="rdf"/>
