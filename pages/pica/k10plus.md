@@ -6,7 +6,7 @@ application:
   - authority
 javascript:
   - js/demo.js
-homepage: https://www.bszgbv.de/
+homepage: https://wiki.k10plus.de/display/K10PLUS/K10plus+Format-Dokumentation
 ---
 
 **K10plus** ist der gemeinsame Katalog der Bibliotheksservice-Zentrum
