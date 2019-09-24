@@ -21,3 +21,4 @@ Einige konkreten CSV-Dialekte:
 
 <list-formats profiles="csv"/>
 
+Zur Abfrage von Inhalten aus CSV-Daten existiert der Standard [RFC 7111](query/rfc7111).
