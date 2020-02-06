@@ -27,11 +27,11 @@ Dokumentation von Feldern und Unterfeldern mit Angaben aus einem
 <example highlight="xml">
     &lt;record xmlns="info:srw/schema/5/picaXML-v1.0">
       &lt;datafield tag="003@">
-        &lt;subfield code="0">12345X&lt;/ppxml:subf>
+        &lt;subfield code="0">12345X&lt;/subfield>
       &lt;/datafield>
       &lt;datafield tag="021A">
-        &lt;subfield code="a">Ein Buch&lt;/ppxml:subf>
-        &lt;subfield code="h">zum Lesen&lt;/ppxml:subf>
+        &lt;subfield code="a">Ein Buch&lt;/subfield>
+        &lt;subfield code="h">zum Lesen&lt;/subfield>
       &lt;/datafield>
-    &lt;/tag>
+    &lt;/record>
 </example>
