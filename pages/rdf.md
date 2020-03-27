@@ -5,7 +5,7 @@ application: structure
 ---
 
 Das **Resource Description Framework (RDF)** ist ein Graph-basiertes
-Datenformat.  Die Grundeinheit von RDF-Daten sind Tripel bestend aus Subjekt,
+Datenformat.  Die Grundeinheit von RDF-Daten sind Tripel bestehend aus Subjekt,
 Prädikat und Objekt.  Das RDF-Format bildet die Grundlage des so genannten
 Semantic Web und von Linked (Open) Data. RDF-Daten können in verschiedenen
 *Serialisierungen* vorkommen, die sich verlustfrei ineinander umwandeln lassen.
