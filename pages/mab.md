@@ -1,7 +1,7 @@
 ---
 title: Maschinelles Austauschformat für Bibliotheken
 short: MAB
-homepage: http://www.dnb.de/DE/Standardisierung/Formate/MAB/mab_node.html
+homepage: https://web.archive.org/web/20181121033620/https://www.dnb.de/DE/Standardisierung/Formate/MAB/mab_node.html
 wikidata: Q1906834
 application:
   - bibliographic

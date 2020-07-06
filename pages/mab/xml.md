@@ -1,6 +1,6 @@
 ---
 title: MABxml
-homepage: http://www.dnb.de/mabxml
+homepage: https://web.archive.org/web/20170629194440/http://www.dnb.de/DE/Standardisierung/Formate/MAB/mabxml.html
 model: mab
 base: xml
 schemas:
