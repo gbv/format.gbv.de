@@ -43,7 +43,7 @@ Standards aber nicht vollständig mit Schemas formalisieren.
 
 <list-formats application="structure"/>
 
-### [Modellierungssprachen](model)
+### [Datenmodelle](model)
 
 <list-formats application="model"/>
 
