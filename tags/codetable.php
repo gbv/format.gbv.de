@@ -11,7 +11,7 @@
 $codings = $PAGES->select(['model' => null, 'base' => null]);
 foreach ($codings as $coding) {
     $syntax = ($coding['id'] == $coding['model']);
-?>
+    ?>
     <tr>
       <td><?= $TAGS->link(['id' => $coding['id'], 'syntax' => $syntax]); ?></td>
       <td><?= $TAGS->link(['id' => $coding['model']]); ?></td>
@@ -20,7 +20,7 @@ foreach ($codings as $coding) {
         echo implode(', ', array_map(function ($id) use ($TAGS) {
             return $TAGS->link(['id' => $id]);
         }, $bases));
-        ?></td>
+            ?></td>
     </tr>
 <?php } ?>
   </tbody>

@@ -14,17 +14,17 @@ foreach ($PAGES->select(['schemas'=>null]) as $id => $page) {
 if (count($schemas)) { ?>
 <h3><?=$title ?? 'Schemas'?></h3>
 <ul>
-<?php
-foreach ($schemas as $schema) {
-    echo '<li>';
-    echo $TAGS->link(['id' => $schema['format']]);
-    if (isset($schema['version'])) {
-        echo " ".$schema['version'];
+    <?php
+    foreach ($schemas as $schema) {
+        echo '<li>';
+        echo $TAGS->link(['id' => $schema['format']]);
+        if (isset($schema['version'])) {
+            echo " ".$schema['version'];
+        }
+        echo '<br>';
+        echo "<a href='{$schema['url']}'>{$schema['url']}</a>";
+        echo '</li>';
     }
-    echo '<br>';
-    echo "<a href='{$schema['url']}'>{$schema['url']}</a>";
-    echo '</li>';
-}
-?>
+    ?>
 </ul>
 <?php }

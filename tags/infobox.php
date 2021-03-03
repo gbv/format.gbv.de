@@ -77,8 +77,8 @@ foreach ($fields as $name => $field) {
 
 if (count($infobox)) { ?>
   <table class="table table-sm">
-<?php foreach ($infobox as $key => $value) {
-    echo "<tr><td>$key</td><td>$value</td></tr>\n";
-} ?>
+    <?php foreach ($infobox as $key => $value) {
+        echo "<tr><td>$key</td><td>$value</td></tr>\n";
+    } ?>
   </table>
 <?php }
