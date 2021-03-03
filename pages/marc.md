@@ -24,25 +24,10 @@ Anwendungsformate.
 
 <list-formats profiles="marc"/>
 
-Darüber hinaus gibt es viele weitere Erweiterungen und Abweichungen die erst noch erfasst werden müssen.
-
+Darüber hinaus gibt es viele weitere Erweiterungen und Abweichungen die erst
+noch erfasst werden müssen.
 
 ## MARC-Schema
 
 Die [Avram Schema Language](schema/avram) ist eine Sprache zur Beschreibung
 von MARC-basierten Formaten.
-
-Die von Péter Király zusammengetragenen Spezifikation MARC-Formats für
-bibliographische Daten kann hier abgerufen werden. Beispiele:
-
-* [schema](marc/bibliographic/schema)
-* <a href="marc/bibliographic/schema/110" class="demo">110</a>
-* <a href="marc/bibliographic/schema/130" class="demo">130</a>
-* ...
-
-<div id="demo" style="display: none">
-  <h3>Antwort</h3>
-  <p id="demo-url"><b>Url</b> <a></a></p>
-  <pre id="demo-output"><code></code></pre>
-</div>
-
