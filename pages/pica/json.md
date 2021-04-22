@@ -23,6 +23,17 @@ Felder.
 Die gleiche Struktur kann als [MARC JSON](../marc/json) zur Kodierung von
 [MARC](../marc) verwendet werden.
 
+Bei der Erweiterung [Annotated PICA](./plain) wird die Feld-Markierung als 
+letztes Array-Element angefügt:
+
+<example highlight="json">
+[
+  [ "003@", null, "0", "12345X", " " ],
+  [ "021A", null, "a", "Ein Buch", "h", "zum Lesen", "-" ],
+  [ "021A", null, "a", "Ein gutes Buch", "h", "zum Lesen und Genießen", "+" ]
+]
+</example>
+
 ## APIs
 
 Über die unAPI-Schnittstelle der VZG kann PICA JSON mit dem Parameter

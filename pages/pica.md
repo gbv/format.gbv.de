@@ -13,6 +13,9 @@ unter [PICA-Format](https://verbundwiki.gbv.de/display/VZG/PICA-Format),
 Bedeutung einzelner Felder und Unterfelder im PICA-Format hängt von konkreten
 Katalogisierungsrichtlinien ab.
 
+Eine ausführliche Beschreibung des PICA-Format und seiner Anwendung liefert das
+Handbuch ["Einführung in die Verarbeitung von PICA-Daten"](https://pro4bib.github.io/pica/).
+
 ## Katalogisierungsrichtlinien
 
 Die Sammlung von einzelnen PICA-Formaten und dazu gehörigen
