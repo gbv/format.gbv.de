@@ -5,6 +5,7 @@ homepage: https://schema.datacite.org/
 base: xml
 model: datacite
 mimetype: application/vnd.datacite.datacite+xml
+wikidata: Q105762834
 schemas:
   - url: https://schema.datacite.org/meta/kernel-4.1/metadata.xsd
     type: xsd
@@ -16,5 +17,4 @@ schemas:
     doi: https://doi.org/10.5438/0013
 ---
 
-Das offizielle Schema des [DataCite-Format](../datacite) liegt als [XML
-Schema](../schema/xsd) vor.
+Das offizielle Schema des [DataCite-Format](../datacite) liegt als [XML Schema](../schema/xsd) vor.
