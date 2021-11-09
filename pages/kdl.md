@@ -1,6 +1,5 @@
 ---
-title: Simple Declarative Language
-short: KDL
+title: KDL
 homepage: https://kdl.dev/
 application: structure
 created: 2021
