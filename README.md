@@ -10,12 +10,12 @@ Dieses Repository enthält den Quellcode und die Quelldaten der unter
 
 Erfordert mindestens PHP 7 mit Erweiterungen für MySQL-PDO und XML.
 
-    $ sudo apt-get install php-mysql php-xml
+    $ sudo apt-get install php-mysql php-xml php-mbstring php-curl
 
 Die Konfigurationsdatei (siehe Beispiel `config/picahelp.example.json`) muss
 nach `config/picahelp.json` kopiert und angepasst werden.
 
-Weitere verwendeten PHP-Module werden mit Composer installiert:
+Weitere verwendeten PHP-Module werden mit [Composer](https://getcomposer.org/) installiert:
 
     $ composer install
 
