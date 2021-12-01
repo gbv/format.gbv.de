@@ -5,13 +5,12 @@ base: bytes
 homepage: http://www.loc.gov/marc/makrbrkr.html
 ---
 
-Bei der Kodierung von [MARC](../marc) im MARCMaker-Format werden Unterfelder
-durch `$` getrennt und Felder durch `=` eingeleitet. Der Leader kann durch
-`=000` oder `=LDR` gekennzeichnet sein.
+Beim Zeilenbasierten MARCMaker-Format werden Unterfelder werden [MARC](../marc)-Felder durch `=` und Unterfelder durch `$` eingeleitet.. Der Leader kann durch `=000` oder `=LDR` gekennzeichnet sein. Der Backslash (`\`) steht für das Leerzeichen als Indikator.
 
 <example>
 =000   01471cjm a2200349 a 4500
 =001   5674874
-=035 \\$9(DLC)   93707283
+=035 \\$a(OCoLC)123456
 =245 10$aTitle :$bsubtitle.
+=856 4\$uhtp://example.org
 </example>
