@@ -16,6 +16,9 @@ Katalogisierungsrichtlinien ab.
 Eine ausführliche Beschreibung des PICA-Format und seiner Anwendung liefert das
 Handbuch ["Einführung in die Verarbeitung von PICA-Daten"](https://pro4bib.github.io/pica/).
 
+Mit [PICA Path](query/pica-path) wird eine Abfragesprache zur Referenzierung
+von PICA-Feldern und -Unterfelder entwickelt.
+
 ## Katalogisierungsrichtlinien
 
 Die Sammlung von einzelnen PICA-Formaten und dazu gehörigen
