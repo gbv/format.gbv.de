@@ -17,24 +17,40 @@ Mit **PICA Path** Ausdrücken lassen sich einzelne Felder, Unterfelder und Feldi
 
 ## Syntax
 
-Die aktuelle PICA Path Syntax lässt sich folgendermaßen formal beschreiben:
+Zur vollständigen Unterstützung von PICA Path muss mindestens folgende formale Syntax erkannt werden:
 
 ~~~
-path             ::=  ( tag | xtag ) occurrence? subfields? position?
+path             ::=  ( tag | xtag ) occurrence? subfields?
 tag              ::=  [012.] [0-9.] [0-9.] [A-Z@.]
 xtag             ::=  "2" [0-9.] [0-9.] [A-Z@.] "x" number
-occurrence       ::=  "/" occurenceValue 
+occurrence       ::=  "/" occurenceValue
 occurenceValue   ::=  number "-" number | occurrencePattern | "*"
-occurencePattern ::=  [0-9.] [0-9.]? [0-9.]?
+occurencePattern ::=  [0-9] [0-9]? [0-9]?
 subfields        ::=  [$.]? ( [A-Za-z0-9]+ | "*" )
-position         ::=  "/" ( number | range ) 
-range            ::=  number "-" number? | "-" number
 number           ::=  [0-9]+
 ~~~
 
-Falls keine `occurrence` angegeben ist, wird als Standardwert `0` angenommen (keine Occcurrence) bzw. `*` (beliebige Occurrence) wenn der Ausdruck mit `2` oder mit `.` beginnt.
+Als Standard-Erweiterungen sind die Angabe von Positionen in Unterfeldwerten (`position`) und eine alternative Syntax zur Angabe von Occurrences möglich (umgesetzt in den Werkzeugen `picadata` und `Catmandu`):
 
-picadata und Catmandu erlauben zusätzlich eine alternative Syntax zur Angabe von Occurrences (`occurrence`)
+~~~
+path             ::=  ( tag | xtag ) occurrence? ( subfields position? )?
+position         ::=  "/" ( number | range ) 
+range            ::=  number "-" number? | "-" number
+occurrence       ::=  "/" occurenceValue | "[" occurrenceValue "]"
+occurencePattern ::=  [0-9.] [0-9.]? [0-9.]?
+~~~
 
-pica-rs erweitert die Syntax um zusätzlich Möglichkeiten zur Referenzierung von Feldnummern (`tag`) und unterstützt keine Positionsangaben (`position`).
+Positionsangaben beziehen sich nicht auf Bytes sondern auf Unicode-Codepunkte. Bei Positionsangaben über mehrere Unterfelder werden die Unterfeldwerte in Reihenfolge ihres Vorkommens im Feld zu einer Zeichenkette zusammengefügt.
+
+Falls keine Occurrence angegeben ist, wird als Standardwert `0` angenommen (keine Occcurrence) bzw. `*` (beliebige Occurrence) wenn der Ausdruck mit `2` oder mit `.` beginnt.
+
+Ein Ausdruck mit X-Occurrence (`xtag`) passt auf Felder der Ebene 2, bei denen das Unterfeld `x` dem angegebenen Wert entspricht.
+
+Zur Besseren Lesbarkeit sollten PICA Path Ausdrücke folgendermaßen normalisiert werden:
+
+* Unterfelder sollten immer mit dem Unterfeld-Indikators `$` bzw. wenn dieses Zeichen leicht anders interpretiert werden würde mit `.` eingeleitet werden (also z.B. `003@$0` oder `003@.0` statt `003@0`)
+
+* Occurrences sollten immer mit zwei Stellen angegeben werden (also z.B. `045B/02` statt `045B/2`). Für Felder der Ebene 2 können auch 3 Stellen verwendet werden.
+
+* Die Null-Occurrence sollte weggelassen werden (also z.B. `003@` statt `003@/00`)
 
