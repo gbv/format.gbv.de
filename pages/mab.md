@@ -8,13 +8,14 @@ application:
   - authority
 ---
 
-Das **Maschinelle Austauschformat für Bibliotheken (MAB)** war im
-deutschsprachigen Bibliothekswesen verbreitet. Die aktuelle Version ist
-**MAB2**. Das Format wird nicht mehr weiterentwickelt.
+Das **Maschinelle Austauschformat für Bibliotheken (MAB)** wurde in den 1970er Jahren für das deutschsprachige Bibliothekswesen entwickelt und 1995 als **MAB2** überarbeitet. MAB2 wurde primär als Austauschformat eingesetzt, im Österreichischen Bibliotheksverbund auch als Internformat. Die Weiterentwicklung und Pflege wurde 2006 beendet und das Format spätestens 2012 mit Wechsel zu [MARC21](marc) abgelöst. Vereinzelt ist MAB2 noch in Altsystemen im Einsatz.
 
 ## Serialisierungen
 
 * MAB2 (Binärformat)
 * [MABxml](mab/xml)
 
-<!-- TODO: see https://www.obvsg.at/katalogisierung/formate/ -->
+## Formate
+
+* [MAB2 als Internformat im ÖBV](https://web.archive.org/web/20210506014336/https://www.obvsg.at/katalogisierung/formate/mab2-internformat/) (Archiv)
+
