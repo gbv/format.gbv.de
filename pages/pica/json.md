@@ -1,6 +1,8 @@
 ---
 title: PICA JSON
-model: pica
+model:
+- pica
+- pica/patch
 base: json
 ---
 
@@ -23,8 +25,9 @@ Felder.
 Die gleiche Struktur kann als [MARC JSON](../marc/json) zur Kodierung von
 [MARC](../marc) verwendet werden.
 
-Bei der Erweiterung [Annotated PICA](./plain) wird die Feld-Markierung als 
-letztes Array-Element angefügt:
+Optional kann als letztes Array-Element eine Feld-Markierung in Form eines
+nicht-alphanumerischen Zeichen angefügt werden, um unter Anderem [PICA
+Patch](patch) Format in JSON abzubilden:
 
 <example highlight="json">
 [

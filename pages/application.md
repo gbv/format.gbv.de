@@ -13,6 +13,7 @@ grob unterteilt in:
 * [Formate für Normdaten](application/authority)
 * [Dokumentformate](application/documents)
 * [Schemasprachen](schema/language) dienen der Beschreibung anderer Formate 
+* [Änderungsformate](application/patch) zur Beschreibung von Änderungen an Daten
 
 Neben konkreten Anwendungsformaten gibt es allgemeinere [Datenmodelle](model),
 die lediglich als Grundlage für konkrete Datenformate dienen.

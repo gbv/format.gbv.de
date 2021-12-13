@@ -44,6 +44,10 @@ Zur Abfrage von JSON-Daten gibt es unter Anderem:
 Zur Spezifikation von JSON-basierten Formaten eignen sich:
 </list-formats>
 
+<list-formats base="json" application="patch" title="Änderungssprachen">
+Zur Angabe von Änderungen an JSON-Daten gibt es:
+</list-formats>
+
 <list-formats base="json" title="Datenformate">
 Folgende hier erfasste Datenformate basieren auf JSON:
 </list-formats>

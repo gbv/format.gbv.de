@@ -55,3 +55,7 @@ Standards aber nicht vollständig mit Schemas formalisieren.
 
 <list-formats for="*"/>
 
+### [Änderungsformate](application/patch)
+
+<list-formats application="patch"/>
+
