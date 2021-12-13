@@ -4,12 +4,6 @@
 .project
 .settings
 
-# local config file
-config/picahelp.json
-
-# Avram specification
-pages/schema/avram
-
 # node dependencies
 node_modules/
 
@@ -17,3 +11,6 @@ node_modules/
 composer.phar
 composer.lock
 vendor/*
+
+# cache
+cache/

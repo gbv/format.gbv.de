@@ -34,7 +34,7 @@ dct:publisher:
 dct:creator: Jakob Voß
 
 dct:source:
-  '@id': http://lov.okfn.org/dataset/lov
+  '@id': https://lov.linkeddata.es/dataset/lov
   dct:license:
     '@id': http://creativecommons.org/licenses/by/4.0/
 

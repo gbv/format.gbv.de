@@ -11,7 +11,7 @@ class LOV extends HTML
             return;
         }
 
-        $url = "http://lov.okfn.org/dataset/lov/api/v2/vocabulary/info?vocab=$id";
+        $url = "https://lov.linkeddata.es/dataset/lov/api/v2/vocabulary/info?vocab=$id";
         $data = file_get_contents($url);
         $data = json_decode($data, true);
 
@@ -38,11 +38,13 @@ class LOV extends HTML
         $data['BODY'      ] = $description ? "<p>$description</p>" : '';
         $data['publisher' ] = $publishers ?? null;
         $data['base']       = 'rdf';
-        $data['lov']        = "http://lov.okfn.org/dataset/lov/vocabs/$id";
+        $data['lov']        = "https://lov.linkeddata.es/dataset/lov/vocabs/$id";
 
         # TODO: add schemas (Expressivity)
 
         # TODO: adjust source to LOV
+
+        // TODO: include information from local knowledge base (#10)
 
         // TODO: add incoming and outgoing links
         // TODO: add equivalence to Wikidata and BARTOC
@@ -52,17 +54,15 @@ class LOV extends HTML
 
     public function page($f3, string $path)
     {
-        $data = $this->data($path);
-
-        if ($data) {
-            return $data;
+        if ($path == '') {
+            return parent::page($f3, 'rdf/lov');
         } else {
-            if ($path == '') {
-                return parent::page($f3, 'rdf/lov');
+            $data = $this->data($path);
+            if ($data) {
+                return $data;
             } else {
                 $f3->error(404);
             }
-            return;
         }
     }
 }

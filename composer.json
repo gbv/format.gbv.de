@@ -28,7 +28,6 @@
     "test": [
       "vendor/bin/phpunit tests",
       "vendor/bin/phpunit tests/mytcms",
-      "vendor/bin/phpunit tests/Avram",
       "vendor/bin/phpcs --ignore=*.js,*.css src tags public tests"
     ]
   },

@@ -1,6 +1,6 @@
 <?php
 
-$url = 'http://lov.okfn.org/dataset/lov/api/v2/vocabulary/list';
+$url = 'https://lov.linkeddata.es/dataset/lov/api/v2/vocabulary/list';
 $data = file_get_contents($url);
 $data = json_decode($data, true);
 

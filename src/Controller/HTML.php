@@ -87,20 +87,6 @@ class HTML
             }
         }
 
-        # load Avram Schema
-        if (preg_match('!^http://format\.gbv\.de/(.+)\.json$!', $query['schema'] ?? '', $match)) {
-            $file = $this->root . $match[1] . ".yaml";
-            if (file_exists($file)) {
-                $data = Yaml::parse(file_get_contents($file));
-                if ($data['$schema'] == 'https://format.gbv.de/schema/avram/schema.json') {
-                    $schema = new \Avram\Schema($data);
-                    $api = new \Avram\API();
-                    $api->request($schema, $query);
-                    return;
-                }
-            }
-        }
-
         $data = $this->page($f3, $path);
         if (!$data) {
             $f3->error('404');

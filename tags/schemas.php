@@ -19,12 +19,7 @@ foreach ($PAGES->select(['schemas'=>null]) as $id => $page) {
             echo "<td></td>";
         }
         $url = $schema['url'];
-        echo "<td><a href='$url'>$url</a>";
-        if ($schema['type'] == 'avram') {
-            # TODO: add link to Schema API
-            //echo "<br>...";
-        }
-        echo "</td>";
+        echo "<td><a href='$url'>$url</a></td>";
         $type = 'schema/'.$schema['type'];
         echo "<td>".$TAGS->link(['id'=>$type])."</td>";
         echo "</tr>";

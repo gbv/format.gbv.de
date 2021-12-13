@@ -29,8 +29,6 @@ jeweiligen Prefix abgerufen werden. Beispiele:
     - implizite profile
 -->
 
-[Linked Open Vocabularies (LOV)]: http://lov.okfn.org/
-
 <list-formats for="rdf" title="Schemasprachen">
 Zur Spezifikation von Ontologien und RDF-Daten eignen sich:
 </list-formats>
