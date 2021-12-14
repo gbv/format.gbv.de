@@ -35,6 +35,10 @@ Zur Abfrage von XML-Daten gibt es:
 Zur Spezifikation von XML-basierten Formaten eignen sich:
 </list-formats>
 
+<list-formats base="xml" application="patch" title="Änderungssprachen">
+Zur Angabe von Änderungen an XML-Daten gibt es:
+</list-formats>
+
 <list-formats base="xml" title="Datenformate">
 Folgende hier erfasste Datenformate basieren auf XML:
 </list-formats>
