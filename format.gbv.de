@@ -1,0 +1,27 @@
+server {
+	listen 8020;
+	listen [::]:8020;
+
+	server_name format.gbv.de;
+
+	root /srv/formatdb/public;
+  	error_log /srv/formatdb/log/error.log;
+
+	location / {
+	   	index index.php;
+       	try_files $uri /index.php?$query_string;
+	}
+
+	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+	location ~ \.php(/.*)?$ {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass unix:/run/php/php-fpm.sock;
+	}
+
+	# Do not serve any .hidden files
+	location ~ /\. { 
+		access_log off;
+		log_not_found off; 
+		deny all; 
+	}
+}

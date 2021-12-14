@@ -12,5 +12,6 @@ composer.phar
 composer.lock
 vendor/*
 
-# cache
+# cache and logfiles
 cache/
+error.log

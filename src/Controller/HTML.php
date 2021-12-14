@@ -13,7 +13,7 @@ use Symfony\Component\Yaml\Yaml;
  */
 class HTML
 {
-    public $root = '../pages/';
+    public $root;
 
     protected static $mimetypes = [
         'html'  => 'text/html',
@@ -26,6 +26,7 @@ class HTML
 
     public function __construct()
     {
+        $this->root = realpath(dirname(__FILE__)) . '/../../pages/';
         $this->pages = new Pages($this->root);
         $this->menu = Yaml::parse(file_get_contents($this->root . 'menu.yaml'));
         $this->tags = new Tags('../tags', [
