@@ -5,7 +5,7 @@ server {
 	server_name format.gbv.de;
 
 	root /srv/formatdb/public;
-  	error_log /srv/formatdb/log/error.log;
+  	error_log /var/log/formatdb-error.log;
 
 	location / {
 	   	index index.php;

@@ -1,9 +1,3 @@
-# IDEs
-.buildpath
-.idea
-.project
-.settings
-
 # node dependencies
 node_modules/
 
@@ -15,3 +9,11 @@ vendor/*
 # cache and logfiles
 cache/
 error.log
+
+# dot file
+.*
+!.editorconfig
+!.githooks
+!.gitignore
+!.scrutinizer.yml
+!.travis.yml

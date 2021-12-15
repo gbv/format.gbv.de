@@ -7,6 +7,7 @@ style:
 	composer style
 
 init:
+	composer install
 	rm -rf pages/schema/avram
 	git clone https://github.com/gbv/avram.git pages/schema/avram
 

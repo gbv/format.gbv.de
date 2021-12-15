@@ -7,7 +7,7 @@ Dieses Repository enthält den Quellcode und die Quelldaten der unter <https://f
 
 ## Systemanforderungen
 
-Erfordert mindestens PHP 7 mit Erweiterungen u.A. für XML.
+Erfordert mindestens PHP 7.4 mit Erweiterungen u.A. für XML.
 
     $ sudo apt-get install php-xml php-mbstring php-curl
 
@@ -27,8 +27,16 @@ Zum Testen kann ein eigener Webserver auf Port 8020 gestartet werden - allerding
 
 ## Installation
 
+Create a user `formatdb` and check out the repository
+
+    $ sudo adduser formatdb --disabled-password --home /srv/formatdb
+    $ sudo -iu formatdb
+    $ git clone --bare https://github.com/gbv/format.gbv.de.git .git
+    $ git init; git checkout
+    $ make init
+
 Die Anwendung läuft mittels nginx und PHP-FPM. Zur Installation sind im Zweifellsfall beide zu Installaieren und zu konfigurieren:
 
     $ sudo apt-get install nginx php-fpm
-    $ sudo cp format.gbv.de /etc/nginx/sites-enabled/format.gbv.de # ggf. anpassen
+    $ sudo cp /srv/formatdb/format.gbv.de /etc/nginx/sites-enabled/format.gbv.de # ggf. anpassen
     $ sudo service nginx restart
