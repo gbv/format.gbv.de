@@ -1,17 +1,15 @@
 <?php declare(strict_types=1);
-
 namespace Controller;
 
 use mytcms\Tags;
 use mytcms\Pages;
-use mytcms\JSON;
 
 use Symfony\Component\Yaml\Yaml;
 
 /**
- * Show HTML based on Markdown files.
+ * Show HTML or other formats based on Markdown files.
  */
-class HTML
+class Base
 {
     public $root;
 
@@ -72,7 +70,7 @@ class HTML
                     if ($data['$schema'] == 'https://format.gbv.de/schema/avram/schema.json') {
                         $options |= JSON_FORCE_OBJECT;
                     }
-                    (new JSON($data))->sendJson($options);
+                    $this->sendJson($data, $options);
                     return;
                 }
             } else {
@@ -160,5 +158,15 @@ class HTML
         } else {
             return;
         }
+    }
+
+    public function sendJson($data, int $options = 0)
+    {
+        if (!headers_sent()) {
+            http_response_code(200);
+            header('Content-Type: application/json; charset=UTF-8');
+            header('Access-Control-Allow-Origin *');
+        }
+        echo json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | $options);
     }
 }

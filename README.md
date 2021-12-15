@@ -7,9 +7,9 @@ Dieses Repository enthält den Quellcode und die Quelldaten der unter <https://f
 
 ## Systemanforderungen
 
-Erfordert mindestens PHP 7 mit Erweiterungen für MySQL-PDO und XML.
+Erfordert mindestens PHP 7 mit Erweiterungen u.A. für XML.
 
-    $ sudo apt-get install php-mysql php-xml php-mbstring php-curl
+    $ sudo apt-get install php-xml php-mbstring php-curl
 
 Weitere verwendeten PHP-Module werden mit [Composer](https://getcomposer.org/) installiert:
 

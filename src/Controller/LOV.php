@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-class LOV extends HTML
+class LOV extends Base
 {
 
     public function data(string $id)

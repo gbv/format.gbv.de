@@ -1,22 +1,25 @@
 {
-  "name": "gbv/picahelprest",
+  "name": "gbv/format.gbv.de",
   "type": "project",
-  "homepage": "http://format.gbv.de/pica/",
+  "homepage": "http://format.gbv.de/",
   "license": "GPL-3.0",
-  "version": "1.0.0-dev",
+  "version": "0.1.0-dev",
   "authors": [
     {
-      "name": "Karsten Achterrath",
-      "email": "karsten.achterrath@gbv.de"
+      "name": "Jakob Voß",
+      "email": "jakob.voss@gbv.de"
+    },
+    {
+      "name": "Karsten Achterrath"
     }
   ],
   "require": {
     "php": "^7.0",
     "psr/log": "^1.0",
-    "bcosca/fatfree" : "^3.6",
-    "symfony/yaml": "^3.4",
-    "erusev/parsedown": "^1.6",
-    "opis/json-schema": "^1.0"
+    "bcosca/fatfree" : "^3.7",
+    "symfony/yaml": "^5.0",
+    "erusev/parsedown": "^1.7",
+    "opis/json-schema": "^2.0"
   },
   "autoload": {
     "psr-4": {
@@ -32,7 +35,7 @@
     ]
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.2",
-    "phpunit/phpunit": "^6.5"
+    "squizlabs/php_codesniffer": "^3.6",
+    "phpunit/phpunit": "^9.5"
   }
 }
