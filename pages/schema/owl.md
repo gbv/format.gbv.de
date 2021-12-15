@@ -2,6 +2,7 @@
 title: Web Ontology Language
 short: OWL
 wikidata: Q826165
+application: schema
 for: rdf
 base: rdf
 ---

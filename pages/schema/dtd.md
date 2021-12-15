@@ -2,6 +2,7 @@
 title: Document Type Definition
 short: DTD
 wikidata: Q212327
+application: schema
 for: xml
 base: unicode
 ---

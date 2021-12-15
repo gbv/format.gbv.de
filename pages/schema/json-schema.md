@@ -2,6 +2,7 @@
 title: JSON Schema
 homepage: http://json-schema.org/
 wikidata: Q24875054
+application: schema
 for: json
 base: json
 schemas:

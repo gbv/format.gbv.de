@@ -3,6 +3,7 @@ title: Shape Expression Language
 short: ShEx
 homepage: https://www.w3.org/community/shex/
 wikidata: Q29377880 
+application: schema
 for: rdf
 ---
 

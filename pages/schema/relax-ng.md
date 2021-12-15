@@ -1,6 +1,7 @@
 ---
 title: RELAX NG
 wikidata: Q1314117
+application: schema
 for: xml
 ---
 

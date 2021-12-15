@@ -2,8 +2,8 @@
 title: CSV Schema
 homepage: https://digital-preservation.github.io/csv-schema/
 base: unicode
-for: 
-  - csv
+application: schema
+for: csv 
 ---
 
 Mit **CSV Schema** können [CSV](../csv)-Formate definiert werden.  Das

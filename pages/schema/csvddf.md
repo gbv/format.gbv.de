@@ -5,6 +5,7 @@ homepage: https://frictionlessdata.io/specs/csv-dialect/
 created: 2013
 creator: Rufus Pollock
 base: json
+application: schema
 for: csv
 schemas:
   - url: https://frictionlessdata.io/schemas/csv-dialect.json

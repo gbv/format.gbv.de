@@ -16,19 +16,24 @@ Katalogisierungsrichtlinien ab.
 Eine ausführliche Beschreibung des PICA-Format und seiner Anwendung liefert das
 Handbuch ["Einführung in die Verarbeitung von PICA-Daten"](https://pro4bib.github.io/pica/).
 
-Mit [PICA Path](query/picapath) wird eine Abfragesprache zur Referenzierung
-von PICA-Feldern und -Unterfelder entwickelt.
-
-## Katalogisierungsrichtlinien
+### Katalogisierungsrichtlinien
 
 Die Sammlung von einzelnen PICA-Formaten und dazu gehörigen
 [Avram-Schemas](schema/avram) ist noch im Aufbau.
 
 <list-formats profiles="pica"/>
 
-## Serialisierungen
+### Serialisierungen
 
 PICA+ wird in verschiedenen [Kodierungen](code) verwendet, die sich alle
 verlustfrei ineinander umwandeln lassen.
 
 <list-encodings model="pica" title=""/>
+
+
+<list-formats over="pica" title="Abfragesprachen"/>
+
+<list-formats for="pica" application="schema" title="Schemasprachen"/>
+
+<list-formats for="pica" application="patch" title="Änderungssprachen"/>
+

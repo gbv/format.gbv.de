@@ -91,4 +91,19 @@ class Pages
         }
         return true;
     }
+
+    public static function asLinkedData(array $page) {
+
+        # remove layout fields
+        foreach (['markdown', 'javascript', 'css', 'broader', 'language'] as $key) {
+            unset($page[$key]);
+        }
+
+        # TODO: expand with type, backlinks etc.
+
+        $page['@context'] = "http://format.gbv.de/data/context.json";
+        $page['$schema']  = "http://format.gbv.de/data/schema.json";
+
+        return $page;
+    }
 }

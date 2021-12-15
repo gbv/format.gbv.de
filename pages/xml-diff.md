@@ -1,5 +1,6 @@
 ---
 title: XML Diff Language
+for: xml
 base: xml
 application: patch
 created: 2002

@@ -1,6 +1,7 @@
 ---
 title: Schematron
 wikidata: Q1780096
+application: schema
 for: xml
 ---
 

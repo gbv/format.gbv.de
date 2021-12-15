@@ -49,11 +49,11 @@ Standards aber nicht vollständig mit Schemas formalisieren.
 
 ### [Abfragesprachen](application/query)
 
-<list-formats over="*"/>
+<list-formats application="query"/>
 
 ### [Schemasprachen](schema/language)
 
-<list-formats for="*"/>
+<list-formats application="schema"/>
 
 ### [Änderungsformate](application/patch)
 

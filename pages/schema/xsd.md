@@ -2,6 +2,7 @@
 title: XML Schema
 short: XSD
 wikidata: Q16342
+application: schema
 for: xml
 base: xml
 schemas:

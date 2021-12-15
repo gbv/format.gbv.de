@@ -3,6 +3,7 @@ title: JSON Table Schema
 homepage: https://frictionlessdata.io/specs/table-schema/
 creator: Paul Walsh, Rufus Pollock
 base: json
+application: schema
 for: 
   - csv
 schemas:

@@ -31,7 +31,7 @@ Neben der Standard-XML-Syntax kann XML ausgedrückt werden in:
 Zur Abfrage von XML-Daten gibt es:
 </list-formats>
 
-<list-formats for="xml" title="Schemasprachen">
+<list-formats for="xml" application="schema" title="Schemasprachen">
 Zur Spezifikation von XML-basierten Formaten eignen sich:
 </list-formats>
 

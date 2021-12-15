@@ -1,6 +1,8 @@
 ---
 title: PICA Plain
-model: pica
+model:
+- pica
+- pica/patch
 base: bytes
 ---
 

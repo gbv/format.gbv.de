@@ -51,12 +51,13 @@ properties:
     $ref: '#/definitions/links'
   over:
     $ref: '#/definitions/links'
-  model:
-    $ref: '#/definitions/id'
+  model:    
+    $ref: '#/definitions/links'
   base:
     $ref: '#/definitions/links'
   profiles:
     $ref: '#/definitions/links'
+
   schemas:
     type: array
     items:  
@@ -83,6 +84,11 @@ properties:
     $ref: '#/definitions/strings'
   contributor:
     $ref: '#/definitions/strings'
+
+  '@context':
+    const: "http://format.gbv.de/data/context.json"
+  '$schema':
+    const: "http://format.gbv.de/data/schema.json"
 
 additionalProperties: false
 

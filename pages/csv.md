@@ -15,10 +15,13 @@ mittels [CSVDDF](schema/csvddf) definieren.
 
 Zur Spezifikation von CSV-basierten Formaten eignen sich:
 
-<list-formats for="csv"/>
+<list-formats for="csv" application="schema"/>
+
+Zur Abfrage von Inhalten aus CSV-Daten existiert:
+
+<list-formats over="csv"/>
 
 Einige konkreten CSV-Dialekte:
 
 <list-formats profiles="csv"/>
 
-Zur Abfrage von Inhalten aus CSV-Daten existiert der Standard [RFC 7111](query/rfc7111).

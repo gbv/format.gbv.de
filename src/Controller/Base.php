@@ -24,7 +24,7 @@ class Base
 
     public function __construct()
     {
-        $this->root = realpath(dirname(__FILE__)) . '/../../pages/';
+        $this->root = realpath(__DIR__) . '/../../pages/';
         $this->pages = new Pages($this->root);
         $this->menu = Yaml::parse(file_get_contents($this->root . 'menu.yaml'));
         $this->tags = new Tags('../tags', [
@@ -51,13 +51,7 @@ class Base
             if ($extension == 'json') {
                 $data = $this->pages->get($id);
                 if ($data) {
-                    # TODO: repeated at bin/metadata
-                    foreach (['markdown', 'javascript', 'css', 'broader'] as $key) {
-                        unset($data[$key]);
-                    }
-                    # TODO: expand with type, backlinks etc.
-                    $data['@context'] = "http://format.gbv.de/data/context.json";
-                    $data['$schema']  = "http://format.gbv.de/data/schema.json";
+                    $data = Pages::asLinkedData($data);
                 } else {
                     $file = $this->root . "$id.yaml";
                     if (file_exists($file)) {

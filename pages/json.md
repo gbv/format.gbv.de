@@ -40,7 +40,7 @@ JSON-Daten als [I-JSON](i-json) oder [NDJSON](ndjson) auf.
 Zur Abfrage von JSON-Daten gibt es unter Anderem:
 </list-formats>
 
-<list-formats for="json" title="Schemasprachen">
+<list-formats for="json" application="schema" title="Schemasprachen">
 Zur Spezifikation von JSON-basierten Formaten eignen sich:
 </list-formats>
 

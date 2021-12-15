@@ -3,6 +3,7 @@ title: Avram Schema Language
 short: Avram
 base: json
 model: schema/avram
+application: schema
 for:
   - marc
   - mab

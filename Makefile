@@ -1,4 +1,4 @@
-.PHONY: test style web metadata validate
+.PHONY: test style web metadata
 
 test: metadata
 	composer test
@@ -14,14 +14,12 @@ init:
 web:
 	php -S localhost:8020 -t public
 
-metadata:
-	@npm run metadata
+metadata: formats.ndjson
 
-validate:
-	@npm run validate
+formats.ndjson:
+	php bin/metadata.php > $@
 
-formats.json: metadata
-formats.dot: formats.json
-	perl bin/graph.pl < $< > $@
-formats.png: formats.dot
-	dot -Gbackground=white -Tpng -oformats.png formats.dot	
+# formats.dot: formats.ndjson
+#	perl bin/graph.pl < $< > $@
+#formats.png: formats.dot
+#	dot -Gbackground=white -Tpng -oformats.png formats.dot	

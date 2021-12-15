@@ -29,7 +29,7 @@ jeweiligen Prefix abgerufen werden. Beispiele:
     - implizite profile
 -->
 
-<list-formats for="rdf" title="Schemasprachen">
+<list-formats for="rdf" application="schema" title="Schemasprachen">
 Zur Spezifikation von Ontologien und RDF-Daten eignen sich:
 </list-formats>
 

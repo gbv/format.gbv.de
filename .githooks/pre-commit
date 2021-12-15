@@ -1,3 +1,2 @@
 #!/bin/bash -e
 make test
-npm run validate

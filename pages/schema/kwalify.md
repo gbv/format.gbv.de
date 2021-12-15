@@ -1,6 +1,7 @@
 ---
 title: Kwalify
 homepage: http://www.kuwata-lab.com/kwalify/
+application: schema
 for:
 - json
 - yaml

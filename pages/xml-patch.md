@@ -1,5 +1,6 @@
 ---
 title: XML Patch
+for: xml
 base: xml
 application: patch
 created: 2008

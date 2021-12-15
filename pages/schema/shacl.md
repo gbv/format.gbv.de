@@ -3,6 +3,7 @@ title: Shapes Constraint Language
 short: SHACL
 homepage: https://www.w3.org/TR/shacl/
 wikidata: Q29377821 
+application: schema
 for: rdf
 ---
 
