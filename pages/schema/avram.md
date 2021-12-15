@@ -8,7 +8,7 @@ for:
   - mab
   - pica 
 schemas:
-  - url: avram/schema.json
+  - url: /schema/avram/schema.json
     type: json-schema
 ---
 
