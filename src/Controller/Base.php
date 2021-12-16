@@ -160,7 +160,7 @@ class Base
         if (!headers_sent()) {
             http_response_code(200);
             header('Content-Type: application/json; charset=UTF-8');
-            header('Access-Control-Allow-Origin *');
+            header('Access-Control-Allow-Origin: *');
         }
         echo json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | $options);
     }
