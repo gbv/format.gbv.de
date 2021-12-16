@@ -92,7 +92,8 @@ class Pages
         return true;
     }
 
-    public static function asLinkedData(array $page) {
+    public static function asLinkedData(array $page)
+    {
 
         # remove layout fields
         foreach (['markdown', 'javascript', 'css', 'broader', 'language'] as $key) {

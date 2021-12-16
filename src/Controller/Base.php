@@ -54,6 +54,7 @@ class Base
                     $data = Pages::asLinkedData($data);
                 } else {
                     $file = $this->root . "$id.yaml";
+                    error_log($file);
                     if (file_exists($file)) {
                         $data = Yaml::parse(file_get_contents($file));
                     }
@@ -73,7 +74,7 @@ class Base
                 $file = $this->root . $path;
                 if ($type and file_exists($file)) {
                     header("Content-Type: $type");
-                    header('Access-Control-Allow-Origin *');
+                    header('Access-Control-Allow-Origin: *');
                     readfile($file);
                     return;
                 }
