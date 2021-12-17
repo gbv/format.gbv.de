@@ -33,4 +33,8 @@ jeweiligen Prefix abgerufen werden. Beispiele:
 Zur Spezifikation von Ontologien und RDF-Daten eignen sich:
 </list-formats>
 
+<list-formats for="rdf" application="query" title="Abfragesprachen"/>
+
+<list-formats for="rdf" application="patch" title="Änderungssprachen"/>
+
 <list-encodings model="rdf"/>

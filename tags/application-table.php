@@ -7,16 +7,16 @@
   </thead>
   <tbody>
   <?php foreach ($PAGES->select(['application'=>$application]) as $id => $item) {
-    $for = $item['for'] ?? [];
-    ?>
+      $for = $item['for'] ?? []; ?>
     <tr>
       <td><?= $TAGS->link(['id' => $id]) ?></td>
-      <td><?= implode(', ', array_map(
-          function ($format) use ($PAGES, $TAGS) {
-              return $TAGS->link(['id'=>$format,'short'=>true]);
-          },
-          is_array($for) ? $for : [$for]
-      )); ?></td>
+      <td><?=
+        implode(', ', array_map(
+            function ($format) use ($PAGES, $TAGS) {
+                return $TAGS->link(['id'=>$format,'short'=>true]);
+            },
+            is_array($for) ? $for : [$for]
+        )); ?></td>
     </tr>
   <?php } ?>
   </tbody>
