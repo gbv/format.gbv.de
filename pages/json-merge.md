@@ -1,7 +1,8 @@
 ---
 title: JSON Merge Patch
-base: json
 application: patch 
+for: json
+base: json
 created: 2014
 homepage: https://datatracker.ietf.org/doc/html/rfc7386
 ---

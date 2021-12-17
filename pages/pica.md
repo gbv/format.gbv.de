@@ -30,8 +30,7 @@ verlustfrei ineinander umwandeln lassen.
 
 <list-encodings model="pica" title=""/>
 
-
-<list-formats over="pica" title="Abfragesprachen"/>
+<list-formats for="pica" application="query" title="Abfragesprachen"/>
 
 <list-formats for="pica" application="schema" title="Schemasprachen"/>
 

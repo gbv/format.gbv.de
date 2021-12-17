@@ -1,7 +1,7 @@
 ---
 title: JSON Path
-over: json
 application: query
+for: json
 homepage: https://goessner.net/articles/JsonPath
 created: 2007
 creator: Stephan Gössner

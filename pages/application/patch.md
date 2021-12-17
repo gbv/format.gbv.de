@@ -12,7 +12,7 @@ Der Hauptanwendungsfall von Änderungsformaten sind Systeme zur Versionskontroll
 
 In der Formatdatenbank sind bislang folgende Änderungsformate erfasst:
 
-<formats-tree application="patch"/>
+<application-table application="patch" title="Änderungsformat"/>
 
 Da für viele Strukturierungssprachen kein etabliertes Änderungsformat existiert, wird oft auf das Änderungsformat einer Serialisierung zurückgegriffen, also beispielsweise [Unidiff](unidiff) statt [JSON Patch](json-patch) für Änderungen an [JSON](json)-Daten. Ein Vorteil dieses kleinsten gemeinsamen Nenners besteht darin, dass Diff-Programme keine Kenntnis über das Strukturierungsformat haben müssen, allerdings können semantisch irrelevante Änderungen auf Syntax-Ebene so nicht erkannt werden.
 

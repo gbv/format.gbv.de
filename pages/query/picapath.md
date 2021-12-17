@@ -1,7 +1,8 @@
 ---
 title: PICA Path
-over: pica
 application: query
+for: pica
+base: chars
 created: 2014
 creator: Jakob Voß
 ---

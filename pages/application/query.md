@@ -7,6 +7,4 @@ wikidata: Q845739
 
 Prinzipiell lassen sich auch beliebige Programmiersprachen zur Durchführung von Abfragen einsetzen. Dies hat den Vorteil dass auch kompliziertere Abfragen möglic sind und den Nachteil dass die Abfragen schwieriger analysiert und wiederverwendet werden können. 
 
-<!-- TODO: emit table instead -->
-
-<list-formats application="query" title="Hier erfasste Abfragesprachen"/>
+<application-table application="query" title="Abfragesprache"/>

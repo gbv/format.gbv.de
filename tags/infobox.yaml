@@ -46,8 +46,8 @@ application:
     style: link
     icon: build
 
-over:
-    label: Zur Abfrage von
+for:
+    label: für
     style: link
     icon: query
 

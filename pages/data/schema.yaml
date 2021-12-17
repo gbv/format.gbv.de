@@ -49,8 +49,6 @@ properties:
 
   for:
     $ref: '#/definitions/links'
-  over:
-    $ref: '#/definitions/links'
   model:    
     $ref: '#/definitions/links'
   base:

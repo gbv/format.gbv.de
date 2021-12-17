@@ -1,16 +1,16 @@
 ---
 title: Reguläre Ausdrücke
 short: Regex
-wikidata: Q185612 
 application:
   - schema
   - query
-over:
-  - unicode
-  - bytes 
 for:
   - unicode
   - bytes 
+base:
+  - unicode
+  - bytes 
+wikidata: Q185612 
 ---
 
 Mit **regulären Ausdrücken** lassen sich Muster in Zeichenketten definieren.

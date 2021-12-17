@@ -2,6 +2,7 @@
 title: JSON Patch
 base: json
 application: patch 
+for: json
 created: 2013
 homepage: https://datatracker.ietf.org/doc/html/rfc6902
 ---

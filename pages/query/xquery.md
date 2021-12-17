@@ -1,8 +1,8 @@
 ---
 title: XQuery
-over: xml
-wikidata: Q850661
 application: query
+for: xml
+wikidata: Q850661
 created: 2005
 ---
 

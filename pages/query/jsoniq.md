@@ -1,7 +1,7 @@
 ---
 title: JSONiq
-over: json
 application: query
+for: json
 wikidata: Q17060857
 homepage: http://www.jsoniq.org/
 ---

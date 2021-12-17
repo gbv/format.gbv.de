@@ -10,16 +10,21 @@
 <?php
 $codings = $PAGES->select(['model' => null, 'base' => null]);
 foreach ($codings as $coding) {
-    $syntax = ($coding['id'] == $coding['model']);
+    $model = is_array($coding['model']) ? $coding['model'] : [ $coding['model'] ];
+    $base  = is_array($coding['base'])  ? $coding['base'] :  [ $coding['base'] ];
+    $syntax = in_array($coding['id'], $model);
     ?>
     <tr>
       <td><?= $TAGS->link(['id' => $coding['id'], 'syntax' => $syntax]); ?></td>
-      <td><?= $TAGS->link(['id' => $coding['model']]); ?></td>
       <td><?php
-        $bases = is_array($coding['base']) ? $coding['base'] : [ $coding['base'] ];
         echo implode(', ', array_map(function ($id) use ($TAGS) {
             return $TAGS->link(['id' => $id]);
-        }, $bases));
+        }, $model));
+      ?></td>
+      <td><?php
+        echo implode(', ', array_map(function ($id) use ($TAGS) {
+            return $TAGS->link(['id' => $id, 'short' => true]);
+        }, $base));
             ?></td>
     </tr>
 <?php } ?>

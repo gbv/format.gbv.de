@@ -1,8 +1,8 @@
 ---
 title: XML Diff Language
+application: patch
 for: xml
 base: xml
-application: patch
 created: 2002
 homepage: https://documentation.help/Microsoft-XML-Diff/xmldiff_conceptual_3w2t.htm
 ---

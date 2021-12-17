@@ -1,8 +1,8 @@
 ---
 title: Unified Diff
+application: patch 
 for: chars
 base: chars
-application: patch 
 created: 1990
 homepage: https://www.gnu.org/software/diffutils/manual/html_node/Detailed-Unified.html
 ---

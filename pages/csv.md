@@ -19,7 +19,7 @@ Zur Spezifikation von CSV-basierten Formaten eignen sich:
 
 Zur Abfrage von Inhalten aus CSV-Daten existiert:
 
-<list-formats over="csv"/>
+<list-formats for="csv" application="query"/>
 
 Einige konkreten CSV-Dialekte:
 

@@ -36,7 +36,7 @@ Strukturierungssprachen [CBOR](cbor), [BSON](bson) und [MessagePack](msgpack)
 decken ebenfalls einen Großteil des JSON-Modells ab.  In der Regel treten
 JSON-Daten als [I-JSON](i-json) oder [NDJSON](ndjson) auf.
 
-<list-formats over="json" title="Abfragesprachen">
+<list-formats for="json" application="query" title="Abfragesprachen">
 Zur Abfrage von JSON-Daten gibt es unter Anderem:
 </list-formats>
 

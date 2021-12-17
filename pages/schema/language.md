@@ -18,4 +18,4 @@ css:
 Datenformaten dienen. Jede Schemasprache ist für Formate einer oder weniger
 bestimmter [Strukturierungssprache](../structure) ausgelegt.
 
-<schema-languages/>
+<application-table application="schema" title="Schemasprache"/>

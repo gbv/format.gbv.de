@@ -1,7 +1,7 @@
 ---
 title: JSONata
-over: json
 application: query
+for: json
 homepage: http://jsonata.org/
 created: 2016
 ---

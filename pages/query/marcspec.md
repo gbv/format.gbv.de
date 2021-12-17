@@ -1,7 +1,7 @@
 ---
 title: MARCspec
-over: marc
 application: query
+for: marc
 homepage: http://marcspec.github.io/MARCspec/marc-spec.html
 created: 2014
 creator: Carsten Klee

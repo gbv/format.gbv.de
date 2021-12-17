@@ -1,8 +1,9 @@
 ---
 title: JMESPath
-over: json
-wikidata: Q54943292
 application: query
+for: json
+base: unicode
+wikidata: Q54943292
 homepage: http://jmespath.org/
 ---
 

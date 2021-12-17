@@ -27,7 +27,7 @@ einfachere Alternative dient oft [JSON](json).
 Neben der Standard-XML-Syntax kann XML ausgedrückt werden in:
 </list-encodings>
 
-<list-formats over="xml" title="Abfragesprachen">
+<list-formats for="xml" application="query" title="Abfragesprachen">
 Zur Abfrage von XML-Daten gibt es:
 </list-formats>
 
