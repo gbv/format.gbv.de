@@ -21,6 +21,10 @@ Zur Abfrage von Inhalten aus CSV-Daten existiert:
 
 <list-formats for="csv" application="query"/>
 
+Ein Änderungsformat für CSV-Daten ist:
+
+<list-formats for="csv" application="patch"/>
+
 Einige konkreten CSV-Dialekte:
 
 <list-formats profiles="csv"/>

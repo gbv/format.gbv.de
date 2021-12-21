@@ -35,7 +35,7 @@ Create a user `formatdb` and check out the repository
     $ git init; git checkout
     $ make init
 
-Die Anwendung läuft mittels nginx und PHP-FPM. Zur Installation sind im Zweifellsfall beide zu Installaieren und zu konfigurieren:
+Die Anwendung läuft mittels nginx und PHP-FPM. Zur Installation sind im Zweifellsfall beide zu Installieren und zu konfigurieren:
 
     $ sudo apt-get install nginx php-fpm
     $ sudo cp /srv/formatdb/format.gbv.de /etc/nginx/sites-enabled/format.gbv.de # ggf. anpassen
