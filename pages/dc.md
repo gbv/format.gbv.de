@@ -8,4 +8,4 @@ application: model
 created: 1995
 ---
 
-Der Dublin Core-Standard besteht aus 15 Kernelementen zur Metadaten-Beschreibung und einer Reihe von zusätzlichen Vokabularen. Das Datenmodell ist unter Anderem als RDF-Ontologie publiziert.
+Die **DCMI Metadata Terms** bestehen aus 15 Kernelementen zur Metadaten-Beschreibung und einer Reihe von zusätzlichen Vokabularen. Das Datenmodell ist unter Anderem als RDF-Ontologie publiziert (siehe [dce](rdf/voc/dce)).

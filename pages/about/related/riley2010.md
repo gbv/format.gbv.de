@@ -27,7 +27,7 @@ GBV format database.
 * ADL
 * AES Core Audio
 * AES Process History
-* AGLS
+* [AGLS](../../rdf/voc/agls)
 * [Art & Architecture Thesaurus (AAT)](http://bartoc.org/en/node/75)
 * Atom
 * [BISAC Subject Headings](http://bartoc.org/en/node/961)
@@ -38,8 +38,8 @@ GBV format database.
 * Contextual Query Language (CQL)
 * CanCore		
 * Describing Archives: A Content Standard (DACS)
-* Dublin Core Metadata Element Set (DC)
-* Dublin Core Metadata Initiative Abstract Model (DCAM)
+* [Dublin Core Metadata Element Set (DC)](../../dc)
+* [Dublin Core Metadata Initiative Abstract Model (DCAM)](../../rdf/voc/dcam)
 * [Dewey Decimal Classification (DDC)](http://bartoc.org/en/node/241)
 * Discovery Interchange Format (DIF)
 * Digital Imaging Group 35 (DIG35)
@@ -51,7 +51,7 @@ GBV format database.
 * FGDC/CSDGM
 * [Friend of a Friend (FOAF)](../../rdf/voc/foaf)
 * [Functional Requirements for Authority Data (FRAD)](../../frad)
-* Functional Requirements for Bibliographic Records (FRBR)
+* [Functional Requirements for Bibliographic Records (FRBR)](../../frbr)
 * [Functional Requirements for Subject Authority Data (FRSAD)](../../frsad)
 * Gateway to Educational Materials (GEM)
 * Government Information Locator Service (GILS)
@@ -74,21 +74,21 @@ GBV format database.
 * [Music Ontology](../../rdf/voc/mo)
 * [Medical Subject Headings (MeSH)](http://bartoc.org/en/node/391)
 * METS Rights Declaration Schema
-* Metadata Encoding and Transmission Standard (METS)
+* [Metadata Encoding and Transmission Standard (METS)](../../mets)
 * NISO Metadata for Images in XML Schema (MIX)
 * [Metadata Object Description Schema (MODS)](../../mods)
 * MPEG-21 Digital Item Description Language (MPEG-21 DIDL)
 * MPEG Multimedia Content Description Interface (MPEG-7)
 * Material Exchange Format (MXL)
 * Mathematical Markup Language (MathML)
-* MuseumDat
+* [MuseumDat](../../museumdat)
 * MusicXML
 * News Markup Language (NewsML)
 * Open Archives Initiative Object Re-use and Exchange (OAI-ORE)
-* Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH)
+* Open Archives Initiative Protocol for Metadata Harvesting (OAI-PMH) *→ is less a format but [an API](http://www.openarchives.org/pmh/)*
 * Open Archival Information System (OAIS)
 * Open Digital Rights Language (ODRL)
-* Online Information Exchange (ONIX)
+* [Online Information Exchange (ONIX)](../../onix)
 * [Ontology for Media Resource](../../rdf/voc/ma-ont)
 * OpenURL (ANSI/NISO Z39.88)
 * Public Broadcasting Core Metadata Dictionary (PB Core)
@@ -105,12 +105,12 @@ GBV format database.
 * [Simple Knowledge Organization System (SKOS)](../../skos)
 * Synchronized Multimedia Integration Language (SMIL)
 * [SPECTRUM](../../spectrum)
-* Search and Retrieve via URL (SRU)
+* Search and Retrieve via URL (SRU) *→ is less a format but [an API](http://www.loc.gov/standards/sru/)*
 * Scholarly Works Application Profile (SWAP)
 * [Sears List of Subject Headings](http://bartoc.org/en/node/1035)
 * [Text Encoding Initiative (TEI)](../../tei)
-* Thesaurus for Graphic Materials I: Subject Terms (TGM I)
-* Thesaurus for Graphic Materials II: Genre and Physical Characteristic Terms (TGM II)
+* Thesaurus for Graphic Materials I: Subject Terms (TGM I) *→ see [TGM](http://bartoc.org/en/node/114)*
+* Thesaurus for Graphic Materials II: Genre and Physical Characteristic Terms (TGM II) *→ see [TGM](http://bartoc.org/en/node/114)*
 * [Thesaurus for Geographic Names (TGN)](http://bartoc.org/en/node/109)
 * Technical Metadata for Text (TextMD)
 * Topic Maps
@@ -120,10 +120,10 @@ GBV format database.
 * [eXtensible Markup Language (XML)](../../xml)
 * Extensible Metadata Platform (XMP)
 * XML Organic Bibliographic Information Schema (XOBIS)
-* XML Path Language (XPath)
-* XML Query Language (XQuery)
+* [XML Path Language (XPath)](../query/xpath)
+* [XML Query Language (XQuery)](query/xquery)
 * [XML Schema (XSD)](../../schema/xsd)
-* eXtensible Stylesheet Language Transformations (XSLT)
+* eXtensible Stylesheet Language Transformations (XSLT) *→ is less a format but a programming language*
 * eXtensible Rights Markup Language (XrML)
-* Z39.50
+* Z39.50 *→ is less a format but an API*
 * &lt;indecs&gt; Metadata Framework
