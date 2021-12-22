@@ -2,8 +2,14 @@
 
 namespace Controller;
 
+use Symfony\Component\Yaml\Yaml;
+
 class LOV extends Base
 {
+    public function __construct() {
+        parent::__construct();
+        $this->local = Yaml::parse(file_get_contents(__DIR__.'/../../pages/rdf/voc.yaml'));
+    }
 
     public function data(string $id)
     {
@@ -40,11 +46,14 @@ class LOV extends Base
         $data['base']       = 'rdf';
         $data['lov']        = "https://lov.linkeddata.es/dataset/lov/vocabs/$id";
 
+        if ($this->local[$id]) {
+            $data = array_merge_recursive($data, $this->local[$id]);
+        }
+
         # TODO: add schemas (Expressivity)
 
         # TODO: adjust source to LOV
 
-        // TODO: include information from local knowledge base (#10)
 
         // TODO: add incoming and outgoing links
         // TODO: add equivalence to Wikidata and BARTOC

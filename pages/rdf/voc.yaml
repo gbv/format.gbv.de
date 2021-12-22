@@ -1,0 +1,7 @@
+---
+dcite:
+  model: datacite
+dce:
+  model: dc
+skos:
+  model: skos
