@@ -5,7 +5,7 @@ wikidata: Q16388
 created: 1988
 homepage: http://www.ifla.org/en/publications/functional-requirements-for-bibliographic-records
 application:
-  - bibliography
+  - bibliographic
   - model
 ---
 
