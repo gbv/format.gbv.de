@@ -6,7 +6,8 @@ use Symfony\Component\Yaml\Yaml;
 
 class LOV extends Base
 {
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         $this->local = Yaml::parse(file_get_contents(__DIR__.'/../../pages/rdf/voc.yaml'));
     }
