@@ -34,6 +34,7 @@ foreach( $pages as $item ) {
     if ($result->isValid()) {
         # print valid files as ndjson
         echo json_encode($item, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        echo "\n";
     } else {
         $valid = false;
         $formatter = new ErrorFormatter();
