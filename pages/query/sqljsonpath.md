@@ -2,6 +2,7 @@
 title: SQL/JSON path
 application: query
 for: json
+base: unicode
 created: 2016
 ---
 
