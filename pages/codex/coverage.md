@@ -3,7 +3,7 @@ title: Codex Coverage
 model: codex
 schemas:
   - type: json-schema
-    url: https://github.com/folio-org/mod-inventory-storage/raw/master/ramls/coverage.json
+    url: https://github.com/folio-org/raml/raw/raml1.0/schemas/codex/coverage.json
 application:
   - bibliographic
 ---

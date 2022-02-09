@@ -3,7 +3,7 @@ title: Codex Package
 model: codex
 schemas:
   - type: json-schema
-    url: https://github.com/folio-org/mod-inventory-storage/raw/master/ramls/package.json
+    url: https://github.com/folio-org/raml/raw/raml1.0/schemas/codex/package.json
 application:
   - bibliographic
 ---

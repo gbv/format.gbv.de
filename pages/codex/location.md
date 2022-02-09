@@ -3,7 +3,7 @@ title: Codex Location
 model: codex
 schemas:
   - type: json-schema
-    url: https://github.com/folio-org/mod-inventory-storage/raw/master/ramls/location.json
+    url: https://github.com/folio-org/raml/raw/raml1.0/schemas/codex/location.json
 application:
   - authority
 ---
