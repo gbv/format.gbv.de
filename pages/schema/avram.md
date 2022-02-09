@@ -9,7 +9,7 @@ for:
   - mab
   - pica 
 schemas:
-  - url: /schema/avram/schema.json
+  - url: http://format.gbv.de/schema/avram/schema.json
     type: json-schema
 ---
 

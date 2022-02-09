@@ -1,7 +1,7 @@
 ---
 title: Datenmodell
 schemas:
-  - url: data/schema.json
+  - url: http://format.gbv.de/data/schema.json
     type: json-schema
 ---
 
@@ -12,7 +12,7 @@ Die Daten werden auf der Webseite angereichert in [JSON-LD](../rdf/json-ld)
 bereitgestellt ("Daten").  Das [Datenmodell](../model) der Einträge und die
 Ontologie seiner Abbildung in [RDF](../rdf) befindet sich noch in Entwicklung.
 Die Struktur ist unter Anderem mit Hilfe eines
-[JSON-Schemas](../schema/json-schema) beschrieben.
+[JSON-Schemas](../data/schema.json) beschrieben.
 
 ## Bestandteile
 
