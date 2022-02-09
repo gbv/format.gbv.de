@@ -5,7 +5,7 @@ base: json
 application: bibliographic
 mimetype: application/vnd.citationstyles.csl+json
 schemas:
-  - url: https://github.com/citation-style-language/schema/raw/master/csl-data.json
+  - url: https://resource.citationstyles.org/schema/v1.0/input/json/csl-data.json
     type: json-schema
 ---
 

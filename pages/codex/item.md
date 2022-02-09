@@ -3,7 +3,7 @@ title: Codex Item/Holding
 model: codex
 schemas:
   - type: json-schema
-    url: https://github.com/folio-org/raml/raw/raml1.0/schemas/codex/item.json
+    url: https://github.com/folio-org/raml/raw/raml1.0/schemas/codex-next/item.json
 application:
   - bibliographic
 ---
