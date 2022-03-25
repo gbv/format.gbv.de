@@ -30,6 +30,16 @@ properties:
   multicodec:
     type: integer
 
+  # experimental fields
+  paradigm:
+    type: string
+  alias:
+    type: array
+    item:
+      type: string
+  inspiredby:
+    type: string
+
   bartoc:
     $ref: '#/definitions/bartoc'
   language:

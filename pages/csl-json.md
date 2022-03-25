@@ -1,6 +1,8 @@
 ---
 title: CSL-JSON
 homepage: https://github.com/citation-style-language/schema#csl-json-schema
+description:
+  en: Metadata of bibliographic items to be processed with citation style language
 base: json
 application: bibliographic
 mimetype: application/vnd.citationstyles.csl+json

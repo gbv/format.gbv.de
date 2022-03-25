@@ -1,5 +1,7 @@
 ---
 title: JSON-LD
+description:
+  en: Mapping of JSON formats to RDF
 wikidata: Q6108942
 model: rdf
 base: json

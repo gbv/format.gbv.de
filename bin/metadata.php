@@ -49,8 +49,8 @@ foreach( $pages as $item ) {
 $linkFields = ['model', 'for', 'over', 'base', 'profiles'];
 foreach( $pages as $id => $item ) {
     foreach ( $linkFields as $field ) {
-        $links = $item[$field];
-        if ($links) {
+        if (isset($item[$field])) {
+            $links = $item[$field];
             $links = is_array($links) ? $links : [$links];
             foreach ($links as $link) {
                 if (!key_exists($link, $pages)) {
