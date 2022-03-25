@@ -2,7 +2,7 @@
 title: CodeMeta
 homepage: https://codemeta.github.io/
 application: bibliographic
-base: json
+base: rdf/json-ld
 mimetype: application/vnd.codemeta.ld+json
 ---
 

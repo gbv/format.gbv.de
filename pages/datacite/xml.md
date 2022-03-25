@@ -7,6 +7,12 @@ model: datacite
 mimetype: application/vnd.datacite.datacite+xml
 wikidata: Q105762834
 schemas:
+  - url: https://schema.datacite.org/meta/kernel-4.3/metadata.xsd
+    type: xsd
+    version: '4.3'
+  - url: https://schema.datacite.org/meta/kernel-4.2/metadata.xsd
+    type: xsd
+    version: '4.2'
   - url: https://schema.datacite.org/meta/kernel-4.1/metadata.xsd
     type: xsd
     version: '4.1'

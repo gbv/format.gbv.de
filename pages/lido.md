@@ -6,6 +6,13 @@ wikidata: Q1249973
 base: xml
 model: lido
 application: bibliographic
+schemas:
+- version: "1.1"
+  type: xsd
+  url: http://lido-schema.org/schema/v1.1/lido-v1.1.xsd
+- version: "1.0"
+  type: xsd
+  url: http://www.lido-schema.org/schema/v1.0/lido-v1.0.xsd
 ---
 
 Das [XML](xml)-Format **LIDO** wird zum Austausch von Daten von Museen
