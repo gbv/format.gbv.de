@@ -1,6 +1,8 @@
 ---
 title: VZG Articleformat
 application: bibliographic
+description:
+  en: Journal articles metadata format for data supply at VZG
 homepage: https://github.com/gbv/articleformat
 base: json
 schemas:

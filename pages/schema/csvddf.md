@@ -1,6 +1,8 @@
 ---
 title: CSV Dialect
 short: CSVDDF
+description:
+  en: Describes CSV syntax variants
 homepage: https://frictionlessdata.io/specs/csv-dialect/
 created: 2013
 creator: Rufus Pollock

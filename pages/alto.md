@@ -1,5 +1,8 @@
 ---
-title: Alto
+title: Analyzed Layout and Text Object
+short: ALTO
+description:
+  en: Describes layout and text of digitized pages
 wikidata: Q2819247
 homepage: https://www.loc.gov/standards/alto/
 application: documents
