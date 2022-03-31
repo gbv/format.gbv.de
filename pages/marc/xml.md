@@ -1,5 +1,6 @@
 ---
 title: MARCXML
+description: XML serialization of MARC21
 homepage: https://www.loc.gov/standards/marcxml/
 created: 2002
 model: marc

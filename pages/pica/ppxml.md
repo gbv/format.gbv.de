@@ -1,6 +1,7 @@
 ---
 title: PPXML
 model: pica
+description: XML serialization of PICA+
 base: xml
 schemas:
 - url: http://files.dnb.de/standards/formate/ppxml-1.0.xsd
