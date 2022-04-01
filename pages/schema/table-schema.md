@@ -1,5 +1,7 @@
 ---
 title: JSON Table Schema
+description:
+  en: Schema language for tabular data
 homepage: https://frictionlessdata.io/specs/table-schema/
 creator: Paul Walsh, Rufus Pollock
 base: json

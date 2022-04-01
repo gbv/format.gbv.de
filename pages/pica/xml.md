@@ -1,6 +1,7 @@
 ---
 title: PICA XML
-description: XML serialization of PICA+
+description:
+  en: XML serialization of PICA+
 homepage: https://verbundwiki.gbv.de/display/VZG/PICA+XML+Version+1.0
 model: pica
 base: xml

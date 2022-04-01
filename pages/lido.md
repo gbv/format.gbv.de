@@ -1,6 +1,8 @@
 ---
 title: Lightweight Information Describing Objects
 short: LIDO
+description:
+  en: XML format for describing museum or collection objects
 homepage: http://www.lido-schema.org
 wikidata: Q1249973
 base: xml

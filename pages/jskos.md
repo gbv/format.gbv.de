@@ -1,6 +1,8 @@
 ---
 title: JSKOS data format for Knowledge Organization Systems
 short: JSKOS
+description:
+  en: JSON format based on SKOS
 base: rdf/json-ld
 model: jskos
 homepage: https://gbv.github.io/jskos/

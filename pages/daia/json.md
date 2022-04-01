@@ -1,5 +1,7 @@
 ---
 title: DAIA/JSON
+description:
+  en: DAIA API response format
 base: json
 model: daia
 schemas:

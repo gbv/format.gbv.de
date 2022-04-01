@@ -1,8 +1,6 @@
 ---
 title: Document Availability Information API
 short: DAIA
-description:
-  en: DAIA API response format
 homepage: http://purl.org/NET/DAIA
 application: bibliographic
 ---
