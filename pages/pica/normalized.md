@@ -4,9 +4,8 @@ model: pica
 base: bytes
 ---
 
-**Normalisiertes PICA** ist eine Kodierung von [PICA+](../pica). Datensätze
-werden durch Zeilenumbrüche (Bytecode `0A`), Felder durch Bytecode `1E` und
-Unterfelder durch Bytecode `1F` getrennt.
+**Normalisiertes PICA** ist eine Kodierung von [PICA+](../pica). Jeder Datensatz steht in einer Zeile (Datensätze werden durch Bytecode `0A` getrennt), Felder werden durch Bytecode `1E` beendet und Unterfelder durch Bytecode `1F` eingeleitet.
 
-Das Format unterscheidet sich von [binärem PICA+](binary) in der Trennung
-aufeinander folgender Datensätze: Jeder Datensatz steht in einer Zeile.
+Das Format unterscheidet sich von [binärem PICA+](binary) lediglich in der Trennung aufeinander folgender Datensätze.
+
+Normalisiertes PICA ist zu unterscheiden vom [PICA-Importformat](import), das manchmal ebenfalls als "normalisiert" bezeichnet wird.
