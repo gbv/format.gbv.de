@@ -40,8 +40,9 @@ unterrepräsentiert.
 Das Projekt [Wikidata for digital Preservation](http://wikidp.org) verwendet
 Wikidata um Informationen zu Dateiformaten und Software zusammenzustellen.
 
-Das Poster **Seeing Standards** von Jenn Riley enthält [105
-Metadaten-Standards](related/riley2010).
+Das Poster **Seeing Standards** (2010) von Jenn Riley enthält [105
+Metadaten-Standards](related/riley2010). Der [Überblick offener Standards im wissenschaftlichen Publizieren](https://doi.org/10.14293/S2199-1006.1.SOR-.PPNKUIH.v1) (2021)
+enthält 27 Metadaten- und 65 weitere Standards.
 
 Die [DLF Metadata Assessment Working
 Group](https://dlfmetadataassessment.github.io/) sammelt unter Anderem
