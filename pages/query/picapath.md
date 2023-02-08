@@ -21,24 +21,24 @@ Mit **PICA Path** Ausdrücken lassen sich einzelne Felder, Unterfelder und Feldi
 Zur vollständigen Unterstützung von PICA Path muss mindestens folgende formale Syntax erkannt werden:
 
 ~~~
-path             ::=  ( tag | xtag ) occurrence? subfields?
-tag              ::=  [012.] [0-9.] [0-9.] [A-Z@.]
-xtag             ::=  "2" [0-9.] [0-9.] [A-Z@.] "x" number
-occurrence       ::=  "/" occurenceValue
-occurenceValue   ::=  number "-" number | occurrencePattern | "*"
-occurencePattern ::=  [0-9] [0-9]? [0-9]?
-subfields        ::=  [$.]? ( [A-Za-z0-9]+ | "*" )
-number           ::=  [0-9]+
+path              ::=  ( tag | xtag ) occurrence? subfields?
+tag               ::=  [012.] [0-9.] [0-9.] [A-Z@.]
+xtag              ::=  "2" [0-9.] [0-9.] [A-Z@.] "x" number
+occurrence        ::=  "/" occurrenceValue
+occurrenceValue   ::=  number "-" number | occurrencePattern | "*"
+occurrencePattern ::=  [0-9] [0-9]? [0-9]?
+subfields         ::=  [$.]? ( [A-Za-z0-9]+ | "*" )
+number            ::=  [0-9]+
 ~~~
 
 Als Standard-Erweiterungen sind die Angabe von Positionen in Unterfeldwerten (`position`) und eine alternative Syntax zur Angabe von Occurrences möglich (umgesetzt in den Werkzeugen `picadata` und `Catmandu`):
 
 ~~~
-path             ::=  ( tag | xtag ) occurrence? ( subfields position? )?
-position         ::=  "/" ( number | range ) 
-range            ::=  number "-" number? | "-" number
-occurrence       ::=  "/" occurenceValue | "[" occurrenceValue "]"
-occurencePattern ::=  [0-9.] [0-9.]? [0-9.]?
+path              ::=  ( tag | xtag ) occurrence? ( subfields position? )?
+position          ::=  "/" ( number | range ) 
+range             ::=  number "-" number? | "-" number
+occurrence        ::=  "/" occurrenceValue | "[" occurrenceValue "]"
+occurrencePattern ::=  [0-9.] [0-9.]? [0-9.]?
 ~~~
 
 Positionsangaben beziehen sich nicht auf Bytes sondern auf Unicode-Codepunkte. Bei Positionsangaben über mehrere Unterfelder werden die Unterfeldwerte in Reihenfolge ihres Vorkommens im Feld zu einer Zeichenkette zusammengefügt.
