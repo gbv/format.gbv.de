@@ -12,8 +12,8 @@ des Satzsystem [typst](https://typst.app/) entwickelt.
 
 <example highlight="yaml">
 42:
-    type: Book
-    title: The Hitchhiker's Guide to the Galaxy
-    author: Adams, Douglas
-    date: 1978 
+&nbsp; &nbsp; type: Book
+&nbsp; &nbsp; title: The Hitchhiker's Guide to the Galaxy
+&nbsp; &nbsp; author: Adams, Douglas
+&nbsp; &nbsp; date: 1978 
 </example>
