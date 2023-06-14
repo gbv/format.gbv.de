@@ -10,3 +10,7 @@ Das **Europeana Data Model (EDM)** wird im Rahmen des [Europeana-Portal](https:/
 EDM basiert unter anderem auf [CIDOC-CRM](cidoc-crm), [Dublin Core](dc), [SKOS](skos) und OAI-ORE.
 
 Das Datenmodell liegt formalisiert als RDF-Ontologie ([EDM Vocabulary](rdf/voc/edm)) und als XML-Schema (EDM XML Schema) vor. Daneben gibt es mit den *Europeana Semantic Elements (ESE)* ein stark vereinfachtes, von EDM abgeleitetes Datenformat.
+
+### Anwendungsprofile
+
+<list-formats profiles="edm"/>
