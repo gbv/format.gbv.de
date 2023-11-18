@@ -16,10 +16,10 @@
   "require": {
     "php": ">=7.4",
     "psr/log": "^1.0",
-    "bcosca/fatfree" : "^3.7",
+    "bcosca/fatfree" : "^3.8",
     "symfony/yaml": "^5.0",
     "erusev/parsedown": "^1.7",
-    "opis/json-schema": "^2.2"
+    "opis/json-schema": "^2.3"
   },
   "autoload": {
     "psr-4": {
