@@ -32,6 +32,10 @@
       "vendor/bin/phpunit tests",
       "vendor/bin/phpunit tests/mytcms",
       "vendor/bin/phpcs --ignore=*.js,*.css src tags public tests"
+    ],
+    "post-update-cmd": [
+	    "rm -rf pages/schema/avram",
+	    "git clone https://github.com/gbv/avram.git pages/schema/avram"
     ]
   },
   "require-dev": {

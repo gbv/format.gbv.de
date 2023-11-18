@@ -15,7 +15,7 @@ Weitere verwendeten PHP-Module werden mit [Composer](https://getcomposer.org/) i
 
     $ composer install
 
-Die Avram-Spezifikation und das dazu gehörige JSON Schema werden [in einem eigenen repository](https://github.com/gbv/avram), das mittels `make init` an die richtige Stelle geklont werden kann.
+Die Avram-Spezifikation und das dazu gehörige JSON Schema werden [in einem eigenen repository](https://github.com/gbv/avram) verwaltet, dass bei der Installation automatisch neu geklont wird.
 
 ## Quellcode
 
@@ -33,10 +33,16 @@ Create a user `formatdb` and check out the repository
     $ sudo -iu formatdb
     $ git clone --bare https://github.com/gbv/format.gbv.de.git .git
     $ git init; git checkout
-    $ make init
+    $ composer install
 
 Die Anwendung läuft mittels nginx und PHP-FPM. Zur Installation sind im Zweifellsfall beide zu Installieren und zu konfigurieren:
 
     $ sudo apt-get install nginx php-fpm
     $ sudo cp /srv/formatdb/format.gbv.de /etc/nginx/sites-enabled/format.gbv.de # ggf. anpassen
     $ sudo service nginx restart
+
+## Development
+
+Make sure to enforce coding style:
+
+    $ composer style
