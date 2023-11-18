@@ -9,15 +9,9 @@ verbunden und/oder von ihnen inspiriert:
 Klassifikationen und andere Wissensorganisationssysteme, darunter einige
 [Datenmodelle](../model) die ebenfalls in die Formatdatenbank aufgenommen
 werden (z.B. [BIBFRAME](../bibframe)), und viele [weitere
-Verzeichnisse](http://bartoc.org/terminology-registries).
-
-**[Wikidata](https://www.wikidata.org/)** ist eine allgemeine, freie
-Wissensbasis. Soweit vorhanden werden alle Eintrage der Formatdatenbank
-mit ihren entsprechenden Wikidata-Einträgen verknüpft so dass zusätzliche
-Informationen dort verwaltet werden können.
-
-**[Linked Open Vocabularies]** konzentriert sich auf [RDF](../rdf)-Ontologien.
-Die Inhalte des Verzeichnis werden sowohl in BARTOC als auch in die 
+Verzeichnisse](http://bartoc.org/terminology-registries), darunter 
+**[Linked Open Vocabularies]** (LOV), das sich auf [RDF](../rdf)-Ontologien
+konzentriert. Die Inhalte von LOV werden sowohl in BARTOC als auch in die 
 Formatdatenbank übernommen ([siehe hier](../rdf/voc)).
 
 Die Library of Congress betreibt mit **[Sustainability of Digital
@@ -37,6 +31,11 @@ Digital Format Registry](http://udfr.org/) (UFDR, 2010-2016). Allgemein sind
 Normdaten- und bibliographische Formate in den bisherigen Verzeichnissen
 unterrepräsentiert.
 
+**[Wikidata](https://www.wikidata.org/)** ist eine allgemeine, freie
+Wissensbasis. Soweit vorhanden werden alle Eintrage der Formatdatenbank
+mit ihren entsprechenden Wikidata-Einträgen verknüpft so dass zusätzliche
+Informationen dort verwaltet werden können.
+
 Das Projekt [Wikidata for digital Preservation](http://wikidp.org) verwendet
 Wikidata um Informationen zu Dateiformaten und Software zusammenzustellen.
 
@@ -47,6 +46,18 @@ enthält 27 Metadaten- und 65 weitere Standards.
 Die [DLF Metadata Assessment Working
 Group](https://dlfmetadataassessment.github.io/) sammelt unter Anderem
 Anwendungsprofile für digitale Sammlungen.
+
+Weitere Sammlungen von Datenformaten:
+
+- [Data Type Registry](https://typeregistry.org/) 2012-(2015?) von CNRI und RDA
+- [Open Data Standards Directory](https://datastandards.directory/) (2017)
+
+<!--
+TOOD:
+
+- fq
+- DFDL
+-->
 
 Die theoretische Grundlage der Metadatenbeschreibung basiert auf
 der Dissertation **[Describing Data Patterns](http://aboutdata.org/)**.
