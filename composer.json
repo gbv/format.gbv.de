@@ -27,6 +27,9 @@
     }
   },
   "scripts": {
+    "post-install-cmd": [
+      "cp bin/pre-commit .git/hooks/pre-commit"
+    ],
     "post-update-cmd": [
 	    "rm -rf pages/schema/avram",
 	    "git clone https://github.com/gbv/avram.git pages/schema/avram"
