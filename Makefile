@@ -1,11 +1,5 @@
 .PHONY: test style web metadata
 
-test: metadata
-	composer test
-
-web:
-	php -S localhost:8020 -t public
-
 metadata: formats.ndjson
 
 formats.ndjson:

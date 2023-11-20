@@ -37,9 +37,9 @@ $ID = $id;
 if ($ID !== $current) {
     echo "<h1>".$title."</h1>";
 }
-if ($VIEW) {
+if (@$VIEW) {
     echo \View::instance()->render($VIEW);
-} elseif ($BODY) {
+} elseif (@$BODY) {
     echo \View::instance()->raw($BODY);
 }
 include 'infobox.php';
@@ -85,7 +85,7 @@ $(function(){
   $('[data-toggle="tooltip"]').tooltip()
 });
 </script>
-<?php if ($wikidata) { ?>
+<?php if ($wikidata ?? false) { ?>
 <!--script src="//unpkg.com/wikidata-sdk/dist/wikidata-sdk.min.js"></script-->
 <?php } ?>
 </html>

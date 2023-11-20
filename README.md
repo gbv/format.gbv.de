@@ -21,9 +21,9 @@ Die Avram-Spezifikation und das dazu gehörige JSON Schema werden [in einem eige
 
 <https://github.com/gbv/format.gbv.de>
 
-Zum Testen kann ein eigener Webserver auf Port 8020 gestartet werden - allerdings funktioniert dabei die Auslieferung von Schema-Dateiennicht vollständig:
+Zum Testen kann ein eigener Webserver erreichbar unter <http://localhost:8021/> gestartet werden - allerdings funktioniert dabei die Auslieferung von Schema-Dateien nicht vollständig:
 
-    $ make web
+    $ composer web
 
 ## Installation
 

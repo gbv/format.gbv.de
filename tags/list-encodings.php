@@ -1,5 +1,5 @@
 <?php
-$exclude = $arguments['model'];
+$exclude = @$arguments['model'];
 $mention = 'base';
 $title = $title ?? 'Serialisierungen';
 

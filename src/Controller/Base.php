@@ -24,6 +24,7 @@ class Base
 
     public function __construct()
     {
+        global $f3;
         $this->root = realpath(__DIR__) . '/../../pages/';
         $this->pages = new Pages($this->root);
         $this->menu = Yaml::parse(file_get_contents($this->root . 'menu.yaml'));

@@ -1,7 +1,7 @@
 <?php
 
 $criteria = [];
-foreach ($arguments as $name) {
+foreach ($string_arguments as $name) {
     $criteria[$name] = ${$name};
 }
 

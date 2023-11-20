@@ -38,7 +38,7 @@ class Tags
         $_file = $this->files[$name] ?? null;
         $_args = is_array($arguments[0] ?? null) ? $arguments[0] : [];
         $content = $arguments[1] ?? '';
-        $arguments = [];
+        $attr = null;
         if ($_file) {
             foreach ($_args as $name => $value) {
                 if (preg_match('/^[a-z][a-z0-9_]*$/i', $name)) {
@@ -49,7 +49,9 @@ class Tags
             foreach ($this->globals as $name => $value) {
                 ${$name} = $value;
             }
-
+            $string_arguments = array_filter($arguments, function ($name) {
+                return is_string($name) && preg_match('/^[a-z][a-z0-9_]*$/i', $name);
+            });
             ob_start();
             include $_file;
             return ob_get_clean();
@@ -70,7 +72,7 @@ class Tags
                 $xml = '<' . $match['tag'] . $match['attr'] . '/>';
                 $xml = new SimpleXMLElement($xml);
                 $elem = json_decode(json_encode($xml), true);
-                $vars = $elem['@attributes'];
+                $vars = @$elem['@attributes'];
                 return $tags->{$match['tag']}($vars, $match['content'] ?? '');
             },
             $body

@@ -1,6 +1,6 @@
 <?php
 
-if ($application) {
+if (@$application) {
     $application = array_map(
         function ($id) {
             return $id == 'structure' || $id == 'model'
@@ -8,7 +8,7 @@ if ($application) {
         },
         is_array($application) ? $application : [$application]
     );
-} elseif ($for) {
+} elseif (@$for) {
     $application = 'schema/language';
 }
 
@@ -32,7 +32,7 @@ $styles = [
         $html =
             "<a href='$url'>$url</a>"
             . ' ('. $TAGS->link(['id'=>$id,'short'=>true]) . ')';
-        if (isset($schema['version'])) {
+        if (@$schema['version']) {
             $html .= ' version '.$schema['version'];
         }
         return $html;
@@ -43,14 +43,14 @@ use Symfony\Component\Yaml\Yaml;
 
 $fields = Yaml::parse(file_get_contents(__DIR__.'/infobox.yaml'));
 
-if ($schemas && $for) {
+if (@$schemas && @$for) {
     $fields['schemas']['label'] = 'Metaschema';
     $fields['schemas']['plural'] = 'Metaschemas';
 }
 
 $infobox = [];
 foreach ($fields as $name => $field) {
-    $value = ${$name};
+    $value = @${$name};
     if (!$value) {
         continue;
     }

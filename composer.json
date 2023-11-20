@@ -27,16 +27,17 @@
     }
   },
   "scripts": {
-    "style": "./vendor/bin/phpcbf src tags public tests",
-    "test": [
-      "vendor/bin/phpunit tests",
-      "vendor/bin/phpunit tests/mytcms",
-      "vendor/bin/phpcs --ignore=*.js,*.css src tags public tests"
-    ],
     "post-update-cmd": [
 	    "rm -rf pages/schema/avram",
 	    "git clone https://github.com/gbv/avram.git pages/schema/avram"
-    ]
+    ],
+    "test": [
+      "vendor/bin/phpunit tests",
+      "vendor/bin/phpunit tests/mytcms",
+      "@style"
+    ],
+    "style": "./vendor/bin/phpcs --ignore=*.js,*.css src tags public tests",
+    "web": "php -d error_reporting=E_WARNING -S localhost:8021 -t public"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.6",

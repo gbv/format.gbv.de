@@ -1,13 +1,13 @@
 <table class="table table-bordered sortable">
   <thead>
     <tr>
-      <th><?= $title ?></th>
+      <th><?= @$title ?></th>
       <th>Strukturierungssprache</th>
     </tr>
   </thead>
   <tbody>
   <?php foreach ($PAGES->select(['application'=>$application]) as $id => $item) {
-      $for = $item['for'] ?? []; ?>
+      $for = @$item['for'] ?? []; ?>
     <tr>
       <td><?= $TAGS->link(['id' => $id]) ?></td>
       <td><?=
