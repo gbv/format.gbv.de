@@ -32,12 +32,14 @@
 	    "git clone https://github.com/gbv/avram.git pages/schema/avram"
     ],
     "test": [
+      "@build",
       "vendor/bin/phpunit tests",
       "vendor/bin/phpunit tests/mytcms",
       "@style"
     ],
     "style": "./vendor/bin/phpcs --ignore=*.js,*.css src tags public tests",
-    "web": "php -d error_reporting=E_WARNING -S localhost:8021 -t public"
+    "web": "php -d error_reporting=E_WARNING -S localhost:8021 -t public",
+    "build": "php bin/metadata.php > formats.ndjson"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.6",

@@ -2,7 +2,7 @@
 title: LOM XML
 model: lom
 base: xml
-schemas:
+#schemas:
 #- url: https://standards.ieee.org/downloads/LOM/lomv1.0/xsd/lom.xsd
 #  type: xsd
 #  version: '1.0'

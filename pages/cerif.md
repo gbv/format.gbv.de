@@ -9,7 +9,7 @@ base: xml
 schemas:
  - url: http://www.eurocris.org/Uploads/Web%20pages/CERIF-1.6/CERIF_1.6_2.xsd
    type: xsd
-   version: 1.6
+   version: '1.6'
 ---
 
 Das **Common European Research Information Format** (CERIF) wurde im Auftrag der Europäischen Union entwickelt um Informationen zu Forschung in einheitlicher Form abzubilden.

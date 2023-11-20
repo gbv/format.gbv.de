@@ -3,7 +3,7 @@ title: PICA Patch
 application: patch 
 for: pica
 base: bytes
-url: https://format.gbv.de/pica/patch/specification
+homepage: https://format.gbv.de/pica/patch/specification
 ---
 
 Mit dem **PICA Patchformat** (auch **PICA Änderungsformat**) können Änderungen an PICA+ Datensätzen ausgedrückt werden. Das Format basiert auf *Annotated PICA* (siehe [PICA Plain](plain)) mit den Markierungszeichen `+` zum Hinzufügen und `-` zum Entfernen von Feldern. Zur Änderung von Unterfeldern wird ein Feld entfernt und anschließend mit geändertem Inhalt hinzugefügt. Zusätzlichen können unmarkierte Felder in einem Änderungsdatensatz enthalten sein um sicherzustellen, dass der Ursprungsdatensatz in diesem Feldern mit den Angaben im Änderungsdatensatz übereinstimmt. Felder die nicht im Änderungsdatensatz enthalten sind, werden beibehalten. Zur Anwendung einer Änderung müssen die PICA-Felder sortiert sein.

@@ -9,19 +9,19 @@ created: 2016
 schemas:
 - url: https://kerndatensatz-forschung.de/version1/technisches_datenmodell/v_1_3/xsd/kdsf.xsd
   type: xsd
-  version: 1.3
+  version: '1.3'
 - url: https://kerndatensatz-forschung.de/version1/technisches_datenmodell/v_1_3/xsd/kdsf-basis.xsd
   type: xsd
-  version: 1.3-basis
+  version: '1.3-basis'
 - url: https://kerndatensatz-forschung.de/version1/technisches_datenmodell/v_1_2/xsd/kdsf.xsd
   type: xsd
-  version: 1.2
+  version: '1.2'
 - url: https://kerndatensatz-forschung.de/version1/technisches_datenmodell/v_1_2/xsd/kdsf-basis.xsd
   type: xsd
-  version: 1.2-basis
+  version: '1.2-basis'
 - url: https://kerndatensatz-forschung.de/version1/technisches_datenmodell/v_1_2/owl/kdsf.owl
   type: owl
-  version: 1.2
+  version: '1.2'
 ---
 
 Der **Kerndatensatz Forschung** (KDSF) ist ein Datenmodell für Forschungsinformationen (Informationen über Forschungsaktivitäten, Personal...  ) im deutschen Wissenschaftssystem. Das KDSF-Modell ist unterteilt in

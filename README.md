@@ -43,6 +43,15 @@ Die Anwendung läuft mittels nginx und PHP-FPM. Zur Installation sind im Zweifel
 
 ## Development
 
-Make sure to enforce coding style:
+Zur Sicherstellung, dass neue Einträge valide sind, muss zuminest
+
+    $ composer build
+
+aufgerufen werden. Um zusätzlich den PHP-Quellcode zu testen:
+
+    $ composer test
+
+Um nur den Coding-Style zu validieren:
 
     $ composer style
+
