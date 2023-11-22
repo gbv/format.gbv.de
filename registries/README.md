@@ -10,4 +10,12 @@ downloaded in a custom JSON format. Records are locally stored in
 does not directly map to data formats but more to conceptual entities and most
 records lack examples.
 
-##
+## Open Data Standards Directory
+
+The [Open Data Standards Directory](https://datastandards.directory/) was
+created 2017 and has rarely been updated since. It contains 84 standards,
+a large parts of which are or contain data formats:
+
+~~~sh
+jq 'select(.machine_readable=="Yes")|{name,website,machine_readable_rationale}' datastandards.ndjson
+~~~
