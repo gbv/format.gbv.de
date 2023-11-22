@@ -49,7 +49,7 @@ Anwendungsprofile für digitale Sammlungen.
 
 Weitere Sammlungen von Datenformaten:
 
-- [Data Type Registry](https://typeregistry.org/) 2012-(2015?) von CNRI und RDA
+- [Data Type Registry](https://typeregistry.org/) 2012- von CNRI und RDA
 - [Open Data Standards Directory](https://datastandards.directory/) (2017)
 
 <!--
