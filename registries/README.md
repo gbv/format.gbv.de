@@ -10,6 +10,12 @@ downloaded in a custom JSON format. Records are locally stored in
 does not directly map to data formats but more to conceptual entities and most
 records lack examples.
 
+## ePIC PID Information Type Registry
+
+This data type registry uses the same software ([Cordra](https://www.cordra.org/) and architecture like the Data Type Registry with focus on granular types of data such as dates and types of identifiers (ARK, DOI, ISBN...).
+
+<https://dtr-pit.pidconsortium.net/>
+
 ## Open Data Standards Directory
 
 The [Open Data Standards Directory](https://datastandards.directory/) was
