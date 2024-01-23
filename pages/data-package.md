@@ -11,7 +11,7 @@ schemas:
 
 Das Format **Data Package** dient zur Beschreibung von Datenpublikationen. Neben allgemeinen Metadaten können einzelne Dateien oder Gruppen von Dateien beschrieben werden. Dazu dienen weitere im Rahmen der Data Package Initiative entwickelte Formate:
 
-- [Data Resource](dataresource)
+- [Data Resource](data-resource)
 - Table Dialect
 - [Table Schema](schema/table-schema)
 
