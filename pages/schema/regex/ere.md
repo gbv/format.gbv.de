@@ -1,6 +1,7 @@
 ---
 title: POSIX Extended Regular Expressions
 short: ERE
+base: chars
 wikidata: Q50349151
 profiles: schema/regex
 ---

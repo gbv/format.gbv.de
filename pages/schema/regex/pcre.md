@@ -1,6 +1,7 @@
 ---
 title: Perl Compatible Regular Expressions
 short: PCRE
+base: chars
 wikidata: Q125267
 homepage: http://www.pcre.org/
 profiles: schema/regex

@@ -1,5 +1,6 @@
 ---
 title: JavaScript Regular Expressions
+base: unicode
 profiles: schema/regex
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: POSIX Basic Regular Expressions
 short: BRE
+base: chars
 profiles: schema/regex
 ---
 

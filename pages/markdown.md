@@ -4,6 +4,7 @@ wikidata: Q1193600
 application: documents
 created: 2004
 creator: John Gruber
+base: unicode
 contributor: Aaron Swartz
 ---
 
