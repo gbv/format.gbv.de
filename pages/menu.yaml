@@ -5,6 +5,7 @@
   - application/bibliographic
   - application/authority
   - application/documents
+  - application/datatype
   - schema/language
   - application/query
   - application/patch

@@ -3,11 +3,11 @@ title: Datentypen
 topConceptOf: application
 ---
 
-**Datentypen** sind [Anwendungsformate](../application) für einen überschaubaren Anwendungsfall zur Nutzung als Teil von komplexeren Datenformaten.
+**Datentypen** sind [Anwendungsformate](../application) für einen überschaubaren Anwendungsfall, die als Teil von komplexeren Datenformaten genutzt werden.
 
-Zu den Datentypen gehören zum einen [Allgemeine Datenstrukturierungssprachen](../structure) und zum anderen so genannte **elementare** oder **primitive Datentypen**, die sich nicht aus anderen Formaten zusammensetzen.
+Zu den Datentypen im weiteren Sinne gehören zum einen [Datenstrukturierungssprachen](../structure) und zum anderen so genannte **elementare** oder **primitive Datentypen**, die sich nicht aus anderen Formaten zusammensetzen.
 
-Datentypen finden sich in als Teil von Programmiersprachen und von Datenstrukturierungssprachen.
+Elementare Datentypen finden sich unter Anderem in als Teil von Programmiersprachen und von Datenstrukturierungssprachen.
 
 <formats-tree application="datatype"/>
 

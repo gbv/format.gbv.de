@@ -10,8 +10,8 @@ Publikationen. Die in der Formatatenbank erfassten Anwendungsformate sind
 grob unterteilt in:
 
 * [Bibliografische Datenformate](application/bibliographic) für Metadaten
-* [Formate für Normdaten](application/authority)
-* [Dokumentformate](application/documents)
+* [Formate für Normdaten](application/authority) wie Klassifikationen und Normdateien
+* [Dokumentformate](application/documents) zur Kodierung von Dokumentstrukturen (meist Auszeichnungssprachen)
 * [Schemasprachen](schema/language) dienen der Beschreibung anderer Formate 
 * [Änderungsformate](application/patch) zur Beschreibung von Änderungen an Daten
 * [Datentypen](application/datatype) definieren Datenelemente zur Verwendung in komplexeren Datenformaten
