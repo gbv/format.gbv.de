@@ -14,6 +14,7 @@ grob unterteilt in:
 * [Dokumentformate](application/documents)
 * [Schemasprachen](schema/language) dienen der Beschreibung anderer Formate 
 * [Änderungsformate](application/patch) zur Beschreibung von Änderungen an Daten
+* [Datentypen](application/datatype) definieren Datenelemente zur Verwendung in komplexeren Datenformaten
 
 Neben konkreten Anwendungsformaten gibt es allgemeinere [Datenmodelle](model),
 die lediglich als Grundlage für konkrete Datenformate dienen.

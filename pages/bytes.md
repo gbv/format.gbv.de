@@ -1,6 +1,8 @@
 ---
 title: Bytes
-application: structure
+application:
+- structure
+- datatype
 ---
 
 Letzendlich lassen sich alle Datenformate und alle digitalen Dokumente über

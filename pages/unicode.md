@@ -3,7 +3,9 @@ title: Unicode
 homepage: http://www.unicode.org/
 wikidata: Q8819
 profiles: chars
-application: structure
+application:
+- structure
+- datatype
 ---
 
 Der **Unicode-Standard** ist eine Zeichenkodierung fast aller in der Praxis

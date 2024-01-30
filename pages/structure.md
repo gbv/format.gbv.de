@@ -23,7 +23,7 @@ nur Hierarchien verwendet.
 
 ³SQL basiert auf Tabellen, wird aber unter Verwendung von Primär- und Fremdschlüsseln oft für Netzwerkstrukturen eingesetzt.
 
-Weitere Datenstrukturierungssprachen sind durch grundlegende **Datentypen** von
+Weitere Datenstrukturierungssprachen sind durch grundlegende [Datentypen](application/datatype) von
 Programmiersprachen und Data Binding Languages (ASN.1, Thrift, Avro, [Protocol
 Buffers](protobuf)...) gegeben.
 

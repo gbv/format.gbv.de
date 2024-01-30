@@ -4,6 +4,7 @@ wikidata: Q184754
 application:
 - model
 - structure
+- datatype
 ---
 
 Eine Zeichenkette ist eine abstrakte Folge von **Zeichen** (Buchstaben,

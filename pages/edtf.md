@@ -2,7 +2,7 @@
 title: Extended Date/Time Format
 short: EDTF
 wikidata: Q57629619
-application: bibliographic
+application: datatype
 base: chars
 created: 2018
 homepage: https://www.loc.gov/standards/datetime/edtf.html
