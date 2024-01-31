@@ -1,3 +1,6 @@
+default:
+	composer build
+
 #formats.dot: formats.ndjson
 #	perl bin/graph.pl < $< > $@
 #
