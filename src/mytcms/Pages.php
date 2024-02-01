@@ -70,7 +70,17 @@ class Pages
     public function get(string $page)
     {
         if (!isset($this->pages[$page])) {
-            $this->pages[$page] = $this->loadPage($page);
+            $loaded = $this->loadPage($page);
+            // apply inference
+            if (isset($loaded["subsetof"])) {
+                $whole = $this->get($loaded["subsetof"]);
+                foreach (["base","for"] as $p) {
+                    if (isset($whole[$p])) {
+                        $loaded[$p] = $whole[$p];
+                    }
+                }
+            }
+            $this->pages[$page] = $loaded;
         }
         return $this->pages[$page] ?? null;
     }

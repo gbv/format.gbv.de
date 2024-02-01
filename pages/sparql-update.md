@@ -1,8 +1,7 @@
 ---
 title: SPARQL Update
 application: patch
-for: rdf
-base: unicode
+subsetof: sparql
 homepage: http://www.w3.org/TR/sparql11-update/
 ---
 

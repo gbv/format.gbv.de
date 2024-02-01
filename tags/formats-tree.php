@@ -1,11 +1,20 @@
 <?php
 
-$criteria = [];
+// FIXME: duplicated in list-formats:
+
+$select = [];
 foreach ($string_arguments as $name) {
-    $criteria[$name] = ${$name};
+    if (!in_array($name, ['exclude', 'title', 'mention'])) {
+        $select[$name] = ${$name};
+    }
+}
+$items = $PAGES->select($select);
+
+if (@$exclude) {
+    unset($items[$exclude]);
 }
 
-$items = $PAGES->select($criteria);
+// end of duplicated code
 
 uasort($items, function ($a, $b) use ($PAGES) {
     $x = $a['title'] ?? '';

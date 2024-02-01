@@ -2,8 +2,7 @@
 title: SPARQL Query Language
 short: SPARQL
 application: query
-for: rdf
-base: unicode
+subsetof: sparql
 homepage: http://www.w3.org/TR/sparql11-query/
 ---
 

@@ -28,7 +28,12 @@ publisher:
 mimetype:
     label: Content Type
     icon: description
-    
+
+subsetof:
+    label: Teilmenge von
+    style: link
+    icon: arrow-back
+   
 base:
     label: Format
     style: link
