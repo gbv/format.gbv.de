@@ -1,6 +1,6 @@
 ---
 title: Datentypen
-topConceptOf: application
+topConceptOf: applications
 ---
 
 **Datentypen** sind [Anwendungsformate](../application) für einen überschaubaren Anwendungsfall, die als Teil von komplexeren Datenformaten genutzt werden.

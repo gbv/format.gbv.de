@@ -12,6 +12,12 @@ $schema = Yaml::parseFile("$BASE/pages/data/schema.yaml");
 $validator = new Validator();
 $validator->resolver()->registerRaw(json_encode($schema),'http://format.gbv.de/data/schema.json');
 
+$type = $argv[1] ?? 'format';
+
+function emit($item) {
+    echo json_encode($item, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+    echo "\n";
+}
 
 # $context = Yaml::parseFile("$BASE/pages/data/context.yaml");
 
@@ -21,6 +27,17 @@ $lang = 'de';# TODO: do we need this?
 $valid = true;
 $pages = (new Pages("$BASE/pages"))->select();
 foreach( $pages as $item ) {
+
+    // plain page
+    if (str_starts_with($item["id"], "about/")) continue;
+
+    // application
+    if ($item["topConceptOf"] ?? 0) {
+        if ($type == "application") emit($item);
+        continue;
+    }
+    if ($type == "application") continue;
+
     $item = Pages::asLinkedData($item);
     $item = json_decode(json_encode($item));
 
@@ -32,9 +49,7 @@ foreach( $pages as $item ) {
     $result = $validator->validate((object)$item, 'http://format.gbv.de/data/schema.json');
 
     if ($result->isValid()) {
-        # print valid files as ndjson
-        echo json_encode($item, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-        echo "\n";
+        emit($item);
     } else {
         $valid = false;
         $formatter = new ErrorFormatter();

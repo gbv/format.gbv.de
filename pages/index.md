@@ -59,3 +59,7 @@ Standards aber nicht vollständig mit Schemas formalisieren.
 
 <list-formats application="patch"/>
 
+<div class="alert alert-warning" role="alert">
+  <a href="rdf">RDF</a>-basierte Formate sind in den Übersichten noch nicht enthalten!
+</div>
+

@@ -2,24 +2,22 @@
 title: Anwendungen
 ---
 
+Die in der Formatatenbank erfassten Datenformate sind grob nach ihrem Einsatzzweck unterteilt.
+
 **Anwendungsformate** ermöglichen die Erfassung von Daten für konkrete Arten
-von Inhalten. Die Bestandteile von Anwendungsformaten beziehen sich abgesehen von allgemeinen [Datenstrukturierungssprachen](structure) nicht auf
-abstrakte Strukturen sondern auf konkrete Objekte wie zum Beispiel Personen und
-Publikationen. Die in der Formatatenbank erfassten Anwendungsformate sind
-grob unterteilt in:
+von Inhalten. Die Bestandteile von Anwendungsformaten beziehen sich auf konkrete Objekte wie zum Beispiel Personen und Publikationen. Bislang werden in der Formtdatenbank folgende Anwendungsformate unterschieden:
 
 - [Bibliografische Datenformate](application/bibliographic) für Metadaten
 - [Formate für Normdaten](application/authority) wie Klassifikationen und Normdateien
 - [Dokumentformate](application/documents) zur Kodierung von Dokumentstrukturen (meist Auszeichnungssprachen)
-- [Datentypen](application/datatype) definieren Datenelemente zur Verwendung in komplexeren Datenformaten
+
+Mit **Datensprachen** lassen sich andere Daten verwalten:
+
+- [Datenstrukturierungssprachen](structure) beziehen sich auf abstrakte Strukturen nach allgemeinen Ordnungsprinzipien
 - [Schemasprachen](schema/language) dienen der Beschreibung anderer Formate 
 - [Abfragesprachen](application/query) zur Auswählen von Teilen aus einem Datenbestand
 - [Änderungsformate](application/patch) zur Beschreibung von Änderungen an Daten
+- [Datentypen](application/datatype) definieren Datenelemente zur Verwendung in komplexeren Datenformaten.
 
-Neben konkreten Anwendungsformaten gibt es allgemeinere [Datenmodelle](model),
-die lediglich als Grundlage für konkrete Datenformate dienen.
-
-<div class="alert alert-warning" role="alert">
-  <a href="rdf">RDF</a>-basierte Formate sind in den Übersichten noch nicht enthalten!
-</div>
+Darüber hinaus gib es abstrakte [Datenmodelle](model) als Grundlage für konkretere Datenformate.
 

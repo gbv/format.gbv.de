@@ -4,12 +4,8 @@ short: Regex
 application:
   - schema
   - query
-for:
-  - unicode
-  - bytes 
-base:
-  - unicode
-  - bytes 
+for: chars
+base: chars
 wikidata: Q185612 
 ---
 

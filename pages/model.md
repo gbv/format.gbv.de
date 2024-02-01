@@ -1,5 +1,6 @@
 ---
 title: Modelle
+topConceptOf: application
 ---
 
 Ein **Datenmodell** ist eine Vorstellung davon welche Form Informationen als

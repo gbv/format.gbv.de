@@ -1,6 +1,7 @@
 ---
 title: Strukturierungssprachen
 short: Strukturen
+topConceptOf: application
 wikidata: Q24451526
 ---
 
