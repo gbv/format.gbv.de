@@ -4,7 +4,6 @@ short: JSKOS
 description:
   en: JSON format based on SKOS
 base: rdf/json-ld
-model: jskos
 homepage: https://gbv.github.io/jskos/
 application: authority
 profiles: skos  # TODO: extends SKOS, uses JSKOS-LD

@@ -3,7 +3,6 @@ title: YAML
 wikidata: Q281876
 homepage: http://www.yaml.org/
 base: unicode
-model: yaml
 application: structure
 ---
 

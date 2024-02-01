@@ -20,9 +20,7 @@ Die Struktur ist unter Anderem mit Hilfe eines
 
 ### Entitäten
 
-<!-- application -->
-
-Datenformate sind einer oder mehreren **Anwendungen** zugeordnet. Diese Zuordnung ist in einigen Fällen formal, in anderen eher pragmatisch. Anwendungen bilden daher eine grobe **Klassifikation von Datenformaten** in:
+Datenformate sind (mit der Eigenschaft `application`) einer oder mehreren **Anwendungen** zugeordnet. Diese Zuordnung ist in einigen Fällen formal, in anderen eher pragmatisch. Anwendungen bilden daher eine grobe **Klassifikation von Datenformaten** in:
 
 - [Bibliographische Datenformate](../application/bibliographic)
 - [Normdatenformate](../application/authority)
@@ -32,22 +30,54 @@ Datenformate sind einer oder mehreren **Anwendungen** zugeordnet. Diese Zuordnun
 - [Abfragesprachen](../application/query)
 - [Änderungsformate](../application/patch)
 - [Strukturierungssprachen](../structure)
+- [Datenmodelle](../model)
 
 <!-- model -->
 
-Darüber hinaus lassen sich **konkrete Datenformate** und **abstrakte [Datenmodelle](../model)** mit verschiedenen möglichen **[Kodierungen](../code)** unterscheiden. Die Kodierungen eines Modells sind zwar eigene Datenformate, lassen sich aber als unterschiedliche Serialisierungen des gleichen Datenmodells auf einer höheren Abstraktionsebene auch als ein Datenformat auffassen.
+<!--
+Darüber hinaus lassen sich **konkrete Datenformate** und **abstrakte [Datenmodelle](../model)** unterscheiden.
 
-<!-- base, for, schemas -->
+Einige konkreten Datenformate haben / sind? Kodierungen
 
-Konkrete Datenformate und Kodierungen/Serialisierungen unterscheiden sich von abstrakten Modellen auch dadurch, dass sie immer auf einer allgemeinen [Strukturierungssprache](../structure) basieren. Dabei können **Schemas** verwendet werden, um die Formate oder Teilaspekte von ihnen formal zu definieren. Jedes Schemas ist im Format einer *Schema-Sprache* für die jeweilige *Strukturierungssprache* definiert.
+mit verschiedenen möglichen **[Kodierungen](../code)** unterscheiden. Die Kodierungen eines Modells sind zwar eigene Datenformate, lassen sich aber als unterschiedliche Serialisierungen des gleichen Datenmodells auf einer höheren Abstraktionsebene auch als ein Datenformat auffassen.
+
+Vielen Datenformate beinhalten ihr eigenes Modell (Bspw. JSON) statt verschiedener Serialisierungen.
+-->
+
+<!-- base, for, schemas, element -->
+
+Konkrete Datenformate und Kodierungen/Serialisierungen basieren im Gegensatz zu
+abstrakten Modellen und Formaten auf einem allgemeinen
+[Strukturierungssprache](../structure) als **Grundformat** (angegeben mit `model`). 
+
+<!--
+Hat ein Format mehrere Grundformate (Beispiel [HTML](../html)) oder ist das Grundformat selber ein [Datenmodell](../model), so ist auch das Format abstrakt.
+-->
+
+Dabei können **Schemas** verwendet werden, um die Formate oder Teilaspekte von ihnen formal zu definieren. Jedes Schemas ist im Format einer *Schema-Sprache* für die jeweilige *Strukturierungssprache* definiert.
+
+<!--
+### Beispiele
+
+- [CSL-JSON](../csl-json) basiert auf dem Grundformat [JSON](../json).
+- [Reguläre Ausdrücke](../schema/regex) basieren auf dem abstrakten Grundformat [Zeichenkette](../chars).
+- ...
+-->
+
+Datenformate können, gekennzeichnet mit der Eigenschaft `subsetof`, Teilmengen anderer Formate sein. In diesem Fall werden das Grundformat (`base`) und das Zielformat (`for`) vom übergeordneten Format übernommen.
 
 <!-- for, profiles -->
 
-Weitere Beziehungen zwischen Datenformaten gibt es bei *Abfragesprachen* und *Änderungsformaten*, die sich ebenfalls auf genau eine *Strukturierungssprache* beziehen.
+Weitere Beziehungen zwischen Datenformaten gibt es bei *Abfragesprachen* und *Änderungsformaten*, die sich ebenfalls auf genau eine *Strukturierungssprache* als Zielformat beziehen.
 
-<!-- uses ? -->
+<!-- element -->
 
 Darüber hinaus können Datenformate als **Anwendungsprofile** andere Formate einschränken und/oder erweitern oder Bestandteil anderer Formate bilden. Insbesondere **Datentypen** werden oft als Teil in komplexere Formate integriert.
+
+<note>
+Schemasprachen, Abfragesprachen und Änderungsformate beziehen sich immer auf eine oder mehrere Datenformate mittels der Eigenschaft `for`.
+(In RDF können auch `restricts`, `queries`, `modifies` verwendet werden).
+</note>
 
 <!--
 

@@ -2,7 +2,7 @@
 title: NDJSON
 homepage: http://ndjson.org/
 base: unicode
-model: ndjson
+application: structure
 element: json
 ---
 

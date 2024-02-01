@@ -2,7 +2,6 @@
 title: Aleph Sequential Format
 short: ASEQ
 application: structure
-model: aseq
 base: chars
 ---
 

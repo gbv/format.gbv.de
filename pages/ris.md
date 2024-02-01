@@ -4,7 +4,6 @@ short: RIS
 wikidata: Q923990
 application: bibliographic
 base: bytes
-model: ris
 mimetype: application/x-research-info-systems
 ---
 

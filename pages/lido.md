@@ -6,7 +6,6 @@ description:
 homepage: http://www.lido-schema.org
 wikidata: Q1249973
 base: xml
-model: lido
 application: bibliographic
 schemas:
 - version: "1.1"

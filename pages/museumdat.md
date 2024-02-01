@@ -2,7 +2,6 @@
 title: museumdat
 homepage: http://www.museumdat.org
 base: xml
-model: museumdat
 application: bibliographic
 ---
 

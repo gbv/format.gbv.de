@@ -2,7 +2,6 @@
 title: IIIF Presentation Model
 homepage: http://iiif.io/api/presentation/2.1/
 application: documents
-model: iiif-presentation
 ---
 
 Das Datenmodell der **IIIF Presentation API** bildet strukturelle Informationen

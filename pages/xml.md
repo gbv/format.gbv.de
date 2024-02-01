@@ -2,7 +2,6 @@
 title: XML
 wikidata: Q2115
 base: unicode
-model: xml
 application: structure
 ---
 

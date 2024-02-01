@@ -2,7 +2,6 @@
 title: INI-Format
 short: INI
 wikidata: Q1141412
-model: ini
 application: structure
 ---
 

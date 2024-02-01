@@ -3,13 +3,11 @@
 if (@$application) {
     $application = array_map(
         function ($id) {
-            return $id == 'structure' || $id == 'model'
+            return $id == 'structure' || $id == 'model' || $id == "schema"
                 ? $id : "application/$id";
         },
         is_array($application) ? $application : [$application]
     );
-} elseif (@$for) {
-    $application = 'schema/language';
 }
 
 $styles = [

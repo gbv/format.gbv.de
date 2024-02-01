@@ -3,7 +3,7 @@ title: Bencode
 wikidata: Q871923
 homepage: https://wiki.theory.org/index.php/BitTorrentSpecification#Bencoding
 base: bytes
-model: bencode
+application: structure
 multicodec: 0x63
 ---
 

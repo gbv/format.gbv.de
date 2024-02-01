@@ -4,7 +4,6 @@ short: EAD
 wikidata: Q1340077
 homepage: https://www.loc.gov/ead/
 base: xml
-model: ead
 application: bibliographic
 schemas:
 - url: https://www.loc.gov/ead/ead3.xsd

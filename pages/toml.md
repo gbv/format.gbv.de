@@ -4,7 +4,6 @@ short: TOML
 wikidata: Q28449455
 homepage: https://github.com/toml-lang/toml
 base: unicode
-model: toml
 application: structure
 ---
 

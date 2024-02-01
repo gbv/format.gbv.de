@@ -5,7 +5,6 @@ homepage: https://json.org/
 created: 2001
 creator: Douglas Crockford
 base: unicode
-model: json
 application: structure
 mimetype: application/json
 ---

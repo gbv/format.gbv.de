@@ -3,7 +3,6 @@ title: MessagePack
 homepage: https://msgpack.org/
 wikidata: Q6821738
 base: bytes
-model: msgpack
 application: structure
 ---
 

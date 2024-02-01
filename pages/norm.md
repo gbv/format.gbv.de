@@ -3,7 +3,6 @@ title: Normal File Format
 short: .NORM
 homepage: https://xkcd.com/2116/
 base: norm
-model: norm
 application: documents
 ---
 

@@ -4,7 +4,6 @@ short: MODS
 homepage: http://www.loc.gov/standards/mods/
 wikidata: Q751808
 base: xml
-model: mods
 application: bibliographic
 schemas:
  - url: https://www.loc.gov/standards/mods/v3/mods-3-7.xsd 

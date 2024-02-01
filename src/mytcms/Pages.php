@@ -71,7 +71,8 @@ class Pages
     {
         if (!isset($this->pages[$page])) {
             $loaded = $this->loadPage($page);
-            // apply inference
+
+            // apply inference. TODO: move this to config file
             if (isset($loaded["subsetof"])) {
                 $whole = $this->get($loaded["subsetof"]);
                 foreach (["base","for"] as $p) {
@@ -80,6 +81,9 @@ class Pages
                     }
                 }
             }
+
+            // TODO: profiles and model => infere application
+
             $this->pages[$page] = $loaded;
         }
         return $this->pages[$page] ?? null;

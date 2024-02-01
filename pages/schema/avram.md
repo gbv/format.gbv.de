@@ -5,7 +5,6 @@ homepage: http://format.gbv.de/schema/avram/specification
 description:
   en: Schema language for MARC and related formats such as PICA and MAB
 base: json
-model: schema/avram
 application: schema
 for:
   - marc

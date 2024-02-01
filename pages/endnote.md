@@ -3,7 +3,6 @@ title: Endnote Tagged Format
 short: ENW
 application: bibliographic
 base: bytes
-model: endnote
 ---
 
 Das Endnote-Format des gleichnamigen Literaturverwaltungsprogramms basiert auf

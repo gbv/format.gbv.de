@@ -4,7 +4,6 @@ short: SBE
 homepage: https://www.fixtrading.org/standards/sbe/
 base: bytes
 for: bytes
-model: sbe
 application: structure
 ---
 
