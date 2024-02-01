@@ -66,8 +66,10 @@ properties:
   base:
     $ref: '#/definitions/links'
   profiles:
-    $ref: '#/definitions/links'
+    $ref: '#/definitions/id'
   subsetof:
+    $ref: '#/definitions/id'
+  element:
     $ref: '#/definitions/id'
 
   schemas:

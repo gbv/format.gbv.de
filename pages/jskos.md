@@ -7,9 +7,7 @@ base: rdf/json-ld
 model: jskos
 homepage: https://gbv.github.io/jskos/
 application: authority
-profiles:
-- skos
-- rdf/json-ld
+profiles: skos  # TODO: extends SKOS, uses JSKOS-LD
 ---
 
 Mit dem **JSKOS data format for Knowledge Organization Systems (JSKOS)** lassen

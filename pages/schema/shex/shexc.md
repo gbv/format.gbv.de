@@ -2,6 +2,7 @@
 title: ShEx Compact syntax
 short: ShExC
 model: schema/shex
+base: unicode
 homepage: https://shexspec.github.io/spec/#shexc
 ---
 

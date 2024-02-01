@@ -52,6 +52,12 @@ application:
     style: link
     icon: build
 
+element:
+    label: Bestandteil
+    plural: Bestandteile
+    style: link
+    icon: splitscreen
+
 for:
     label: für
     style: link

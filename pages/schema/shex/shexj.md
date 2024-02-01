@@ -2,6 +2,7 @@
 title: ShEx JSON Syntax
 short: ShExJ
 model: schema/shex
+base: json
 homepage: https://shexspec.github.io/spec/#shexj
 ---
 
