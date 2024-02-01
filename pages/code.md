@@ -1,5 +1,6 @@
 ---
 title: Kodierungen
+page: true
 javascript:
     - //cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js
     - //cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js

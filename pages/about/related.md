@@ -10,7 +10,7 @@ Klassifikationen und andere Wissensorganisationssysteme, darunter einige
 [Datenmodelle](../model) die ebenfalls in die Formatdatenbank aufgenommen
 werden (z.B. [BIBFRAME](../bibframe)), und viele [weitere
 Verzeichnisse](http://bartoc.org/terminology-registries), darunter 
-**[Linked Open Vocabularies]** (LOV), das sich auf [RDF](../rdf)-Ontologien
+**[Linked Open Vocabularies](https://lov.linkeddata.es/dataset/lov/)** (LOV), das sich auf [RDF](../rdf)-Ontologien
 konzentriert. Die Inhalte von LOV werden sowohl in BARTOC als auch in die 
 Formatdatenbank übernommen ([siehe hier](../rdf/voc)).
 

@@ -1,6 +1,7 @@
 ---
 title: Excel
 wikidata: Q11272
+page: true
 ---
 
 **Excel** ist kein Dateiformat sondern ein Tabellelkalkulationsprogramm. Sein

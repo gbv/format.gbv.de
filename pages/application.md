@@ -1,5 +1,6 @@
 ---
 title: Anwendungen
+page: true
 ---
 
 Die in der Formatatenbank erfassten Datenformate sind grob nach ihrem Einsatzzweck unterteilt.

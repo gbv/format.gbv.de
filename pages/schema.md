@@ -1,6 +1,7 @@
 ---
 title: Schemas und Schemasprachen
 short: Schemas
+page: true
 ---
 
 Ein **Schema** ist eine formale Beschreibung der Struktur von Daten. Mit einem

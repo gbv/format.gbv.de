@@ -2,8 +2,7 @@
 title: Lizenz
 ---
 
-Diese Seite beinhaltet ausgewählte Daten von [Linked Open Vocabularies (LOV)],
-welche unter der [CC-BY-Lizenz] freigegeben wurden.
+Diese Seite beinhaltet ausgewählte Daten von [Linked Open Vocabularies (LOV)](https://lov.linkeddata.es/dataset/lov/api), welche unter der [CC-BY-Lizenz] freigegeben wurden.
 
 Die übrigen **Inhalte der Formatdatenbank**, das heisst alle Angaben die sich
 nicht auf [RDF-Formate](../rdf/voc) beziehen, stehen ohne weitere Bedingungen zur

@@ -1,5 +1,6 @@
 ---
 title: Datenformate
+page: true
 ---
 
 **Datenformate** lassen sich grob in Strukturierungssprachen,

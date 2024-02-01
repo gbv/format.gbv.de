@@ -29,7 +29,7 @@ $pages = (new Pages("$BASE/pages"))->select();
 foreach( $pages as $item ) {
 
     // plain page
-    if (str_starts_with($item["id"], "about/")) continue;
+    if ($item["page"] ?? 0 || str_starts_with($item["id"], "about/")) continue;
 
     // application
     if ($item["topConceptOf"] ?? 0) {
