@@ -35,7 +35,8 @@ subsetof:
     icon: arrow-back
    
 base:
-    label: Format
+    label: Grundformat
+    plural: Grundformate
     style: link
     icon: arrow-up
     tooltip: Dieses Format dient als Grundlage
