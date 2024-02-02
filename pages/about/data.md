@@ -18,9 +18,9 @@ Die Struktur ist unter Anderem mit Hilfe eines
 
 *Das Datenmodell der Formatdatenbank befindet sich noch in Entwicklung. Hier eine vorläufige Übersicht:*
 
-### Entitäten
+### Anwendungen
 
-Datenformate sind (mit der Eigenschaft `application`) einer oder mehreren **Anwendungen** zugeordnet. Diese Zuordnung ist in einigen Fällen formal, in anderen eher pragmatisch. Anwendungen bilden daher eine grobe **Klassifikation von Datenformaten** in:
+Datenformate sind (angegeben mit `application`) einer oder mehreren **Anwendungen** zugeordnet. Diese Zuordnung ist in einigen Fällen formal, in anderen eher pragmatisch. Anwendungen bilden daher eine grobe **Klassifikation von Datenformaten** in:
 
 - [Bibliographische Datenformate](../application/bibliographic)
 - [Normdatenformate](../application/authority)
@@ -32,29 +32,34 @@ Datenformate sind (mit der Eigenschaft `application`) einer oder mehreren **Anwe
 - [Strukturierungssprachen](../structure)
 - [Datenmodelle](../model)
 
-<!-- model -->
+### Datenmodelle und Kodierungen
+
+**[Datenmodelle](../model)** sind abstrakte Datenformate, die nicht direkt
+sondern nur in Form von Kodierungen genutzt werden können.
+**[Kodierungen/Serialisierungen](../code)** sind konkrete Datenformate, die
+
+- auf einer [Strukturierungssprache](../structure) als ihr *Grundformat* basieren (angegeben mit `base`) und
+- ein Datenmodell umsetzen (angegeben mit `model`).
+
+Die Anwendungen von Kodierungen werden *nicht* explizit angegeben sondern ergeben sich aus den Anwendungen des referenzierten Datenmodells.
+
+Bei vielen Datenformaten wird allerdings nicht zwischen Datenmodell und
+Kodierung unterschieden. So bezieht sich bspw. [JSON](../json) sowohl auf
+das JSON-Modell als auch auf die Standard-Syntax von JSON.
 
 <!--
-Darüber hinaus lassen sich **konkrete Datenformate** und **abstrakte [Datenmodelle](../model)** unterscheiden.
-
-Einige konkreten Datenformate haben / sind? Kodierungen
-
-mit verschiedenen möglichen **[Kodierungen](../code)** unterscheiden. Die Kodierungen eines Modells sind zwar eigene Datenformate, lassen sich aber als unterschiedliche Serialisierungen des gleichen Datenmodells auf einer höheren Abstraktionsebene auch als ein Datenformat auffassen.
-
-Vielen Datenformate beinhalten ihr eigenes Modell (Bspw. JSON) statt verschiedener Serialisierungen.
+Die Kodierungen eines Modells sind zwar eigene Datenformate, lassen sich aber als unterschiedliche Serialisierungen des gleichen Datenmodells auf einer höheren Abstraktionsebene auch als ein Datenformat auffassen.
 -->
 
 <!-- base, for, schemas, element -->
-
-Konkrete Datenformate und Kodierungen/Serialisierungen basieren im Gegensatz zu
-abstrakten Modellen und Formaten auf einem allgemeinen
-[Strukturierungssprache](../structure) als **Grundformat** (angegeben mit `model`). 
 
 <!--
 Hat ein Format mehrere Grundformate (Beispiel [HTML](../html)) oder ist das Grundformat selber ein [Datenmodell](../model), so ist auch das Format abstrakt.
 -->
 
+<!--
 Dabei können **Schemas** verwendet werden, um die Formate oder Teilaspekte von ihnen formal zu definieren. Jedes Schemas ist im Format einer *Schema-Sprache* für die jeweilige *Strukturierungssprache* definiert.
+-->
 
 <!--
 ### Beispiele
@@ -64,20 +69,20 @@ Dabei können **Schemas** verwendet werden, um die Formate oder Teilaspekte von 
 - ...
 -->
 
+### Weitere Beziehungen zwischen Datenformaten
+
+*Abfragesprachen* und *Änderungsformaten* beziehen sich (mit `for`) auf genau eine *Strukturierungssprache* als ihr Zielformat.
+
 Datenformate können, gekennzeichnet mit der Eigenschaft `subsetof`, Teilmengen anderer Formate sein. In diesem Fall werden das Grundformat (`base`) und das Zielformat (`for`) vom übergeordneten Format übernommen.
 
-<!-- for, profiles -->
+Formate können auch Bestandteil anderer Formate bilden (angegeben mit `element`). Insbesondere abstrakte **Datentypen** werden oft als Teil in komplexere Formate integriert.
 
-Weitere Beziehungen zwischen Datenformaten gibt es bei *Abfragesprachen* und *Änderungsformaten*, die sich ebenfalls auf genau eine *Strukturierungssprache* als Zielformat beziehen.
+**Anwendungsprofile** sind Formate die andere Formate (angegeben mit `profiles`) einschränken und/oder erweitern.
 
-<!-- element -->
-
-Darüber hinaus können Datenformate als **Anwendungsprofile** andere Formate einschränken und/oder erweitern oder Bestandteil anderer Formate bilden. Insbesondere **Datentypen** werden oft als Teil in komplexere Formate integriert.
-
-<note>
+<!--note>
 Schemasprachen, Abfragesprachen und Änderungsformate beziehen sich immer auf eine oder mehrere Datenformate mittels der Eigenschaft `for`.
 (In RDF können auch `restricts`, `queries`, `modifies` verwendet werden).
-</note>
+</note-->
 
 <!--
 

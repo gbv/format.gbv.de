@@ -2,6 +2,7 @@
 title: Tab-separated values
 short: TSV
 profiles: csv
+application: structure
 wikidata: Q3513566
 homepage: https://www.iana.org/assignments/media-types/text/tab-separated-values
 base: chars

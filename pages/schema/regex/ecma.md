@@ -1,6 +1,10 @@
 ---
 title: JavaScript Regular Expressions
 base: unicode
+for: unicode
+application:
+  - schema
+  - query
 profiles: schema/regex
 ---
 

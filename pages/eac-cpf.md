@@ -2,7 +2,6 @@
 title: Encoded Archival Context for Corporate Bodies, Persons, and Families
 short: EAC-CPF
 homepage: http://eac.staatsbibliothek-berlin.de/
-application: authority
 base: xml
 model: isaar-cpf
 schemas:

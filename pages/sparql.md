@@ -3,6 +3,9 @@ title: SPARQL
 for: rdf
 base: unicode
 homepage: https://www.w3.org/TR/sparql11-overview/
+application:
+- query
+- patch
 wikidata: Q54871
 ---
 

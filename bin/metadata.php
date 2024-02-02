@@ -38,6 +38,11 @@ foreach( $pages as $item ) {
     }
     if ($type == "application") continue;
 
+    if ($item["id"] == ($item["model"] ?? 0)) {
+        error_log("$id is its own model!");
+        continue;
+    }
+
     $item = Pages::asLinkedData($item);
     $item = json_decode(json_encode($item));
 

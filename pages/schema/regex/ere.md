@@ -2,7 +2,11 @@
 title: POSIX Extended Regular Expressions
 short: ERE
 base: chars
+for: chars
 wikidata: Q50349151
+application:
+  - schema
+  - query
 profiles: schema/regex
 ---
 

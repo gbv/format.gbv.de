@@ -2,6 +2,10 @@
 title: POSIX Basic Regular Expressions
 short: BRE
 base: chars
+for: chars
+application:
+  - schema
+  - query
 profiles: schema/regex
 ---
 
