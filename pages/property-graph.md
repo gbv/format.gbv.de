@@ -1,21 +1,10 @@
 ---
 title: Labeled Property Graph
 application: model
+paradigm: graph
 ---
 
-Das **(Labeled) Property Graph Modell** definiert Property-Graphen bestend aus:
+**(Labeled) Property Graph** ist ein abstraktes Modell einer Graphstruktur
+bestehend aus einer Menge von **Knoten** und einer Menge von **Kanten**, die jeweils zwei Knoten verbinden. Kanten und Knoten können **Labels** (auch *Typen*) und **Properties** (auch *Eigenschaften*) haben. Labels sind Zeichenketten und Properties sind Mengen von Paaren aus **Schlüssel** (*Key*) und **Wert** (*Value*), das heisst dass einem Schlüssel mehrere Werte zugeordnet sein können. Schlüssel sind Zeichenketten und Werte sind  Zeichenketten, Zahlen, Boolean und Null.
 
-- Einer Menge von **Knoten**
-  - Jeder Knoten kann eine oder mehrere **Labels** haben
-  - Jeder Knoten kann **Properties** haben
-
-- Einer Menge von **Kanten**, die jeweils zwei Knoten verbinden
-  - Jede Kante kann eine oder mehrere **Labels** haben
-  - Jede Kante kann **Properties** haben
-
-Properties sind Mengen von Key-Value-Paaren wobei einem Key eine nicht-leere Menge von Werten zugeordnet ist. 
-
-Werte können je nach konkreter Anwendung des Modells Zeichenketten oder andere getypte Werte sein (z.B. Zahlen).
-
-Das Modell ist Grundlage von Graphdatenbanken und verwandten Sprachen wie SQL/PSQL, Cypher, GDL und PG.
-
+Das Labeled Property Graph Modell ist Grundlage von Graphdatenbanken und verwandten Sprachen wie SQL/PSQL, Cypher, GDL und PG.
