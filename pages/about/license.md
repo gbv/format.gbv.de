@@ -13,6 +13,8 @@ Der Quelltext der Datenbank und Skripte zur Erstellung der Webseite sind [in
 einem öffentlichen git-repository](https://github.com/gbv/format.gbv.de)
 verfügbar.
 
+Ein Dump der Datenbank im JSON-Format ist [hier verfügbar](../formats.ndjson).
+
 Weitere Informationen zur Formatdatenbank siehe unter [Hintergrund](../about).
 
 [CC-BY-Lizenz]: https://creativecommons.org/licenses/by/4.0/
