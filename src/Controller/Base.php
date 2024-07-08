@@ -12,6 +12,9 @@ use Symfony\Component\Yaml\Yaml;
 class Base
 {
     public $root;
+    public $pages;
+    public $menu;
+    public $tags;
 
     protected static $mimetypes = [
         'html'  => 'text/html',
