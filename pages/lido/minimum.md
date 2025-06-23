@@ -10,7 +10,7 @@ schemas:
 
 ---
 
-Das [LIDO](../lido)-AnwendungsprofilMinimaldatensatz-Empfehlung für Museen und Sammlungen wurde von der AG Minimaldatensatz entwickelt, 
+Das [LIDO](../lido)-Anwendungsprofil Minimaldatensatz-Empfehlung für Museen und Sammlungen wurde von der AG Minimaldatensatz entwickelt, 
 um Museen und Sammlungen den Weg zur Online-Veröffentlichung ihrer Daten zu ebnen und relevante Standards in leicht verständlicher,
 niedrigschwelliger Form zu vermitteln.
 
