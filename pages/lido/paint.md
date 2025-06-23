@@ -1,5 +1,5 @@
 ---
-title: LIDO Handbook "Painting and Scultpure", Gemeinsamer Feldkatalog Graphischer Sammlungen
+title: LIDO Handbook "Painting and Scultpure"
 homepage: https://doi.org/10.11588/arthistoricum.1026
 profiles: lido
 application: bibliographic
