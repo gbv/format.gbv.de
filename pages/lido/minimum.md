@@ -12,7 +12,9 @@ schemas:
 
 [LIDO](../lido)-Anwendungsprofil für die
 Minimaldatensatz-Empfehlung für Museen und Sammlungen.
-Die Empfehlung kann folgendermaßen zitiert werden:
 Minimaldatensatz-Empfehlung für Museen und Sammlungen v1.0.1 (2024), AG Minimaldatensatz, CC0 1.0 Universell
 Wiki: www.minimaldatensatz.de
 PDF: https://doi.org/10.5281/zenodo.12759620
+Englische Version: Minimum Record Recommendation v1.0.1 (2024), Minimum Record Working Group, CC0 1.0 Universal
+Wiki: https://wiki.deutsche-digitale-bibliothek.de/x/AQAIDQ
+PDF: https://doi.org/10.5281/zenodo.14007413
