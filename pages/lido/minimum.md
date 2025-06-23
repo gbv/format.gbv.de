@@ -1,5 +1,5 @@
 ---
-title: Miinimum Record Recommendation (v. 1.0.1)
+title: Minimum Record Recommendation (v. 1.0.1)
 homepage: https://www.minimaldatensatz.de
 profiles: lido
 application: bibliographic
