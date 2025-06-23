@@ -23,4 +23,6 @@ genauen Verwendung von LIDO ist meist in Anwendungsprofilen festgelegt.
 
 ### Anwendungsprofile
 
+*Siehe auch [LIDO Profiles](https://cidoc.mini.icom.museum/working-groups/lido/lido-overview/profiles/) auf der LIDO-Homepage.*
+
 <list-formats profiles="lido"/>
