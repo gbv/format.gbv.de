@@ -1,6 +1,6 @@
 ---
 title: DDB-LIDO
-homepage: http://www.smb.museum/fileadmin/website/Institute/Institut_fuer_Museumsforschung/Fachstelle_Museum/Handreichung_DDB-LIDO_1.0.pdf 
+homepage: https://wiki.deutsche-digitale-bibliothek.de/x/cwiuB 
 profiles: lido
 application: bibliographic
 ---
@@ -10,4 +10,6 @@ Digitalen Bibliothek](https://www.deutsche-digitale-bibliothek.de/) für den
 Import von Museumsdaten vorgeschrieben.
 
 Für Archivdaten gibt es entsprechend das [EAD](../ead)-Anwendungsprofil
-[EAD(DDB)](../ead/ddb).
+[EAD(DDB)](../ead/ddb). Weitere Datenformate sind hier dokumentiert: https://wiki.deutsche-digitale-bibliothek.de/x/uQQiAQ. 
+
+Eine XSD ist in Arbeit. 
