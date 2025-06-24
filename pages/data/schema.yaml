@@ -14,6 +14,8 @@ properties:
     type: string
   homepage:
     $ref: '#/definitions/url'
+  license:
+    $ref: '#/definitions/url'
   description:
     type: object
     propertyNames:

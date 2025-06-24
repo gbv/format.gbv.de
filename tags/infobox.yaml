@@ -29,6 +29,11 @@ mimetype:
     label: Content Type
     icon: description
 
+license:
+    label: Lizenz
+    style: url
+    icon: info-outline
+
 subsetof:
     label: Teilmenge von
     style: link

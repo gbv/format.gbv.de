@@ -24,6 +24,9 @@ $styles = [
     'bartoc' => function ($id) {
         return "<a href='https://bartoc.org/en/node/$id'>http://bartoc.org/en/node/$id</a>";
     },
+    'license' => function ($url) {
+        return "<a href='$url'>$url</a>";
+    },
     'schema' => function ($schema) use ($TAGS) {
         $id = 'schema/'.$schema['type'];
         $url = $schema['url'];
