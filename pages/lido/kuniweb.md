@@ -5,5 +5,4 @@ profiles: lido
 application: bibliographic
 ---
 
-Das Exportformat der [kuniweb-Datenbank](https://kuniweb.gbv.de/) Objekte
-basiert auf [LIDO](../lido). 
+Das Exportformat der [kuniweb-Datenbank](https://kuniweb.gbv.de/) Objekte basiert auf [LIDO](../lido). 

@@ -5,5 +5,4 @@ profiles: lido
 application: bibliographic
 ---
 
-Das Exportformat der [KENOM-Datenbank](http://www.kenom.de/) für numismatische
-Objekte basiert auf [LIDO](../lido). 
+Das Exportformat der [KENOM-Datenbank](http://www.kenom.de/) für numismatische Objekte basiert auf [LIDO](../lido). 
