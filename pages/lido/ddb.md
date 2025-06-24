@@ -3,6 +3,7 @@ title: DDB-LIDO
 homepage: https://wiki.deutsche-digitale-bibliothek.de/x/cwiuB 
 profiles: lido
 application: bibliographic
+license: https://creativecommons.org/publicdomain/zero/1.0/
 ---
 
 Das [LIDO](../lido)-Anwendungsprofil **DDB-LIDO** wird von der [Deutschen
