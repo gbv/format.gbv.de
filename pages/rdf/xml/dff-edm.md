@@ -1,5 +1,5 @@
 ---
-title: DFF-EDM
+title: DFF-EDM(DDB)
 homepage: https://wiki.deutsche-digitale-bibliothek.de/x/TgauB
 profiles: rdf/xml
 application: bibliographic
