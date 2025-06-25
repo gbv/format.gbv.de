@@ -12,3 +12,7 @@ schemas:
 ---
 
 Das **METS-Format** ist ein [XML](xml)-Format zur strukturierten Beschreibung von digitalen Objekten. Mit METS können sowohl Informationen von der Herkunft des Objekts bis zur Binnenstruktur abgebildet werden. Für allgemeine Metadaten wird METS mit Formaten wie [MODS](mods) kombiniert.
+
+### Anwendungsprofile
+
+<list-formats profiles="mets"/>
