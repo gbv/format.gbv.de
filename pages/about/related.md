@@ -49,8 +49,9 @@ Anwendungsprofile für digitale Sammlungen.
 
 Weitere Sammlungen von Datenformaten:
 
-- [Data Type Registry](https://typeregistry.org/) 2012- von CNRI und RDA
+- [RDA Metadata Standards Catalog](https://rdamsc.bath.ac.uk/) 2017-
 - [ePIC PID Information Type Registry](http://dtr-pit.pidconsortium.net/) 2016- betrieben von der GWDG
+- [Data Type Registry (DTR)](https://typeregistry.org/) 2012-? von CNRI und RDA
 - [Open Data Standards Directory](https://datastandards.directory/) (2017)
 
 <!--

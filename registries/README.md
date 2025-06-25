@@ -25,3 +25,8 @@ a large parts of which are or contain data formats:
 ~~~sh
 jq 'select(.machine_readable=="Yes")|{name,website,machine_readable_rationale}' datastandards.ndjson
 ~~~
+
+## RDA Metadata Standards Catalog
+
+The [RDA Metadata Standards Catalog](https://rdamsc.bath.ac.uk/) provides an API (not tested yet).
+
