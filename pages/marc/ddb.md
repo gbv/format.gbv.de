@@ -5,5 +5,5 @@ profiles: marc
 application: bibliographic
 ---
 
-**EAD(DDB)** ist ein Anwendungsprofil, das für die Verwendung von MARCXML in der 
+**EAD(DDB)** ist ein Anwendungsprofil, das für die Verwendung von [MARC](../marc) in der 
 Deutschen Digitalen Bibliothek (DDB) entwickelt wurde.
