@@ -1,0 +1,9 @@
+---
+title: DFF-EDM
+homepage: https://wiki.deutsche-digitale-bibliothek.de/x/TgauB
+profiles: rdf/xml
+application: bibliographic
+---
+
+**DFF-EDM** ist ein Anwendungsprofil, das für den Export von digitalen Objekten aus dem Portal filmportal.de entwickelt wurde. 
+Künftig als Lieferformat für die DDB-Fachstelle Mediathek-Film vorgesehen. 
