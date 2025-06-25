@@ -6,5 +6,5 @@ application: bibliographic
 license: https://creativecommons.org/publicdomain/zero/1.0/
 ---
 
-**EAD(DDB)** ist ein Anwendungsprofil, das für die Verwendung von [MARC](../marc) in der 
+**MARC(DDB)** ist ein Anwendungsprofil, das für die Verwendung von [MARC](../marc) in der 
 Deutschen Digitalen Bibliothek (DDB) entwickelt wurde.
