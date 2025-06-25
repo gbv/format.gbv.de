@@ -5,5 +5,5 @@ profiles: rdf/xml
 application: bibliographic
 ---
 
-**DFF-EDM** ist ein Anwendungsprofil, das für den Export von digitalen Objekten aus dem Portal filmportal.de entwickelt wurde. 
+**DFF-EDM** ist ein Anwendungsprofil, das für den Export von digitalen Objekten aus dem Portal [filmportal.de](https://www.filmportal.de/) entwickelt wurde. 
 Künftig als Lieferformat für die DDB-Fachstelle Mediathek-Film vorgesehen. 
