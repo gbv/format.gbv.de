@@ -11,4 +11,4 @@ Das **Culture Graph Interchange Format (CGIF)** wurde im Rahmen des NFDI-Konsort
 
 Das Datenmodell besteht im Wesentlichen aus Sammlungen (`schema:DataCatalog`) und darin enthaltenen bibliographischen Beschreibungen (`schema:DataFeedItem`) bestehend aus IRI, Titel, kontrollierter Verschlagwortung und ggf. zeitlicher Einordnung.
 
-Eine bevorzugte RDF-Serialisierung existiert nicht, in den Beispielen wird [JSON-LD](rdf/json-ld) verwendet. Allerdings gibt es daneben die NFDI4Culture ontology und die NFDIcore Ontology.
+Die Kodierung des CGIF-Datenmodells kann in einer belienigen [RDF]-Serialisierung erfolgen. In den Beispielen der CGIF-Dokumentation und in der Praxis wird meist [JSON-LD](rdf/json-ld) verwendet.
