@@ -1,6 +1,6 @@
 ---
 title: DDB-LIDO
-homepage: https://wiki.deutsche-digitale-bibliothek.de/x/cwiuB 
+homepage: https://deutsche-digitale-bibliothek.atlassian.net/wiki/x/xALeAg
 profiles: lido
 application: bibliographic
 license: https://creativecommons.org/publicdomain/zero/1.0/
