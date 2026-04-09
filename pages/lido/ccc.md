@@ -1,7 +1,7 @@
 ---
 title: Collections from Colonial Contexts
 short: LIDO-CCC
-homepage: https://ccc.deutsche-digitale-bibliothek.de/en
+homepage: https://deutsche-digitale-bibliothek.atlassian.net/wiki/x/JQCyDw
 profiles: lido
 application: bibliographic
 ---
