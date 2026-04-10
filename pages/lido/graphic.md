@@ -6,4 +6,4 @@ application: bibliographic
 license: https://creativecommons.org/licenses/by-sa/4.0/
 ---
 
-[LIDO](../lido)-Anwendungsprofil für die Erfassung und Publikation von Metadaten zu Zeichnungen und Druckgraphik. Es wird insbesondere im Zusammenhang mit dem [Graphikportal](https://www.graphikportal.org/) verwendet.
+[LIDO](../lido)-Anwendungsprofil für die Erfassung und Publikation von Metadaten zu Zeichnungen und Druckgraphiken. Es wird insbesondere im Zusammenhang mit dem [Graphikportal](https://www.graphikportal.org/) verwendet.
