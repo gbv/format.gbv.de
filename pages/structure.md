@@ -9,8 +9,8 @@ wikidata: Q24451526
 Einheiten zu unterteilen und miteinander in Beziehung zu setzen. Jede
 Strukturierungssprache basiert auf allgemeinen Ordnungsprinzipien:
 
-| Ordnungsprinzip | Strukturierungssprachen | Beispiele für Anwendungsformate
-|
+| Ordnungsprinzip | Strukturierungssprachen | Beispiele für Anwendungsformate|
+| --- | --- | --- |
 | Felder | [INI](ini), [MARC](marc)¹, [PICA](pica)¹ | [MARC 21 für bibliographische Daten](marc/bibliographic), [BibTeX](bibtex)¹
 | Hierarchie/Dokument | [JSON](json), [XML](xml), [SGML](sgml), [YAML](yaml)², [TOML](toml), [SDLang](sdlang)... | [TEI](tei)
 | Tabelle | [CSV](csv), [SQL](sql)³, [Wikibase Tabular Data](wikibase-tabular-data), [CSVW JSON](csvw-json)... | [Excel](excel)
